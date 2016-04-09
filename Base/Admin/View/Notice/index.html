@@ -1,0 +1,27 @@
+<extend name="Public/tpl" />
+<block name="title">各类通知 - </block>
+<block name="content">
+    <nav class="nav-title">
+        <h4>说说、公告、轮播 <small>在这里管理【说说】【公告】【轮播图】</small></h4>
+        <a href="{:U('notice_add')}" class="btn btn-success pull-right">添加新的内容</a>
+        <section class="pull-right" style="margin-right:10px;">
+            <div class="input-group">
+                <span class="input-group-addon">查看</span>
+                <select class="form-control text-center" name="no_type" onchange="load_list(this.value)">
+                    <option value="1" <eq name="on_type" value="1" >selected</eq> >说说</option>
+                    <option value="2" <eq name="on_type" value="2" >selected</eq> >公告</option>
+                    <option value="3" <eq name="on_type" value="3" >selected</eq> >轮播图</option>
+                </select>
+            </div>
+        </section>
+    </nav>
+    <table id="list-notice" class="table table-hover"></table>
+    <script type="text/javascript">
+    //根据状态加载数据
+    function load_list(type){
+        $.get("{:U('notice_list')}?type="+type,function(list){$("table#list-notice").html(list);});
+    }
+    // 首次访问自动加载列表
+    window.onload=load_list($("select[name=no_type]").val());
+    </script>
+</block>

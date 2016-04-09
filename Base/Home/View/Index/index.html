@@ -1,0 +1,25 @@
+<extend name="Public/templet-home" />
+<block name="title">{$site['site_name']}</block>
+<block name="meta"><meta property="qc:admins" content="730633572147656375" /></block>
+<block name="localhost"><small>您现在的位置:  首页</small></block>
+<block name="face-image">
+    <div id="module-slide" class="module module-slide-1 carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#module-slide" data-slide-to="0" class="active"></li>
+            <li data-target="#module-slide" data-slide-to="1"></li>
+            <li data-target="#module-slide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <volist name="slide" id="slideData">
+                <div class="item <eq name="key" value="0">active</eq>"><a href="{:U('/article/'.$slideData['no_to_article'])}"><img src="{$site['site_url']}{$slideData['no_cover_img']}" alt="{$slideData['no_title']}"></a></div>
+            </volist>
+        </div>
+    </div>
+</block>
+
+<block name="div-script">
+<script>
+    /* 轮播启动 */
+    $(".module-slide-1").carousel({interval: 3000});
+</script>
+</block>

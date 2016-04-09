@@ -1,0 +1,42 @@
+@charset "utf-8";
+/******* 标签重定义 *******/
+body{height:100%;font-family: 微软雅黑 !important;min-width: 1366px;}/*背景*/
+a:hover{text-decoration: none;cursor: pointer;}
+a:link{text-decoration: none;}
+textarea{resize:none}
+/******* 标签重定义 结束 *******/
+/******* 功能性CSS *******/
+.text-overflow{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+/******* 翻页部分 *******/
+.page-ul{height:30px;text-align:center;margin: 15px 0 10px;}
+.page-ul>li{display: inline-block;}
+.page-ul>li>a{display: block;height:27px;line-height: 25px;margin: 0 5px;padding: 0 10px;border:1px solid #ddd;border-radius: 5px;color: #000}
+.page-ul>li.page-on>a,.page-ul>li>a:hover{color: #003ac1;border: 1px solid #003ac1;}
+/******* 功能性CSS 结束 *******/
+/******* 布局css *******/
+/* 顶导航栏 */
+#main-top{border: none;z-index: 998;}
+#main-top header{display: block;float: left;}
+#main-top header img{height:50px;}
+#main-top header div{margin: 8px;}
+#main-top footer{padding: 10px;}
+#main-top footer h5,#main-top footer a{display: inline-block;margin: 0 5px;}
+#main-top footer h5{line-height: 30px;}
+/* 左菜单 */
+#main-left{background-color: rgba(50,50,50,1);position:fixed;height: 100%;width:200px;z-index: 3;}
+#main-left section a{display: block;color: #7FFF00;padding: 10px 20px;}
+#main-left section a:hover{background-color: rgba(0,0,0,0.65);}
+#main-left section a span{margin-right: 10px;}
+#main-left section footer a{background-color: rgba(0,0,0,0.3);padding-left: 44px;}
+/* 右内容 */
+#main-right{margin-top: 50px;margin-left: 200px;padding: 15px;}
+#main-right>nav>h4{margin-top: 0;}
+/******* 布局css 结束 *******/
+/******* nav标题 *******/
+nav.nav-title>*{display: inline-block}
+nav.nav-title>h4{margin: 0;line-height: 34px;font-weight: 600;}
+nav.nav-title>section{width: 300px;}
+/******* 用户信息 *******/
+table#user thead>tr>th,table#user tbody>tr>td{text-align: center;}
+/******* 发表文章 *******/
+form.article-publish{width: 1136px;}

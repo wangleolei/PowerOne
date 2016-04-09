@@ -1,0 +1,49 @@
+<volist name="parameter" id="parameterData">
+    <tr>
+        <td><label for="{$parameterData['pa_attribute']}" class="control-label">{$parameterData['pa_explain']}</label></td>
+        <td>
+        <switch name="parameterData['pa_form']">
+        <case value="1">
+            <input type="text" id="{$parameterData['pa_attribute']}" name="{$parameterData['pa_attribute']}" class="form-control" value="{$parameterData['pa_value']}" >
+        </case>
+        <case value="2">
+            <textarea id="{$parameterData['pa_attribute']}" name="{$parameterData['pa_attribute']}" class="form-control" rows="2" >{$parameterData['pa_value']}</textarea>
+        </case>
+        <case value="3">
+            <input type="password" id="{$parameterData['pa_attribute']}" name="{$parameterData['pa_attribute']}" class="form-control" value="{$parameterData['pa_value']}" >
+        </case>
+        <case value="4">
+            <input type="file" id="{$parameterData['pa_attribute']}" name="upload{$parameterData['pa_id']}" >
+        </case>
+        <case value="5">
+            <label><input type="radio" name="{$parameterData['pa_attribute']}" value="true" <if condition="$parameterData['pa_value'] eq 'true'">checked</if> > 开启</label>
+            <label><input type="radio" name="{$parameterData['pa_attribute']}" value="false" <if condition="$parameterData['pa_value'] eq 'false'">checked</if> > 关闭</label>
+        </case>
+        <default />
+        </switch>
+        </td>
+        <td>{$parameterData['pa_form_explain']}</td>
+    </tr>
+</volist>
+<if condition="$on_class eq 3">
+    <tr>
+        <td><label for="testing" class="control-label">测试邮件（配置后,先保存再测试）</label></td>
+        <td><input type="text" class="form-control" id="testing" name="testing" placeholder="输入收件箱"></td>
+        <td><button type="button" class="btn btn-default" onclick="test_email(this);">发送测试</button></td>
+    </tr>
+    <script type="text/javascript">
+    function test_email(obc){
+        var value = $("input[name=testing]").val();
+        if(value){
+            var copy = $(obc).clone();
+            $(obc).addClass("disabled").removeAttr("onclick").html("邮件发送中...");
+            $.get("{:U('test_email')}?test="+value,function(state){
+                if(state)alert(state);
+                else alert("发送成功！");
+                $(obc).replaceWith(copy);
+            });
+        }
+        else alert("请输入收件人邮箱！");
+    }
+    </script>
+</if>
