@@ -13,6 +13,12 @@ class IndexController extends CommonController {
         // 5篇最新更新的文章
         $data = M('article') -> where('ar_state=1') -> order('ar_time desc') -> limit(8) -> select();
         $this -> assign('article',$data);
+        // 文章信息
+        $data  = M('notice') -> where('no_type=1') -> order('no_time desc') -> limit($page->limit,$page->single) -> select();
+        $place = new \Org\Util\IP();
+        $mood  = change_mood($data,$place);
+        $this -> assign('mood',$mood);
+        
         $this -> display();
     }
 

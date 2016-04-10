@@ -8043,3 +8043,99 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
+[ 2016-04-10T23:29:40+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-10T23:29:40+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-10T23:29:45+08:00 ] 127.0.0.1 /powerone/Admin/login/exit_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-10T23:29:46+08:00 ] 127.0.0.1 /powerone/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-10T23:29:46+08:00 ] 127.0.0.1 /powerone/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [2] Missing argument 1 for verify(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\LoginController.class.php on line 44 and defined D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 10 行.
+NOTIC: [8] Undefined variable: code D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 11 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

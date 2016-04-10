@@ -28,7 +28,7 @@
 
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon ">最新动态</span></a>
+    <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
     <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
@@ -37,7 +37,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
-        <li><a href="<?php echo U('/index');?>">最新动态</a></li>
+        <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
         <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
         <li><a href="<?php echo U('/index');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
@@ -72,15 +72,13 @@
 
                 </div>
                 <div class="panel-body panel-home">
-                    <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
                     <ul class="menu1">
-                        <?php if(is_array($softtop5)): $i = 0; $__LIST__ = $softtop5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$softtop5data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                                <li><a href="<?php echo U('/lookblog');?>/<?php echo ($softtop5data["blog_number"]); ?>"><?php echo ($notice['no_content']); ?></a>
-                                    <div ><span><i class="glyphicon glyphicon-time"></i><?php echo (timestamp_to_timeline($notice['no_time'])); ?></span></div>
+                        <?php if(is_array($mood)): $i = 0; $__LIST__ = $mood;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$mooddata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
+                                <li><a href="<?php echo U('/mood_'.$mooddata['no_id']);?>"><?php echo ($mooddata["no_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($mooddata['no_time'])); ?></span>
                                 </li>
                             </section><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
-                    <div class="module text-center at2"><span><a href="<?php echo U('/articles');?>" class="btn btn-link">>>了解详情</a></span></div>
+                    <div class="module text-center at2"><span><a href="<?php echo U('/mood');?>" class="btn btn-link">>>了解详情</a></span></div>
                 </div>
             </div>
         
@@ -94,7 +92,7 @@
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articledata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                            <li><a href="<?php echo U('/article/'.$articledata['ar_id']);?>"><?php echo ($articledata["ar_title"]); ?></a><span class='pull-right'>00-00-00</span>
+                            <li><a href="<?php echo U('/article/'.$articledata['ar_id']);?>"><?php echo ($articledata["ar_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($articledata["ar_last_time"])); ?></span>
                             </li>
                         </section><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
