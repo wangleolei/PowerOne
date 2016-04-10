@@ -33,7 +33,7 @@
 </nav>
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="{:U('/')}" {$on_url['index']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles')}" {$on_url['articles']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
@@ -42,7 +42,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
-        <li><a href="{:U('/index')}">最新动态</a></li>
+        <li><a href="{:U('/mood')}">最新动态</a></li>
         <li><a href="{:U('/articles')}">技术分享</a></li>
         <li><a href="{:U('/index')}">作品分享</a></li>
         <li><a href="{:U('/index')}">留言板</a></li>
@@ -135,8 +135,7 @@
 </section>
 <footer class="main-footer">
     <div class="container">
-        <p>Copyright &copy; {$site['site_time']} - {$site['on_year']} {$site['site_name']} &amp; 版权所有</p>
-        <p class="pull-right">{$site['site_record']}</p>
+        <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->

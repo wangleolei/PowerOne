@@ -28,7 +28,7 @@
 
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="{:U('/')}" {$on_url['index']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles')}" {$on_url['articles']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
@@ -37,7 +37,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
-        <li><a href="{:U('/index')}">最新动态</a></li>
+        <li><a href="{:U('/mood')}">最新动态</a></li>
         <li><a href="{:U('/articles')}">技术分享</a></li>
         <li><a href="{:U('/index')}">作品分享</a></li>
         <li><a href="{:U('/index')}">留言板</a></li>
@@ -61,17 +61,15 @@
 
                 </div>
                 <div class="panel-body panel-home">
-                    <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
                     <ul class="menu1">
-                        <volist name="softtop5" id="softtop5data">
+                        <volist name="mood" id="mooddata">
                             <section class="indexarticle">
-                                <li><a href="{:U('/lookblog')}/{$softtop5data.blog_number}">{$notice['no_content']}</a>
-                                    <div ><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
+                                <li><a href="{:U('/mood_'.$mooddata['no_id'])}">{$mooddata.no_title}</a><span class='pull-right'>{$mooddata['no_time']|timestamp_to_timeline}</span>
                                 </li>
                             </section>
                         </volist>
                     </ul>
-                    <div class="module text-center at2"><span><a href="{:U('/articles')}" class="btn btn-link">>>了解详情</a></span></div>
+                    <div class="module text-center at2"><span><a href="{:U('/mood')}" class="btn btn-link">>>了解详情</a></span></div>
                 </div>
             </div>
         </block>
@@ -86,7 +84,7 @@
                 <ul class="menu1">
                     <volist name="article" id="articledata">
                         <section class="indexarticle">
-                            <li><a href="{:U('/lookblog')}/{$articledata.blog_number}">{$articledata.ar_title}</a>
+                            <li><a href="{:U('/article/'.$articledata['ar_id'])}">{$articledata.ar_title}</a><span class='pull-right'>{$articledata.ar_last_time|timestamp_to_timeline}</span>
                             </li>
                         </section>
                     </volist>
@@ -139,9 +137,8 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container">
-        <p>Copyright &copy; {$site['site_time']} - {$site['on_year']} {$site['site_name']} &amp; 版权所有</p>
-        <p class="pull-right">{$site['site_record']}</p>
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->

@@ -1,6 +1,6 @@
-<extend name="Public/tpl" />
-<block name="title">时光浅逝</block>
-<block name="localhost"><i class="glyphicon glyphicon-time"></i><small>时光浅逝</small></block>
+<extend name="Public/templet-article" />
+<block name="title">最新动态</block>
+<block name="localhost"><i class="glyphicon "></i><small>最新动态</small></block>
 <block name="content-right">
     <div class="module module-right-search visible-xs" style="margin-top: 10px;">
         <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
@@ -12,7 +12,7 @@
             <header><img src="{$moodData['no_portrait']}" alt="这是头像" class="img-circle"></header>
             <div><span></span></div>
             <footer>
-                <h4>
+                <h4> 
                     <time>{$moodData['no_nickname']}<small>{$moodData['no_time']|timestamp_to_timeline}</small></time>
                     <span class="pull-right hidden-xs"><i class="glyphicon glyphicon-map-marker"></i>{$moodData['no_place']}<i class="glyphicon glyphicon-{$moodData['no_icon']}"></i>{$moodData['no_os']}</span>
                 </h4>
