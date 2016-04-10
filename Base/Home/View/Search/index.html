@@ -1,4 +1,4 @@
-<extend name="Public/tpl" />
+<extend name="Public/templet-article" />
 <block name="title">{$search} - 搜索结果</block>
 <block name="localhost"><i class="glyphicon glyphicon-search"></i><small>【{$search}】- 搜索结果</small></block>
 <block name="content-right">
@@ -36,10 +36,4 @@
         <if condition="$button['end'] neq null"><li><a href="{:U('/search/'.$search.'_'.$button['end'])}">末页</a></li></if>
     </ul>
     <div class="clear"></div>
-</block>
-<block name="content-left-top">
-    <div class="module">
-        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
-        <div class="module-right-notice">{$notice['no_content']}</div>
-    </div>
 </block>

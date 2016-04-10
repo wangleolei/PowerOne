@@ -23,11 +23,13 @@
     你正在使用一个<strong>过时</strong>的浏览器。请升级你的浏览器保证其支持H5和CSS3的新特性再观看此页面，谢谢。</p>
 </p>
 <![endif]-->
-<nav class="main-nav">
-    <section class="container">
-        <a href="<?php echo U('/');?>" title="博客首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
+<nav class="main-nav ">
+    <section class="container ">
+    <div class="module-right-search">
+        <a href="<?php echo U('/');?>" title="首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
 
-    </section>
+    </div>
+  </section>
 </nav>
 
 <nav class="main-nav-bottom visible-xs">
@@ -168,13 +170,13 @@
 
 
 <!-- 导航栏隐藏 -->
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.jquery.headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/system.home.js"></script>
+<script src="/powerone/Public/js/headroom.jquery.headroom.js"></script>
+<script src="/powerone/Public/js/headroom.js"></script>
+<script src="/powerone/Public/js/system.home.js"></script>
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","/powerone/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
     /* 退出QQ登陆 */

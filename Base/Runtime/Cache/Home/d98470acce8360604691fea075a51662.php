@@ -23,57 +23,72 @@
     你正在使用一个<strong>过时</strong>的浏览器。请升级你的浏览器保证其支持H5和CSS3的新特性再观看此页面，谢谢。</p>
 </p>
 <![endif]-->
-<nav class="main-nav">
-    <section class="container">
-        <a href="<?php echo U('/');?>" title="博客首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
-        <ul class="pull-right hidden-xs">
-            <li><a href="<?php echo U('/');?>">站点首页</a></li>
-            <li><a href="<?php echo U('/mood');?>">时光浅逝</a></li>
-            <li><a href="<?php echo U('/articles');?>">博文之柜</a></li>
-            <li><a href="<?php echo U('/comment');?>">留言天地</a></li>
-        </ul>
-    </section>
+<nav class="main-nav ">
+    <section class="container ">
+    <div class="module-right-search">
+        <a href="<?php echo U('/');?>" title="首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
+
+    </div>
+  </section>
 </nav>
+
 <nav class="main-nav-bottom visible-xs">
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon glyphicon-home"></span></a>
-    <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon glyphicon-time"></span></a>
-    <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon glyphicon-book"></span></a>
-    <!-- <a href="<?php echo U('/comment');?>" <?php echo ($on_url['comment']); ?>><span class="glyphicon glyphicon-comment"></span></a> -->
+    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon ">最新动态</span></a>
+    <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
+    <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
+    <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
 </nav>
+    
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <li><a href="<?php echo U('/index');?>">首页</a></li>
+        <li><a href="<?php echo U('/index');?>">最新动态</a></li>
+        <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
+        <li><a href="<?php echo U('/index');?>">作品分享</a></li>
+        <li><a href="<?php echo U('/index');?>">留言板</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</nav>
+  
+
+<!-- 头图片 -->
+
 <header class="main-header container hidden-xs">
     <h4><i class="glyphicon glyphicon-search"></i><small>【<?php echo ($search); ?>】- 搜索结果</small></h4>
     <div class="pull-right">
         <?php if($user['us_login_on']): ?><img class="img-circle" src="<?php echo ($user['us_portrait']); ?>" alt="QQ用户头像">
-        <p><b><?php echo ($user['us_nickname']); ?></b>，欢迎访问Toilove个人博客，<a>点此退出登录</a></p>
+        <p><b><?php echo ($user['us_nickname']); ?></b>，欢迎访问PowerOne，<a>点此退出登录</a></p>
         <?php else: ?>
-        <a href="<?php echo U('/tool/login');?>"><img src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/img/login.png" alt="QQ登陆按钮"></a><?php endif; ?>
+        <!--
+        <a href="<?php echo U('/tool/login');?>"><img src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/img/login.png" alt="QQ登陆按钮"></a>
+        --><?php endif; ?>
     </div>
 </header>
 <!-- 头图片 -->
 <section class="main-content container">
     <div class="col-md-4 left">
-        
-    <div class="module">
-        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i><?php echo (timestamp_to_timeline($notice['no_time'])); ?></span></div>
-        <div class="module-right-notice"><?php echo ($notice['no_content']); ?></div>
-    </div>
-
         <div class="module">
-            <div class="module-title-2"><b>Search</b><small>内容搜索</small></div>
+            <div class="module-title-2"><b>内容搜索</b><small>Search</small></div>
             <div class="module-right-search">
                 <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
                 <footer><a class="btn btn-default">搜索</a></footer>
             </div>
         </div>
         <!-- 这是搜索下方内容 -->
-        <div class="module">
-            <div class="module-title-2"><b>Abuot</b><small>关于程序</small><span><i class="glyphicon glyphicon-download-alt"></i>开源程序提供下载学习</span></div>
+        <!-- 这是开始内容 -->
+            <div class="module">
+            <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
             <ul class="module-right-list">
-                <li>前端后台<a class="btn btn-xs btn-danger disabled">Bootstrap3.3.5 - ThinkPHP3.2.3 - UTF8</a></li>
-                <li>联系作者<a class="btn btn-xs btn-primary disabled">伊始：774694235@qq.com</a></li>
-                <li>站点版本<a class="btn btn-xs btn-default disabled"><?php echo ($site['site_version']); ?></a></li>
+                <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+                <?php else: ?>
+                    <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
+                <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list"><?php echo ($classData['ar_c_title']); ?><a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+                    <?php else: ?>
+                        <li><?php echo ($classData['ar_c_title']); ?><a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </ul>
-        </div>
+            </div>
+        
+        
         <!-- 这是about下方内容 -->
         <div class="module module-right-tabs">
             <ul class="nav nav-tabs">
@@ -100,12 +115,6 @@
             </div>
         </div>
         <!-- 这是BOX下方内容 -->
-        <div class="module">
-            <div class="module-title-2"><b>Link</b><small>友情链接</small><span><i class="glyphicon glyphicon-link"></i>欢迎各位站长交换链接</span></div>
-            <ul class="module-right-link">
-                <?php if(is_array($right['link'])): $i = 0; $__LIST__ = $right['link'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$linkData): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($linkData['li_url']); ?>" target="_blank"><?php echo ($linkData['li_title']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-            </ul>
-        </div>
         <!-- 这是最后内容 -->
     </div>
     <div class="col-md-8 right">
@@ -150,13 +159,13 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- 这是页面自定义script -->
 <!-- 导航栏隐藏 -->
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.jquery.headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/system.home.js"></script>
+<script src="/powerone/Public/js/headroom.jquery.headroom.js"></script>
+<script src="/powerone/Public/js/headroom.js"></script>
+<script src="/powerone/Public/js/system.home.js"></script>
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","/powerone/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
     /* 退出QQ登陆 */
