@@ -40,7 +40,7 @@
         }
     }
 </script>
-<article id="main-left">
+<article id="main-left1" class="col-md-2">
     <section><a href="<?php echo U('/');?>" class="no_clear_session" target="_blank"><span class="glyphicon glyphicon-home"></span>网站首页</a></section>
     <section><a href="<?php echo U('index/index');?>" class="no_clear_session"><span class="glyphicon glyphicon-home"></span>后台首页</a></section>
     <section><a href="<?php echo U('user/index');?>" ><span class="glyphicon glyphicon-user"></span>用户信息</a></section>
@@ -62,7 +62,7 @@
         if(!$(this).hasClass("no_clear_session"))$.ajax($(this).attr("href"),{async: false});
     });
 </script>
-<article id="main-right">
+<article id="main-right1" class="col-md-10">
 
     <nav class="nav-title">
         <h4>已发布文档 <small>这里显示所有的已发布的资讯文档，您可以对其进行各项操作</small></h4>

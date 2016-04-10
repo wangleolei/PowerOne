@@ -1,6 +1,6 @@
 @charset "utf-8";
 /******* 标签重定义 *******/
-body{height:100%;font-family: 微软雅黑 !important;min-width: 1366px;}/*背景*/
+body{height:100%;font-family: 微软雅黑 !important;min-width: 100%;}/*背景*/
 a:hover{text-decoration: none;cursor: pointer;}
 a:link{text-decoration: none;}
 textarea{resize:none}
@@ -23,7 +23,7 @@ textarea{resize:none}
 #main-top footer h5,#main-top footer a{display: inline-block;margin: 0 5px;}
 #main-top footer h5{line-height: 30px;}
 /* 左菜单 */
-#main-left{background-color: rgba(50,50,50,1);position:fixed;height: 100%;width:200px;z-index: 3;}
+#main-left{background-color: rgba(50,50,50,1);position:;height: 100%;width:;z-index: 3;}
 #main-left section a{display: block;color: #7FFF00;padding: 10px 20px;}
 #main-left section a:hover{background-color: rgba(0,0,0,0.65);}
 #main-left section a span{margin-right: 10px;}

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo ($site['site_name']); if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
+    <title>PowerOne首页<?php if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
     <meta name="keywords" content="<?php echo ($site['site_keywords']); ?>" />
     <meta name="description" content="<?php echo ($site['site_description']); ?>" />
     <meta name="version" content="<?php echo ($site['site_version']); ?>" />
@@ -94,7 +94,7 @@
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articledata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                            <li><a href="<?php echo U('/lookblog');?>/<?php echo ($articledata["blog_number"]); ?>"><?php echo ($articledata["ar_title"]); ?></a>
+                            <li><a href="<?php echo U('/article/'.$articledata['ar_id']);?>"><?php echo ($articledata["ar_title"]); ?></a><span class='pull-right'>00-00-00</span>
                             </li>
                         </section><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
@@ -144,9 +144,8 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container">
-        <p>Copyright &copy; <?php echo ($site['site_time']); ?> - <?php echo ($site['on_year']); ?> <?php echo ($site['site_name']); ?> &amp; 版权所有</p>
-        <p class="pull-right"><?php echo ($site['site_record']); ?></p>
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->

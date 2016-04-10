@@ -136,7 +136,7 @@
             <?php if($article['ar_source'] != null): ?><h5><span>版权说明：</span>本文为【<?php echo ($article['ar_source']); ?>】原创文章，转载请说明出处。</h5>
             <?php else: ?>
             <h5><span>版权说明：</span>本文为【<?php echo ($site['site_name']); ?>】原创文章，转载请说明出处。</h5>
-            <h5><span>文章地址：</span><?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/article/<?php echo ($article['ar_id']); ?>.html</h5><?php endif; ?>
+            <h5><span>文章地址：</span>www.powerone.cn/article/<?php echo ($article['ar_id']); ?>.html</h5><?php endif; ?>
         </section>
         <footer>
             <h4 class="bdsharebuttonbox">

@@ -34,7 +34,7 @@ class NoticeController extends AuthController {
             unset($session);
             // 数据分页
             $sum  = M('notice') -> where($where) -> count();
-            $page = new \Org\Toilove\Page($sum,15);
+            $page = new \Org\Powerone\Page($sum,15);
             $page->ulcss = 'page-ul';
             $page->licss = 'page-on';
             $page->now   = $now_page;

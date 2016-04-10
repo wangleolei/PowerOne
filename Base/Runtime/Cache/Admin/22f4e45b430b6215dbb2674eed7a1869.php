@@ -14,19 +14,22 @@
     <link href="/powerone/Public/admin/css/admin.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-<nav id="main-top" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <header class="navbar-header">
-        <a href="<?php echo U('index/index');?>"><img src="/powerone/Public/admin/img/admin_logo.png"/></a>
-        <div class="pull-right visible-xs">
-            <button class="btn btn-danger">注销登录</button>
-        </div>
-    </header>
-    <footer class="pull-right text-right hidden-xs">
-        <h5 class="navbar-text "><?php echo ($auth['ad_username']); ?></h5>
-        <h5 class="navbar-text "><?php echo ($auth['on_time']); ?></h5>
-        <a href="<?php echo U('/');?>" target="_blank" class="btn btn-info btn-sm">网站首页</a><a href="<?php echo U('index/index');?>" class="btn btn-warning btn-sm">后台首页</a><a class="btn btn-danger btn-sm" onclick="exitLogin();">注销登录</a>
-    </footer>
-</nav>
+<div class="masthead">
+    <nav class="navbar navbar-default " >
+        <header class="navbar-header">
+            <a href="<?php echo U('index/index');?>"><img src="/powerone/logo.png"/></a>
+            <div class="pull-right visible-xs">
+                <button class="btn btn-danger">注销登录</button>
+            </div>
+        </header>
+        <footer class="pull-right text-right hidden-xs">
+            <h5 class="navbar-text "><?php echo ($auth['ad_username']); ?></h5>
+            <h5 class="navbar-text "><?php echo ($auth['on_time']); ?></h5>
+            <a href="<?php echo U('/');?>" target="_blank" class="btn btn-info btn-sm">网站首页</a><a href="<?php echo U('index/index');?>" class="btn btn-warning btn-sm">后台首页</a><a class="btn btn-danger btn-sm" onclick="exitLogin();">注销登录</a>
+        </footer>
+    </nav>
+</div>
+
 <script>
     function exitLogin(){
         if(confirm("要退出当前登录吗？")){
@@ -40,7 +43,7 @@
         }
     }
 </script>
-<article id="main-left">
+<article id="main-left" class="col-md-2">
     <section><a href="<?php echo U('/');?>" class="no_clear_session" target="_blank"><span class="glyphicon glyphicon-home"></span>网站首页</a></section>
     <section><a href="<?php echo U('index/index');?>" class="no_clear_session"><span class="glyphicon glyphicon-home"></span>后台首页</a></section>
     <section><a href="<?php echo U('user/index');?>" ><span class="glyphicon glyphicon-user"></span>用户信息</a></section>
@@ -62,7 +65,7 @@
         if(!$(this).hasClass("no_clear_session"))$.ajax($(this).attr("href"),{async: false});
     });
 </script>
-<article id="main-right">
+<article id="main-right1" class="col-md-10">
 
 
 

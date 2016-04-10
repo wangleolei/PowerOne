@@ -86,7 +86,7 @@
                 <ul class="menu1">
                     <volist name="article" id="articledata">
                         <section class="indexarticle">
-                            <li><a href="{:U('/lookblog')}/{$articledata.blog_number}">{$articledata.ar_title}</a>
+                            <li><a href="{:U('/article/'.$articledata['ar_id'])}">{$articledata.ar_title}</a><span class='pull-right'>00-00-00</span>
                             </li>
                         </section>
                     </volist>
@@ -139,9 +139,8 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container">
-        <p>Copyright &copy; {$site['site_time']} - {$site['on_year']} {$site['site_name']} &amp; 版权所有</p>
-        <p class="pull-right">{$site['site_record']}</p>
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->
