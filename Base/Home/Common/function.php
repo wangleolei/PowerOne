@@ -69,7 +69,7 @@ function get_comment_replay($id,$state){
 // 参数：$class 参数类型ID
 // CommonController 使用
 function get_parameter($class){
-    $parameter = M('parameter') -> where('pa_class='.$class) -> select();
+//    $parameter = M('parameter') -> where('pa_class='.$class) -> select();
     for($i=0;$i<count($parameter);$i++){
         $return[$parameter[$i]['pa_attribute']] = $parameter[$i]['pa_value'];
     }

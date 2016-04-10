@@ -169,12 +169,35 @@ CREATE TABLE `base_parameter_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='参数类别表';
 
 #
-# Data for table "base_parameter_class"
+# Data for table "base_coded"
 #
 
 /*!40000 ALTER TABLE `base_parameter_class` DISABLE KEYS */;
 INSERT INTO `base_parameter_class` VALUES (1,0,'站点信息'),(2,0,'官方信息'),(3,0,'邮箱配置');
 /*!40000 ALTER TABLE `base_parameter_class` ENABLE KEYS */;
+
+# Structure for table "base_coded_value"
+DROP TABLE IF EXISTS `base_coded_value`;
+CREATE TABLE `base_coded_value` (
+  `seq_number` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',
+  `index` int(5) NOT NULL DEFAULT '0' COMMENT '一个属性的定义',
+  `sort_value` int(5) NOT NULL DEFAULT '0' COMMENT '用于排序',
+  `int_value` int(11) NOT NULL DEFAULT '0' COMMENT 'internal value',
+  `ext_value` varchar(9) NOT NULL DEFAULT '' COMMENT 'external value',
+  `oth_value` varchar(9) NOT NULL DEFAULT '' COMMENT 'other value',
+  `short_desc` varchar(40) NOT NULL DEFAULT '' COMMENT 'short description',
+  `long_desc` varchar(100) NOT NULL DEFAULT '' COMMENT 'long description',
+  PRIMARY KEY (`seq_number`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='coded value table';
+
+#
+# Data for table "base_parameter"
+#
+
+/*!40000 ALTER TABLE `base_parameter` DISABLE KEYS */;
+INSERT INTO `base_coded_value` VALUES (1,10000,1,1,'menu','','首页','菜单'),(2,10000,2,2,'menu','','最新动态','菜单'),(3,10000,3,3,'menu','','技术分享','菜单'),(4,10000,4,4,'menu','','作品分享','菜单'),(5,10000,5,5,'menu','','留言板','菜单'),(6,10000,6,6,'menu','','关于我们','菜单');
+/*!40000 ALTER TABLE `base_parameter` ENABLE KEYS */;
+
 
 #
 # Structure for table "base_user"

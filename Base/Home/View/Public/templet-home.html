@@ -28,7 +28,7 @@
 
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="{:U('/')}" {$on_url['index']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles')}" {$on_url['articles']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
@@ -37,7 +37,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
-        <li><a href="{:U('/index')}">最新动态</a></li>
+        <li><a href="{:U('/mood')}">最新动态</a></li>
         <li><a href="{:U('/articles')}">技术分享</a></li>
         <li><a href="{:U('/index')}">作品分享</a></li>
         <li><a href="{:U('/index')}">留言板</a></li>
@@ -60,18 +60,16 @@
                     <h3 class="panel-title"><a href="#">最新动态</a></h3>
 
                 </div>
-                <div class="panel-body">
-                    <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
+                <div class="panel-body panel-home">
                     <ul class="menu1">
-                        <volist name="softtop5" id="softtop5data">
+                        <volist name="mood" id="mooddata">
                             <section class="indexarticle">
-                                <li><a href="{:U('/lookblog')}/{$softtop5data.blog_number}">{$notice['no_content']}</a>
-                                    <div ><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
+                                <li><a href="{:U('/mood_'.$mooddata['no_id'])}">{$mooddata.no_title}</a><span class='pull-right'>{$mooddata['no_time']|timestamp_to_timeline}</span>
                                 </li>
                             </section>
                         </volist>
                     </ul>
-                    <div class="module text-center at2"><span><a href="{:U('/articles')}" class="btn btn-link">>>了解详情</a></span></div>
+                    <div class="module text-center at2"><span><a href="{:U('/mood')}" class="btn btn-link">>>了解详情</a></span></div>
                 </div>
             </div>
         </block>
@@ -81,12 +79,12 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">技术分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <volist name="article" id="articledata">
                         <section class="indexarticle">
-                            <li><a href="{:U('/lookblog')}/{$articledata.blog_number}">{$articledata.ar_title}</a>
+                            <li><a href="{:U('/article/'.$articledata['ar_id'])}">{$articledata.ar_title}</a><span class='pull-right'>{$articledata.ar_last_time|timestamp_to_timeline}</span>
                             </li>
                         </section>
                     </volist>
@@ -101,7 +99,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">作品分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>自己制造小软件开发优。格式如下。。</p>
                 <ul class="menu1">
                     <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
@@ -128,7 +126,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">关于我们</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>Email :  wanglei_leo@163.com</p>
                 <p>微信订阅号二维码</p>
                 <p><img src="__PUBLIC__/img/wechat.jpg" width="151" height="151"/> </p>
@@ -139,9 +137,8 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container">
-        <p>Copyright &copy; {$site['site_time']} - {$site['on_year']} {$site['site_name']} &amp; 版权所有</p>
-        <p class="pull-right">{$site['site_record']}</p>
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->
@@ -155,7 +152,7 @@
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","{$site['site_url']}{$site['site_catalog']}/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","__ROOT__/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
 </script>

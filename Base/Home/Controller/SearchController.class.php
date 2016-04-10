@@ -14,7 +14,7 @@ class SearchController extends CommonController {
             // 数据分页
             $sum = M('article') -> where($where) -> count();
             if($sum){
-                $page = new \Org\Toilove\Page($sum,10,0,true);
+                $page = new \Org\Powerone\Page($sum,10,0,true);
                 $button = $page->show();
                 if(($page->pages)>1){
                     $this -> assign('button',$button);

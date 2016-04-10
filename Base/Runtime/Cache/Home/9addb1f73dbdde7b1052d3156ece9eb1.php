@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo ($site['site_name']); if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
+    <title>PowerOne首页<?php if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
     <meta name="keywords" content="<?php echo ($site['site_keywords']); ?>" />
     <meta name="description" content="<?php echo ($site['site_description']); ?>" />
     <meta name="version" content="<?php echo ($site['site_version']); ?>" />
@@ -28,7 +28,7 @@
 
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon ">最新动态</span></a>
+    <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
     <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
@@ -37,7 +37,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
-        <li><a href="<?php echo U('/index');?>">最新动态</a></li>
+        <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
         <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
         <li><a href="<?php echo U('/index');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
@@ -71,16 +71,14 @@
                     <h3 class="panel-title"><a href="#">最新动态</a></h3>
 
                 </div>
-                <div class="panel-body">
-                    <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
+                <div class="panel-body panel-home">
                     <ul class="menu1">
-                        <?php if(is_array($softtop5)): $i = 0; $__LIST__ = $softtop5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$softtop5data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                                <li><a href="<?php echo U('/lookblog');?>/<?php echo ($softtop5data["blog_number"]); ?>"><?php echo ($notice['no_content']); ?></a>
-                                    <div ><span><i class="glyphicon glyphicon-time"></i><?php echo (timestamp_to_timeline($notice['no_time'])); ?></span></div>
+                        <?php if(is_array($mood)): $i = 0; $__LIST__ = $mood;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$mooddata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
+                                <li><a href="<?php echo U('/mood_'.$mooddata['no_id']);?>"><?php echo ($mooddata["no_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($mooddata['no_time'])); ?></span>
                                 </li>
                             </section><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
-                    <div class="module text-center at2"><span><a href="<?php echo U('/articles');?>" class="btn btn-link">>>了解详情</a></span></div>
+                    <div class="module text-center at2"><span><a href="<?php echo U('/mood');?>" class="btn btn-link">>>了解详情</a></span></div>
                 </div>
             </div>
         
@@ -90,11 +88,11 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">技术分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articledata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                            <li><a href="<?php echo U('/lookblog');?>/<?php echo ($articledata["blog_number"]); ?>"><?php echo ($articledata["ar_title"]); ?></a>
+                            <li><a href="<?php echo U('/article/'.$articledata['ar_id']);?>"><?php echo ($articledata["ar_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($articledata["ar_last_time"])); ?></span>
                             </li>
                         </section><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
@@ -108,7 +106,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">作品分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>自己制造小软件开发优。格式如下。。</p>
                 <ul class="menu1">
                     <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
@@ -133,7 +131,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">关于我们</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>Email :  wanglei_leo@163.com</p>
                 <p>微信订阅号二维码</p>
                 <p><img src="/powerone/Public/img/wechat.jpg" width="151" height="151"/> </p>
@@ -144,9 +142,8 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container">
-        <p>Copyright &copy; <?php echo ($site['site_time']); ?> - <?php echo ($site['on_year']); ?> <?php echo ($site['site_name']); ?> &amp; 版权所有</p>
-        <p class="pull-right"><?php echo ($site['site_record']); ?></p>
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->
@@ -165,7 +162,7 @@
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","/powerone/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
 </script>

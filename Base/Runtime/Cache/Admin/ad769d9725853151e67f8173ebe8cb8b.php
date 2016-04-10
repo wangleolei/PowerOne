@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>首页 - Toilove Admin管理系统</title>
+    <title>各类通知 - Toilove Admin管理系统</title>
     <!-- ico/css/js -->
     <link rel="shortcut icon" href="/powerone/Public/img/favicon.ico" />
     <link rel="stylesheet" href="/powerone/Public/css/system.bootstrap.min.css">
@@ -67,7 +67,29 @@
 </script>
 <article id="main-right1" class="col-md-10">
 
-
+    <nav class="nav-title">
+        <h4>说说、公告、轮播 <small>在这里管理【说说】【公告】【轮播图】</small></h4>
+        <a href="<?php echo U('notice_add');?>" class="btn btn-success pull-right">添加新的内容</a>
+        <section class="pull-right" style="margin-right:10px;">
+            <div class="input-group">
+                <span class="input-group-addon">查看</span>
+                <select class="form-control text-center" name="no_type" onchange="load_list(this.value)">
+                    <option value="1" <?php if(($on_type) == "1"): ?>selected<?php endif; ?> >说说</option>
+                    <option value="2" <?php if(($on_type) == "2"): ?>selected<?php endif; ?> >公告</option>
+                    <option value="3" <?php if(($on_type) == "3"): ?>selected<?php endif; ?> >轮播图</option>
+                </select>
+            </div>
+        </section>
+    </nav>
+    <table id="list-notice" class="table table-hover"></table>
+    <script type="text/javascript">
+    //根据状态加载数据
+    function load_list(type){
+        $.get("<?php echo U('notice_list');?>?type="+type,function(list){$("table#list-notice").html(list);});
+    }
+    // 首次访问自动加载列表
+    window.onload=load_list($("select[name=no_type]").val());
+    </script>
 
 </article>
 </body>

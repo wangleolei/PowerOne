@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>已发布文档 - Toilove Admin管理系统</title>
+    <title>系统设置 - Toilove Admin管理系统</title>
     <!-- ico/css/js -->
     <link rel="shortcut icon" href="/powerone/Public/img/favicon.ico" />
     <link rel="stylesheet" href="/powerone/Public/css/system.bootstrap.min.css">
@@ -40,7 +40,7 @@
         }
     }
 </script>
-<article id="main-left1" class="col-md-2">
+<article id="main-left">
     <section><a href="<?php echo U('/');?>" class="no_clear_session" target="_blank"><span class="glyphicon glyphicon-home"></span>网站首页</a></section>
     <section><a href="<?php echo U('index/index');?>" class="no_clear_session"><span class="glyphicon glyphicon-home"></span>后台首页</a></section>
     <section><a href="<?php echo U('user/index');?>" ><span class="glyphicon glyphicon-user"></span>用户信息</a></section>
@@ -62,28 +62,45 @@
         if(!$(this).hasClass("no_clear_session"))$.ajax($(this).attr("href"),{async: false});
     });
 </script>
-<article id="main-right1" class="col-md-10">
+<article id="main-right">
 
     <nav class="nav-title">
-        <h4>已发布文档 <small>这里显示所有的已发布的资讯文档，您可以对其进行各项操作</small></h4>
-        <section class="pull-right" style="width:370px;">
+        <h4>系统设置 <small>在这里对系统进行参数设置</small></h4>
+        <section class="pull-right">
             <div class="input-group">
-                <span class="input-group-addon">选择栏目</span>
-                <select class="form-control" name="ar_class" onchange="load_list(this.value)">
-                    <option value="0" >查看全部</option>
-                    <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><option value="<?php echo ($classData['ar_class']); ?>" <?php if(($class['on']) == $classData['ar_class']): ?>selected<?php endif; ?> ><?php echo ($classData['ar_c_title']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                <span class="input-group-addon">参数类型</span>
+                <select class="form-control text-center" name="pa_class" onchange="load_list(this.value);">
+                    <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><option value="<?php echo ($classData['pa_class']); ?>" <?php if(($class['on']) == $classData['pa_class']): ?>selected<?php endif; ?> ><?php echo ($classData['pa_t_title']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                 </select>
             </div>
         </section>
     </nav>
-    <table id="list-article" class="table table-striped"></table>
+    <form action="<?php echo U('operat');?>" method="post" enctype="multipart/form-data">
+        <table id="list-seting" class="table table-hover">
+            <thead>
+            <tr>
+                <th style="width: 250px;">属性</th>
+                <th style="width: 400px;">值</th>
+                <th>填写说明</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+            <tr>
+                <td><b>操作</b></td>
+                <td colspan="2">
+                    <input hidden type="text" name="se_type" value="<?php echo ($setingData["id"]); ?>" >
+                    <button type="submit" class="btn btn-success" name="operat" value="save">保存修改</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
     <script type="text/javascript">
-    // 根据状态加载数据
     function load_list(value){
-        $.get("<?php echo U('article_list');?>?class="+value,function(list){$("table#list-article").html(list);});
+        $.get("<?php echo U('parameter_list');?>?class="+value,function(list){$("table#list-seting tbody").html(list);});
     }
-    // 首次访问自动加载列表
-    window.onload=load_list($("select[name=ar_class]").val());
+    window.onload=load_list($("select[name=pa_class]").val());
     </script>
 
 </article>

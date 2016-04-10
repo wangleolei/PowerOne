@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- seo标签、基础参数 -->
-    <title>技术分享<?php if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
+    <title>最新动态<?php if($site['site_name_suffix']): ?>- <?php echo ($site['site_name_suffix']); endif; ?></title>
     <meta name="keywords" content="<?php echo ($site['site_keywords']); ?>" />
     <meta name="description" content="<?php echo ($site['site_description']); ?>" />
     <meta name="version" content="<?php echo ($site['site_version']); ?>" />
@@ -54,7 +54,7 @@
 <!-- 头图片 -->
 
 <header class="main-header container hidden-xs">
-    <h4><small>您现在的位置: 首页 -> 技术分享</small></h4>
+    <h4><i class="glyphicon "></i><small>最新动态</small></h4>
     <div class="pull-right">
         <?php if($user['us_login_on']): ?><img class="img-circle" src="<?php echo ($user['us_portrait']); ?>" alt="QQ用户头像">
         <p><b><?php echo ($user['us_nickname']); ?></b>，欢迎访问PowerOne，<a>点此退出登录</a></p>
@@ -77,15 +77,8 @@
         <!-- 这是搜索下方内容 -->
         
     <div class="module">
-        <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
-        <ul class="module-right-list">
-            <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <?php else: ?>
-            <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
-            <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list"><?php echo ($classData['ar_c_title']); ?><a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <?php else: ?>
-            <li><?php echo ($classData['ar_c_title']); ?><a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-        </ul>
+        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i><?php echo (timestamp_to_timeline($notice['no_time'])); ?></span></div>
+        <div class="module-right-notice"><?php echo ($notice['no_content']); ?></div>
     </div>
 
         
@@ -123,27 +116,25 @@
         <footer><a class="btn btn-default">搜索</a></footer>
     </div>
     <div class="module">
-    <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articleData): $mod = ($i % 2 );++$i;?><article class="module-article-img1">
-            <h4><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><?php echo ($articleData['ar_title']); ?></a></h4>
-            <h5><span>发布时间：<?php echo (timestamp_to_timeline($articleData['ar_time'])); ?></span><span>栏目：<?php echo (get_class_title($articleData['ar_class'])); ?></span></h5>
-            <header class="hidden-xs"><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><img src="<?php echo ($site['site_catalog']); echo ($articleData['ar_cover_img']); ?>" alt="<?php echo ($articleData['ar_title']); ?>_封面" /></a></header>
+    <?php if(is_array($mood)): $i = 0; $__LIST__ = $mood;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$moodData): $mod = ($i % 2 );++$i;?><article class="module-mood-1">
+            <header><img src="<?php echo ($moodData['no_portrait']); ?>" alt="这是头像" class="img-circle"></header>
+            <div><span></span></div>
             <footer>
-                <header><p><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><?php echo ($articleData['ar_description']); ?></a></p></header>
-                <div>
-                    <span><i class="glyphicon glyphicon-tag"></i><?php echo ($articleData['ar_keywords']); ?></span>
-                    <a href="<?php echo U('/article/'.$articleData['ar_id']);?>" class="btn btn-xs btn-success">阅读全文</a>
-                </div>
+                <h4> 
+                    <time><?php echo ($moodData['no_nickname']); ?><small><?php echo (timestamp_to_timeline($moodData['no_time'])); ?></small></time>
+                    <span class="pull-right hidden-xs"><i class="glyphicon glyphicon-map-marker"></i><?php echo ($moodData['no_place']); ?><i class="glyphicon glyphicon-<?php echo ($moodData['no_icon']); ?>"></i><?php echo ($moodData['no_os']); ?></span>
+                </h4>
+                <div><?php echo ($moodData['no_content']); ?></div>
             </footer>
         </article><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
     <ul class="module-page-1 pull-right">
-        <?php if($button['first'] != null): ?><li><a href="<?php if($class['on'] == 0): echo U('/articles'); else: echo U('/articles/'.$class['on']); endif; ?>">首页</a></li><?php endif; ?>
-        <?php if($button['previous'] != null): ?><li><a href="<?php if($class['on'] == 0 and $button['previous'] == 1): echo U('/articles'); elseif($class['on'] == 0): echo U('/articles_'.$button['previous']); elseif($button['previous'] == 1): echo U('/articles/'.$class['on']); else: echo U('/articles/'.$class['on'].'_'.$button['previous']); endif; ?>">上一页</a></li><?php endif; ?>
+        <?php if($button['first'] != null): ?><li><a href="<?php echo U('/mood');?>">首页</a></li><?php endif; ?>
+        <?php if($button['previous'] != null): ?><li><a href="<?php if($button['previous'] == 1): echo U('/mood'); else: echo U('/mood_'.$button['previous']); endif; ?>">上一页</a></li><?php endif; ?>
         <?php if(is_array($button['num'])): $i = 0; $__LIST__ = $button['num'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$numData): $mod = ($i % 2 );++$i; if(($numData) == $button['on']): ?><li class="active"><a><?php echo ($numData); ?></a></li>
-            <?php else: ?>
-            <li><a href="<?php if($class['on'] == 0 and $numData == 1): echo U('/articles'); elseif($class['on'] == 0): echo U('/articles_'.$numData); elseif($numData == 1): echo U('/articles/'.$class['on']); else: echo U('/articles/'.$class['on'].'_'.$numData); endif; ?>"><?php echo ($numData); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-        <?php if($button['next'] != null): ?><li><a href="<?php if($class['on'] == 0): echo U('/articles_'.$button['next']); else: echo U('/articles/'.$class['on'].'_'.$button['next']); endif; ?>">下一页</a></li><?php endif; ?>
-        <?php if($button['end'] != null): ?><li><a href="<?php if($class['on'] == 0): echo U('/articles_'.$button['end']); else: echo U('/articles/'.$class['on'].'_'.$button['end']); endif; ?>">末页</a></li><?php endif; ?>
+            <?php else: ?><li><a href="<?php if($numData == 1): echo U('/mood'); else: echo U('/mood_'.$numData); endif; ?>"><?php echo ($numData); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+        <?php if($button['next'] != null): ?><li><a href="<?php echo U('/mood_'.$button['next']);?>">下一页</a></li><?php endif; ?>
+        <?php if($button['end'] != null): ?><li><a href="<?php echo U('/mood_'.$button['end']);?>">末页</a></li><?php endif; ?>
     </ul>
     <div class="clear"></div>
 </div>

@@ -23,15 +23,17 @@
     你正在使用一个<strong>过时</strong>的浏览器。请升级你的浏览器保证其支持H5和CSS3的新特性再观看此页面，谢谢。</p>
 </p>
 <![endif]-->
-<nav class="main-nav">
-    <section class="container">
-        <a href="<?php echo U('/');?>" title="博客首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
+<nav class="main-nav ">
+    <section class="container ">
+    <div class="module-right-search">
+        <a href="<?php echo U('/');?>" title="首页"><img src="/powerone/upload/base/image/system/logo.png" alt="LOGO图" /></a>
 
-    </section>
+    </div>
+  </section>
 </nav>
 
 <nav class="main-nav-bottom visible-xs">
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon ">最新动态</span></a>
+    <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
     <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
@@ -40,7 +42,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
-        <li><a href="<?php echo U('/index');?>">最新动态</a></li>
+        <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
         <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
         <li><a href="<?php echo U('/index');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
@@ -134,7 +136,7 @@
             <?php if($article['ar_source'] != null): ?><h5><span>版权说明：</span>本文为【<?php echo ($article['ar_source']); ?>】原创文章，转载请说明出处。</h5>
             <?php else: ?>
             <h5><span>版权说明：</span>本文为【<?php echo ($site['site_name']); ?>】原创文章，转载请说明出处。</h5>
-            <h5><span>文章地址：</span><?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/article/<?php echo ($article['ar_id']); ?>.html</h5><?php endif; ?>
+            <h5><span>文章地址：</span>www.powerone.cn/article/<?php echo ($article['ar_id']); ?>.html</h5><?php endif; ?>
         </section>
         <footer>
             <h4 class="bdsharebuttonbox">
@@ -158,8 +160,7 @@
 </section>
 <footer class="main-footer">
     <div class="container">
-        <p>Copyright &copy; <?php echo ($site['site_time']); ?> - <?php echo ($site['on_year']); ?> <?php echo ($site['site_name']); ?> &amp; 版权所有</p>
-        <p class="pull-right"><?php echo ($site['site_record']); ?></p>
+        <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->
@@ -168,13 +169,13 @@
 
 
 <!-- 导航栏隐藏 -->
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.jquery.headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/headroom.js"></script>
-<script src="<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/Public/js/system.home.js"></script>
+<script src="/powerone/Public/js/headroom.jquery.headroom.js"></script>
+<script src="/powerone/Public/js/headroom.js"></script>
+<script src="/powerone/Public/js/system.home.js"></script>
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","/powerone/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
     /* 退出QQ登陆 */
