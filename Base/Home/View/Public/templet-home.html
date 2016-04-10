@@ -60,7 +60,7 @@
                     <h3 class="panel-title"><a href="#">最新动态</a></h3>
 
                 </div>
-                <div class="panel-body">
+                <div class="panel-body panel-home">
                     <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
                     <ul class="menu1">
                         <volist name="softtop5" id="softtop5data">
@@ -81,7 +81,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">技术分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <volist name="article" id="articledata">
@@ -101,7 +101,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">作品分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>自己制造小软件开发优。格式如下。。</p>
                 <ul class="menu1">
                     <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
@@ -128,7 +128,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">关于我们</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>Email :  wanglei_leo@163.com</p>
                 <p>微信订阅号二维码</p>
                 <p><img src="__PUBLIC__/img/wechat.jpg" width="151" height="151"/> </p>
@@ -155,7 +155,7 @@
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","{$site['site_url']}{$site['site_catalog']}/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","__ROOT__/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
 </script>

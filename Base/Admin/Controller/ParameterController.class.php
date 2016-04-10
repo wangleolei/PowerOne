@@ -11,8 +11,8 @@ class ParameterController extends AuthController {
         else
         {
             $session = session('admin.parameter');
-            if($session['pa_class'])$class['on'] = $session['pa_class'];
-            $class['data'] = M('parameter_class') -> select();
+ //           if($session['pa_class'])$class['on'] = $session['pa_class'];
+ //           $class['data'] = M('parameter_class') -> select();
             $this -> assign('class',$class);
             $this -> display();
         }
@@ -27,7 +27,7 @@ class ParameterController extends AuthController {
             else $session['pa_class'] = $where['pa_class'] = 1;
             session('admin.parameter',$session);
             unset($session);
-            $parameter = M('parameter') -> where($where) -> select();
+//            $parameter = M('parameter') -> where($where) -> select();
             $this -> assign('parameter',$parameter);
             unset($parameter);
             $this -> assign('on_class',$where['pa_class']);
@@ -42,14 +42,14 @@ class ParameterController extends AuthController {
         if(I('post.operat')=='save')
         {
             $session   = session('admin.parameter');
-            $parameter = M('parameter') -> where('pa_class='.$session['pa_class']) -> select();
+//            $parameter = M('parameter') -> where('pa_class='.$session['pa_class']) -> select();
             for($i=0;$i<count($parameter);$i++){
                 if($parameter[$i]['pa_form'] == 4){
                     $upload = upload_file($parameter[$i]['pa_id']);
                     if($upload)$save['pa_value'] = $upload;
                 }
                 elseif(I('post.'.$parameter[$i]['pa_attribute'])!=$parameter[$i]['pa_value'])$save['pa_value'] = I('post.'.$parameter[$i]['pa_attribute']);
-                if($save)M('parameter') -> where('pa_id='.$parameter[$i]['pa_id']) -> save($save);
+//                if($save)M('parameter') -> where('pa_id='.$parameter[$i]['pa_id']) -> save($save);
                 unset($save);
             }
             $this -> success('操作成功！');

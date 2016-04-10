@@ -71,7 +71,7 @@
                     <h3 class="panel-title"><a href="#">最新动态</a></h3>
 
                 </div>
-                <div class="panel-body">
+                <div class="panel-body panel-home">
                     <p>自己制造小软件开发优化中，haha尽请期待。。。</p>
                     <ul class="menu1">
                         <?php if(is_array($softtop5)): $i = 0; $__LIST__ = $softtop5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$softtop5data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
@@ -90,7 +90,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">技术分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
                     <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articledata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
@@ -108,7 +108,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">作品分享</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>自己制造小软件开发优。格式如下。。</p>
                 <ul class="menu1">
                     <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
@@ -133,7 +133,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#">关于我们</a></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body panel-home">
                 <p>Email :  wanglei_leo@163.com</p>
                 <p>微信订阅号二维码</p>
                 <p><img src="/powerone/Public/img/wechat.jpg" width="151" height="151"/> </p>
@@ -165,7 +165,7 @@
 <script>
     /* 搜索框 */
     $(".module-right-search input[name=search]").change(function(){
-        if($(this).val())$(".module-right-search footer a").attr("href","<?php echo ($site['site_url']); echo ($site['site_catalog']); ?>/search/"+$(this).val()+".html");
+        if($(this).val())$(".module-right-search footer a").attr("href","/powerone/search/"+$(this).val()+".html");
         else $(".module-right-search footer a").removeAttr("href");
     });
 </script>
