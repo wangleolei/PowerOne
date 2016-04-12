@@ -34,8 +34,8 @@
 
 <nav class="main-nav-bottom visible-xs">
     <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
-    <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
+    <a href="<?php echo U('/articles/1');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
+    <a href="<?php echo U('/articles/2');?>" <?php echo ($on_url['articles/2']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
 </nav>
     
@@ -43,8 +43,8 @@
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
         <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
-        <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
-        <li><a href="<?php echo U('/index');?>">作品分享</a></li>
+        <li><a href="<?php echo U('/articles/1');?>">技术分享</a></li>
+        <li><a href="<?php echo U('/articles/2');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
         <li><a href="#">关于我们</a></li>
     </ul>
@@ -75,19 +75,28 @@
             </div>
         </div>
         <!-- 这是搜索下方内容 -->
+        <!-- 这是开始内容 -->
+            <div class="module">
+            <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
+            <ul class="module-right-list">
+<!--                <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+                <?php else: ?>
+                    <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
+-->                
+                <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list">
+                            <?php if($classData['ar_link'] == 0): ?>全部文章
+                            <?php else: echo ($classData['ar_c_title']); endif; ?>
+                            <a class="btn btn-xs btn-primary disabled">当前栏目</a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <?php if($classData['ar_link'] == 0): ?>全部文章
+                            <?php else: echo ($classData['ar_c_title']); endif; ?>
+                            <a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a>
+                        </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            </div>
         
-    <div class="module">
-        <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
-        <ul class="module-right-list">
-            <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <?php else: ?>
-            <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
-            <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list"><?php echo ($classData['ar_c_title']); ?><a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <?php else: ?>
-            <li><?php echo ($classData['ar_c_title']); ?><a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-        </ul>
-    </div>
-
         
         <!-- 这是about下方内容 -->
         <div class="module module-right-tabs">

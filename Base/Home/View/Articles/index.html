@@ -37,22 +37,3 @@
     </ul>
     <div class="clear"></div>
 </block>
-<block name="content-left-top">
-    <div class="module">
-        <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
-        <ul class="module-right-list">
-            <if condition="$class['on'] eq 0">
-            <li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <else />
-            <li>全部文章<a href="{:U('/articles')}" class="btn btn-xs btn-success">点击进入</a></li>
-            </if>
-            <volist name="class['data']" id="classData">
-            <eq name="class['on']" value="$classData['ar_class']">
-            <li class="on-list">{$classData['ar_c_title']}<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
-            <else/>
-            <li>{$classData['ar_c_title']}<a href="{:U('/articles/'.$classData['ar_class'])}" class="btn btn-xs btn-success">点击进入</a></li>
-            </eq>
-            </volist>
-        </ul>
-    </div>
-</block>

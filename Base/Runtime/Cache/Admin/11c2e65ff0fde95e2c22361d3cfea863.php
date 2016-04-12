@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>已发布文档 - Toilove Admin管理系统</title>
+    <title>资讯类别管理 - Toilove Admin管理系统</title>
     <!-- ico/css/js -->
     <link rel="shortcut icon" href="/powerone/Public/img/favicon.ico" />
     <link rel="stylesheet" href="/powerone/Public/css/system.bootstrap.min.css">
@@ -67,26 +67,64 @@
 </script>
 <article id="main-right1" class="col-md-10">
 
+    <form action="<?php echo U('article_class_operat');?>" method="get" >
     <nav class="nav-title">
-        <h4>已发布文档 <small>这里显示所有的已发布的资讯文档，您可以对其进行各项操作</small></h4>
-        <section class="pull-right" style="width:370px;">
-            <div class="input-group">
-                <span class="input-group-addon">选择栏目</span>
-                <select class="form-control" name="ar_class" onchange="load_list(this.value)">
-                    <option value="0" >查看全部</option>
-                    <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><option value="<?php echo ($classData['ar_class']); ?>" <?php if(($class['on']) == $classData['ar_class']): ?>selected<?php endif; ?> ><?php echo ($classData['ar_c_title']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-            </div>
+        <h4>资讯类别管理 <small>您可以在这里对文档分类进行管理</small></h4>
+        <button type="submit" class="btn btn-success pull-right">添加新的类别</button>
+        <section class="pull-right" style="margin-right:10px;width:150px" >
+            <input type="text" name="ar_link" class="form-control" placeholder="请输入父类编号" maxlength="10" required />
+        </section>
+        <section class="pull-right" style="margin-right:10px;width:170px" >
+            <input type="text" name="ar_c_title" class="form-control" placeholder="请输入类别名称" maxlength="10" required />
         </section>
     </nav>
-    <table id="list-article" class="table table-striped"></table>
+    </form>
+    <hr />
+    <h5><b>提示</b>：删除类别后，所属其的文档将会移至回收站。</h5>
+    <hr />
+    <table id="list-article-class" class="table table-striped text-center">
+        <thead>
+        <tr>
+            <th class="text-center">编号</th>
+            <th class="text-center">类名</th>
+            <th class="text-center">父类编号</th>
+            <th class="text-center">文档数</th>
+            <th class="text-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if(is_array($class)): $i = 0; $__LIST__ = $class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><tr>
+                <td class="hidden-xs"><h5><?php echo ($classData['ar_class']); ?></h5></td>
+                <td><input type="text" class="form-control text-center" name="ar_c_title<?php echo ($classData['ar_class']); ?>" value="<?php echo ($classData['ar_c_title']); ?>" maxlength="10" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_link<?php echo ($classData['ar_class']); ?>" value="<?php echo ($classData['ar_link']); ?>" maxlength="10" required /></td>
+                <td class="text-center hidden-xs"><h5><?php echo ($classData['ar_c_number']); ?></h5></td>
+                <td class="text-center">
+                    <button class="btn btn-success"  onclick="operat(this,<?php echo ($classData['ar_class']); ?>,1);">保存</button>
+                    <button class="btn btn-danger" onclick="operat(this,<?php echo ($classData['ar_class']); ?>);" >删除</button>
+                </td>
+            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+    </table>
     <script type="text/javascript">
-    // 根据状态加载数据
-    function load_list(value){
-        $.get("<?php echo U('article_list');?>?class="+value,function(list){$("table#list-article").html(list);});
+    function operat(obc,id,select){
+        if(select)
+        {
+            var value = $("input[name=ar_c_title"+id+"]").val();
+            var link = $("input[name=ar_link"+id+"]").val();
+        }
+        else var value = 0;
+        var copy = $(obc).clone();
+        $(obc).addClass("disabled").removeAttr("onclick");
+        $.get("<?php echo U('article_class_operat');?>",{id:id,value:value,link:link},function(state){
+            if(state)alert("找不到该记录！");
+            else
+            {
+                alert("修改成功！");
+                window.location.reload();
+            } 
+            $(obc).replaceWith(copy);
+        });
     }
-    // 首次访问自动加载列表
-    window.onload=load_list($("select[name=ar_class]").val());
     </script>
 
 </article>
