@@ -17,7 +17,7 @@
 <div class="masthead">
     <nav class="navbar navbar-default " >
         <header class="navbar-header">
-            <a href="<?php echo U('index/index');?>"><img src="/powerone/Public/admin/img/admin_logo.png"/></a>
+            <a href="<?php echo U('index/index');?>"><img src="/powerone/logo.png"/></a>
             <div class="pull-right visible-xs">
                 <button class="btn btn-danger">注销登录</button>
             </div>
