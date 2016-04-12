@@ -34,8 +34,8 @@
 
 <nav class="main-nav-bottom visible-xs">
     <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
-    <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
+    <a href="<?php echo U('/articles/1');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
+    <a href="<?php echo U('/articles/2');?>" <?php echo ($on_url['articles/2']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
 </nav>
     
@@ -43,8 +43,8 @@
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
         <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
-        <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
-        <li><a href="<?php echo U('/index');?>">作品分享</a></li>
+        <li><a href="<?php echo U('/articles/1');?>">技术分享</a></li>
+        <li><a href="<?php echo U('/articles/2');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
         <li><a href="#">关于我们</a></li>
     </ul>
