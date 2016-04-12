@@ -90,14 +90,14 @@
                 <volist name="class['data']" id="classData">
                     <eq name="class['on']" value="$classData['ar_class']">
                         <li class="on-list">
-                            <if condition="$classData['ar_link'] eq 0">全部文章
+                            <if condition="$classData['ar_parent'] eq 0">全部文章
                             <else />{$classData['ar_c_title']}
                             </if>
                             <a class="btn btn-xs btn-primary disabled">当前栏目</a>
                         </li>
                     <else/>
                         <li>
-                            <if condition="$classData['ar_link'] eq 0">全部文章
+                            <if condition="$classData['ar_parent'] eq 0">全部文章
                             <else />{$classData['ar_c_title']}
                             </if>
                             <a href="{:U('/articles/'.$classData['ar_class'])}" class="btn btn-xs btn-success">点击进入</a>

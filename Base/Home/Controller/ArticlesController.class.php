@@ -41,19 +41,19 @@ class ArticlesController extends CommonController {
     }
 
     function getsubclass($parent_class){
-        $condition['ar_link'] = $parent_class;
+        $condition['ar_parent'] = $parent_class;
         $subclass = M('article_class') -> where($condition) -> field('ar_class') -> select();
         return $subclass;
     }
     
     function getclasstree($class){
         $condition1['ar_class'] = $class;
-        $condition2['ar_link'] = $class;
+        $condition2['ar_parent'] = $class;
         $inputarray = array($class);
-        $parentclass = M('article_class') -> field('ar_link') -> where($condition1) -> find();
-        if ($parentclass && $parentclass['ar_link'] != 0) {
-            $condition2['ar_link'] = $parentclass['ar_link'];
- //           $inputarray = $this->array_column($parentclass, 'ar_link');
+        $parentclass = M('article_class') -> field('ar_parent') -> where($condition1) -> find();
+        if ($parentclass && $parentclass['ar_parent'] != 0) {
+            $condition2['ar_parent'] = $parentclass['ar_parent'];
+ //           $inputarray = $this->array_column($parentclass, 'ar_parent');
             $inputarray = $parentclass;
         }
         $subclass = M('article_class') -> where($condition2) -> field('ar_class') -> select();

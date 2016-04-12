@@ -40,7 +40,7 @@
         <li><a href="{:U('/mood')}">最新动态</a></li>
         <li><a href="{:U('/articles/1')}">技术分享</a></li>
         <li><a href="{:U('/articles/2')}">作品分享</a></li>
-        <li><a href="{:U('/index')}">留言板</a></li>
+        <li><a href="#">留言板</a></li>
         <li><a href="#">关于我们</a></li>
     </ul>
 </nav>
@@ -57,7 +57,7 @@
         <block name="content-left-top">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="#">最新动态</a></h3>
+                    <h3 class="panel-title"><a href="{:U('/mood')}">最新动态</a></h3>
 
                 </div>
                 <div class="panel-body panel-home">
@@ -77,19 +77,19 @@
     <div class="col-md-6 right">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><a href="#">技术分享</a></h3>
+                <h3 class="panel-title"><a href="{:U('/articles/1')}">技术分享</a></h3>
             </div>
             <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
-                    <volist name="article" id="articledata">
+                    <volist name="article1" id="article1data">
                         <section class="indexarticle">
-                            <li><a href="{:U('/article/'.$articledata['ar_id'])}">{$articledata.ar_title}</a><span class='pull-right'>{$articledata.ar_last_time|timestamp_to_timeline}</span>
+                            <li><a href="{:U('/article/'.$article1data['ar_id'])}">{$article1data.ar_title}</a><span class='pull-right'>{$article1data.ar_last_time|timestamp_to_timeline}</span>
                             </li>
                         </section>
                     </volist>
                 </ul>
-                <div class="module text-center at2"><span><a href="{:U('/articles')}" class="btn btn-link">>>了解详情</a></span>
+                <div class="module text-center at2"><span><a href="{:U('/articles/1')}" class="btn btn-link">>>了解详情</a></span>
                 </div>
             </div>
         </div>
@@ -97,24 +97,19 @@
     <div class="col-md-6 left">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><a href="#">作品分享</a></h3>
+                <h3 class="panel-title"><a href="{:U('/articles/2')}">作品分享</a></h3>
             </div>
             <div class="panel-body panel-home">
-                <p>自己制造小软件开发优。格式如下。。</p>
+                <p>自己制造小软件开发.分享如下。。</p>
                 <ul class="menu1">
-                    <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
-                    <li><a href="/mycode/inq0.php">第一个MF error查询系统</a><span class='pull-right'>00-00-00</span></li>
-                    <li><a href="/mycode/inq.php">MF error查询系统手机界面优化中</a><span class='pull-right'>00-00-00</span></li>
-                    <li><a href="{:U('/errorcode')}">MF error 维护系统</a><span class='pull-right'>00-00-00</span></li>
-                </ul>
-                <ul class="menu1">
-                    <volist name="newtop5" id="newtop5data">
+                    <volist name="article2" id="article2data">
                         <section class="indexarticle">
-                            <li><a href="{:U('/lookblog')}/{$newtop5data.blog_number}">{$newtop5data.blog_name}</a></li>
+                            <li><a href="{:U('/article/'.$article2data['ar_id'])}">{$article2data.ar_title}</a><span class='pull-right'>{$article2data.ar_last_time|timestamp_to_timeline}</span>
+                            </li>
                         </section>
                     </volist>
                 </ul>
-                <div class="module text-center at2"><span><a href="{:U('/articles')}" class="btn btn-link">>>了解详情</a></span>
+                <div class="module text-center at2"><span><a href="{:U('/articles/2')}" class="btn btn-link">>>了解详情</a></span>
                 </div>
             </div>
         </div> 

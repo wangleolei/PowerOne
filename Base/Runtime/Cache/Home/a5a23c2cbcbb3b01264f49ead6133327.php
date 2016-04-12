@@ -84,13 +84,13 @@
                     <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
 -->                
                 <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list">
-                            <?php if($classData['ar_link'] == 0): ?>全部文章
+                            <?php if($classData['ar_parent'] == 0): ?>全部文章
                             <?php else: echo ($classData['ar_c_title']); endif; ?>
                             <a class="btn btn-xs btn-primary disabled">当前栏目</a>
                         </li>
                     <?php else: ?>
                         <li>
-                            <?php if($classData['ar_link'] == 0): ?>全部文章
+                            <?php if($classData['ar_parent'] == 0): ?>全部文章
                             <?php else: echo ($classData['ar_c_title']); endif; ?>
                             <a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a>
                         </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
