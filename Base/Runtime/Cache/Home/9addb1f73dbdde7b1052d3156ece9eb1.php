@@ -40,7 +40,7 @@
         <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
         <li><a href="<?php echo U('/articles/1');?>">技术分享</a></li>
         <li><a href="<?php echo U('/articles/2');?>">作品分享</a></li>
-        <li><a href="<?php echo U('/index');?>">留言板</a></li>
+        <li><a href="#">留言板</a></li>
         <li><a href="#">关于我们</a></li>
     </ul>
 </nav>
@@ -68,7 +68,7 @@
         
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="#">最新动态</a></h3>
+                    <h3 class="panel-title"><a href="<?php echo U('/mood');?>">最新动态</a></h3>
 
                 </div>
                 <div class="panel-body panel-home">
@@ -86,17 +86,17 @@
     <div class="col-md-6 right">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><a href="#">技术分享</a></h3>
+                <h3 class="panel-title"><a href="<?php echo U('/articles/1');?>">技术分享</a></h3>
             </div>
             <div class="panel-body panel-home">
                 <p>技术知识分享，版本整理中...</p>
                 <ul class="menu1">
-                    <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articledata): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                            <li><a href="<?php echo U('/article/'.$articledata['ar_id']);?>"><?php echo ($articledata["ar_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($articledata["ar_last_time"])); ?></span>
+                    <?php if(is_array($article1)): $i = 0; $__LIST__ = $article1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$article1data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
+                            <li><a href="<?php echo U('/article/'.$article1data['ar_id']);?>"><?php echo ($article1data["ar_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($article1data["ar_last_time"])); ?></span>
                             </li>
                         </section><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
-                <div class="module text-center at2"><span><a href="<?php echo U('/articles');?>" class="btn btn-link">>>了解详情</a></span>
+                <div class="module text-center at2"><span><a href="<?php echo U('/articles/1');?>" class="btn btn-link">>>了解详情</a></span>
                 </div>
             </div>
         </div>
@@ -104,22 +104,17 @@
     <div class="col-md-6 left">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><a href="#">作品分享</a></h3>
+                <h3 class="panel-title"><a href="<?php echo U('/articles/2');?>">作品分享</a></h3>
             </div>
             <div class="panel-body panel-home">
-                <p>自己制造小软件开发优。格式如下。。</p>
+                <p>自己制造小软件开发.分享如下。。</p>
                 <ul class="menu1">
-                    <li><a href="/First HTML5.html">第一个 HTML5 例子</a></li>
-                    <li><a href="/mycode/inq0.php">第一个MF error查询系统</a><span class='pull-right'>00-00-00</span></li>
-                    <li><a href="/mycode/inq.php">MF error查询系统手机界面优化中</a><span class='pull-right'>00-00-00</span></li>
-                    <li><a href="<?php echo U('/errorcode');?>">MF error 维护系统</a><span class='pull-right'>00-00-00</span></li>
-                </ul>
-                <ul class="menu1">
-                    <?php if(is_array($newtop5)): $i = 0; $__LIST__ = $newtop5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$newtop5data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
-                            <li><a href="<?php echo U('/lookblog');?>/<?php echo ($newtop5data["blog_number"]); ?>"><?php echo ($newtop5data["blog_name"]); ?></a></li>
+                    <?php if(is_array($article2)): $i = 0; $__LIST__ = $article2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$article2data): $mod = ($i % 2 );++$i;?><section class="indexarticle">
+                            <li><a href="<?php echo U('/article/'.$article2data['ar_id']);?>"><?php echo ($article2data["ar_title"]); ?></a><span class='pull-right'><?php echo (timestamp_to_timeline($article2data["ar_last_time"])); ?></span>
+                            </li>
                         </section><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
-                <div class="module text-center at2"><span><a href="<?php echo U('/articles');?>" class="btn btn-link">>>了解详情</a></span>
+                <div class="module text-center at2"><span><a href="<?php echo U('/articles/2');?>" class="btn btn-link">>>了解详情</a></span>
                 </div>
             </div>
         </div> 
