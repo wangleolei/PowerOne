@@ -38,12 +38,12 @@ INSERT INTO `base_article` VALUES (1,1,1,1,'欢迎使用base个人博客程序',
 
 #
 # Structure for table "base_article_class"
-# ALTER TABLE  `base_article_class` ADD  `ar_link` INT( 11 ) NOT NULL DEFAULT  '0' COMMENT  '上一层' AFTER  `ar_class`
+# ALTER TABLE  `base_article_class` ADD  `ar_parent` INT( 11 ) NOT NULL DEFAULT  '0' COMMENT  '上一层' AFTER  `ar_class`
 
 DROP TABLE IF EXISTS `base_article_class`;
 CREATE TABLE `base_article_class` (
   `ar_class` int(11) NOT NULL AUTO_INCREMENT COMMENT '唯一标识ID',
-  `ar_link`  int(11) NOT NULL DEFAULT  '0' COMMENT  '上一层',
+  `ar_parent`  int(11) NOT NULL DEFAULT  '0' COMMENT  '上一层',
   `ar_c_title` varchar(10) NOT NULL DEFAULT '' COMMENT '类别名',
   `ar_c_number` tinyint(3) NOT NULL DEFAULT '0' COMMENT '该类日志数量',
   PRIMARY KEY (`ar_class`),
