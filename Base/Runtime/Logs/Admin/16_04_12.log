@@ -7,7 +7,7 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
 NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
 SQL: SHOW COLUMNS FROM `base_article_class` [ RunTime:0.0156s ]
-SQL: UPDATE `base_article_class` SET `ar_c_title`='作品分享',`ar_link`='2' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+SQL: UPDATE `base_article_class` SET `ar_c_title`='作品分享',`ar_parent`='2' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
 
 [ 2016-04-12T00:01:52+08:00 ] 127.0.0.1 /powerone/Admin/article/article_class.html
 INFO: [ app_init ] --START--
@@ -40,7 +40,7 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
 NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
 SQL: SHOW COLUMNS FROM `base_article_class` [ RunTime:0.0156s ]
-SQL: UPDATE `base_article_class` SET `ar_c_title`='作品分享',`ar_link`='0' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+SQL: UPDATE `base_article_class` SET `ar_c_title`='作品分享',`ar_parent`='0' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
 
 [ 2016-04-12T00:02:31+08:00 ] 127.0.0.1 /powerone/Admin/article/article_class.html
 INFO: [ app_init ] --START--

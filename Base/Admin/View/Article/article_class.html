@@ -6,7 +6,7 @@
         <h4>资讯类别管理 <small>您可以在这里对文档分类进行管理</small></h4>
         <button type="submit" class="btn btn-success pull-right">添加新的类别</button>
         <section class="pull-right" style="margin-right:10px;width:150px" >
-            <input type="text" name="ar_link" class="form-control" placeholder="请输入父类编号" maxlength="10" required />
+            <input type="text" name="ar_parent" class="form-control" placeholder="请输入父类编号" maxlength="10" required />
         </section>
         <section class="pull-right" style="margin-right:10px;width:170px" >
             <input type="text" name="ar_c_title" class="form-control" placeholder="请输入类别名称" maxlength="10" required />
@@ -31,7 +31,7 @@
             <tr>
                 <td class="hidden-xs"><h5>{$classData['ar_class']}</h5></td>
                 <td><input type="text" class="form-control text-center" name="ar_c_title{$classData['ar_class']}" value="{$classData['ar_c_title']}" maxlength="10" required /></td>
-                <td><input type="text" class="form-control text-center" name="ar_link{$classData['ar_class']}" value="{$classData['ar_link']}" maxlength="10" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_parent{$classData['ar_class']}" value="{$classData['ar_parent']}" maxlength="10" required /></td>
                 <td class="text-center hidden-xs"><h5>{$classData['ar_c_number']}</h5></td>
                 <td class="text-center">
                     <button class="btn btn-success"  onclick="operat(this,{$classData['ar_class']},1);">保存</button>
@@ -46,7 +46,7 @@
         if(select)
         {
             var value = $("input[name=ar_c_title"+id+"]").val();
-            var link = $("input[name=ar_link"+id+"]").val();
+            var link = $("input[name=ar_parent"+id+"]").val();
         }
         else var value = 0;
         var copy = $(obc).clone();

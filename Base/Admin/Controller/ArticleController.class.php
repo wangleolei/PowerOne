@@ -147,7 +147,7 @@ class ArticleController extends AuthController {
             {
                 if(I('get.value')){
                     $save['ar_c_title'] = I('get.value');
-                    $save['ar_link'] = I('get.link');
+                    $save['ar_parent'] = I('get.link');
                     M('article_class') -> where('ar_class='.I('get.id')) -> save($save);
                 }
                 else
@@ -164,7 +164,7 @@ class ArticleController extends AuthController {
         elseif(IS_GET)
         {
             $add['ar_c_title'] = I('get.ar_c_title');
-            $add['ar_link'] = I('get.ar_link');
+            $add['ar_parent'] = I('get.ar_parent');
             if(M('article_class') -> add($add))$this -> success('新增类别成功！');
             else $this -> error('存储数据失败！');
         }
