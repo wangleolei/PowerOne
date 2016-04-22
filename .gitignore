@@ -1,4 +1,5 @@
 ThinkPHP/
 Runtime/
 Base/Common/Conf
+Base/Runtime/
 *.sql
