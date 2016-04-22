@@ -1,0 +1,2441 @@
+[ 2016-04-11T00:05:43+08:00 ] 127.0.0.1 /powerone/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:05:44+08:00 ] 127.0.0.1 /powerone/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [2] Missing argument 1 for verify(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\LoginController.class.php on line 44 and defined D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 10 行.
+NOTIC: [8] Undefined variable: code D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 11 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:05:50+08:00 ] 127.0.0.1 /powerone/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_useradmin` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_useradmin` WHERE `ad_username` = 'leo' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-11T00:05:55+08:00 ] 127.0.0.1 /powerone/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_useradmin` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_useradmin` WHERE `ad_username` = 'Admin' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-11T00:05:57+08:00 ] 127.0.0.1 /powerone/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+SQL: SHOW COLUMNS FROM `base_useradmin` [ RunTime:0.0156s ]
+SQL: UPDATE `base_useradmin` SET `ad_last_time`='1460304357',`ad_last_ip`='127.0.0.1',`ad_last_os`='Win XP' WHERE ( ad_id=1 ) [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:01+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T00:06:01+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: on_type D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 15 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:02+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:13+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 74 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 98 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 107 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 110 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 119 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:30+08:00 ] 127.0.0.1 /powerone/Admin/Notice/operat_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 89 行.
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0156s ]
+SQL: INSERT INTO `base_notice` (`no_type`,`no_title`,`no_content`,`no_user`,`no_time`,`no_ip`,`no_os`) VALUES ('2','test 公告','<p>水电费水电费水电费</p>','1','1460304390','127.0.0.1','Win XP') [ RunTime:0.0000s ]
+
+[ 2016-04-11T00:06:31+08:00 ] 127.0.0.1 /powerone/Admin/Notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:31+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:39+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015625s ]
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 74 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 98 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 107 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 110 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 119 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:51+08:00 ] 127.0.0.1 /powerone/Admin/Notice/operat_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 89 行.
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: INSERT INTO `base_notice` (`no_type`,`no_title`,`no_content`,`no_user`,`no_time`,`no_ip`,`no_os`) VALUES ('1','test 说说','<p>test说说水电费水电费发送到发多少的算法的算法的算法水电费</p>','1','1460304411','127.0.0.1','Win XP') [ RunTime:0.0000s ]
+
+[ 2016-04-11T00:06:53+08:00 ] 127.0.0.1 /powerone/Admin/Notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T00:06:53+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:10+08:00 ] 127.0.0.1 /powerone/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:11+08:00 ] 127.0.0.1 /powerone/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for verify(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\LoginController.class.php on line 44 and defined D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 10 行.
+NOTIC: [8] Undefined variable: code D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 11 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+NOTIC: [8] A non well formed numeric value encountered D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Think\Verify.class.php 第 166 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:23+08:00 ] 127.0.0.1 /powerone/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_useradmin` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_useradmin` WHERE `ad_username` = 'Admin' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-11T16:02:25+08:00 ] 127.0.0.1 /powerone/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+SQL: SHOW COLUMNS FROM `base_useradmin` [ RunTime:0.0000s ]
+SQL: UPDATE `base_useradmin` SET `ad_last_time`='1460361744',`ad_last_ip`='127.0.0.1',`ad_last_os`='Win XP' WHERE ( ad_id=1 ) [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:27+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:28+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: on_type D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 15 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:02:28+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T16:02:35+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 74 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 98 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 107 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 110 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 119 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:21+08:00 ] 127.0.0.1 /powerone/Admin/Notice/operat_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 41 行.
+NOTIC: [8192] Function eregi() is deprecated D:\Program Files\PHPStudy\WWW\powerone\Base\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 89 行.
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: INSERT INTO `base_notice` (`no_type`,`no_title`,`no_content`,`no_user`,`no_time`,`no_ip`,`no_os`) VALUES ('1','测试图片支持情况','<p>测试</p><p><img src=\"/upload/image/20160411/1460361790135941.png\" title=\"1460361790135941.png\" alt=\"blob.png\"/></p>','1','1460361801','127.0.0.1','Win XP') [ RunTime:0.0313s ]
+
+[ 2016-04-11T16:03:23+08:00 ] 127.0.0.1 /powerone/Admin/Notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:23+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:31+08:00 ] 127.0.0.1 /powerone/Admin/article/article_publish.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:31+08:00 ] 127.0.0.1 /powerone/Admin/article/article_publish.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 71 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 71 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 78 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 83 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 90 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 99 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 106 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 107 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 108 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 109 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 116 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 119 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 125 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 131 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 135 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 142 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 148 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T16:03:35+08:00 ] 127.0.0.1 /powerone/Admin/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T16:03:35+08:00 ] 127.0.0.1 /powerone/Admin/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:35+08:00 ] 127.0.0.1 /powerone/Admin/User/user_list.html?type=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_user` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_user` WHERE `us_type` = 2 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\UserController.class.php on line 47 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+SQL: SELECT * FROM `base_user` WHERE `us_type` = 2 ORDER BY us_last_time desc LIMIT 0,12   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5c59cbf535595c52b01caa9f7117858b.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:36+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:36+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: on_type D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 15 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:36+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T16:03:38+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 74 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 98 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 107 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 110 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 119 行.
+NOTIC: [8] Undefined variable: notice D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\e336197fe768399542418d26b903cfc1.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:41+08:00 ] 127.0.0.1 /powerone/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T16:03:43+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:43+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: on_type D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 15 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:43+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:03:44+08:00 ] 127.0.0.1 /powerone/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:07:01+08:00 ] 127.0.0.1 /powerone/Admin/article/article_publish.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:07:01+08:00 ] 127.0.0.1 /powerone/Admin/article/article_publish.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 71 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 71 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 78 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 83 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 90 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 99 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 106 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 107 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 108 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 109 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 116 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 119 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 125 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 131 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 135 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 142 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 148 行.
+NOTIC: [8] Undefined variable: article D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\5752b6483cfa6f76cba06893c3450018.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:07:45+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_operat.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [8] Undefined offset: 1 D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Common\function.php 第 19 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0156s ]
+SQL: INSERT INTO `base_article` (`ar_class`,`ar_position`,`ar_title`,`ar_keywords`,`ar_description`,`ar_cover_img`,`ar_last_time`,`ar_state`,`ar_time`,`ar_last_user`) VALUES ('1','0','测试标题','测试关键词语','测试导航渔具','/upload/image/system/thumb8.jpg','1460362065','1','1460362065','1') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articledata` [ RunTime:0.0000s ]
+SQL: INSERT INTO `base_Articledata` (`ar_body`,`ar_id`) VALUES ('<p>测试封面</p>','10') [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:07:47+08:00 ] 127.0.0.1 /powerone/Admin/Article/index/class/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:07:47+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ar_state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_class` = 1 AND `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_class` = 1 AND `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:01+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:01+08:00 ] 127.0.0.1 /powerone/Admin/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: on_type D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php 第 15 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:01+08:00 ] 127.0.0.1 /powerone/Admin/Notice/notice_list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_notice` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_notice` WHERE `no_type` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\NoticeController.class.php on line 37 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_notice` WHERE `no_type` = 1 ORDER BY no_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\972c04bfca7b52e40536d39422143b62.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:05+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:05+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078125s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:15+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?ar_c_title=%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: INSERT INTO `base_Articleclass` (`ar_c_title`) VALUES ('新增类别') [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T16:10:16+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:17:30+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:27:04+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:27:59+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0156s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:30:30+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:30:36+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=2&value=%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='新增类别' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:30:38+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:47:50+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:47:55+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=2&value=%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='新增类别',`ar_parent`='0' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:47:56+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:48:01+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=1&value=%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='默认分类',`ar_parent`='0' WHERE ( ar_class=1 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:48:02+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:49:21+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:49:24+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=2&value=%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB&link=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='新增类别',`ar_parent`='1' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:49:25+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:49:29+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=2&value=%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB&link=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='新增类别',`ar_parent`='0' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:49:30+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:50:52+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.015625s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015625s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:50:54+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:52:15+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:52:26+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:53:04+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:53:21+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:54:16+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:54:22+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:54:30+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:56:33+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:57:09+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?ar_parent=1&ar_c_title=%E6%B5%8B%E8%AF%95%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: INSERT INTO `base_Articleclass` (`ar_c_title`,`ar_parent`) VALUES ('测试新增类别','1') [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:57:11+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:57:15+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=3&value=%E6%B5%8B%E8%AF%95%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%88%AB&link=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='测试新增类别',`ar_parent`='0' WHERE ( ar_class=3 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T21:57:16+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:58:22+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:58:26+08:00 ] 127.0.0.1 /powerone/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T21:59:46+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:01:24+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:01:24+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:02:32+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=1&value=%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB&link=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='技术分享',`ar_parent`='0' WHERE ( ar_class=1 ) [ RunTime:0.0156s ]
+
+[ 2016-04-11T22:02:34+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:03:55+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=2&value=%E4%BD%9C%E5%93%81%E5%88%86%E4%BA%AB&link=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='作品分享',`ar_parent`='0' WHERE ( ar_class=2 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T22:03:57+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:04:28+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=3&value=%E4%B8%BB%E6%9C%BA%E7%9B%B8%E5%85%B3&link=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='主机相关',`ar_parent`='1' WHERE ( ar_class=3 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T22:04:30+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:04:43+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?ar_parent=2&ar_c_title=%E6%88%91%E7%9A%84%E5%AE%9E%E9%AA%8C%E5%AE%A4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: INSERT INTO `base_Articleclass` (`ar_c_title`,`ar_parent`) VALUES ('我的实验室','2') [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:04:44+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0156s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.078125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.078125s ]
+
+[ 2016-04-11T22:38:46+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:38:46+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-11T22:38:46+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [8] Undefined index: ar_state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:38:50+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_publish/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_article` WHERE ( ar_id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articledata` [ RunTime:0.0000s ]
+SQL: SELECT `ar_body` FROM `base_Articledata` WHERE ( ar_id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:08+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_operat/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_article` WHERE ( ar_id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articledata` [ RunTime:0.0156s ]
+SQL: SELECT `ar_body` FROM `base_Articledata` WHERE ( ar_id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `base_article` SET `ar_class`='2' WHERE ( ar_id=10 ) [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: saveData D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 213 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:09+08:00 ] 127.0.0.1 /powerone/Admin/Article/index/class/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:09+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ar_class D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_class` = 2 AND `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_class` = 2 AND `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:17+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:17+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:17+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ar_state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:26+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_publish/id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_article` WHERE ( ar_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articledata` [ RunTime:0.0000s ]
+SQL: SELECT `ar_body` FROM `base_Articledata` WHERE ( ar_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:36+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_operat/id/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_article` WHERE ( ar_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `base_Articledata` [ RunTime:0.0156s ]
+SQL: SELECT `ar_body` FROM `base_Articledata` WHERE ( ar_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `base_article` SET `ar_class`='4' WHERE ( ar_id=9 ) [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: saveData D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 213 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:38+08:00 ] 127.0.0.1 /powerone/Admin/Article/index/class/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:38+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [8] Undefined index: ar_class D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_class` = 4 AND `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_class` = 4 AND `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:46+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:46+08:00 ] 127.0.0.1 /powerone/Admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+NOTIC: [8] Undefined index: on D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\20cb4aab320fa76792bd27d03013ea34.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T22:39:46+08:00 ] 127.0.0.1 /powerone/Admin/Article/article_list.html?class=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ar_state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 53 行.
+SQL: SHOW COLUMNS FROM `base_article` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `base_article` WHERE `ar_state` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 4 for Org\Powerone\Page::__construct(), called in D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php on line 58 and defined D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 49 行.
+NOTIC: [8] Undefined variable: only D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 65 行.
+NOTIC: [8] Undefined variable: num D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 137 行.
+NOTIC: [8] Undefined variable: first D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: previous D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: next D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+NOTIC: [8] Undefined variable: end D:\Program Files\PHPStudy\WWW\powerone\ThinkPHP\Library\Org\Powerone\Page.class.php 第 140 行.
+SQL: SELECT * FROM `base_article` WHERE `ar_state` = 1 ORDER BY ar_time desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: button D:\Program Files\PHPStudy\WWW\powerone\Base\Runtime\Cache\Admin\ce6e8b9cbd4d5dcefc77b05e4410f46f.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T23:40:51+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T23:40:51+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.062500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.062500s ]
+
+[ 2016-04-11T23:42:15+08:00 ] 127.0.0.1 /powerone/Admin/Article/Articleclass_operat.html?id=3&value=%E4%B8%BB%E6%9C%BA%E7%9B%B8%E5%85%B3&link=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: state D:\Program Files\PHPStudy\WWW\powerone\Base\Admin\Controller\ArticleController.class.php 第 145 行.
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: UPDATE `base_Articleclass` SET `ar_c_title`='主机相关',`ar_parent`='2' WHERE ( ar_class=3 ) [ RunTime:0.0000s ]
+
+[ 2016-04-11T23:42:16+08:00 ] 127.0.0.1 /powerone/Admin/article/Articleclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `base_Articleclass` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `base_Articleclass`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.078125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.078125s ]
+

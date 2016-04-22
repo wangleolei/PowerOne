@@ -1,0 +1,18 @@
+<extend name="Public/tpl" />
+<block name="title">留言天地</block>
+<block name="localhost"><i class="glyphicon glyphicon-comment"></i><small>留言天地</small></block>
+<block name="content-right">
+    <div class="module module-right-search visible-xs" style="margin-top: 10px;">
+        <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
+        <footer><a class="btn btn-default">搜索</a></footer>
+    </div>
+</block>
+<block name="content-left-top">
+    <div class="module">
+        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
+        <div class="module-right-notice">{$notice['no_content']}</div>
+    </div>
+</block>
+<block name="div-script">
+
+</block>

@@ -1,0 +1,269 @@
+[ 2015-09-15T15:15:18+08:00 ] 127.0.0.1 /taobaoke/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `onethink_hooks` [ RunTime:0.0000s ]
+SQL: SELECT `name`,`addons` FROM `onethink_hooks`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0156s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046875s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+
+[ 2015-09-15T15:15:19+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0156s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:19+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:24+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:24+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Public/verify.html&random=0.6505783360917121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:28+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: lite D:\Program Files\PHPStudy\WWW\taobaoke\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`avatar`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0156s ]
+SQL: SELECT `nickname` FROM `onethink_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1442301328','leo在2015-09-15 15:15登录了后台') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 1 D:\Program Files\PHPStudy\WWW\taobaoke\Application\Common\Common\function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\Program Files\PHPStudy\WWW\taobaoke\Application\Common\Common\function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1442214928 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `onethink_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0000s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`='1442301328',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0000s ]
+
+[ 2015-09-15T15:15:28+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0156s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.078125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.046875s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.093750s ]
+SQL: select version() as v; [ RunTime:0.0313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.046875s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.046875s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.093750s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.046875s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:33+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `onethink_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '商品' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '采集' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '分类' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '专题' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where D:\Program Files\PHPStudy\WWW\taobaoke\Application\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `onethink_goods` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_goods` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `onethink_goods` WHERE `status` >= 0 ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_category_goods` [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where D:\Program Files\PHPStudy\WWW\taobaoke\Application\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `onethink_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 5 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+NOTIC: [8] Use of undefined constant item_url - assumed 'item_url' D:\Program Files\PHPStudy\WWW\taobaoke\Runtime\Cache\Admin\be76b01b172771da708e23523e315e7c.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-09-15T15:15:36+08:00 ] 127.0.0.1 /taobaoke/admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0313s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0156s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.046875s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.062500s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.093750s ]
+SQL: select version() as v; [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.031250s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.031250s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.093750s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.031250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

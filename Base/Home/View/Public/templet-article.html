@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <!-- 文档参数标签 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- seo标签、基础参数 -->
+    <title><block name="title"></block><block name="connect"><if condition="$site['site_name_suffix']"> - {$site['site_name_suffix']}</if></block></title>
+    <meta name="keywords" content="<block name="seo-keywords">{$site['site_keywords']}</block>" />
+    <meta name="description" content="<block name="seo-description">{$site['site_description']}</block>" />
+    <meta name="version" content="{$site['site_version']}" />
+    <meta name="author" content="{$site['site_author']}" />
+    <block name="meta"></block>
+    <!-- ico/css/js -->
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="__PUBLIC__/css/system.home.css" rel="stylesheet">
+</head>
+<body>
+<!--[if lte IE 8]>
+<p style="margin-top: 10%;text-align: center;font-size: 1.2em;">
+    你正在使用一个<strong>过时</strong>的浏览器。请升级你的浏览器保证其支持H5和CSS3的新特性再观看此页面，谢谢。</p>
+</p>
+<![endif]-->
+<nav class="main-nav ">
+    <section class="container ">
+    <div class="module-right-search">
+        <a href="{:U('/')}" title="首页"><img src="__ROOT__/upload/base/image/system/logo.png" alt="LOGO图" /></a>
+
+    </div>
+  </section>
+</nav>
+
+<nav class="main-nav-bottom visible-xs">
+    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/articles/1')}" {$on_url['articles/1']}><span class="glyphicon ">技术分享</span></a>
+    <a href="{:U('/articles/2')}" {$on_url['articles/2']}><span class="glyphicon ">作品分享</span></a>
+    <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
+</nav>
+    
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <li><a href="{:U('/index')}">首页</a></li>
+        <li><a href="{:U('/mood')}">最新动态</a></li>
+        <li><a href="{:U('/articles/1')}">技术分享</a></li>
+        <li><a href="{:U('/articles/2')}">作品分享</a></li>
+        <li><a href="{:U('/index')}">留言板</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</nav>
+  
+
+<block name="face-image"><!-- 头图片 --></block>
+
+<header class="main-header container hidden-xs">
+    <h4><block name="localhost"><i class="glyphicon glyphicon-home"></i><small>您现在的位置:首页</small></block></h4>
+    <div class="pull-right">
+        <if condition="$user['us_login_on']">
+        <img class="img-circle" src="{$user['us_portrait']}" alt="QQ用户头像">
+        <p><b>{$user['us_nickname']}</b>，欢迎访问PowerOne，<a>点此退出登录</a></p>
+        <else />
+        <!--
+        <a href="{:U('/tool/login')}"><img src="{$site['site_url']}{$site['site_catalog']}/Public/img/login.png" alt="QQ登陆按钮"></a>
+        -->
+        </if>
+    </div>
+</header>
+<block name="face-image"><!-- 头图片 --></block>
+<section class="main-content container">
+    <div class="col-md-4 left hidden-xs">
+        <div class="module">
+            <div class="module-title-2"><b>内容搜索</b><small>Search</small></div>
+            <div class="module-right-search">
+                <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
+                <footer><a class="btn btn-default">搜索</a></footer>
+            </div>
+        </div>
+        <block name="right-search-after"><!-- 这是搜索下方内容 --></block>
+        <block name="content-left-top"><!-- 这是开始内容 -->
+            <div class="module">
+            <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
+            <ul class="module-right-list">
+<!--                <if condition="$class['on'] eq 0">
+                    <li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+                <else />
+                    <li>全部文章<a href="{:U('/articles')}" class="btn btn-xs btn-success">点击进入</a></li>
+                </if>
+-->                
+                <volist name="class['data']" id="classData">
+                    <eq name="class['on']" value="$classData['ar_class']">
+                        <li class="on-list">
+                            <if condition="$classData['ar_parent'] eq 0">全部文章
+                            <else />{$classData['ar_c_title']}
+                            </if>
+                            <a class="btn btn-xs btn-primary disabled">当前栏目</a>
+                        </li>
+                    <else/>
+                        <li>
+                            <if condition="$classData['ar_parent'] eq 0">全部文章
+                            <else />{$classData['ar_c_title']}
+                            </if>
+                            <a href="{:U('/articles/'.$classData['ar_class'])}" class="btn btn-xs btn-success">点击进入</a>
+                        </li>
+                    </eq>
+                </volist>
+            </ul>
+            </div>
+        </block>
+        
+        <block name="right-about-after"><!-- 这是about下方内容 --></block>
+        <div class="module module-right-tabs">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#box-recom" data-toggle="tab">推荐文章</a></li>
+                <li><a href="#box-hits" data-toggle="tab">点击排行</a></li>
+                <li><a href="#box-time" data-toggle="tab">最新发布</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="box-recom">
+                    <ul>
+                        <volist name="right['box']['recom']" id="recomData">
+                        <li><a href="{:U('/article/'.$recomData['ar_id'])}">{$recomData['ar_title']}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="box-hits">
+                    <ul>
+                        <volist name="right['box']['hits']" id="hitsData">
+                        <li><a href="{:U('/article/'.$hitsData['ar_id'])}">{$hitsData['ar_title']}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="box-time">
+                    <ul>
+                        <volist name="right['box']['time']" id="timeData">
+                        <li><a href="{:U('/article/'.$timeData['ar_id'])}">{$timeData['ar_title']}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <block name="right-tabs-after"><!-- 这是BOX下方内容 --></block>
+        <block name="content-left-bottom"><!-- 这是最后内容 --></block>
+    </div>
+    <div class="col-md-8 right"><block name="content-right">这是右边内容</block></div>
+</section>
+<footer class="main-footer">
+    <div class="container">
+        <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
+    </div>
+</footer>
+<!-- 公共js -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<block name="div-script"><!-- 这是页面自定义script --></block>
+<!-- 导航栏隐藏 -->
+<script src="__PUBLIC__/js/headroom.jquery.headroom.js"></script>
+<script src="__PUBLIC__/js/headroom.js"></script>
+<script src="__PUBLIC__/js/system.home.js"></script>
+<script>
+    /* 搜索框 */
+    $(".module-right-search input[name=search]").change(function(){
+        if($(this).val())$(".module-right-search footer a").attr("href","__ROOT__/search/"+$(this).val()+".html");
+        else $(".module-right-search footer a").removeAttr("href");
+    });
+    /* 退出QQ登陆 */
+    $("header.main-header p>a").click(function(){
+        if(confirm("确定要退出登陆吗？")){
+            $.get("{:U('/tool/exitqq')}",function(state){
+                if(state)alert("退出失败！");
+                else window.location.reload();
+            });
+        }
+    });
+</script>
+</body>
+</html>
