@@ -135,7 +135,7 @@
     <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articleData): $mod = ($i % 2 );++$i;?><article class="module-article-img1">
             <h4><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><?php echo ($articleData['ar_title']); ?></a></h4>
             <h5><span>发布时间：<?php echo (timestamp_to_timeline($articleData['ar_time'])); ?></span><span>栏目：<?php echo (get_class_title($articleData['ar_class'])); ?></span></h5>
-            <header class="hidden-xs"><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><img src="<?php echo ($site['site_catalog']); echo ($articleData['ar_cover_img']); ?>" alt="<?php echo ($articleData['ar_title']); ?>_封面" /></a></header>
+            <header class=""><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><img src="<?php echo ($site['site_catalog']); echo ($articleData['ar_cover_img']); ?>" alt="<?php echo ($articleData['ar_title']); ?>_封面" /></a></header>
             <footer>
                 <header><p><a href="<?php echo U('/article/'.$articleData['ar_id']);?>"><?php echo ($articleData['ar_description']); ?></a></p></header>
                 <div>

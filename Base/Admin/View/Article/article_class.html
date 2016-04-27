@@ -1,7 +1,7 @@
 <extend name="Public/tpl" />
 <block name="title">资讯类别管理 - </block>
 <block name="content">
-    <form action="{:U('Articleclass_operat')}" method="get" >
+    <form action="{:U('Article_class_operat')}" method="get" >
     <nav class="nav-title">
         <h4>资讯类别管理 <small>您可以在这里对文档分类进行管理</small></h4>
         <button type="submit" class="btn btn-success pull-right">添加新的类别</button>
@@ -51,7 +51,7 @@
         else var value = 0;
         var copy = $(obc).clone();
         $(obc).addClass("disabled").removeAttr("onclick");
-        $.get("{:U('Articleclass_operat')}",{id:id,value:value,link:link},function(state){
+        $.get("{:U('Article_class_operat')}",{id:id,value:value,link:link},function(state){
             if(state)alert("找不到该记录！");
             else
             {

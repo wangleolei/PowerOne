@@ -127,7 +127,7 @@ class ArticleController extends AuthController {
     }
 
     // 资讯文档类别管理 -> end in 2016/02/29
-    public function Articleclass(){
+    public function Article_class(){
         if(IS_AJAX)session('admin.article',null);
         else
         {
@@ -138,7 +138,7 @@ class ArticleController extends AuthController {
     }
 
     // 资讯文档类别管理 -> end in 2016/02/29
-    public function Articleclass_operat(){
+    public function Article_class_operat(){
         if(IS_AJAX)
         {
             if(!I('get.id'))$state=1;
