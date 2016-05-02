@@ -88,7 +88,7 @@ class ArticleController extends AuthController {
         else $this -> error('你的操作有错误！');
     }
 
-    // 改变文档状态 -> end in 2016/02/29
+    // 改变文档状态 -> end in 2016/02/29 
     public function article_state(){
         if (IS_AJAX) {
             if(I('get.id')&&I('get.value'))
@@ -202,6 +202,10 @@ class ArticleController extends AuthController {
                 }
                 if($_POST['ar_body']!=$article['ar_body']){
                     $saveData['ar_body']  = $_POST['ar_body'];
+                    if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
+                    {
+                    $saveData['ar_body']=stripslashes($saveData['ar_body']);//将字符串进行处理
+                    }
                     $admin = session('admin.auth');
                     $save['ar_last_user'] = $admin['ad_id'];
                     $save['ar_last_time'] = time();
@@ -224,6 +228,10 @@ class ArticleController extends AuthController {
                     if(I('post.'.$array[$i])||(I('post.'.$array[$i])=='0'))$add[$array[$i]] = I('post.'.$array[$i]);
                 }
                 $addData['ar_body'] = $_POST['ar_body'];
+                if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
+                {
+                    $addData['ar_body']=stripslashes($addData['ar_body']);//将字符串进行处理
+                }
                 $upload = upload_file('',$cut);
                 if($upload)$add['ar_cover_img'] = $upload;
                 else $add['ar_cover_img'] = get_string_img($addData['ar_body'],$cut);
