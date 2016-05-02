@@ -9,15 +9,16 @@ class InterfaceController extends Controller {
     	$wechatObj = D('Common/Wechatapi','Logic'); //实例化UserLogic  ，方法一
     	$wechatObj->settoken('weixin');
     	//$wechatObj = new \Common\Logic\WechatapiLogic("weixin");  //方法二
-        //$wechatObj = new \Think\Wechat_api("weixin");             //已淘汰方法，参考project name: po
+
+    	$wechatObj->load('book');
         //$res = $weixin->create_menu($data);
 
 
-        if (!isset($_GET['echostr'])) {
+//        if (!isset($_GET['echostr'])) {
             $wechatObj->responseMsg();
-        }else{
-            $wechatObj->valid();
-        }
+//        }else{
+//            $wechatObj->valid();
+//        }
 
     }
 

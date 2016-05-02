@@ -9,6 +9,7 @@ namespace Common\Logic;
 class WechatapiLogic
 {
 	var $token = "";
+    var $module;
 
 
     //构造函数，获取Access Token
@@ -16,9 +17,23 @@ class WechatapiLogic
 	{
         if($token){
             $this->token = $token;
+            if (isset($_GET['echostr'])) {
+                $this->valid();
+            }
         }
 
 	}
+    //构造函数，获取Access Token方法
+    public function settoken($token = NULL)
+    {
+        if($token){
+            $this->token = $token;
+            if (isset($_GET['echostr'])) {
+                $this->valid();
+            }
+        }
+
+    }
 
     //验证签名
     public function valid()
@@ -50,10 +65,14 @@ class WechatapiLogic
             switch ($RX_TYPE)
             {
                 case "event":
-                    $result = $this->receiveEvent($postObj);
+                    //$result = $this->receiveEvent($postObj);
+                    $content = $this->module->receiveEvent($postObj);
+                    $result = $this->transmitText($postObj, $content);
                     break;
                 case "text":
-                    $result = $this->receiveText($postObj);
+                    //$result = $this->receiveText($postObj);
+                    $content = $this->module->receiveText($postObj);
+                    $result = $this->transmitText($postObj, $content);
                     break;
             }
             $this->logger("T ".$result);
@@ -62,6 +81,13 @@ class WechatapiLogic
             echo "";
             exit;
         }
+    }
+
+    public function load($module)
+    {
+        $this->module = D('Wechat/'.$module); 
+//        $result->receiveEvent($object, $content);
+//        return $result;
     }
 
     private function receiveEvent($object)
