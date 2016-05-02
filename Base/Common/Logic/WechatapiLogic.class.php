@@ -1,11 +1,12 @@
 <?php
 namespace Common\Logic;
-use Think\Model;
+//use Think\Model;
 /*
 
 */
 
-class WechatapiLogic extends Model
+//class WechatapiLogic extends Model
+class WechatapiLogic
 {
 	var $token = "";
 

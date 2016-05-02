@@ -1,0 +1,155 @@
+<if condition="$nonew eq blog">
+    <section class="rightblogclass">文章分类</section>
+    <section class="blogclass">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a>全部文章</a>
+            </li>
+        </ul>
+        <volist name="blogclass" id="blogclassdata">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a>{$blogclassdata.blog_class}</a>
+                    <span class="pull-right">{$blogclassdata.class_number}</span>
+                </li>
+            </ul>
+        </volist>
+    </section>
+    <section class="indexsearch">
+        <div class="input-group">
+            <input type="text" class="form-control" id="search" placeholder="请输入你想搜索的关键字。">
+            <span class="input-group-addon btn btn-default">搜索文章</span>
+        </div>
+    </section>
+    <script>
+    $(".blogclass a").click(function()
+        {
+            $("html,body").animate({scrollTop:$("body").offset().top},500);
+            if($(this).html() == '全部文章'){
+                $.get("{:U('pagecontrol/blog')}",function(response)
+                {
+
+                    $("section.indexhotarticle").html('全部文章');
+                    $("#blog").html(response);
+                });
+            }
+            else
+            {
+                var classname = $(this).html();
+                $.get("{:U('pagecontrol/blog')}?blog_class="+classname,function(response)
+                {
+
+                    $("section.indexhotarticle").html(classname);
+                    if(response){$("#blog").html(response);}
+                    else {$("#blog").html('<h4 class="text-center">该类暂时没有文章。</h4>');}
+                });
+            }
+        });
+    $(".indexsearch span").click(function()
+            {
+                $("html,body").animate({scrollTop:$("body").offset().top},500);
+                var search = $('#search').val();
+                $.get("{:U('pagecontrol/blog')}?blog_search="+search,function(response)
+                {
+                    $("section.indexhotarticle").html("搜索结果");
+                    if(response){$("#blog").html(response);}
+                    else {$("#blog").html('<h4 class="text-center">没有找到你想要的文章。</h4>');}
+                });
+            });
+    </script>
+</if>
+<if condition="$Think.session.qqnickname eq null">
+<section class="qq hidden-xs">
+    <a href="{:U('qqlogin/index')}" class="btn-default btn"><img src="__PUBLIC__/img/qq.png" height="32px" /></a>
+</section>
+<else />
+<section class="qq hidden-xs">
+    欢迎来访，<span>{$Think.session.qqnickname}</span>。<a href="{:U('qqlogin/qqexit')}" class="pull-right">注销登陆</a>
+</section>
+</if>
+<section class="versiondownload">
+    <header>
+        <h5><b>站点版本</b>：<span>Foryan 1.2</span></h5>
+        <h5><b>开源版本</b>：<span>Foryan 1.2</span></h5>
+    </header>
+    <a href="#" class="form-control btn btn-success"><span class="glyphicon glyphicon-save"></span>&nbsp;下载开源版本(暂停提供)</a>
+    <a href="#" class="form-control btn btn-success"><span class="glyphicon glyphicon-save"></span>&nbsp;下载使用手册(暂停提供)</a>
+</section>
+<if condition="$nonew neq blog">
+    <section class="rightnewarticle">最新文章</section>
+    <volist name="hotblog" id="hotblogdata">
+        <section class="rightnnew">
+            <a href="{:U('/lookblog')}/{$hotblogdata.blog_number}" title="{$hotblogdata.blog_name}"><img src="{$hotblogdata.blog_img}" class="img-thumbnail pull-left" /></a>
+            <header>
+                <a href="{:U('/lookblog')}/{$hotblogdata.blog_number}">{$hotblogdata.blog_name}</a>
+            </header>
+            <p><a href="{:U('/lookblog')}/{$hotblogdata.blog_number}">{$hotblogdata.blog_name2}</a></p>
+            <footer>
+                <span>{$hotblogdata.blog_time}</span>
+            </footer>
+        </section>
+    </volist>
+    <section class="rightnnew"></section>
+</if>
+<section class="righttablenav">
+    <ul class="nav nav-tabs hidden-xs nav-justified">
+        <li class="active"><a href="#updatedynamic" data-toggle="tab">更新动态</a></li>
+        <li><a href="#newvisitors" data-toggle="tab">最近访客</a></li>
+        <li><a href="#newmessage" data-toggle="tab">新的留言</a></li>
+    </ul>
+    <ul class="nav nav-tabs visible-xs">
+        <li class="active"><a href="#updatedynamic" data-toggle="tab">更新动态</a></li>
+        <li><a href="#newvisitors" data-toggle="tab">最近访客</a></li>
+        <li><a href="#newmessage" data-toggle="tab">新的留言</a></li>
+    </ul>
+</section>
+<section class="righttablebox">
+    <article class="tab-content">
+        <section class="tab-pane fade in active" id="updatedynamic">
+            <table class="table">
+                <tbody>
+                <volist name="forward10" id="forward10data">
+                    <tr>
+                        <td><b><time>{$forward10data.forward_time}</time></b></td>
+                        <td><span>{$forward10data.forward_name}</span></td>
+                    </tr>
+                </volist>
+                <tr>
+                    <td colspan="2" class="text-center"><a href="{:U('/forward')}" class="btn btn-warning">查看更多请点击这里</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-pane fade" id="newvisitors">
+            <volist name="visitors15" id="visitors15data">
+            <img src="{$visitors15data.visitors_img}" class="img-circle" title="{$visitors15data.visitors_nickname} - {$visitors15data.visitors_time}">
+            </volist>
+            <footer>
+                <a class="btn btn-warning">游客只能查看最近的15条</a>
+            </footer>
+        </section>
+        <section class="tab-pane fade" id="newmessage">
+            <volist name="new4message" id="new4messagedata">
+                <section class="panel panel-default message">
+                    <header class="panel-heading">
+                        <img src="{$new4messagedata.message_img}" class="img-circle"/>
+                        <p>{$new4messagedata.message_name}<small class="hidden">我是一个交表</small></p>
+                        <time>{$new4messagedata.message_time}</time>
+                    </header>
+                    <div class="panel-body">
+                        <p>{$new4messagedata.message_content}</p>
+                    </div>
+                </section>
+            </volist>
+            <footer class="rightmessageall">
+                <a href="{:U('/message')}" class="btn btn-warning">查看更多请点击这里</a>
+            </footer>
+        </section>
+    </article>
+</section>
+<section class="rightlinktitle">友情链接</section>
+<section class="rightlink">
+    <volist name="friendlink" id="friendlinkdata">
+    <a class="well-sm btn-default btn" href="httP://{$friendlinkdata.link_address}" target="_blank">{$friendlinkdata.link_name}</a>
+    </volist>
+</section>

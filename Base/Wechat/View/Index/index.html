@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>{$wwwdata['NAME']} — 软件分享</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body>
+<include file='Public/header' />
+<div class="container">
+    <div class="row">
+        <article  class="well col-lg-8 col-md-8 indexwell">
+            <section class="indexsearch visible-xs">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="blogsearch" placeholder="请输入你想搜索的关键字。">
+                    <span class="input-group-addon btn btn-default">搜索文章</span>
+                </div>
+            </section>
+            <section class="indexhotarticle">全部文章</section>
+            <div id="blog">
+            <script>
+ //           $.get("{:U('pagecontrol/blog')}",function(response)
+            var classname = "服务分享";
+            $.get("{:U('pagecontrol/blog')}?blog_class="+classname,function(response)
+                {
+                    $("#blog").html(response);
+                });
+            </script>
+            </div>
+        </article>
+        <article class="col-lg-4 col-md-4 col-sm-12 col-xs-12 well rightwell">
+            <include file='Public/right' />
+        </article>
+    </div>
+</div>
+<include file='Public/footer' />
+</body>
+</html>
