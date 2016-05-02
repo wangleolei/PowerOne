@@ -6,9 +6,10 @@ use Think\Model;
 
 class InterfaceController extends Controller {
     public function index(){
-    	//$wechatObj = D('Common/Wechatapi','Logic'); //实例化UserLogic
-    	$wechatObj = new \Common\Logic\WechatapiLogic("weixin");
-        //$wechatObj = new \Think\Wechat_api("weixin");
+    	$wechatObj = D('Common/Wechatapi','Logic'); //实例化UserLogic  ，方法一
+    	$wechatObj->settoken('weixin');
+    	//$wechatObj = new \Common\Logic\WechatapiLogic("weixin");  //方法二
+        //$wechatObj = new \Think\Wechat_api("weixin");             //已淘汰方法，参考project name: po
         //$res = $weixin->create_menu($data);
 
 
@@ -20,5 +21,4 @@ class InterfaceController extends Controller {
 
     }
 
- 
 } 
