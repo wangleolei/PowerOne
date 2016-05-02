@@ -18,16 +18,17 @@ function get_string_img($content,$cut){
     preg_match("/\<img.*?src\=\"(.*?)\"[^>]*>/i",$content,$img);
     if($img[1]){
         if($cut){
+            $img[1] = substr($img[1],9);
             $array = explode('/',$img[1]);
             $thumb = '/upload/image/thumb/'.$array[count($array)-1];
             $image = new \Think\Image();
             $image -> open('.'.$img[1]);
             $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$thumb);
-            return $thumb;
+            return '/powerone'.$thumb;
         }
         else return $img[1];
     }
-    else return '/upload/image/system/thumb'.rand(1,20).'.jpg';
+    else return '/powerone/upload/image/system/thumb'.rand(1,20).'.jpg';
 }
 
 // 发送邮件
@@ -79,11 +80,11 @@ function upload_file($name,$cut){
     if($info){
         $data = $upload->rootPath;
         $data = '/'.$data.$info['upload'.$name]['savepath'].$info['upload'.$name]['savename'];
-        if($cut){
+//        if($cut){
             $image = new \Think\Image();
             $image -> open('.'.$data);
             $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$data);
-        }
+        //}
         return $data;
     }
     else return false;

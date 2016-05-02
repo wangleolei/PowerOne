@@ -1,5 +1,6 @@
-ThinkPHP/
-Runtime/
-Base/Common/Conf
-Base/Runtime/
+ThinkPHP/*
+Runtime/*
+Base/Common/Conf/*
+Base/Runtime/*
+upload/*
 *.sql

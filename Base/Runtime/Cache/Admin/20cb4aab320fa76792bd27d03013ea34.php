@@ -54,7 +54,7 @@
             <a href="<?php echo U('article/article_publish');?>" >编写文档</a>
             <a href="<?php echo U('article/index');?>" >已发布文档</a>
             <a href="<?php echo U('article/article_box');?>" >存稿箱与回收站</a>
-            <a href="<?php echo U('article/Articleclass');?>" >资讯类别管理</a>
+            <a href="<?php echo U('article/Article_class');?>" >资讯类别管理</a>
         </footer>
     </section>
     <section><a href="<?php echo U('link/index');?>" ><span class="glyphicon glyphicon-link"></span>友情链接</a></section>
