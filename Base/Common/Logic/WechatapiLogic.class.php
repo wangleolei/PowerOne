@@ -72,7 +72,13 @@ class WechatapiLogic
                 case "text":
                     //$result = $this->receiveText($postObj);
                     $content = $this->module->receiveText($postObj);
-                    $result = $this->transmitText($postObj, $content);
+                    if(is_array($content)){
+                        $result = $this->transmitNews($postObj, $content );
+                    }
+                    else{
+                        $result = $this->transmitText($postObj, $content);
+                    }
+                    
                     break;
             }
             $this->logger("T ".$result);
@@ -85,7 +91,7 @@ class WechatapiLogic
 
     public function load($module)
     {
-        $this->module = D('Wechat/'.$module); 
+        $this->module = D('Wechat/'.$module, 'Logic'); 
 //        $result->receiveEvent($object, $content);
 //        return $result;
     }
