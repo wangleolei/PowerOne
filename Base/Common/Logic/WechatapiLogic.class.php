@@ -67,7 +67,13 @@ class WechatapiLogic
                 case "event":
                     //$result = $this->receiveEvent($postObj);
                     $content = $this->module->receiveEvent($postObj);
-                    $result = $this->transmitText($postObj, $content);
+                    //$result = $this->transmitText($postObj, $content);
+                    if(is_array($content)){
+                        $result = $this->transmitNews($postObj, $content );
+                    }
+                    else{
+                        $result = $this->transmitText($postObj, $content);
+                    }
                     break;
                 case "text":
                     //$result = $this->receiveText($postObj);
