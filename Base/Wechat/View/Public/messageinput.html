@@ -1,0 +1,33 @@
+<section class="well messagetool">
+    <header>
+        <img src="__PUBLIC__/img/messagelogo.png">
+    </header>
+    <form action="{:U('message/add')}" method="post" onsubmit="return addmessage();">
+        <div class="input-group">
+            <span class="input-group-addon">留言昵称</span>
+            <input type="text" class="form-control" name="message_name" placeholder="请输入您的昵称。" value="{$Think.session.qqnickname}" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">联系邮箱</span>
+            <input type="text" class="form-control" name="message_email" placeholder="请输入您的邮箱。" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">您的留言</span>
+            <textarea class="form-control" name="message_content" maxlength="140" name="code" placeholder="请在这里输入你想说的话。"></textarea>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">字符验证</span>
+            <input type="text" class="form-control" name="message_verify" placeholder="请输入验证码。" />
+        </div>
+        <div class="messagebutton text-right">
+            <span><img src="{:U('message/verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。"></span>
+            <button type="submit" class="btn btn-danger" name="messagetype" value="{$lookblog['blog_number']}">留言</button>
+        </div>
+<!-- 
+        <footer class="well-sm">
+            <p><span>已经登陆QQ时：</span>使用你的QQ头像作为留言头像，使用你的QQ邮箱为消息回复邮箱。留言直接显示</p>
+            <p><span>没有登录QQ时：</span>机使用内置头像作为留言头像，邮箱请正确地填写，后台审核通过后显示留言。</p>
+        </footer>
+-->
+    </form>
+</section>

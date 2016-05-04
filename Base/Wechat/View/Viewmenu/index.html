@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>{$wwwdata['NAME']} — 软件分享</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body>
+<include file='Public/header' />
+<div class="container">
+<section class="well menutool">
+    <header>
+        <h1>查询菜单定义</h1> 
+    </header>
+    <form action="{:U('viewmenu/retreive_menu')}" method="post" >
+        <div class="input-group">
+            <span class="input-group-addon">AppID:</span>
+            <input type="text" class="form-control" name="appid" placeholder="应用ID。从“开发者中心”->“配置项”中获得。" value="wx166d8bf9345aecd3" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">AppSecret:</span>
+            <input type="text" class="form-control" name="appsecret" placeholder="应用密钥。从“开发者中心”->“配置项”中获得。"  value="92d63ef28656b43669b6a84df4ee005f" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">自定义菜单内容</span>
+            <textarea class="form-control" name="menu_content" maxlength="14000"  placeholder="自定义菜单内容">
+            {$menu_content}
+            </textarea>
+        </div>
+        <div class="messagebutton text-right">
+            <button type="submit" class="btn btn-danger" name="messagetype" value="{$lookblog['blog_number']}">查询菜单定义</button>
+        </div>
+
+    </form>
+</section>
+</div>
+<include file='Public/footer' />
+</body>
+</html>
+

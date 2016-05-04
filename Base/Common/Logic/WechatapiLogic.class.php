@@ -1,13 +1,15 @@
 <?php
 namespace Common\Logic;
-use Think\Model;
+//use Think\Model;
 /*
 
 */
 
-class WechatapiLogic extends Model
+//class WechatapiLogic extends Model
+class WechatapiLogic
 {
 	var $token = "";
+    var $module;
 
 
     //构造函数，获取Access Token
@@ -15,9 +17,23 @@ class WechatapiLogic extends Model
 	{
         if($token){
             $this->token = $token;
+            if (isset($_GET['echostr'])) {
+                $this->valid();
+            }
         }
 
 	}
+    //构造函数，获取Access Token方法
+    public function settoken($token = NULL)
+    {
+        if($token){
+            $this->token = $token;
+            if (isset($_GET['echostr'])) {
+                $this->valid();
+            }
+        }
+
+    }
 
     //验证签名
     public function valid()
@@ -49,10 +65,20 @@ class WechatapiLogic extends Model
             switch ($RX_TYPE)
             {
                 case "event":
-                    $result = $this->receiveEvent($postObj);
+                    //$result = $this->receiveEvent($postObj);
+                    $content = $this->module->receiveEvent($postObj);
+                    $result = $this->transmitText($postObj, $content);
                     break;
                 case "text":
-                    $result = $this->receiveText($postObj);
+                    //$result = $this->receiveText($postObj);
+                    $content = $this->module->receiveText($postObj);
+                    if(is_array($content)){
+                        $result = $this->transmitNews($postObj, $content );
+                    }
+                    else{
+                        $result = $this->transmitText($postObj, $content);
+                    }
+                    
                     break;
             }
             $this->logger("T ".$result);
@@ -61,6 +87,13 @@ class WechatapiLogic extends Model
             echo "";
             exit;
         }
+    }
+
+    public function load($module)
+    {
+        $this->module = D('Wechat/'.$module, 'Logic'); 
+//        $result->receiveEvent($object, $content);
+//        return $result;
     }
 
     private function receiveEvent($object)
