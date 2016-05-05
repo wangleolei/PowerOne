@@ -15,10 +15,24 @@ class TestingLogic{
                 switch ($object->EventKey) {
                     case 'rselfmenu_0_0':
                         $scan_result = trim($object->ScanCodeInfo->ScanResult);
+                        if ($object->ScanCodeInfo->ScanType == 'qrcode') {
+                            $scan_result = basename($scan_result);
+                        }
                         $lib = D('Library');
-                        $temp = $lib->addbook($scan_result);
+                        $result = $lib->getbook($scan_result);
+                        if ($result) {
+                            $content = "《".$result['book_name']."》已被录入，如需修改或申报书名错误请联系管理员";
+                        }else{
+                            $temp = $lib->addbook($scan_result);
+                            $url = "http://www.powerone.cn/powerone/wechat/library/inq/seq/".$temp;
+                            $content[0]['Title'] = "录入书名";
+                            $content[0]['Description'] = "请进入页面进行书名录入";
+                            $content[0]['PicUrl'] = 'http://www.powerone.cn/powerone/Public/img/wechat.jpg';
+                            $content[0]['Url'] = $url;
+                        }
+                        
                         //$temp = $lib->addbook('http://weixin.qq.com/r/AkgYAKvE8-aMre9j9');
-                        $content = $temp;
+                        
                         break;
                     default:
                         $content = "测试失败";
@@ -56,8 +70,13 @@ class TestingLogic{
                 break;
             case "!":
                 $lib = D('Library');
-                $temp = $lib->addbook($keyword);
-                $content = $temp;
+                $result = $lib->getbook($keyword);
+                        if ($result) {
+                            $content = "《".$result['book_name']."》已被录入，如需修改或申报书名错误请联系管理员";
+                        }else{
+                            $temp = $lib->addbook($keyword);
+                            $content = $temp;
+                        }
                 break;
             default:
                 $content = "输入@或者#号查看返回图文的例子";

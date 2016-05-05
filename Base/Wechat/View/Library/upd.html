@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>{$wwwdata['NAME']} — 软件分享</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body>
+
+<div class="container">
+<section class="well menutool">
+    <header>
+        <h1>录入书名</h1> 
+    </header>
+    <form action="{:U('wechat/library/upd/seq/'.$data['seq_numb'])}" method="post" >
+        <span class="input-group-addon">新书序列号已经生成，请为新书录入书名。序列号：{$data['seq_numb']}</span>
+        <div class="input-group">
+            <span class="input-group-addon">书名:</span>
+            <input type="text" class="form-control" name="bookname" placeholder="请输入书名" />
+        </div>
+
+        </div>
+        <div class="messagebutton text-right">
+            <button type="submit" class="btn btn-danger" name="messagetype" >录入书名</button>
+        </div>
+
+    </form>
+</section>
+</div>
+
+</body>
+</html>
+

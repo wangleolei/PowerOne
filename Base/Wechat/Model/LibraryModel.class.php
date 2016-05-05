@@ -23,9 +23,9 @@ class LibraryModel extends Model{
 		$result = $this->where($where)->find();
 		return $result;
 	}
-	public function getseq($scan_code){
+	public function getbook($scan_code){
 		$where['scan_code'] = $scan_code;
 		$result = $this->where($where)->find();
-		return $result['seq_numb'];
+		return $result;
 	}
 }
