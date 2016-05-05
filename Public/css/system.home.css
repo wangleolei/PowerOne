@@ -227,3 +227,14 @@ footer.main-footer>div>p a:hover{color: orange;}
 .at2 *{ vertical-align:middle}
 .at2 a{ color:#af4f02; }
 .at2 span{ position:absolute; right:0; bottom:0}
+
+
+/*下面是微信的样式*/
+.menutool header{margin-bottom: 10px;}/*留言板全局样式*/
+.menutool header button{height: 40px;margin-top: 10px;}/*QQ登陆按钮*/
+.menutool div{margin-top: 10px;clear: both;}/*消除浮动*/
+.menutool div textarea{resize: none; height: 1000px;}/*留言内容框不随意移动*/
+.menutool div.messagebutton span img{height: 40px;width: 150px;cursor: pointer;}/*验证码大小设置*/
+.menutool div.messagebutton span{margin-right: 10px;}/*验证码和按钮隔开距离*/
+.menutool div.messagebutton button{width: 100px;height: 40px;font-size: 17px;}/*提交按钮设置*/
+.menutool footer span{font-weight: 600;margin-right: 5px;}/*下方提示的内容加粗*/
