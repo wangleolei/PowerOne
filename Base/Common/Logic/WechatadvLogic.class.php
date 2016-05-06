@@ -152,6 +152,31 @@ class WechatadvLogic extends Model
 //            var_dump($this->access_token);
         }
 	}
+    public function initialize($appid = NULL, $appsecret = NULL)
+    {
+        if($appid){
+            $this->appid = $appid;
+        }
+        if($appsecret){
+            $this->appsecret = $appsecret;
+        }
+
+        //HARDCODE
+        $this->lasttime = 1398947018;
+        $this->access_token = "WibGd13elnkAkdBAY3fwRoXexY4-aM96oKBqBHKpcB1OqoANYNMFDmjvBeRZynFF";
+
+        if (time() > ($this->lasttime + 7200)){
+            $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$this->appid."&secret=".$this->appsecret;
+            $res = $this->https_request($url);
+            $result = json_decode($res, true);
+            //save to Database or Memcache
+            $this->access_token = $result["access_token"];
+            $this->lasttime = time();
+
+//            var_dump(time());
+//            var_dump($this->access_token);
+        }
+    }
 
     //获取关注者列表
 	public function get_user_list($next_openid = NULL)
