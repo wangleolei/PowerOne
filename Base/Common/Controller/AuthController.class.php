@@ -18,6 +18,7 @@ class AuthController extends Controller{
             session("admin.auth",$session);
             session("admin.login",null);
             update_login($session["ad_id"]);
+            //ini_set('session.gc_maxlifetime',20);//设置session有效期为20s,
         }
         if($session){
             // 这里还有权限管理，后续添加

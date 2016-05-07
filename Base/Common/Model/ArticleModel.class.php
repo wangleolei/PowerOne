@@ -11,4 +11,9 @@ class ArticleModel extends Model{
 	function countarticle($condition){
 		return $this -> where($condition) -> count();
 	}
+
+	//返回文章列表
+	function wechatlist(){
+		return $this -> where('ar_wechat > 0') -> order('ar_wechat asc') -> limit($start, $number) -> select();
+	}
 }

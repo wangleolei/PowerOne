@@ -31,6 +31,11 @@
             <button class="btn btn-xs btn-default" onclick="article_state(this,'position',2);" value="{$articleData['ar_id']}" >顶</button>
             <button class="btn btn-xs btn-default" onclick="article_state(this,'position',1);" value="{$articleData['ar_id']}" >荐</button>
         </switch>
+        <if condition="$articleData['ar_wechat'] gt 0">
+            <button class="btn btn-xs btn-success" onclick="article_state(this,'wechat',0);" value="{$articleData['ar_id']}" >微</button>
+        <else />
+            <button class="btn btn-xs btn-default" onclick="article_state(this,'wechat',1);" value="{$articleData['ar_id']}" >微</button>
+        </if>
         <if condition="$articleData['ar_file'] gt 0"><span class="label label-success" title="文档中存在附件">附</span></if>
     </td>
     <td>{$articleData['ar_title']}</td>
@@ -114,6 +119,13 @@ function article_state(obc,paramet,value,select){
             var url  = "{:U('article_state')}";
             if(select)var name = select;
             else var name = "ar_state";
+            break;
+        }
+        case "wechat":   //  20160507
+        {
+            var url  = "{:U('article_wechat')}";
+            if(select)var name = select;
+            else var name = "ar_class";
             break;
         }
     }
