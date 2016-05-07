@@ -74,6 +74,41 @@ class ArticleController extends AuthController {
         else $this -> error('你的操作有错误！');
     }
 
+    // 已发布文档查看 关于推送到微信公众平台-> end in 2016/05/07
+    public function wechat(){
+        if(IS_AJAX){
+            $article = D('Common/Article');
+            $articlelist = $article->wechatlist();
+//            foreach ($articlelist as $key => $value) {
+//                $value['ar_title']
+//            }
+
+            $appid = "wx23fd7c74957292e0";
+            $appsecret = "d4624c36b6795d1d99dcf0547af5443d";
+            $groupid = 0;
+            $type = 'text';
+            $data = 'test message';
+            $weixin = new \Common\Logic\WechatadvLogic($appid, $appsecret); 
+            $weixin->mass_send_group($groupid, $type, $data);
+            $state = 0;
+            //0表示成功  1 表示失败
+            $this -> ajaxReturn($state);
+        }
+        else
+        {
+            $session = session('admin.article');
+            if(I('get.class'))$class['on'] = I('get.class');
+            elseif($session['ar_class'])$class['on'] = $session['ar_class'];
+            $class['data'] = M('Articleclass') -> select();
+            $this -> assign('class',$class);
+
+            $article = D('Common/Article');
+            $articlelist = $article->wechatlist();
+            $this -> assign('article',$articlelist);
+            $this -> display();
+        }
+    }
+
     // 改变文档定位 -> end in 2016/02/29
     public function article_position(){
         if(IS_AJAX){
@@ -106,6 +141,20 @@ class ArticleController extends AuthController {
                 else $state=1;
                 $this -> ajaxReturn($state);
             }
+        }
+        else $this -> error('你的操作有错误！');
+    }
+
+    // 加入微信图文 -> end in 20160507
+    public function article_wechat(){
+        if(IS_AJAX){
+            if(I('get.id')){
+                $save['ar_wechat'] = I('get.value');
+                if(M('article') -> where('ar_id='.I('get.id')) -> save($save))$state = 0;
+                else $state = 1;
+            }
+            else $state = 2;
+            $this -> ajaxReturn($state);
         }
         else $this -> error('你的操作有错误！');
     }

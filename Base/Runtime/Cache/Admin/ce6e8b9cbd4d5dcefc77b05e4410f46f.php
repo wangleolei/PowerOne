@@ -21,6 +21,9 @@
         <?php default: ?>
             <button class="btn btn-xs btn-default" onclick="article_state(this,'position',2);" value="<?php echo ($articleData['ar_id']); ?>" >顶</button>
             <button class="btn btn-xs btn-default" onclick="article_state(this,'position',1);" value="<?php echo ($articleData['ar_id']); ?>" >荐</button><?php endswitch;?>
+        <?php if($articleData['ar_wechat'] > 0): ?><button class="btn btn-xs btn-success" onclick="article_state(this,'wechat',0);" value="<?php echo ($articleData['ar_id']); ?>" >微</button>
+        <?php else: ?>
+            <button class="btn btn-xs btn-default" onclick="article_state(this,'wechat',1);" value="<?php echo ($articleData['ar_id']); ?>" >微</button><?php endif; ?>
         <?php if($articleData['ar_file'] > 0): ?><span class="label label-success" title="文档中存在附件">附</span><?php endif; ?>
     </td>
     <td><?php echo ($articleData['ar_title']); ?></td>
@@ -92,6 +95,13 @@ function article_state(obc,paramet,value,select){
             var url  = "<?php echo U('article_state');?>";
             if(select)var name = select;
             else var name = "ar_state";
+            break;
+        }
+        case "wechat":   //  20160507
+        {
+            var url  = "<?php echo U('article_wechat');?>";
+            if(select)var name = select;
+            else var name = "ar_class";
             break;
         }
     }

@@ -1,0 +1,48 @@
+<extend name="Public/tpl" />
+<block name="title">已选的文档 - </block>
+ <block name="content">
+            <div class=" text-right">
+                <button type="submit" class="btn btn-success" name="operat" value="publish" onclick="if(confirm('确定要推送到微信吗？')) article_send();">确认推送到微信</button>
+                
+            </div>
+<table id="list-article" class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 110px;">ID</th>
+            <th style="width: 120px;">排序</th>
+            <th style="width: 200px;">图片</th>
+            <th style="width: 250px;">文字</th>
+            <th style="width: 160px;" class="text-right">操作</th>
+        </tr>
+    </thead>
+    <volist name="article" id="articleData" >
+    <tr>
+    <td>{$articleData['ar_id']}</td>
+    <td >
+        <button type="button" class="btn btn-xs btn-default" onclick="if(confirm('文档将进入回收站，确定要删除吗？'))article_state(this,'state',3,'ar_class');" value="{$articleData['ar_id']}">上移</button>
+        <button type="button" class="btn btn-xs btn-default" onclick="if(confirm('文档将进入回收站，确定要删除吗？'))article_state(this,'state',3,'ar_class');" value="{$articleData['ar_id']}">下移</button>
+    </td>
+    <td><img src={$articleData['ar_cover_img']}  /></td>
+    <td>{$articleData['ar_title']}</td>
+    <td class="text-right">
+        <button type="button" class="btn btn-xs btn-danger" onclick="if(confirm('文档将进入回收站，确定要删除吗？'))article_state(this,'state',3,'ar_class');" value="{$articleData['ar_id']}">移除</button>
+    </td>
+    </tr>
+    </volist>
+</table>
+<script type="text/javascript">
+// 删除该文档
+function article_send(){
+    if(confirm("再次确定要推送到微信吗？"))
+    {
+        $.get("{:U('wechat')}",function(state){
+            if(state){
+                alert("发送失败！");
+            }
+            else alert("已发送到微信公众号！");
+        });
+    }
+}
+</script>
+</block> 
+
