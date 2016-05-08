@@ -1,16 +1,63 @@
 <?php if (!defined('THINK_PATH')) exit(); if(is_array($parameter)): $i = 0; $__LIST__ = $parameter;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$parameterData): $mod = ($i % 2 );++$i;?><tr>
-        <td><label for="<?php echo ($parameterData['pa_attribute']); ?>" class="control-label"><?php echo ($parameterData['pa_explain']); ?></label></td>
         <td>
-        <?php switch($parameterData['pa_form']): case "1": ?><input type="text" id="<?php echo ($parameterData['pa_attribute']); ?>" name="<?php echo ($parameterData['pa_attribute']); ?>" class="form-control" value="<?php echo ($parameterData['pa_value']); ?>" ><?php break;?>
-        <?php case "2": ?><textarea id="<?php echo ($parameterData['pa_attribute']); ?>" name="<?php echo ($parameterData['pa_attribute']); ?>" class="form-control" rows="2" ><?php echo ($parameterData['pa_value']); ?></textarea><?php break;?>
-        <?php case "3": ?><input type="password" id="<?php echo ($parameterData['pa_attribute']); ?>" name="<?php echo ($parameterData['pa_attribute']); ?>" class="form-control" value="<?php echo ($parameterData['pa_value']); ?>" ><?php break;?>
-        <?php case "4": ?><input type="file" id="<?php echo ($parameterData['pa_attribute']); ?>" name="upload<?php echo ($parameterData['pa_id']); ?>" ><?php break;?>
-        <?php case "5": ?><label><input type="radio" name="<?php echo ($parameterData['pa_attribute']); ?>" value="true" <?php if($parameterData['pa_value'] == 'true'): ?>checked<?php endif; ?> > 开启</label>
-            <label><input type="radio" name="<?php echo ($parameterData['pa_attribute']); ?>" value="false" <?php if($parameterData['pa_value'] == 'false'): ?>checked<?php endif; ?> > 关闭</label><?php break;?>
-        <?php default: endswitch;?>
+            <input type="text" id="control_code<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
         </td>
-        <td><?php echo ($parameterData['pa_form_explain']); ?></td>
+        <td>
+            <input type="text" id="index<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['index']); ?>" class="form-control" value="<?php echo ($parameterData['index']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="sort_value<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['sort_value']); ?>" class="form-control" value="<?php echo ($parameterData['sort_value']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="int_value<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['int_value']); ?>" class="form-control" value="<?php echo ($parameterData['int_value']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="ext_value<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['ext_value']); ?>" class="form-control" value="<?php echo ($parameterData['ext_value']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="oth_value<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['oth_value']); ?>" class="form-control" value="<?php echo ($parameterData['oth_value']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="short_desc<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['short_desc']); ?>" class="form-control" value="<?php echo ($parameterData['short_desc']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="long_desc<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['long_desc']); ?>" class="form-control" value="<?php echo ($parameterData['long_desc']); ?>" >
+        </td>
+        <td class="text-right">
+            <button type="button" class="btn btn-xs btn-warning" value="<?php echo ($parameterData['seq_number']); ?>" onclick="parameter_upd(this);">存</button>
+            <button type="button" class="btn btn-xs btn-danger" value="<?php echo ($parameterData['seq_number']); ?>" onclick="parameter_delete(this,'pa_class');">删</button>
+        </td>
     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+    <tr id="tr">
+        <td>
+            <input type="text" id="control_code" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="index" name="<?php echo ($parameterData['index']); ?>" class="form-control" value="<?php echo ($parameterData['index']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="sort_value" name="<?php echo ($parameterData['sort_value']); ?>" class="form-control" value="<?php echo ($parameterData['sort_value']); ?>" >
+        </td>
+        <td>
+            <input type="text" id="int_value" name="<?php echo ($parameterData['int_value']); ?>" class="form-control" value="" >
+        </td>
+        <td>
+            <input type="text" id="ext_value" name="<?php echo ($parameterData['ext_value']); ?>" class="form-control" value="" >
+        </td>
+        <td>
+            <input type="text" id="oth_value" name="<?php echo ($parameterData['oth_value']); ?>" class="form-control" value="" >
+        </td>
+        <td>
+            <input type="text" id="short_desc" name="<?php echo ($parameterData['short_desc']); ?>" class="form-control" value="" >
+        </td>
+        <td>
+            <input type="text" id="long_desc" name="<?php echo ($parameterData['long_desc']); ?>" class="form-control" value="" >
+        </td>
+        <td class="text-right">
+            <button type="button" class="btn btn-xs btn-warning" value="<?php echo ($parameterData['seq_number']); ?>" onclick="parameter_add();">保存</button>
+            
+        </td>
+    </tr>
 <?php if($on_class == 3): ?><tr>
         <td><label for="testing" class="control-label">测试邮件（配置后,先保存再测试）</label></td>
         <td><input type="text" class="form-control" id="testing" name="testing" placeholder="输入收件箱"></td>
@@ -31,3 +78,105 @@
         else alert("请输入收件人邮箱！");
     }
     </script><?php endif; ?>
+
+<script type="text/javascript">
+// 更改文档状态 位置/发布
+function article_state(obc,paramet,value,select){
+    switch(paramet){
+        case "position":
+        {
+            var url  = "<?php echo U('article_position');?>";
+            if(select)var name = select;
+            else var name = "ar_class";
+            break;
+        }
+        case "state":
+        {
+            var url  = "<?php echo U('article_state');?>";
+            if(select)var name = select;
+            else var name = "ar_state";
+            break;
+        }
+        case "wechat":   //  20160507
+        {
+            var url  = "<?php echo U('article_wechat');?>";
+            if(select)var name = select;
+            else var name = "ar_class";
+            break;
+        }
+    }
+    var copy = $(obc).clone();
+    var id   = $(obc).val();
+    $(obc).addClass("disabled").removeAttr("onclick");
+    $.get(url,{id:id,value:value},function(state){
+        if(state){
+            switch(state){
+                case 1: alert("新增链接失败！数据库写入失败！");break;
+                case 2: alert("找不到该记录！");break;
+                default:alert("新增失败，未知的错误原因！");
+            }
+            $(obc).replaceWith(copy);
+        }
+        else load_list($("select[name="+name+"]").val()); 
+    });
+}
+// 删除该参数
+function parameter_delete(obc,paramet){
+    if(confirm("确定要删除吗？数据将无法恢复！"))
+    {
+        var id   = $(obc).val();
+        $.get("<?php echo U('parameter_delete');?>?id="+id,function(state){
+            if(state){
+                alert("找不到该记录！");
+            }
+            else {
+                alert("删除成功！");
+                load_list($("select[name="+paramet+"]").val()); 
+//                load_list($("select[name=pa_class]").val());
+            }
+        });
+    }
+}
+// 修改该参数
+function parameter_upd(obc){
+    if(confirm("确定要修改吗？数据将无法恢复！"))
+    {
+        var id   = $(obc).val();
+        var control = $("#control_code"+id).val();
+        var index = $("#index"+id).val();
+        var sort_value = $("#sort_value"+id).val();
+        var int_value = $("#int_value"+id).val();
+        var ext_value = $("#ext_value"+id).val();
+        var oth_value = $("#oth_value"+id).val();
+        var short_desc = $("#short_desc"+id).val();
+        var long_desc = $("#long_desc"+id).val();
+
+        $.post("<?php echo U('parameter_upd');?>",
+            {   id: id,
+                control: control,
+                index: index,
+                sort_value: sort_value,
+                int_value: int_value,
+                ext_value: ext_value,
+                oth_value: oth_value,
+                short_desc: short_desc,
+                long_desc: long_desc
+            },
+            function(state){
+                if(state){
+                    alert("找不到该记录！");
+                }
+                else {
+                    alert("修改成功！");
+                    load_list($("select[name=pa_class]").val()); 
+                }
+            });
+    }
+}
+
+    // 新增一条记录
+function parameter_add(){
+    //    $("#tr").clone().appendTo("#tbodyid");
+        $("#sort_value").val(0);
+}
+</script>
