@@ -77,22 +77,6 @@ class ArticleController extends AuthController {
     // 已发布文档查看 关于推送到微信公众平台-> end in 2016/05/07
     public function wechat(){
         if(IS_AJAX){
-            $article = D('Common/Article');
-            $articlelist = $article->wechatlist();
-//            foreach ($articlelist as $key => $value) {
-//                $value['ar_title']
-//            }
-
-            $appid = "wx23fd7c74957292e0";
-            $appsecret = "d4624c36b6795d1d99dcf0547af5443d";
-            $groupid = 0;
-            $type = 'text';
-            $data = 'test message';
-            $weixin = new \Common\Logic\WechatadvLogic($appid, $appsecret); 
-            $weixin->mass_send_group($groupid, $type, $data);
-            $state = 0;
-            //0表示成功  1 表示失败
-            $this -> ajaxReturn($state);
         }
         else
         {
@@ -106,6 +90,35 @@ class ArticleController extends AuthController {
             $articlelist = $article->wechatlist();
             $this -> assign('article',$articlelist);
             $this -> display();
+        }
+    }
+// 微信send to all 
+    public function senttoall(){
+        if(IS_AJAX){
+            $article = D('Common/Article');
+            $articlelist = $article->wechatlist();
+//            foreach ($articlelist as $key => $value) {
+//                $value['ar_title']
+//            }
+
+            $appid = "wx23fd7c74957292e0";
+            $appsecret = "d4624c36b6795d1d99dcf0547af5443d";
+            $groupid = 0;
+            $type = 'text';
+            $data = 'test message2';
+            $weixin = new \Common\Logic\WechatadvLogic($appid, $appsecret); 
+            $news[] = array("thumb_media_id"=>$thumb_media_id3,
+                "author"=>"方倍工作室",
+                "title"=>"微信公众平台开发最佳实践",
+                "content_source_url" =>"http://m.cnblogs.com/?u=txw1958",
+                "content" =>"<p>本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。系统完整地介绍微信公众平台基础接口、自定义菜单、高级接口、微信支付、分享转发等所有相关技术，以生活类、娱乐类、企业类微信开发为切入点，讲解了30多个功能或应用案例。<br>本书按照从简单到复杂，从基础到实践的方式编排，在讲解过程中注重将原理和实践相结合。初学者可以在了解PHP和MySQL语法之后，从头至尾学习，对于其中难以理解的部分可以查阅相关资料，针对企业功能类的开发还需要具有一定的JavaScript、CSS、HTML等编程基础。<br>本书可以作为微信公众平台开发的教程。对于移动互联网及微信公众平台的相关从业人员，本书也具有极大的参考价值。</p>",
+                "digest" =>"微信公众平台开发含金量最高的书籍"
+                );
+$mpnews = $weixin->upload_news($news);
+            $weixin->mass_send_group($groupid, $type, $data);
+            $state = 0;
+            //0表示成功  1 表示失败
+            $this -> ajaxReturn($state);
         }
     }
 

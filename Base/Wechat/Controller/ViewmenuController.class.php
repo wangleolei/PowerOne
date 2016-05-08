@@ -9,13 +9,21 @@ class ViewmenuController extends Controller {
 	public function retreive_menu() {
 		$appid = I('post.appid'); 
 		$appsecret = I('post.appsecret');
+
 		$menu_content = I('post.menu_content');
 		//$weixin = new \Think\Weixin_adv($appid, $appsecret);
 		$weixin = new \Common\Logic\WechatadvLogic($appid, $appsecret);  
-		$res = $weixin->get_menu($data);
-
+//		$res = $weixin->get_menu($data);
 //		var_dump($weixin->get_groups());
-		$news[] = array("thumb_media_id"=>$thumb_media_id3,
+//		$media3 = $weixin->upload_media("thumb","1462168421124465.jpg");
+//		var_dump("@".dirname(__FILE__).'\\'.'1462168421124465.jpg');
+
+//        echo dirname(__FILE__).'/1462168421124465.jpg';
+		$uploadpic = $weixin->upload_media("thumb",dirname(__FILE__).'\1462168421124465.jpg');
+		echo $uploadpic['thumb_media_id']. "          " ;
+//		$news[] = array("thumb_media_id"=>$thumb_media_id3, 
+
+		$news[] = array("thumb_media_id"=>$uploadpic['thumb_media_id'], 
                 "author"=>"方倍工作室",
                 "title"=>"微信公众平台开发最佳实践",
                 "content_source_url" =>"http://m.cnblogs.com/?u=txw1958",
@@ -25,9 +33,18 @@ class ViewmenuController extends Controller {
 
  $mpnews = $weixin->upload_news($news);
  var_dump($mpnews);
+echo "    ".$mpnews['media_id']."                ";
+ 
+ 
+		$groupid = 0;
+        $type = 'mpnews';
+        $data = $mpnews['media_id'];
+		$sentres = $weixin->mass_send_group($groupid, $type, $data);
+		var_dump($sentres);
+
 		$menu_content = $res;
 		$this -> assign('menu_content',$menu_content);  
-        $this -> display('index');
+//        $this -> display('index');
 
 	}
 }

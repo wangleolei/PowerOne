@@ -282,7 +282,10 @@ class WechatadvLogic extends Model
     //上传多媒体文件(除图文)
     public function upload_media($type, $file)
     {
-        $data = array("media"  => "@".dirname(__FILE__).'\\'.$file);
+    //在Windows服务器上，格式示例为：”@F:\israel\upload\winter.jpg”，而在Linux服务器上，格式示例为：”@home/israel/upload/winter.jpg”。
+        //$data = array("media"  => "@".dirname(__FILE__).'\\'.$file);
+        $data = array("media"  => "@".$file);
+        //var_dump($data);
         $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=".$this->access_token."&type=".$type;
         $res = $this->https_request($url, $data);
         return json_decode($res, true);
