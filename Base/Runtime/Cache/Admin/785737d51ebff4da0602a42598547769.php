@@ -74,7 +74,7 @@
             <div class="input-group">
                 <span class="input-group-addon">参数类型</span>
                 <select class="form-control text-center" name="pa_class" onchange="load_list(this.value);">
-                    <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><option value="<?php echo ($classData['pa_class']); ?>" <?php if(($class['on']) == $classData['pa_class']): ?>selected<?php endif; ?> ><?php echo ($classData['pa_t_title']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <?php if(is_array($class)): $i = 0; $__LIST__ = $class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i;?><option value="<?php echo ($classData['int_value']); ?>" <?php if(($class['on']) == $classData['int_value']): ?>selected<?php endif; ?> ><?php echo ($classData['short_desc']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                 </select>
             </div>
         </section>
@@ -83,15 +83,24 @@
         <table id="list-seting" class="table table-hover">
             <thead>
             <tr>
-                <th style="width: 250px;">属性</th>
-                <th style="width: 400px;">值</th>
-                <th>填写说明</th>
+                <th style="width: 50px;">Ctrl</th>
+                <th style="width: 50px;">Index</th>
+                <th style="width: 50px;">Sort</th>
+                <th style="width: 55px;">Int Val</th>
+                <th style="width: 50px;">Ext Val</th>
+                <th style="width: 50px;">Oth Val</th>
+                <th style="width: 150px;">Short Desc</th>
+                <th style="width: 250px;">Long Desc</th>
+                <th style="width: 60px;" >操作</th>
             </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="tbodyid"></tbody>
             <tfoot>
             <tr>
-                <td><b>操作</b></td>
+                <td colspan="2">
+                    <input hidden type="text" name="se_type" value="<?php echo ($setingData["id"]); ?>" >
+                    <button type="button" class="btn btn-warning" name="operat" value="add" onclick="parameter_add();">新增</button>
+                </td>
                 <td colspan="2">
                     <input hidden type="text" name="se_type" value="<?php echo ($setingData["id"]); ?>" >
                     <button type="submit" class="btn btn-success" name="operat" value="save">保存修改</button>
@@ -105,7 +114,9 @@
         $.get("<?php echo U('parameter_list');?>?class="+value,function(list){$("table#list-seting tbody").html(list);});
     }
     window.onload=load_list($("select[name=pa_class]").val());
+
     </script>
+
 
 </article>
 </body>

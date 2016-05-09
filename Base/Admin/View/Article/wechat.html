@@ -35,7 +35,7 @@
 function article_send(){
     if(confirm("再次确定要推送到微信吗？"))
     {
-        $.get("{:U('wechat')}",function(state){
+        $.get("{:U('senttoall')}",function(state){
             if(state){
                 alert("发送失败！");
             }

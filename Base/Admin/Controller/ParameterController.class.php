@@ -12,8 +12,10 @@ class ParameterController extends AuthController {
         {
             $session = session('admin.parameter');
  //           if($session['pa_class'])$class['on'] = $session['pa_class'];
- //           $class['data'] = M('parameter_class') -> select();
-            $this -> assign('class',$class);
+ //           $class['data'] = M('parameter_class') -> select(); 
+            $cvt = D('Common/Codedvalue');
+            $cvt01000 = $cvt->getbyindex(58,1000);
+            $this -> assign('class',$cvt01000);
             $this -> display();
         }
     }
@@ -21,17 +23,16 @@ class ParameterController extends AuthController {
     // 列表 -> end in 2016/02/25
     public function parameter_list(){
         if (IS_AJAX) {
-            $session = session('admin.parameter');
-            if(I('get.class'))$session['pa_class'] = $where['pa_class'] = I('get.class');
-            elseif($session['pa_class'])$where['pa_class'] = $session['pa_class'];
-            else $session['pa_class'] = $where['pa_class'] = 1;
-            session('admin.parameter',$session);
-            unset($session);
+//            $session = session('admin.parameter');
+            $index = I('get.class');
+            $cvt = D('Common/Codedvalue');
+            $cvt01000 = $cvt->getbyindex2($index);
+//            session('admin.parameter',$session);
+//            unset($session);
 //            $parameter = M('parameter') -> where($where) -> select();
-            $this -> assign('parameter',$parameter);
-            unset($parameter);
-            $this -> assign('on_class',$where['pa_class']);
-            unset($where);
+            $this -> assign('parameter',$cvt01000);
+//            $this -> assign('on_class',3);
+//            $this -> assign('on_class',$where['pa_class']);
             $this -> display();
         }
         else $this -> error('你的操作有错误！');
@@ -50,7 +51,7 @@ class ParameterController extends AuthController {
                 }
                 elseif(I('post.'.$parameter[$i]['pa_attribute'])!=$parameter[$i]['pa_value'])$save['pa_value'] = I('post.'.$parameter[$i]['pa_attribute']);
 //                if($save)M('parameter') -> where('pa_id='.$parameter[$i]['pa_id']) -> save($save);
-                unset($save);
+
             }
             $this -> success('操作成功！');
         }
@@ -69,5 +70,46 @@ class ParameterController extends AuthController {
         }
     }
 
+    // 删除参数 -> end in 20160508
+    public function parameter_delete(){
+        if (IS_AJAX) {
+            if(I('get.id'))$id = I('get.id');
+            else $state=1;
+            if($state)$this -> ajaxReturn($state);
+            else
+            {
+                $cvt = D('Common/Codedvalue');
+                $delcvt = $cvt->delbyseq($id);
+                $state=0;
+                $this -> ajaxReturn($state);
+            }
+        }
+        else $this -> error('你的操作有错误！');
+    }
+// 修改参数 -> end in 20160508
+    public function parameter_upd(){
+        if (IS_AJAX) {
+            if(I('post.id'))$data['seq_number'] = I('post.id');
+            else $state=1;
+
+            $data['control_code'] = I('post.control');
+            $data['index'] = I('post.index');
+            $data['sort_value'] = I('post.sort_value');
+            $data['int_value'] = I('post.int_value');
+            $data['ext_value'] = I('post.ext_value');
+            $data['oth_value'] = I('post.oth_value');
+            $data['short_desc'] = I('post.short_desc');
+            $data['long_desc'] = I('post.long_desc');
+            if($state)$this -> ajaxReturn($state);
+            else
+            {
+                $cvt = D('Common/Codedvalue');
+                $cvt->updbyseq($data['seq_number'],$data);
+                $state=0;
+                $this -> ajaxReturn($state);
+            }
+        }
+        else $this -> error('你的操作有错误！');
+    }
 
 }
