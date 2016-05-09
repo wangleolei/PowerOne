@@ -36,13 +36,23 @@ class CodedvalueModel extends Model{
     }
     //  输入data, 修改
     public function updbyseq($id,$data){
-        $condition['seq_number'] = $id;
-        $result = $this->where($condition)->save($data);
+        if ($id == 0 || !$id) {
+            //$data['seq_number'] = 9;
+            $result = M('Codedvalue')->data($data)->add();
+        }
+        else{
+            $data['seq_number'] = $id;
+            $condition['seq_number'] = $id;
+            $result = $this->where($condition)->save($data);
+        }
         return $result;
     }
     //  输入data, 新增
     public function add($data){
-        $result = $this->data($data)->add();
+     //       $this->seq_number = 9;
+        //$M = M('Codedvalue');
+        //$this->data($data)->add();
+        $this->data($data)->add();
         return $result;
     }
 

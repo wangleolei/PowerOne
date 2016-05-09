@@ -89,11 +89,15 @@ class ParameterController extends AuthController {
 // 修改参数 -> end in 20160508
     public function parameter_upd(){
         if (IS_AJAX) {
-            if(I('post.id'))$data['seq_number'] = I('post.id');
+            if(I('post.index'))
+            {
+                $data['index'] = I('post.index');
+                if (I('post.id')) $id = I('post.id');
+                else $id = 0;
+            }
             else $state=1;
 
             $data['control_code'] = I('post.control');
-            $data['index'] = I('post.index');
             $data['sort_value'] = I('post.sort_value');
             $data['int_value'] = I('post.int_value');
             $data['ext_value'] = I('post.ext_value');
@@ -104,7 +108,7 @@ class ParameterController extends AuthController {
             else
             {
                 $cvt = D('Common/Codedvalue');
-                $cvt->updbyseq($data['seq_number'],$data);
+                $cvt->updbyseq($id,$data);
                 $state=0;
                 $this -> ajaxReturn($state);
             }
@@ -112,4 +116,27 @@ class ParameterController extends AuthController {
         else $this -> error('你的操作有错误！');
     }
 
+    // 修改参数 -> end in 20160508
+    public function testing(){
+        
+
+                
+            $id = 0;
+
+            //$data['seq_number'] = 9;
+            $data['index'] = 1000;
+            $data['control_code'] = 58;
+            $data['sort_value'] = 4;
+            $data['int_value'] = 4;
+            $data['ext_value'] = "e";
+            $data['oth_value'] = "o";
+            $data['short_desc'] = "s";
+            $data['long_desc'] = "l";
+            
+                $cvt = D('Common/Codedvalue');
+                $res = $cvt->add($data);
+                //$res = M('Codedvalue')->data($data)->add();
+                $state=0;
+            var_dump($res);
+   }
 }
