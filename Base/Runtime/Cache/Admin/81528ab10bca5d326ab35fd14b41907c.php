@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit(); if(is_array($parameter)): $i = 0; $__LIST__ = $parameter;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$parameterData): $mod = ($i % 2 );++$i;?><tr>
         <td>
-            <input type="text" id="control_code<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
+            <input type="text" id="control<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
         </td>
         <td>
             <input type="text" id="index<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['index']); ?>" class="form-control" value="<?php echo ($parameterData['index']); ?>" >

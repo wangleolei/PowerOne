@@ -26,14 +26,14 @@
   </section>
 </nav>
 
-
+<!--
 <nav class="main-nav-bottom visible-xs"> 
     <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles/1')}" {$on_url['articles/1']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/articles/2')}" {$on_url['2']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
 </nav>
-    
+
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
@@ -44,7 +44,20 @@
         <li><a href="#">关于我们</a></li>
     </ul>
 </nav>
-  
+-->
+
+<nav class="main-nav-bottom visible-xs"> 
+    <volist name="cvt10001" id="menu">
+        <a href="{$menu.long_desc}"  class="{$menu.oth_value}"><span class="glyphicon ">{$menu.short_desc}</span></a>
+    </volist>
+</nav>
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <volist name="cvt10000" id="menu">
+            <li><a href="{$menu.long_desc}">{$menu.short_desc}</a></li>
+        </volist>
+    </ul>
+</nav>
 
 <block name="face-image"><!-- 头图片 --></block>
 <header class="main-header container hidden-xs">
