@@ -1,0 +1,31 @@
+﻿<extend name="Public/Base1/templet_base" /> 
+<block name="main-content">
+    <div class="col-md-6 left">
+        <block name="content-left-top">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="{:U('/mood')}">最新动态</a></h3>
+
+                </div>
+                <div class="panel-body panel-home">
+                    <ul class="menu1">
+                        <volist name="mood" id="mooddata">
+                            <section class="indexarticle">
+                                <li><a href="{:U('/mood_'.$mooddata['no_id'])}">{$mooddata.no_title}</a><span class='pull-right'>{$mooddata['no_time']|timestamp_to_timeline}</span>
+                                </li>
+                            </section>
+                        </volist>
+                    </ul>
+                    <div class="module text-center at2"><span><a href="{:U('/mood')}" class="btn btn-link">>>了解详情</a></span></div>
+                </div>
+            </div>
+        </block>
+    </div>
+</block>
+
+  
+
+
+<!--
+<include file='Public/footer' />
+-->

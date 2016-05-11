@@ -126,12 +126,16 @@
     <div class="module">
     <?php if(is_array($mood)): $i = 0; $__LIST__ = $mood;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$moodData): $mod = ($i % 2 );++$i;?><article class="module-mood-1">
 <!--             <header><img src="<?php echo ($moodData['no_portrait']); ?>" alt="这是头像" class="img-circle"></header>
+            <div><span></span></div>
 -->
             <div><span></span></div>
-            <footer>
+             <footer>
                 <h4> 
                     <time><?php echo ($moodData['no_nickname']); ?><small><?php echo (timestamp_to_timeline($moodData['no_time'])); ?></small></time>
-                    <span class="pull-right hidden-xs"><i class="glyphicon glyphicon-map-marker"></i><?php echo ($moodData['no_place']); ?><i class="glyphicon glyphicon-<?php echo ($moodData['no_icon']); ?>"></i><?php echo ($moodData['no_os']); ?></span>
+<!--                    
+                    <span class="pull-right hidden-xs"><i class="glyphicon glyphicon-map-marker"></i><?php echo ($moodData['no_place']); ?>
+                    <i class="glyphicon glyphicon-<?php echo ($moodData['no_icon']); ?>"></i><?php echo ($moodData['no_os']); ?></span>
+-->
                 </h4>
                 <div><?php echo ($moodData['no_content']); ?></div>
            </footer>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><block name="title"></block><block name="connect"><if condition="$site['site_name_suffix']"> - {$site['site_name_suffix']}</if></block></title>
+    <meta name="keywords" content="<block name="seo-keywords">{$site['site_keywords']}</block>" />
+    <meta name="description" content="<block name="seo-description">{$site['site_description']}</block>" />
+    <meta name="version" content="{$site['site_version']}" />
+    <meta name="author" content="{$site['site_author']}" />
+    <block name="meta"></block>
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="__PUBLIC__/css/system.home.css" rel="stylesheet">
+</head>
+<body>
+<nav class="main-nav ">
+    <section class="container ">
+    <div class="module-right-search">
+        <a href="{:U('/')}" title="首页"><img src="__ROOT__/upload/base/image/system/logo.png" alt="LOGO图" /></a>
+                <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名">
+                </header>
+                <footer><a class="btn btn-default">搜索</a></footer>
+    </div>
+  </section>
+</nav>
+
+<!--
+<nav class="main-nav-bottom visible-xs"> 
+    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/articles/1')}" {$on_url['articles/1']}><span class="glyphicon ">技术分享</span></a>
+    <a href="{:U('/articles/2')}" {$on_url['2']}><span class="glyphicon ">作品分享</span></a>
+    <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
+</nav>
+
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <li><a href="{:U('/index')}">首页</a></li>
+        <li><a href="{:U('/mood')}">最新动态</a></li>
+        <li><a href="{:U('/articles/1')}">技术分享</a></li>
+        <li><a href="{:U('/articles/2')}">作品分享</a></li>
+        <li><a href="#">留言板</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</nav>
+-->
+
+<nav class="main-nav-bottom visible-xs"> 
+    <volist name="cvt10001" id="menu">
+        <a href="{$menu.long_desc}"  class="{$menu.oth_value}"><span class="glyphicon ">{$menu.short_desc}</span></a>
+    </volist>
+</nav>
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <volist name="cvt10000" id="menu">
+            <li><a href="{$menu.long_desc}">{$menu.short_desc}</a></li>
+        </volist>
+    </ul>
+</nav>
+
+<block name="face-image"><!-- 头图片 --></block>
+<header class="main-header container hidden-xs">
+    <h4><i class="glyphicon"></i><block name="localhost"><small>您现在的位置:首页</small></block>
+    </h4>
+</header>
+
+<section class="main-content container">
+    <div class="col-md-6 left">
+        <block name="content-left-top">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="{:U('/mood')}">最新动态</a></h3>
+
+                </div>
+                <div class="panel-body panel-home">
+                    <ul class="menu1">
+                        <volist name="mood" id="mooddata">
+                            <section class="indexarticle">
+                                <li><a href="{:U('/mood_'.$mooddata['no_id'])}">{$mooddata.no_title}</a><span class='pull-right'>{$mooddata['no_time']|timestamp_to_timeline}</span>
+                                </li>
+                            </section>
+                        </volist>
+                    </ul>
+                    <div class="module text-center at2"><span><a href="{:U('/mood')}" class="btn btn-link">>>了解详情</a></span></div>
+                </div>
+            </div>
+        </block>
+    </div>
+    <div class="col-md-6 right">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="{:U('/articles/1')}">技术分享</a></h3>
+            </div>
+            <div class="panel-body panel-home">
+                <p>技术知识分享，版本整理中...</p>
+                <ul class="menu1">
+                    <volist name="article1" id="article1data">
+                        <section class="indexarticle">
+                            <li><a href="{:U('/article/'.$article1data['ar_id'])}">{$article1data.ar_title}</a><span class='pull-right'>{$article1data.ar_last_time|timestamp_to_timeline}</span>
+                            </li>
+                        </section>
+                    </volist>
+                </ul>
+                <div class="module text-center at2"><span><a href="{:U('/articles/1')}" class="btn btn-link">>>了解详情</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 left">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="{:U('/articles/2')}">作品分享</a></h3>
+            </div>
+            <div class="panel-body panel-home">
+                <p>自己制造小软件开发.分享如下。。</p>
+                <ul class="menu1">
+                    <volist name="article2" id="article2data">
+                        <section class="indexarticle">
+                            <li><a href="{:U('/article/'.$article2data['ar_id'])}">{$article2data.ar_title}</a><span class='pull-right'>{$article2data.ar_last_time|timestamp_to_timeline}</span>
+                            </li>
+                        </section>
+                    </volist>
+                </ul>
+                <div class="module text-center at2"><span><a href="{:U('/articles/2')}" class="btn btn-link">>>了解详情</a></span>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+    <div class="col-md-6 right">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="#">关于我们</a></h3>
+            </div>
+            <div class="panel-body panel-home">
+                <p>Email :  wanglei_leo@163.com</p>
+                <p>微信订阅号二维码</p>
+                <p><img src="__PUBLIC__/img/wechat.jpg" width="151" height="151"/> </p>
+                <div class="module text-center at2 pull-right"><span><a href="{:U('/articles')}" class="btn btn-link">>>了解详情</a></span>
+                </div>
+            </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="container ">
+            <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
+    </div>
+</footer>
+<!-- 公共js -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<block name="div-script"><!-- 这是页面自定义script --></block>
+<!-- 导航栏隐藏 -->
+<script src="__PUBLIC__/js/headroom.jquery.headroom.js"></script>
+<script src="__PUBLIC__/js/headroom.js"></script>
+<script src="__PUBLIC__/js/system.home.js"></script>
+<script>
+    /* 搜索框 */
+    $(".module-right-search input[name=search]").change(function(){
+        if($(this).val())$(".module-right-search footer a").attr("href","__ROOT__/search/"+$(this).val()+".html");
+        else $(".module-right-search footer a").removeAttr("href");
+    });
+</script>
+</body>
+</html>
