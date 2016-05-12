@@ -78,6 +78,7 @@
                     <option value="1" <?php if(($on_type) == "1"): ?>selected<?php endif; ?> >说说</option>
                     <option value="2" <?php if(($on_type) == "2"): ?>selected<?php endif; ?> >公告</option>
                     <option value="3" <?php if(($on_type) == "3"): ?>selected<?php endif; ?> >轮播图</option>
+                    <option value="4" <?php if(($on_type) == "4"): ?>selected<?php endif; ?> >关于我们</option>
                 </select>
             </div>
         </section>

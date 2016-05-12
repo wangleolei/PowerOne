@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>新增通知 - Toilove Admin管理系统</title>
+    <title>新增通知 - PowerOne Admin管理系统</title>
     <!-- ico/css/js -->
     <link rel="shortcut icon" href="/powerone/Public/img/favicon.ico" />
     <link rel="stylesheet" href="/powerone/Public/css/system.bootstrap.min.css">
@@ -54,7 +54,8 @@
             <a href="<?php echo U('article/article_publish');?>" >编写文档</a>
             <a href="<?php echo U('article/index');?>" >已发布文档</a>
             <a href="<?php echo U('article/article_box');?>" >存稿箱与回收站</a>
-            <a href="<?php echo U('article/Articleclass');?>" >资讯类别管理</a>
+            <a href="<?php echo U('article/Article_class');?>" >资讯类别管理</a>
+            <a href="<?php echo U('article/wechat');?>" >推送到微信公众号</a>
         </footer>
     </section>
     <section><a href="<?php echo U('link/index');?>" ><span class="glyphicon glyphicon-link"></span>友情链接</a></section>
@@ -89,6 +90,7 @@
                                 <option value="1" <?php if(($on_type) == "1"): ?>selected<?php endif; ?> >说说</option>
                                 <option value="2" <?php if(($on_type) == "2"): ?>selected<?php endif; ?> >公告</option>
                                 <option value="3" <?php if(($on_type) == "3"): ?>selected<?php endif; ?> >轮播图</option>
+                                <option value="4" <?php if(($on_type) == "４"): ?>selected<?php endif; ?> >关于我们</option>
                             </select>
                         </div>
                     </div>
