@@ -27,7 +27,9 @@ class IndexController extends CommonController {
         $mood  = change_mood($data,$place);
         $this -> assign('mood',$mood);
         
-        $this -> display();
+        //$this -> display();
+        //$this->theme('')->display('');
+        $this->theme()->display();
     }
         
 }
