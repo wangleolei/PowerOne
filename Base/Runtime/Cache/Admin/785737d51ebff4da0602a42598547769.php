@@ -99,11 +99,11 @@
             <tr>
                 <td colspan="2">
                     <input hidden type="text" name="se_type" value="<?php echo ($setingData["id"]); ?>" >
-                    <button type="button" class="btn btn-warning" name="operat" value="add" onclick="parameter_add();">新增</button>
+                    <button type="button" class="btn btn-success" name="operat" value="add" onclick="parameter_add();">新增</button>
                 </td>
-                <td colspan="2">
+                <td colspan="2" hidden>
                     <input hidden type="text" name="se_type" value="<?php echo ($setingData["id"]); ?>" >
-                    <button type="submit" class="btn btn-success" name="operat" value="save">保存修改</button>
+                    <button type="submit" class="btn btn-warning" name="operat" value="save">保存修改</button>
                 </td>
             </tr>
             </tfoot>

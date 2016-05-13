@@ -66,7 +66,30 @@ class CommonController extends Controller{
         }
         $this -> assign('on_url',$on_url);
         // 
-
+        //var_dump(__SELF__);
+        // 实例化coded value
+        $cvt = D('Common/Codedvalue');
+        //system url
+        //$cvt1001 =  $cvt->getshortbyindex(58,1001);
+        //$this->assign('cvt1001',$cvt1001);
+        //电脑菜单CVT10000
+        $cvt10000 = $cvt->getdescbyindex(58,10000);
+        $this->assign('cvt10000',$cvt10000);
+        //手机菜单CVT10001
+        $cvt10001 = $cvt->getlast3byindex(58,10001);
+        for ($i=0; $cvt10001[$i] ; $i++) { 
+             if ($cvt10001[$i]['long_desc'] != __SELF__) {
+                 $cvt10001[$i]['oth_value'] = "";
+             }
+         }
+/*        foreach($cvt10001 as $key=>$value){
+            if(__SELF__ == $value['long_desc']){
+                $value['oth_value'] = "now";
+                var_dump($cvt10001);
+            }
+        }
+*/        
+        $this->assign('cvt10001',$cvt10001);
     }
     /**************************************************************/
 }

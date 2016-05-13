@@ -31,25 +31,33 @@
     </div>
   </section>
 </nav>
-
+<!--
 <nav class="main-nav-bottom visible-xs">
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['index']); ?>><span class="glyphicon ">最新动态</span></a>
-    <a href="<?php echo U('/articles');?>" <?php echo ($on_url['articles']); ?>><span class="glyphicon ">技术分享</span></a>
-    <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">作品分享</span></a>
+    <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
+    <a href="<?php echo U('/articles/1');?>" <?php echo ($on_url['articles/1']); ?>><span class="glyphicon ">技术分享</span></a>
+    <a href="<?php echo U('/articles/2');?>" <?php echo ($on_url['articles/2']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
 </nav>
     
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
-        <li><a href="<?php echo U('/index');?>">最新动态</a></li>
-        <li><a href="<?php echo U('/articles');?>">技术分享</a></li>
-        <li><a href="<?php echo U('/index');?>">作品分享</a></li>
+        <li><a href="<?php echo U('/mood');?>">最新动态</a></li>
+        <li><a href="<?php echo U('/articles/1');?>">技术分享</a></li>
+        <li><a href="<?php echo U('/articles/2');?>">作品分享</a></li>
         <li><a href="<?php echo U('/index');?>">留言板</a></li>
         <li><a href="#">关于我们</a></li>
     </ul>
 </nav>
-  
+-->
+<nav class="main-nav-bottom visible-xs"> 
+    <?php if(is_array($cvt10001)): $i = 0; $__LIST__ = $cvt10001;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><a href="<?php echo ($menu["long_desc"]); ?>"  class="<?php echo ($menu["oth_value"]); ?>"><span class="glyphicon "><?php echo ($menu["short_desc"]); ?></span></a><?php endforeach; endif; else: echo "" ;endif; ?>
+</nav>
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <?php if(is_array($cvt10000)): $i = 0; $__LIST__ = $cvt10000;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($menu["long_desc"]); ?>"><?php echo ($menu["short_desc"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+    </ul>
+</nav>
 
 <!-- 头图片 -->
 
@@ -66,7 +74,7 @@
 </header>
 <!-- 头图片 -->
 <section class="main-content container">
-    <div class="col-md-4 left">
+    <div class="col-md-4 left hidden-xs">
         <div class="module">
             <div class="module-title-2"><b>内容搜索</b><small>Search</small></div>
             <div class="module-right-search">
@@ -79,12 +87,21 @@
             <div class="module">
             <div class="module-title-2"><b>文章类别</b><small>Class</small><span><i class="glyphicon glyphicon-share-alt"></i>查看特定栏目文章</span></div>
             <ul class="module-right-list">
-                <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+<!--                <?php if($class['on'] == 0): ?><li class="on-list">全部文章<a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
                 <?php else: ?>
                     <li>全部文章<a href="<?php echo U('/articles');?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; ?>
-                <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list"><?php echo ($classData['ar_c_title']); ?><a class="btn btn-xs btn-primary disabled">当前栏目</a></li>
+-->                
+                <?php if(is_array($class['data'])): $i = 0; $__LIST__ = $class['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$classData): $mod = ($i % 2 );++$i; if(($class['on']) == $classData['ar_class']): ?><li class="on-list">
+                            <?php if($classData['ar_parent'] == 0): ?>全部文章
+                            <?php else: echo ($classData['ar_c_title']); endif; ?>
+                            <a class="btn btn-xs btn-primary disabled">当前栏目</a>
+                        </li>
                     <?php else: ?>
-                        <li><?php echo ($classData['ar_c_title']); ?><a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        <li>
+                            <?php if($classData['ar_parent'] == 0): ?>全部文章
+                            <?php else: echo ($classData['ar_c_title']); endif; ?>
+                            <a href="<?php echo U('/articles/'.$classData['ar_class']);?>" class="btn btn-xs btn-success">点击进入</a>
+                        </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </ul>
             </div>
         
@@ -150,8 +167,7 @@
 </section>
 <footer class="main-footer">
     <div class="container">
-        <p>Copyright &copy; <?php echo ($site['site_time']); ?> - <?php echo ($site['on_year']); ?> <?php echo ($site['site_name']); ?> &amp; 版权所有</p>
-        <p class="pull-right"><?php echo ($site['site_record']); ?></p>
+        <h5><span><a href="http://www.miitbeian.gov.cn">辽ICP备15011308号</a></span></h5>
     </div>
 </footer>
 <!-- 公共js -->

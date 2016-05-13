@@ -66,6 +66,7 @@ nav.main-nav ul>li>a:active{background-color: #2383c4;}
   border-radius: 0 0 5px 5px;
 }
 .panel-home {height: 250px;}
+.panel-about {min-height: 250px;}
 /* 底部nav */
 nav.main-nav-bottom{width: 100%;position: fixed;bottom: 0;background-color: #fff;z-index: 999;}
 nav.main-nav-bottom>a{display: block;float: left;width: 25%;height: 40px;text-align: center;line-height: 40px;}
@@ -83,7 +84,7 @@ header.main-header>div>p>b{color: red;}
 header.main-header>div>a{margin-top: 16px;}
 header.main-header>div>a,header.main-header>div>a>img{height: 24px;width: 76px;}
 /* 尾部 footer */
-footer.main-footer{margin: 0 0 -40px;height: 40px;line-height: 40px;color: #fff;background-color: #ADADAD;}
+footer.main-footer{margin: 0 0 -40px;height: 40px;line-height: 40px;color: #fff;background-color: #DDDDDD;}
 footer.main-footer>div>*{display: inline-block;}
 footer.main-footer>div>p a{color: #fff;}
 footer.main-footer>div>p a:hover{color: orange;}
@@ -122,10 +123,11 @@ footer.main-footer>div>p a:hover{color: orange;}
 .module-mood-1>header{min-width: 50px;}
 .module-mood-1>header>img{height: 50px;width: 50px;border: 1px solid #D0D0D0;}
 .module-mood-1>div{min-width: 8px;text-align: right;}
-.module-mood-1>div>span{display: block;margin-top: 7px;border-color: transparent;border-style: solid solid dotted;border-width: 8px 8px 8px 0;pointer-events: none;border-right-color: #7f8c8d;}
+/*.module-mood-1>div>span{display: block;margin-top: 7px;border-color: transparent;border-style: solid solid dotted;border-width: 8px 8px 8px 0;pointer-events: none;border-right-color: #7f8c8d;}
+*/
 .module-mood-1>footer{width: 100%;border: 1px solid #7f8c8d;border-radius: 5px;}
-.module-mood-1>footer>h4{background-color: #7f8c8d;height: 30px;font-size: 16px;line-height: 30px;padding: 0 10px;color: white;}
-.module-mood-1>footer>h4>time>small{margin-left: 5px;color: white;}
+.module-mood-1>footer>h4{background-color: #E0E0E0;height: 30px;font-size: 16px;line-height: 30px;padding: 0 10px;color: white;}
+.module-mood-1>footer>h4>time>small{margin-left: 5px;color: black;}
 .module-mood-1>footer>h4>span{display: block;font-size: 12px;}
 .module-mood-1>footer>h4>span>i{margin: 0 3px 0 10px;}
 .module-mood-1>footer>div{padding: 5px 10px;background-color: #f7f7f7;border-radius: 5px;}

@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit(); if(is_array($parameter)): $i = 0; $__LIST__ = $parameter;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$parameterData): $mod = ($i % 2 );++$i;?><tr>
         <td>
-            <input type="text" id="control_code<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
+            <input type="text" id="control<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
         </td>
         <td>
             <input type="text" id="index<?php echo ($parameterData['seq_number']); ?>" name="<?php echo ($parameterData['index']); ?>" class="form-control" value="<?php echo ($parameterData['index']); ?>" >
@@ -28,33 +28,33 @@
             <button type="button" class="btn btn-xs btn-danger" value="<?php echo ($parameterData['seq_number']); ?>" onclick="parameter_delete(this,'pa_class');">删</button>
         </td>
     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-    <tr id="tr">
+    <tr id="tr" hidden>
         <td>
-            <input type="text" id="control_code" name="<?php echo ($parameterData['control_code']); ?>" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
+            <input type="text" id="control" name="control" class="form-control" value="<?php echo ($parameterData['control_code']); ?>" >
         </td>
         <td>
-            <input type="text" id="index" name="<?php echo ($parameterData['index']); ?>" class="form-control" value="<?php echo ($parameterData['index']); ?>" >
+            <input type="text" id="index" name="index" class="form-control" value="<?php echo ($parameterData['index']); ?>" >
         </td>
         <td>
-            <input type="text" id="sort_value" name="<?php echo ($parameterData['sort_value']); ?>" class="form-control" value="<?php echo ($parameterData['sort_value']); ?>" >
+            <input type="text" id="sort_value" name="sort_value'" class="form-control" value="<?php echo ($parameterData['sort_value']); ?>" >
         </td>
         <td>
-            <input type="text" id="int_value" name="<?php echo ($parameterData['int_value']); ?>" class="form-control" value="" >
+            <input type="text" id="int_value" name="int_value" class="form-control" value="0" >
         </td>
         <td>
-            <input type="text" id="ext_value" name="<?php echo ($parameterData['ext_value']); ?>" class="form-control" value="" >
+            <input type="text" id="ext_value" name="ext_value" class="form-control" value="" >
         </td>
         <td>
-            <input type="text" id="oth_value" name="<?php echo ($parameterData['oth_value']); ?>" class="form-control" value="" >
+            <input type="text" id="oth_value" name="oth_value" class="form-control" value="" >
         </td>
         <td>
-            <input type="text" id="short_desc" name="<?php echo ($parameterData['short_desc']); ?>" class="form-control" value="" >
+            <input type="text" id="short_desc" name="short_desc" class="form-control" value="" >
         </td>
         <td>
-            <input type="text" id="long_desc" name="<?php echo ($parameterData['long_desc']); ?>" class="form-control" value="" >
+            <input type="text" id="long_desc" name="long_desc" class="form-control" value="" >
         </td>
         <td class="text-right">
-            <button type="button" class="btn btn-xs btn-warning" value="<?php echo ($parameterData['seq_number']); ?>" onclick="parameter_add();">保存</button>
+            <button type="button" class="btn btn-xs btn-warning" value="" onclick="parameter_upd(this);">保存</button>
             
         </td>
     </tr>
@@ -139,10 +139,10 @@ function parameter_delete(obc,paramet){
 }
 // 修改该参数
 function parameter_upd(obc){
-    if(confirm("确定要修改吗？数据将无法恢复！"))
+    if(confirm("请确定该操作！"))
     {
         var id   = $(obc).val();
-        var control = $("#control_code"+id).val();
+        var control = $("#control"+id).val();
         var index = $("#index"+id).val();
         var sort_value = $("#sort_value"+id).val();
         var int_value = $("#int_value"+id).val();
@@ -150,7 +150,7 @@ function parameter_upd(obc){
         var oth_value = $("#oth_value"+id).val();
         var short_desc = $("#short_desc"+id).val();
         var long_desc = $("#long_desc"+id).val();
-
+        //alert(int_value);
         $.post("<?php echo U('parameter_upd');?>",
             {   id: id,
                 control: control,
@@ -162,12 +162,12 @@ function parameter_upd(obc){
                 short_desc: short_desc,
                 long_desc: long_desc
             },
-            function(state){
+            function(state,status){
                 if(state){
-                    alert("找不到该记录！");
+                    alert("该操作失败！");
                 }
                 else {
-                    alert("修改成功！");
+                    alert("成功！");
                     load_list($("select[name=pa_class]").val()); 
                 }
             });
@@ -177,6 +177,6 @@ function parameter_upd(obc){
     // 新增一条记录
 function parameter_add(){
     //    $("#tr").clone().appendTo("#tbodyid");
-        $("#sort_value").val(0);
+        $("#tr").show();
 }
 </script>

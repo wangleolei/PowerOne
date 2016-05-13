@@ -26,14 +26,14 @@
   </section>
 </nav>
 
-
+<!--
 <nav class="main-nav-bottom visible-xs"> 
     <a href="<?php echo U('/mood');?>" <?php echo ($on_url['mood']); ?>><span class="glyphicon ">最新动态</span></a>
     <a href="<?php echo U('/articles/1');?>" <?php echo ($on_url['articles/1']); ?>><span class="glyphicon ">技术分享</span></a>
     <a href="<?php echo U('/articles/2');?>" <?php echo ($on_url['2']); ?>><span class="glyphicon ">作品分享</span></a>
     <a href="<?php echo U('/');?>" <?php echo ($on_url['']); ?>><span class="glyphicon ">我们</span></a>
 </nav>
-    
+
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="<?php echo U('/index');?>">首页</a></li>
@@ -44,7 +44,16 @@
         <li><a href="#">关于我们</a></li>
     </ul>
 </nav>
-  
+-->
+
+<nav class="main-nav-bottom visible-xs"> 
+    <?php if(is_array($cvt10001)): $i = 0; $__LIST__ = $cvt10001;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><a href="<?php echo ($menu["long_desc"]); ?>"  class="<?php echo ($menu["oth_value"]); ?>"><span class="glyphicon "><?php echo ($menu["short_desc"]); ?></span></a><?php endforeach; endif; else: echo "" ;endif; ?>
+</nav>
+<nav class="container hidden-xs">
+    <ul class="nav nav-justified">
+        <?php if(is_array($cvt10000)): $i = 0; $__LIST__ = $cvt10000;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($menu["long_desc"]); ?>"><?php echo ($menu["short_desc"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+    </ul>
+</nav>
 
 
     <div id="module-slide" class="module module-slide-1 carousel slide">
