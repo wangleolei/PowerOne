@@ -280,15 +280,14 @@
 					 * 		}
 					 * });
 					 */
-					document.getElementById('captchaimg').click();
 					 $.post("{:U('login')}",$("#form-login").serialize(),function(state,status){
                     if(state){
                     	
                         switch(state){
-                            case 1: formWrapper.clearMessages(); displayError('用户名错误'); return false; break; 
-                            case 2: formWrapper.clearMessages(); displayError('用户名状态不可登陆'); return false; break; 
-                            case 3: formWrapper.clearMessages(); displayError('密码错误'); return false; break; 
-                            case 4: formWrapper.clearMessages(); displayError('验证码错误'); return false; break; 
+                            case 1: formWrapper.clearMessages(); displayError('用户名错误');  break; 
+                            case 2: formWrapper.clearMessages(); displayError('用户名状态不可登陆');  break; 
+                            case 3: formWrapper.clearMessages(); displayError('密码错误');  break; 
+                            case 4: formWrapper.clearMessages(); displayError('验证码错误');  break; 
 /*                            
                             case 1: alert("该账号不存在！");break;
                             case 2: alert("账户状态为不可登陆！"); break;
@@ -296,7 +295,8 @@
                             case 4: alert("验证码错误！");break;
 */                            
                         }
-                        
+                        document.getElementById('captchaimg').click();
+                        return false;
 //                        $(obc).replaceWith(copy);
                     }
                     else
