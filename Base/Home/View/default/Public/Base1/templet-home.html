@@ -28,7 +28,7 @@
 
 <!--
 <nav class="main-nav-bottom visible-xs"> 
-    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/news')}" {$on_url['news']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles/1')}" {$on_url['articles/1']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/articles/2')}" {$on_url['2']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
@@ -37,7 +37,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
-        <li><a href="{:U('/mood')}">最新动态</a></li>
+        <li><a href="{:U('/news')}">最新动态</a></li>
         <li><a href="{:U('/articles/1')}">技术分享</a></li>
         <li><a href="{:U('/articles/2')}">作品分享</a></li>
         <li><a href="#">留言板</a></li>
@@ -70,19 +70,19 @@
         <block name="content-left-top">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="{:U('/mood')}">最新动态</a></h3>
+                    <h3 class="panel-title"><a href="{:U('/news')}">最新动态</a></h3>
 
                 </div>
                 <div class="panel-body panel-home">
                     <ul class="menu1">
-                        <volist name="mood" id="mooddata">
+                        <volist name="news" id="newsdata">
                             <section class="indexarticle">
-                                <li><a href="{:U('/mood_'.$mooddata['no_id'])}">{$mooddata.no_title}</a><span class='pull-right'>{$mooddata['no_time']|timestamp_to_timeline}</span>
+                                <li><a href="{:U('/news_'.$newsdata['no_id'])}">{$newsdata.no_title}</a><span class='pull-right'>{$newsdata['no_time']|timestamp_to_timeline}</span>
                                 </li>
                             </section>
                         </volist>
                     </ul>
-                    <div class="module text-center at2"><span><a href="{:U('/mood')}" class="btn btn-link">>>了解详情</a></span></div>
+                    <div class="module text-center at2"><span><a href="{:U('/news')}" class="btn btn-link">>>了解详情</a></span></div>
                 </div>
             </div>
         </block>

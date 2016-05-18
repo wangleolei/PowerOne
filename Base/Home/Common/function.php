@@ -35,8 +35,8 @@ function change_comment($data,$place){
 
 // 修饰心情数据
 // 参数 $data 心情原始数据 $place 实例化的IP类
-// MoodController 使用
-function change_mood($data,$place){
+// newsController 使用
+function change_news($data,$place){
     for($i=0; $i < count($data); $i++) {
         $data[$i]['no_place'] = ip_to_place($data[$i]['no_ip'],$place);
         $user = M('useradmin') -> where('ad_id='.$data[$i]['no_user']) -> find();

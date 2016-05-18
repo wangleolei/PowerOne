@@ -1,0 +1,101 @@
+<extend name="Public/tpl" />
+<block name="title">新增通知 - </block>
+<block name="content">
+    <!-- 编辑器 -->
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+    <nav class="nav-title">
+        <section class="float-right text-right"><button class="button anthracite-gradient" onclick="window.history.go(-1);">返回上级</button></section>
+        <h1><if condition="$notice neq null">编辑<else />新增</if> <small>在这里管理【说说】【公告】【轮播图】</small></h1>
+        
+    </nav>
+    <hr />
+    <h5><b>发布提示</b>：发布人为当前管理员，发表时间、IP、系统将自动获取生成。</h5>
+    <hr />
+    <section style="width: 100%;">
+        <form id="notice_add">
+            <div class="form-group ">
+                <h5><b>选择发布数据的类型：</b><i>非轮播图不填后面的轮播文章ID</i></h5>
+                <p class="button-height inline-label">
+                    <label for="validation-select" class="label">类型</label>
+                    <select id="validation-select" name="no_type" class="select">
+                        <option value="1" <eq name="on_type" value="1" >selected</eq> >说说</option>
+                        <option value="2" <eq name="on_type" value="2" >selected</eq> >公告</option>
+                        <option value="3" <eq name="on_type" value="3" >selected</eq> >轮播图</option>
+                        <option value="4" <eq name="on_type" value="４" >selected</eq> >关于我们</option>
+                    </select>
+
+                    <label class="float-right">轮播文章ID</span>
+                    <input type="number" class="input float-right" name="no_to_article" placeholder="点击轮播图后进入的文章ID" maxlength="11" value="{$notice['no_to_article']}" />
+                </p>
+            </div>
+            <div class="form-group ">
+                <h5><b>发布标题：</b><i>数据信息的标题，必填</i></h5>
+                <div class="columns">
+                    <div class="eight-columns">
+                        <input type="text" class="input full-width" name="no_title" placeholder="请输入标题" value="{$notice['no_title']}">
+                    </div>
+                    <div class="four-columns">
+                        <if condition="$notice neq null">
+                        <input name="no_id" value="{$notice['no_id']}" hidden />
+                        <button class="button green-gradient full-width" type="button" onclick="notice_save(this);" >保存</button>
+                        <else />
+                        <button class="button green-gradient full-width" type="button" onclick="notice_add(this);" >新增</button>
+                        </if>
+                    </div>
+                </div>
+            </div>
+            <div class="new-row">
+                <h4><b>详细内容：</b><i>为轮播图时，详细内容仅一张图片，宽高为你自己前端界面要用的图片大小。（个人博客使用的为 1170 * 360），必填</i></h4>
+                <script id="editor" type="text/plain" style="height:400px;" name="no_content">{$notice['no_content']}</script>
+                <script type="text/javascript">var ue = UE.getEditor('editor',{initialFrameWidth: null});</script>
+            </div>
+        </form>
+    </section>
+    <script type="text/javascript">
+    <if condition="$notice neq null">
+    function notice_save(obc){
+        var copy = $(obc).clone();
+        $(obc).addClass("disabled").removeAttr("onclick").html("操作中...");
+        $.post("{:U('operat_save')}",$("#notice_add").serialize(),function(state){
+            if(state){
+                switch(state){
+                    case 1: alert("新增失败！数据库写入失败！");break;
+                    case 2: alert("不存在的记录！");break;
+                    case 3: alert("没有修改数据！");break;
+                    case 4: alert("内容里没有图片！");break;
+                    default:alert("新增失败，未知的错误原因！");
+                }
+                $(obc).replaceWith(copy);
+            }
+            else
+            {
+                alert("保存成功！");
+                location.href = "{:U('index')}";
+            }
+        });
+    }
+    <else />
+    function notice_add(obc){
+        var copy = $(obc).clone();
+        $(obc).addClass("disabled").removeAttr("onclick").html("操作中...");
+        $.post("{:U('operat_add')}",$("#notice_add").serialize(),function(state){
+            if(state){
+                switch(state){
+                    case 1: alert("新增失败！数据库写入失败！");break;
+                    case 2: alert("类型、标题、内容是必填！");break;
+                    case 3: alert("内容里没有图片！");break;
+                    default:alert("新增失败，未知的错误原因！");
+                }
+                $(obc).replaceWith(copy);
+            }
+            else
+            {
+                alert("新增数据成功！");
+                location.href = "{:U('index')}";
+            }
+        });
+    }
+    </if>
+    </script>
+</block>

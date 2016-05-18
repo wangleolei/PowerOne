@@ -256,7 +256,7 @@ h6:first-child {
 .clear-both		{ clear: both; }
 
 /* Padding */
-.with-padding			{ padding: 20px !important; }
+.with-padding			{ padding: 10px !important; }
 .with-mid-padding		{ padding: 10px !important; }
 .with-small-padding		{ padding: 5px !important; }
 .no-padding				{ padding: 0 !important; }
@@ -4322,3 +4322,7 @@ a:link {
 .invisible {
 	visibility: hidden;
 }
+
+
+
+/*Powerone special*/

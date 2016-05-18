@@ -24,8 +24,8 @@ class IndexController extends CommonController {
         // 文章信息
         $data = $notice->noticelist(1,$page->limit,$page->single);
         $place = new \Org\Util\IP();
-        $mood  = change_mood($data,$place);
-        $this -> assign('mood',$mood);
+        $news  = change_news($data,$place);
+        $this -> assign('news',$news);
         
         //$this -> display();
         //$this->theme('')->display('');

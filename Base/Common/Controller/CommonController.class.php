@@ -59,7 +59,7 @@ class CommonController extends Controller{
         // 当前页面
         switch (__SELF__) {
             case U('/')         : $on_url['index']    = 'class="now"';break;
-            case U('/mood')     : $on_url['mood']     = 'class="now"';break;
+            case U('/news')     : $on_url['news']     = 'class="now"';break;
             case U('/articles/1') : $on_url['articles/1'] = 'class="now"';break;
             case U('/articles/2') : $on_url['articles/2'] = 'class="now"';break;
             case U('/comment')  : $on_url['comment']  = 'class="now"';break;

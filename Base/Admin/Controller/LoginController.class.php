@@ -9,8 +9,8 @@ class LoginController extends Controller {
     public function index() {
         if(session('admin.auth'))$this -> success('欢迎回来！',U('index/index'));
         else 
-//            $this -> display();
-            $this->theme('templete2')->display();
+            $this -> display();
+//            $this->theme('templete2')->display();
     }
 
     // 登陆 -> end in 2016/03/01

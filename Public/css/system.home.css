@@ -118,19 +118,19 @@ footer.main-footer>div>p a:hover{color: orange;}
 .module-page-1 li a:hover,.module-page-1 li.active a{background-color: #1abc9c;color: white;}
 .module-page-1 li a:active{background-color: #16a085;}
 /* 心情1 */
-.module-mood-1{margin: 15px 0;}
-.module-mood-1>*{display: table-cell;vertical-align: top;}
-.module-mood-1>header{min-width: 50px;}
-.module-mood-1>header>img{height: 50px;width: 50px;border: 1px solid #D0D0D0;}
-.module-mood-1>div{min-width: 8px;text-align: right;}
-/*.module-mood-1>div>span{display: block;margin-top: 7px;border-color: transparent;border-style: solid solid dotted;border-width: 8px 8px 8px 0;pointer-events: none;border-right-color: #7f8c8d;}
+.module-news-1{margin: 15px 0;}
+.module-news-1>*{display: table-cell;vertical-align: top;}
+.module-news-1>header{min-width: 50px;}
+.module-news-1>header>img{height: 50px;width: 50px;border: 1px solid #D0D0D0;}
+.module-news-1>div{min-width: 8px;text-align: right;}
+/*.module-news-1>div>span{display: block;margin-top: 7px;border-color: transparent;border-style: solid solid dotted;border-width: 8px 8px 8px 0;pointer-events: none;border-right-color: #7f8c8d;}
 */
-.module-mood-1>footer{width: 100%;border: 1px solid #7f8c8d;border-radius: 5px;}
-.module-mood-1>footer>h4{background-color: #E0E0E0;height: 30px;font-size: 16px;line-height: 30px;padding: 0 10px;color: white;}
-.module-mood-1>footer>h4>time>small{margin-left: 5px;color: black;}
-.module-mood-1>footer>h4>span{display: block;font-size: 12px;}
-.module-mood-1>footer>h4>span>i{margin: 0 3px 0 10px;}
-.module-mood-1>footer>div{padding: 5px 10px;background-color: #f7f7f7;border-radius: 5px;}
+.module-news-1>footer{width: 100%;border: 1px solid #7f8c8d;border-radius: 5px;}
+.module-news-1>footer>h4{background-color: #E0E0E0;height: 30px;font-size: 16px;line-height: 30px;padding: 0 10px;color: white;}
+.module-news-1>footer>h4>time>small{margin-left: 5px;color: black;}
+.module-news-1>footer>h4>span{display: block;font-size: 12px;}
+.module-news-1>footer>h4>span>i{margin: 0 3px 0 10px;}
+.module-news-1>footer>div{padding: 5px 10px;background-color: #f7f7f7;border-radius: 5px;}
 /* 图文1 */
 .module-article-img1{margin-bottom: 15px;background-color:rgba(255,255,255,0.7);border-radius:5px;box-shadow: 2px 2px 2px #e2dace;}
 .module-article-img1>h4{padding: 5px 7px 0;font-size: 16px;height: 30px;line-height: 30px;color: #666699;text-overflow: ellipsis;overflow: hidden;white-space:nowrap;}

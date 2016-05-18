@@ -1,0 +1,58 @@
+<thead>
+    <tr>
+        <th scope="col" width="70%">标题</th>
+        <th scope="col" width="18%">发布时间</th>
+        <th scope="col" width="100">操作</th>
+    </tr>
+</thead>
+<if condition="$notice neq null">
+<tbody>
+<volist name="notice" id="noticeData">
+<tr>
+    <td>{$noticeData['no_title']}</td>
+    <td>{$noticeData['no_time']|date="Y/m/d H:i",###}</td>
+    <td class="text-right">
+    <a href="{:U('notice_add','id='.$noticeData['no_id'])}" class="button orange-gradient tiny" >编辑</a>
+    <button type="button" class="button red-gradient tiny" onclick="operat_delete(this);" value="{$noticeData['no_id']}" >删除</button>
+    </td>
+</tr>
+</volist>
+</tbody>
+    <if condition="$button neq null">
+    <tfoot><tr><td colspan="8" class="text-center">{$button}</td></tr></tfoot>
+    <script type="text/javascript">
+    $(".page-ul li a").removeAttr("href");
+    $(".page-ul li a").click(function()
+        {
+            var active = $('.page-ul li.page-on a').text();        // 当前页
+            var button = $(this).text();                           // 点击的按钮
+            switch(button)
+            {
+            case '上一页': var to = (parseInt(active)-1); break;
+            case '下一页': var to = (parseInt(active)+1); break;
+            case '尾页'  : var to = {$pages};             break;
+            case '首页'  : var to = 1;                    break;
+            default      : var to = button;
+            }
+            $.get("{:U('notice_list')}?page="+to,function(list){$("table#list-notice").html(list);});
+        });
+    </script>
+    </if>
+    <script type="text/javascript">
+    function operat_delete(obc){
+        if(confirm("确定要删除吗？数据将无法恢复！"))
+        {
+            var value = $(obc).val();
+            var copy  = $(obc).clone();
+            $(obc).addClass("disabled").removeAttr("onclick").html("删除中...");
+            $.get("{:U('operat_delete')}?id="+value,function(state){
+                if(state){
+                    alert("无法找到该记录！");
+                    $(obc).replaceWith(copy);
+                }
+                else load_list($("select[name=no_type]").val());
+            });
+        }
+    }
+    </script>
+</if>

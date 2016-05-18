@@ -14,7 +14,7 @@
     <block name="meta"></block>
     <!-- ico/css/js -->
     <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css">
     <link href="__PUBLIC__/css/system.home.css" rel="stylesheet">
 </head>
 <body>
@@ -33,7 +33,7 @@
 </nav>
 <!--
 <nav class="main-nav-bottom visible-xs">
-    <a href="{:U('/mood')}" {$on_url['mood']}><span class="glyphicon ">最新动态</span></a>
+    <a href="{:U('/news')}" {$on_url['news']}><span class="glyphicon ">最新动态</span></a>
     <a href="{:U('/articles/1')}" {$on_url['1']}><span class="glyphicon ">技术分享</span></a>
     <a href="{:U('/articles/2')}" {$on_url['articles']}><span class="glyphicon ">作品分享</span></a>
     <a href="{:U('/')}" {$on_url['']}><span class="glyphicon ">我们</span></a>
@@ -42,7 +42,7 @@
 <nav class="container hidden-xs">
     <ul class="nav nav-justified">
         <li><a href="{:U('/index')}">首页</a></li>
-        <li><a href="{:U('/mood')}">最新动态</a></li>
+        <li><a href="{:U('/news')}">最新动态</a></li>
         <li><a href="{:U('/articles/1')}">技术分享</a></li>
         <li><a href="{:U('/articles/2')}">作品分享</a></li>
         <li><a href="{:U('/index')}">留言板</a></li>
@@ -162,8 +162,8 @@
     </div>
 </footer>
 <!-- 公共js -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.2.1.4.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
 <block name="div-script"><!-- 这是页面自定义script --></block>
 <!-- 导航栏隐藏 -->
 <script src="__PUBLIC__/js/headroom.jquery.headroom.js"></script>

@@ -1,0 +1,44 @@
+<extend name="Public/tpl" />
+<block name="title">用户信息 - </block>
+<block name="content">
+
+
+
+<div class="with-padding">
+            <h1>用户信息</h1>
+
+            <div class="table-header button-height">
+                <div class="float-right">
+                    <p class="button-height inline-label ">
+                    <label for="validation-select" class="label ">信息类型&nbsp;</label>
+                    <select id="validation-select" class="select blue-gradient" name="us_type" onchange="load_list(this.value);">
+                        <option value="" >请选择</option>
+                        <option value="1" <eq name="on_type" value="1" >selected</eq>>访客统计</option>
+                        <option value="2" <eq name="on_type" value="2" >selected</eq>>QQ用户</option>
+                        <option value="3" <eq name="on_type" value="3" >selected</eq>>管理员</option>
+                    </select>
+                    </p>
+                </div>
+
+                显示&nbsp;<select name="range" class="select blue-gradient glossy">
+                    <option value="1">10</option>
+                    <option value="2">20</option>
+                    <option value="3" selected="selected">40</option>
+                    <option value="4">100</option>
+                </select>条/每页
+            </div>
+            <table class="table responsive-table" id="list-user">
+            </table>
+</div>
+
+<script type="text/javascript">
+// 根据状态加载数据
+function load_list(type){
+    $.get("{:U('user_list')}?type="+type,function(list){$("table#list-user").html(list);});
+}
+// 首次访问自动加载列表
+//window.onload=load_list($("select[name=us_type]").val());
+//window.onload=function(){load_list(3);}
+window.onload=function(){load_list($("select[name=us_type]").val());}
+</script>
+</block>
