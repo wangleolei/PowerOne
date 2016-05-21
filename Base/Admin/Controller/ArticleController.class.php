@@ -210,6 +210,7 @@ $mpnews = $weixin->upload_news($news);
                 if(I('get.value')){
                     $save['ar_c_title'] = I('get.value');
                     $save['ar_parent'] = I('get.link');
+                    $save['ar_c_url'] = I('get.url');
                     M('Articleclass') -> where('ar_class='.I('get.id')) -> save($save);
                 }
                 else

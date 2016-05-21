@@ -6,7 +6,7 @@ use Think\Controller;
 class CommonController extends Controller{
     // 自动加载函数
     public function _initialize(){
-        /****************** 记录登录状态 ******************/
+        /****************** 记录登录状态 ******************/ 
         // 1：是否用用户记录，有则第2步，无则第3步
         // 2：是否有get code记录，有则获取登陆QQ，更新用户记录，无则结束判断
         // 3：获取用户信息存入

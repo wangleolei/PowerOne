@@ -3,7 +3,7 @@ namespace Common\Model;
 use Think\Model;
 
 class ArticleclassModel extends Model{
-//	输入其中一个分类，查找一条线上的所有分类  并且返回 ， 并且专为where条件使用
+//	输入其中一个分类，查找一条线上的所有分类  并且返回 ， 并且专使用到where条件
 	function getclasstreecondition($class){
         $condition1['ar_class'] = $class;
         $condition2['ar_parent'] = $class;
@@ -56,6 +56,32 @@ class ArticleclassModel extends Model{
         //$output_classtree = M('Articleclass') -> where($condition3) -> select();
         $output_classtree = $this -> where($condition3) -> select();
         return $output_classtree;
+        }
+//输入类别，返回该分支的path. e,g   技术分享->主机相关
+        function getpath($class){
+            for ($i=0; $i < 10; $i++) { 
+                $condition['ar_class'] = $class;
+                $parentclass = $this->field('ar_parent, ar_c_title, ar_c_url')->where($condition) -> find();
+                if (empty($parentclass)) {
+                    $path = "failed";
+                    $i = 10;
+                }elseif ($parentclass['ar_parent'] == 0) {
+                    if (!$path) {
+                        $path = '-> '.'<a href="'.$parentclass['ar_c_url'].'">'.$parentclass['ar_c_title'].'</a>';
+                    }else{
+                        $path = '-> '.'<a href="'.$parentclass['ar_c_url'].'">'.$parentclass['ar_c_title'].'</a>'." -> ".$path;
+                    }
+                    $i = 10;
+                }else{
+                    if (!$path) {
+                        $path = '<a href="'.$parentclass['ar_c_url'].'">'.$parentclass['ar_c_title'].'</a>';
+                    }else{
+                        $path = '<a href="'.$parentclass['ar_c_url'].'">'.$parentclass['ar_c_title'].'</a>'." -> ".$path;
+                    }
+                }
+                $class = $parentclass['ar_parent'];
+            }
+            return $path;
         }
 
         //从记录集中取出二维数组中 其中一列：PHP 5.5+ 是系统自带函数

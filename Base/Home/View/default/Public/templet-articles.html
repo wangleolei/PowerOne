@@ -66,7 +66,7 @@
 <block name="face-image"><!-- 头图片 --></block>
 
 <header class="main-header container hidden-xs">
-    <h4><block name="localhost"><i class="glyphicon glyphicon-home"></i><small>您现在的位置:首页</small></block></h4>
+    <h4><block name="localhost"><i class="glyphicon glyphicon-home"></i><small>您现在的位置: <a href="{:U('/index')}">首页</a> {$current_path} -> {$article['ar_title']}</small></block></h4>
     <div class="pull-right">
         <if condition="$user['us_login_on']">
         <img class="img-circle" src="{$user['us_portrait']}" alt="QQ用户头像">

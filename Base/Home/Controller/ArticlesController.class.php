@@ -10,6 +10,11 @@ class ArticlesController extends CommonController {
         $Articleclass = D('Common/Articleclass');
         if(I('get.class'))
         {
+            //位置和目录
+            $Articleclass = D('Common/Articleclass');
+            $current_path = $Articleclass->getpath(I('get.class'));
+            $this -> assign('current_path', $current_path);
+            //得到class list
             $where['ar_class'] = I('get.class');
             $classlist1 = array(I('get.class'));
             //$classlist2 = $this->getsubclass(I('get.class'));
@@ -45,6 +50,8 @@ class ArticlesController extends CommonController {
         $class['data'] = $Articleclass->getclasstree(I('get.class'));
         //$class['data'] = M('Articleclass') -> select();
         $this -> assign('class',$class);
+
+        //display
         $this -> display();
     }
 

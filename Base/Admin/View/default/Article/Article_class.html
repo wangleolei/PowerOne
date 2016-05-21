@@ -22,6 +22,7 @@
             <th class="text-center">编号</th>
             <th class="text-center">类名</th>
             <th class="text-center">父类编号</th>
+            <th class="text-center">对应url</th>
             <th class="text-center">文档数</th>
             <th class="text-center">操作</th>
         </tr>
@@ -32,6 +33,7 @@
                 <td class="hidden-xs"><h5>{$classData['ar_class']}</h5></td>
                 <td><input type="text" class="form-control text-center" name="ar_c_title{$classData['ar_class']}" value="{$classData['ar_c_title']}" maxlength="10" required /></td>
                 <td><input type="text" class="form-control text-center" name="ar_parent{$classData['ar_class']}" value="{$classData['ar_parent']}" maxlength="10" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_c_url{$classData['ar_class']}" value="{$classData['ar_c_url']}" maxlength="40" /></td>
                 <td class="text-center hidden-xs"><h5>{$classData['ar_c_number']}</h5></td>
                 <td class="text-center">
                     <button class="btn btn-success"  onclick="operat(this,{$classData['ar_class']},1);">保存</button>
@@ -47,11 +49,12 @@
         {
             var value = $("input[name=ar_c_title"+id+"]").val();
             var link = $("input[name=ar_parent"+id+"]").val();
+            var url  = $("input[name=ar_c_url"+id+"]").val();
         }
         else var value = 0;
         var copy = $(obc).clone();
         $(obc).addClass("disabled").removeAttr("onclick");
-        $.get("{:U('Article_class_operat')}",{id:id,value:value,link:link},function(state){
+        $.get("{:U('Article_class_operat')}",{id:id,value:value,link:link,url:url},function(state){
             if(state)alert("找不到该记录！");
             else
             {
