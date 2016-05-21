@@ -23,4 +23,6 @@ return array(
         '/^search\/([^_]{1,})$/'            =>  'search/index?search=:1',
         '/^search\/([^_]{1,})_(\d{1,})$/'   =>  'search/index?search=:1&page=:2',
      ),
+    'DEFAULT_THEME' => 'default'                           //view templete 
+//    'DEFAULT_THEME' => 'winbell'                           //view templete 
 );
