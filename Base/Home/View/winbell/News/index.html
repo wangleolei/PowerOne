@@ -1,0 +1,47 @@
+<extend name="Public/templet-article" />
+<block name="title">最新动态</block>
+<block name="localhost"><i class="glyphicon glyphicon-home"></i><small>您现在的位置: <a href="{:U('/index')}">首页</a> -> <a href="{:U('/news')}">最新动态</a></small></block>
+<block name="content-right">
+    <div class="module module-right-search visible-xs" style="margin-top: 10px;">
+        <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
+        <footer><a class="btn btn-default">搜索</a></footer>
+    </div>
+    <div class="module">
+    <volist name="news" id="newsData">
+       <article class="module-news-1">
+<!--             <header><img src="{$newsData['no_portrait']}" alt="这是头像" class="img-circle"></header>
+            <div><span></span></div>
+-->
+            <div><span></span></div>
+             <footer>
+                <h4> 
+                    <time>{$newsData['no_nickname']}<small>{$newsData['no_time']|timestamp_to_timeline}</small></time>
+<!--                    
+                    <span class="pull-right hidden-xs"><i class="glyphicon glyphicon-map-marker"></i>{$newsData['no_place']}
+                    <i class="glyphicon glyphicon-{$newsData['no_icon']}"></i>{$newsData['no_os']}</span>
+-->
+                </h4>
+                <div>{$newsData['no_content']}</div>
+           </footer>
+        </article>
+    </volist>
+    </div>
+    <ul class="module-page-1 pull-right">
+        <if condition="$button['first'] neq null"><li><a href="{:U('/news')}">首页</a></li></if>
+        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 1">{:U('/news')}<else />{:U('/news_'.$button['previous'])}</if>">上一页</a></li></if>
+        <volist name="button['num']" id="numData">
+            <eq name="numData" value="$button['on']"><li class="active"><a>{$numData}</a></li>
+            <else/><li><a href="<if condition="$numData eq 1">{:U('/news')}<else />{:U('/news_'.$numData)}</if>">{$numData}</a></li>
+            </eq>
+        </volist>
+        <if condition="$button['next'] neq null"><li><a href="{:U('/news_'.$button['next'])}">下一页</a></li></if>
+        <if condition="$button['end'] neq null"><li><a href="{:U('/news_'.$button['end'])}">末页</a></li></if>
+    </ul>
+    <div class="clear"></div>
+</block>
+<block name="content-left-top">
+    <div class="module">
+        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
+        <div class="module-right-notice">{$notice['no_content']}</div>
+    </div>
+</block>

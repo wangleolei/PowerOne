@@ -1,0 +1,67 @@
+<extend name="Public/tpl" />
+<block name="title">系统设置 - </block>
+<block name="content">
+
+    <form action="{:U('operat')}" method="post" enctype="multipart/form-data">
+        <div class="with-padding">
+            <h1>系统设置 <small>在这里对系统进行参数设置</small></h1>
+            <div class="table-header button-height">
+                <div class="float-right">
+                    <p class="button-height inline-label ">
+                    <label for="validation-select" class="label ">参数类型&nbsp;</label>
+                    <select id="validation-select" class="select blue-gradient" name="us_type" onchange="load_list(this.value);">
+                        <volist name="class" id="classData">
+                        <option value="{$classData['int_value']}" <eq name="class['on']" value="$classData['int_value']">selected</eq> >{$classData['short_desc']}</option>
+                    </volist>
+                    </select>
+                    </p>
+                </div>
+
+                显示&nbsp;<select name="range" class="select blue-gradient glossy">
+                    <option value="1">10</option>
+                    <option value="2">20</option>
+                    <option value="3" selected="selected">40</option>
+                    <option value="4">100</option>
+                </select>条/每页
+            </div>
+          
+
+        <table id="list-seting" class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col" width="5%">Ctrl</th>
+                <th scope="col" width="5%">Index</th>
+                <th scope="col" width="5%">Sort</th>
+                <th scope="col" width="5%">Int Val</th>
+                <th scope="col" width="5%">Ext Val</th>
+                <th scope="col" width="5%">Oth Val</th>
+                <th scope="col" width="10%">Short Desc</th>
+                <th scope="col" width="20%">Long Desc</th>
+                <th scope="col" width="10%">操作</th>
+            </tr>
+            </thead>
+            <tbody id="tbodyid"></tbody>
+            <tfoot>
+            <tr>
+                <td colspan="12">
+                    <input hidden type="text" name="se_type" value="{$setingData.id}" >
+                    <button type="button" class="button green-gradient" name="operat" value="add" onclick="parameter_add();">新增</button>
+                </td>
+                <td colspan="0" hidden>
+                    <input hidden type="text" name="se_type" value="{$setingData.id}" >
+                    <button type="submit" class="btn btn-warning" name="operat" value="save">保存修改</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        </div>
+    </form>
+    <script type="text/javascript">
+    function load_list(value){
+        $.get("{:U('parameter_list')}?class="+value,function(list){$("table#list-seting tbody").html(list);});
+    }
+    window.onload=function(){load_list($("select[name=us_type]").val());}
+
+    </script>
+
+</block>

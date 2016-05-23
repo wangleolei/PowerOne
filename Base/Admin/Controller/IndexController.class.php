@@ -7,11 +7,11 @@ class IndexController extends AuthController {
     
     public function index(){
         // 当前页面功能名
-        /*$data = M('mood') -> select();
+        /*$data = M('news') -> select();
         for ($i=0; $i < count($data); $i++) {
             $where['mo_id'] = $data[$i]['mo_id'];
             $save['mo_time'] = strtotime($data[$i]['mo_time']);
-            M('mood') -> where($where) -> save($save);
+            M('news') -> where($where) -> save($save);
         }*/
         /*$data = M('article1') -> select();
         for ($i=0; $i < count($data); $i++) {

@@ -1,0 +1,184 @@
+<if condition="$on_state eq 1">
+<thead>
+<tr>
+    <th scope="col" width="5%">ID</th>
+    <th style="width: 120px;">状态</th>
+    <th style="width: 500px;">文档标题</th>
+    <th style="width: 146px;">发布时间</th>
+    <th style="width: 110px;" class="text-right">点击量</th>
+    <th style="width: 150px;" class="text-right">执行操作</th>
+</tr>
+</thead>
+<tbody>
+<volist name="article" id="articleData" >
+<tr>
+    <td>{$articleData['ar_id']}</td>
+    <td>
+        <switch name="articleData['ar_position']">
+        <case value="1">
+            <button class="button tiny" onclick="article_state(this,'position',3);" value="{$articleData['ar_id']}" >顶</button>
+            <button class="button tiny orange-gradient" onclick="article_state(this,'position',0);" value="{$articleData['ar_id']}" >荐</button>
+        </case>
+        <case value="2">
+            <button class="button tiny red-gradient" onclick="article_state(this,'position',0);" value="{$articleData['ar_id']}" >顶</button>
+            <button class="button tiny" onclick="article_state(this,'position',3);" value="{$articleData['ar_id']}" >荐</button>
+        </case>
+        <case value="3">
+            <button class="button tiny red-gradient" onclick="article_state(this,'position',1);" value="{$articleData['ar_id']}" >顶</button>
+            <button class="button tiny orange-gradient" onclick="article_state(this,'position',2);" value="{$articleData['ar_id']}" >荐</button>
+        </case>
+        <default />
+            <button class="button tiny" onclick="article_state(this,'position',2);" value="{$articleData['ar_id']}" >顶</button>
+            <button class="button tiny" onclick="article_state(this,'position',1);" value="{$articleData['ar_id']}" >荐</button>
+        </switch>
+        <if condition="$articleData['ar_wechat'] gt 0">
+            <button class="button tiny green-gradient" onclick="article_state(this,'wechat',0);" value="{$articleData['ar_id']}" >微</button>
+        <else />
+            <button class="button tiny" onclick="article_state(this,'wechat',1);" value="{$articleData['ar_id']}" >微</button>
+        </if>
+        <if condition="$articleData['ar_file'] gt 0"><span class="label label-success" title="文档中存在附件">附</span></if>
+    </td>
+    <td>{$articleData['ar_title']}</td>
+    <td>{$articleData['ar_time']|date="Y/m/d H:i",###}</td>
+    <td class="text-right">{$articleData['ar_hits']}</td>
+    <td class="text-right">
+        <a href="{:U('article_publish?id='.$articleData['ar_id'])}" class="btn btn-xs btn-warning" >编辑</a>
+        <button type="button" class="btn btn-xs btn-danger" onclick="if(confirm('文档将进入回收站，确定要删除吗？'))article_state(this,'state',3,'ar_class');" value="{$articleData['ar_id']}">删除</button>
+    </td>
+</tr>
+</volist>
+</tbody>
+<else />
+<thead>
+<tr>
+    <th style="width: 110px;">ID</th>
+    <th style="width: 470px;">文档标题</th>
+    <th style="width: 180px;">类别</th>
+    <th style="width: 140px;">最后编辑于</th>
+    <th style="width: 236px;" class="text-right">执行操作</th>
+</tr>
+</thead>
+<tbody>
+<volist name="article" id="articleData" >
+<tr>
+    <td>{$articleData['ar_id']}</td>
+    <td>{$articleData['ar_title']}</td>
+    <td>{$articleData['ar_class']|get_class_name}</td>
+    <td>{$articleData['ar_last_time']|date="Y/m/d H:i",###}</td>
+    <td class="text-right">
+        <input hidden type="text" name="se_type" value="{$setingData.id}" >
+        <switch name="on_state">
+        <case value="2">
+        <button type="button" class="btn btn-xs btn-success " onclick="article_state(this,'state',1);" value="{$articleData['ar_id']}" >正式发布</button>
+        <button type="button" class="btn btn-xs btn-danger" onclick="article_state(this,'state',3);" value="{$articleData['ar_id']}" >扔入回收站</button>
+        </case>
+        <case value="3">
+        <button type="button" class="btn btn-xs btn-success " onclick="article_state(this,'state',1);" value="{$articleData['ar_id']}" >恢复</button>
+        <button type="button" class="btn btn-xs btn-info" onclick="article_state(this,'state',2);" value="{$articleData['ar_id']}" >加入草稿箱</button>
+        </case>
+        </switch>
+        <a href="{:U('article_publish?id='.$articleData['ar_id'])}" class="btn btn-xs btn-warning" >编辑</a>
+        <button type="button" class="btn btn-xs btn-danger" onclick="article_delete(this,'ar_state');" value="{$articleData['ar_id']}">删除</button>
+    </td>
+</tr>
+</volist>
+</if>
+<if condition="$button neq null">
+<tfoot><tr><td colspan="6" class="text-center">{$button}</td></tr>
+        <tr><td colspan="6" class="width-full">
+                <div class="float-right">
+                    <div class="button-group">
+                        <a href="#" title="First page" class="button blue-gradient glossy"><span class="">首页</span></a>
+                        <a href="#" title="Previous page" class="button blue-gradient glossy"><span class="">上一页</span></a>
+                    </div>
+
+                    <div class="button-group">
+                        <a href="#" title="Page 1" class="button blue-gradient glossy">1</a>
+                        <a href="#" title="Page 2" class="button blue-gradient glossy active">2</a>
+                        <a href="#" title="Page 3" class="button blue-gradient glossy">3</a>
+                        <a href="#" title="Page 4" class="button blue-gradient glossy">4</a>
+                    </div>
+
+                    <div class="button-group">
+                        <a href="#" title="Next page" class="button blue-gradient glossy"><span class="">下一页</span></a>
+                        <a href="#" title="Last page" class="button blue-gradient glossy"><span class="">最后</span></a>
+                    </div>
+                </div>
+        </td></tr>
+</tfoot>
+<script type="text/javascript">
+$(".page-ul li a").removeAttr("href");
+$(".page-ul li a").click(function()
+    {
+        var active = $('.page-ul li.page-on a').text();        // 当前页
+        var button = $(this).text();                           // 点击的按钮
+        switch(button)
+        {
+        case '上一页': var to = (parseInt(active)-1); break;
+        case '下一页': var to = (parseInt(active)+1); break;
+        case '尾页'  : var to = {$pages};             break;
+        case '首页'  : var to = 1;                    break;
+        default      : var to = button;
+        }
+        $.get("{:U('article_list')}?page="+to,function(list){$("table#list-article").html(list);});
+    });
+</script>
+</if>
+<script type="text/javascript">
+// 更改文档状态 位置/发布
+function article_state(obc,paramet,value,select){
+    switch(paramet){
+        case "position":
+        {
+            var url  = "{:U('article_position')}";
+            if(select)var name = select;
+            else var name = "ar_class";
+            break;
+        }
+        case "state":
+        {
+            var url  = "{:U('article_state')}";
+            if(select)var name = select;
+            else var name = "ar_state";
+            break;
+        }
+        case "wechat":   //  20160507
+        {
+            var url  = "{:U('article_wechat')}";
+            if(select)var name = select;
+            else var name = "ar_class";
+            break;
+        }
+    }
+    var copy = $(obc).clone();
+    var id   = $(obc).val();
+    $(obc).addClass("disabled").removeAttr("onclick");
+    $.get(url,{id:id,value:value},function(state){
+        if(state){
+            switch(state){
+                case 1: alert("新增链接失败！数据库写入失败！");break;
+                case 2: alert("找不到该记录！");break;
+                default:alert("新增失败，未知的错误原因！");
+            }
+            $(obc).replaceWith(copy);
+        }
+        else load_list($("select[name="+name+"]").val()); 
+    });
+}
+// 删除该文档
+function article_delete(obc,paramet){
+    if(confirm("确定要删除吗？数据将无法恢复！"))
+    {
+        var copy = $(obc).clone();
+        var id   = $(obc).val();
+        $(obc).addClass("disabled").removeAttr("onclick").html("删除中...");
+        $.get("{:U('article_delete')}?id="+id,function(state){
+            if(state){
+                alert("找不到该记录！");
+                $(obc).replaceWith(copy);
+            }
+            else load_list($("select[name="+paramet+"]").val()); 
+        });
+    }
+}
+</script>

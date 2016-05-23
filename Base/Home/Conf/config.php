@@ -16,11 +16,13 @@ return array(
         '/^articles\/(\d{1,})_(\d{1,})$/'   =>  'articles/index?class=:1&page=:2',
         '/^articles_(\d{1,})$/'             =>  'articles/index?page=:1',
         // 说说心情分页
-        '/^mood_(\d{1,})$/'                 =>  'mood/index?page=:1',
+        '/^news_(\d{1,})$/'                 =>  'news/index?page=:1',
         // 留言板留言分页
         '/^comment_(\d{1,})$/'              =>  'comment/index?page=:1',
         // 搜索分页
         '/^search\/([^_]{1,})$/'            =>  'search/index?search=:1',
         '/^search\/([^_]{1,})_(\d{1,})$/'   =>  'search/index?search=:1&page=:2',
      ),
+    'DEFAULT_THEME' => 'default'                           //view templete 
+//    'DEFAULT_THEME' => 'winbell'                           //view templete 
 );

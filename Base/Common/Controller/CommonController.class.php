@@ -6,7 +6,7 @@ use Think\Controller;
 class CommonController extends Controller{
     // 自动加载函数
     public function _initialize(){
-        /****************** 记录登录状态 ******************/
+        /****************** 记录登录状态 ******************/ 
         // 1：是否用用户记录，有则第2步，无则第3步
         // 2：是否有get code记录，有则获取登陆QQ，更新用户记录，无则结束判断
         // 3：获取用户信息存入
@@ -59,7 +59,7 @@ class CommonController extends Controller{
         // 当前页面
         switch (__SELF__) {
             case U('/')         : $on_url['index']    = 'class="now"';break;
-            case U('/mood')     : $on_url['mood']     = 'class="now"';break;
+            case U('/news')     : $on_url['news']     = 'class="now"';break;
             case U('/articles/1') : $on_url['articles/1'] = 'class="now"';break;
             case U('/articles/2') : $on_url['articles/2'] = 'class="now"';break;
             case U('/comment')  : $on_url['comment']  = 'class="now"';break;

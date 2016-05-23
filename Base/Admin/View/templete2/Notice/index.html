@@ -1,0 +1,38 @@
+<extend name="Public/tpl" />
+<block name="title">各类通知 - </block>
+<block name="content">
+        <a href="{:U('notice_add')}" class="btn btn-success pull-right">添加新的内容</a>
+ 
+    <div class="with-padding">
+        <h1>说说、公告、轮播 <small>在这里管理【说说】【公告】【轮播图】</small></h1>
+        <div class="table-header button-height">
+            <div class="float-right">
+                <p class="button-height inline-label ">
+                <label for="validation-select" class="label ">查看&nbsp;</label>
+                <select id="validation-select" class="select blue-gradient" name="no_type" onchange="load_list(this.value);">
+                    <option value="1" <eq name="on_type" value="1" >selected</eq> >说说</option>
+                    <option value="2" <eq name="on_type" value="2" >selected</eq> >公告</option>
+                    <option value="3" <eq name="on_type" value="3" >selected</eq> >轮播图</option>
+                    <option value="4" <eq name="on_type" value="4" >selected</eq> >关于我们</option>
+                </select>
+                </p>
+            </div>
+                显示&nbsp;<select name="range" class="select blue-gradient glossy">
+                    <option value="1">10</option>
+                    <option value="2">20</option>
+                    <option value="3" selected="selected">40</option>
+                    <option value="4">100</option>
+                </select>条/每页
+        </div>
+        <table id="list-notice" class="table table-hover"></table>
+    </div>
+
+    <script type="text/javascript">
+    //根据状态加载数据
+    function load_list(type){
+        $.get("{:U('notice_list')}?type="+type,function(list){$("table#list-notice").html(list);});
+    }
+    // 首次访问自动加载列表
+    window.onload=function(){load_list($("select[name=no_type]").val());};
+    </script>
+</block>

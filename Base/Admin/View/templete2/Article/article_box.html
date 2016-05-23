@@ -1,0 +1,27 @@
+<extend name="Public/tpl" />
+<block name="title">存稿箱与回收站 - </block>
+<block name="content">
+    <nav class="nav-title">
+        <h4>存稿箱与回收站 <small>这里是存稿箱和回收站，您可以在此进行一些操作</small></h4>
+        <section class="pull-right">
+            <div class="input-group">
+                <span class="input-group-addon">当前查看</span>
+                <select class="form-control text-center" name="ar_state" onchange="load_list(this.value)">
+                    <option value="2" <eq name="state" value="2">selected</eq> >存稿箱</option>
+                    <option value="3" <eq name="state" value="3">selected</eq> >回收站</option>
+                </select>
+            </div>
+        </section>
+    </nav>
+    <h5><b>提示</b>：在存稿箱发布文档，时间将更新为当前时间。</h5>
+    <hr />
+    <table id="list-article" class="table table-striped"></table>
+    <script type="text/javascript">
+    // 根据状态加载数据
+    function load_list(state){
+        $.get("{:U('article_list')}?state="+state,function(list){$("table#list-article").html(list);});
+    }
+    // 首次访问自动加载列表
+    window.onload=function(){load_list($("select[name=ar_state]").val());};
+    </script>
+</block>
