@@ -11,10 +11,15 @@ return array(
         // 文章与文章分页
         '/^article\/(\d{1,})$/'             =>  'article/index?id=:1',
         '/^article\/(\d{1,})_(\d{1,})$/'    =>  'article/index?id=:1&page=:2',
+        '/^details\/(\d{1,})$/'             =>  'details/index?id=:1',
+        '/^details\/(\d{1,})_(\d{1,})$/'    =>  'details/index?id=:1&page=:2',
         // 文章类别与分页
         '/^articles\/(\d{1,})$/'            =>  'articles/index?class=:1',
         '/^articles\/(\d{1,})_(\d{1,})$/'   =>  'articles/index?class=:1&page=:2',
         '/^articles_(\d{1,})$/'             =>  'articles/index?page=:1',
+        '/^classes\/(\d{1,})$/'             =>  'classes/index?class=:1',
+        '/^classes\/(\d{1,})_(\d{1,})$/'    =>  'classes/index?class=:1&page=:2',
+        '/^classes_(\d{1,})$/'              =>  'classes/index?page=:1',
         // 说说心情分页
         '/^news_(\d{1,})$/'                 =>  'news/index?page=:1',
         // 留言板留言分页
