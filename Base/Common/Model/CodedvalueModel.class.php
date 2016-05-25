@@ -19,13 +19,22 @@ class CodedvalueModel extends Model{
         return $result;
                
 	}
-//  输入control code, index, ext_value to retreive unique value.
+//  输入control code, index, ext_value to retreive .
     public function getbyext($control,$index,$ext){
         if  ($control) $condition['control_code'] = $control;
         else  $condition['control_code'] = 58;
         $condition['index'] = $index;
         $condition['ext_value'] = $ext;
-        $result = $this->where($condition) ->find();
+        $result = $this->where($condition) ->select();
+        return $result;
+    }
+//  输入control code, index, int_value to retreive short and long description.
+    public function getdescbyint($control,$index,$int){
+        if  ($control) $condition['control_code'] = $control;
+        else  $condition['control_code'] = 58;
+        $condition['index'] = $index;
+        $condition['int_value'] = $int;
+        $result = $this->where($condition) ->field('short_desc, long_desc') ->order('sort_value')->select();
         return $result;
     }
 //  输入control code, index, 得到 short_desc

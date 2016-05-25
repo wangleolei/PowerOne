@@ -3,7 +3,7 @@ namespace Home\Controller;
 
 use Common\Controller\CommonController;
 
-class ArticleController extends CommonController {
+class DetailsController extends CommonController {
 
     // 文章页 end in 2016/03/14
     public function index(){

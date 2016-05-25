@@ -74,6 +74,12 @@ class CommonController extends Controller{
         //$this->assign('cvt1001',$cvt1001);
         //电脑菜单CVT10000
         $cvt10000 = $cvt->getdescbyindex(58,10000);
+        $numbers = count($cvt10000);
+        for ($i=0; $i < $numbers ; $i++) { //电脑菜单二级菜单，要求主菜单int and sort从1到10顺序增加
+            $cvt10002 = $cvt->getdescbyint(58,10002,$i+1);
+            if($cvt10002) $cvt10000[$i]['cvt10002'] = $cvt10002;
+        }
+        
         $this->assign('cvt10000',$cvt10000);
         //手机菜单CVT10001
         $cvt10001 = $cvt->getlast3byindex(58,10001);

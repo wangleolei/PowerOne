@@ -98,21 +98,33 @@
                 <else />
                     <li>全部文章<a href="{:U('/articles')}" class="btn btn-xs btn-success">点击进入</a></li>
                 </if>
--->                
-                <volist name="class['data']" id="classData">
-                    <eq name="class['on']" value="$classData['ar_class']">
+-->      
+                
+                <eq name="class['subclass']" value="$class['data']['ar_class']">
                         <li class="on-list">
-                            <if condition="$classData['ar_parent'] eq 0">全部文章
+                            <if condition="$class['data']['ar_parent'] eq 0">全部文章
                             <else />{$classData['ar_c_title']}
                             </if>
                             <a class="btn btn-xs btn-primary disabled">当前栏目</a>
                         </li>
-                    <else/>
+                <else/>
                         <li>
-                            <if condition="$classData['ar_parent'] eq 0">全部文章
+                            <if condition="$class['data']['ar_parent'] eq 0">全部文章
                             <else />{$classData['ar_c_title']}
                             </if>
-                            <a href="{:U('/articles/'.$classData['ar_class'])}" class="btn btn-xs btn-success">点击进入</a>
+                            <a href="{$class['data']['ar_c_url']}" class="btn btn-xs btn-success">点击进入</a>
+                        </li>
+                </eq>       
+                <volist name="class['data']['subclass']" id="classData">
+                    <eq name="class['subclass']" value="$classData['ar_class']">
+                        <li class="on-list">
+                            {$classData['ar_c_title']}
+                            <a class="btn btn-xs btn-primary disabled">当前栏目</a>
+                        </li>
+                    <else/>
+                        <li>
+                            {$classData['ar_c_title']}
+                            <a href="{$classData.ar_c_url}" class="btn btn-xs btn-success">点击进入</a>
                         </li>
                     </eq>
                 </volist>

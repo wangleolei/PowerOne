@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><block name="title">{$current_title}</block><block name="connect"><if condition="$site['site_name_suffix']"> - {$site['site_name_suffix']}</if></block>
+    <title><block name="title"></block><block name="connect"><if condition="$site['site_name_suffix']"> - {$site['site_name_suffix']}</if></block>
     </title>
     <meta name="keywords" content="<block name="seo-keywords">{$site['site_keywords']}</block>" />
     <meta name="description" content="<block name="seo-description">{$site['site_description']}</block>" />
@@ -38,7 +38,7 @@
         </div>
         <div class="top">
             <div class="top_tell pull-right">
-                ---办公电话---
+                ---格恩服务热线---
                 <p>021-65679986</p>
             </div>
             <a href="http://www.win-bell.net/"><img src="__PUBLIC__/winbell/logo.jpg" width="506" height="85" alt="上海盈贝国际贸易有限公司" class="logo l"></a>
@@ -66,15 +66,16 @@
     <div id="content">
         <div class="ny_back">
             <div class="main_11 fix wid_1000">
+                <block name="main-content"><!-- 内容 --></block>
                 <div class="main_w2 r">
                     <div class="ny_tl">
                         <div class="dhwz r">当前位置：<a href="{:U('/index')}">网站首页</a>
                         <block name="localhost">{$current_path}</block>
                         </div>
-                        <span>{$current_title}</span>
+
                     </div>   
 <!-- 主要内容展示 开始-->
-<block name="main-content">
+<block name="face-image">
                     <div class="ny_show">
                         <div class="show" id="show">
                             <div class="show_big">
@@ -102,7 +103,7 @@
                 </div>
 <!--左边list-->
                 <div class="main_w1 l">
-                    <div class="title_01">产品中心<i class="icon_01"></i><span class="icon_21"></span></div>
+                    <div class="title_01">服装功能吊牌管理<i class="icon_01"></i><span class="icon_21"></span></div>
                     <div class="left_menu" id="left_menu">
                         <ul>
                             <volist name="class[data][subclass]" id="classData" key="i">
@@ -122,6 +123,35 @@
                             </volist>
                         </ul>
                     </div>
+                    
+                    <div class="title_01 mar_20"><a href="http://www.greenexplore.cn/news_2_1.html" class="more_11 r">More</a>政策法规<i class="icon_01"></i><span class="icon_21"></span></div>
+                    <div class="left_news back_w">
+                        <ul>
+                            <li><a href="http://www.greenexplore.cn/news_2719.html">纺织品阻燃性能的测式方法</a></li>
+<li><a href="http://www.greenexplore.cn/news_2703.html">防水防油易去污纺织整理技术国外的相</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="title_01 mar_20"><a href="http://www.greenexplore.cn/index_5.html" class="more_11 r">More</a>最新产品<i class="icon_01"></i><span class="icon_21"></span></div>
+                    <div class="left_show back_w" id="left_show">
+                        <div class="left_showbk">
+                            <ul style="width: 880px; margin-left: -220px;">
+                                <li><p><a href="http://www.greenexplore.cn/products_1078.html" class="b">三防助剂 NT-X668</a></p>
+                            <div style="overflow:hidden; height:96px;">三防助剂 NT-X668 NT-X668 是一种可用于棉、聚酯及羊毛的耐久性拒水、拒油整理剂。 产品特性  赋予织物卓越的耐久拒水及拒...</div>
+                        </li>
+<li><p><a href="http://www.greenexplore.cn/products_1042.html" class="b">Nuva® N 2114 liquid</a></p>
+                            <div style="overflow:hidden; height:96px;">Nuva N 2114 liquid 具有极佳的拒水，拒油性，适于化纤和纤维素纤维，特别是棉，涤纶以及他们的混纺物； 对织物上残留的杂质...</div>
+                        </li>
+
+                            <li><p><a href="http://www.greenexplore.cn/products_1078.html" class="b">三防助剂 NT-X668</a></p>
+                            <div style="overflow:hidden; height:96px;">三防助剂 NT-X668 NT-X668 是一种可用于棉、聚酯及羊毛的耐久性拒水、拒油整理剂。 产品特性  赋予织物卓越的耐久拒水及拒...</div>
+                        </li><li><p><a href="http://www.greenexplore.cn/products_1042.html" class="b">Nuva® N 2114 liquid</a></p>
+                            <div style="overflow:hidden; height:96px;">Nuva N 2114 liquid 具有极佳的拒水，拒油性，适于化纤和纤维素纤维，特别是棉，涤纶以及他们的混纺物； 对织物上残留的杂质...</div>
+                        </li></ul>
+                        </div>
+                        <span class="hz_prev" style="display:none"></span>
+                        <span class="hz_next" style="display:none"></span>
+                    </div>
                 </div>
                 <img src="__PUBLIC__/winbell/ny_bot.png" width="690" height="23" alt="" class="ny_fot">
             </div>
@@ -130,8 +160,8 @@
     <div id="footer">
         <div class="footer">
             <ul>
-                <li>Copyright <em class="en">©</em> 上海盈贝国际贸易有限公司 All Rights Reserved 沪ICP备11030505号-2 </li>
-                <li><span>电话/TEL：86-21-65679986</span><span>地址：上海市虹口区天宝路466弄9号建邦大厦902室</span></li>
+                <li>Copyright <em class="en">©</em> 2014-2015 版权所有：杭州格恩纺织化工有限公司 All Rights Reserved </li>
+                <li><span>电话/TEL：86-571-86766296</span><span>地址/ADD：浙江省杭州市丁桥紫丁香路151号新城广场550室</span>|<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253651109'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1253651109%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1253651109"><a href="http://www.cnzz.com/stat/website.php?web_id=1253651109" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="__PUBLIC__/winbell/pic1.gif"></a></span><script src="__PUBLIC__/winbell/z_stat.php" type="text/javascript"></script><script src="__PUBLIC__/winbell/core.php" charset="utf-8" type="text/javascript"></script></li>
 
             </ul>
         </div>

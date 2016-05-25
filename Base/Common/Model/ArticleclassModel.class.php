@@ -132,6 +132,14 @@ class ArticleclassModel extends Model{
             }
             return $path;
     }
+//输入类别号，返回该类别名称
+    function getclassname($class){
+        $condition['ar_class'] = $class;
+        $result = $this->field('ar_c_title')->where($condition) -> find();
+        $classname = $result['ar_c_title'];
+        return $classname;
+                
+    }
 
         //从记录集中取出二维数组中 其中一列：PHP 5.5+ 是系统自带函数
 //array_column(array,column_key,index_key);  

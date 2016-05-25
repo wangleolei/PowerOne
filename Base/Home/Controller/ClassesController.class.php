@@ -12,23 +12,31 @@ class ClassesController extends CommonController {
         {
             $input_class = I('get.class'); 
             if(!is_numeric($input_class)) {
-                $class['on'] = 0;
+                $class['class'] = NULL;
+                $class['subclass'] = NULL;
                 E('加载失败'); return;
             }
             if(strlen($input_class) == 2){
-                $class['on'] = $input_class;
                 $input_subclass = $input_class;
+                $class['class'] = $input_subclass;
+                $class['subclass'] = $input_subclass;
             }elseif (strlen($input_class) == 4) {
-                $class['on'] = $input_class;
-                $input_subclass = substr($input_class,0,2);
+                $input_subclass = substr($input_class,2,2);
                 $input_class = substr($input_class,0,2);
+                $class['class'] = $input_class;
+                $class['subclass'] = $input_subclass;
             }else{
-                $class['on'] = 0;
+                $class['class'] = NULL;
+                $class['subclass'] = NULL;
                 E('加载失败'); return;
             }
+            //var_dump($class);
             //位置和目录
             $current_path = $Articleclass->getpath($input_subclass);
             $this -> assign('current_path', $current_path);
+            //获得Title
+            $current_title = $Articleclass->getclassname($input_subclass);
+            $this -> assign('current_title', $current_title);
 
             //目录-文章类别
             $class['data'] = $Articleclass->getsubclasstree($input_class);
@@ -45,7 +53,7 @@ class ClassesController extends CommonController {
         $articletb = D('Common/Article');
         //$sum  = M('article') -> where($where) -> count();
         $sum = $articletb->countarticle($where);
-        $page = new \Org\Powerone\Page($sum,10,0,true);
+        $page = new \Org\Powerone\Page($sum,8,0,true);
         $button = $page->show();
         if(($page->pages)>1){
             $this -> assign('button',$button);
