@@ -16,12 +16,28 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
 define('APP_DEBUG',True);
-//switch ($_SERVER["HTTP_HOST"]) {
-//    case "www1.aspcn.net":
-//    header("location:index1.htm");
-//    break;
+//var_dump($_SERVER["HTTP_HOST");
+switch ($_SERVER["HTTP_HOST"]) {
+    case "jnnewmig.com":
+    case "www.jnnewmig.com":
+	    define('APP_PATH','./jnnewmig/');
+    break;
+    case "test.jnnewmig.com":
+	    define('APP_PATH','./winbell/');
+    break;
+    case "localhost":
+	    define('APP_PATH','./Base/');
+    break;
+    case "powerone.cn":
+    case "www.powerone.cn":
+	    define('APP_PATH','./Base/');
+    break;
+    default:
+    	echo '加载失败'; return;
+}
 // 定义应用目录
-define('APP_PATH','./Base/');
+//define('APP_NAME','base');
+//define('APP_PATH','./base/');
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';

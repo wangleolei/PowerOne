@@ -25,10 +25,15 @@ class DetailsController extends CommonController {
                 $article['previous'] = M('article') -> where('ar_state=1 and ar_time<'.$article['ar_time']) -> order('ar_time desc') -> limit(1) -> getField('ar_id');
                 $article['next']     = M('article') -> where('ar_state=1 and ar_time>'.$article['ar_time']) -> order('ar_time asc')  -> limit(1) -> getField('ar_id');
                 $this -> assign('article',$article);
-                //位置和目录
+                //位置和目录 
                 $Articleclass = D('Common/Articleclass');
                 $current_path = $Articleclass->getpath($article['ar_class']);
                 $this -> assign('current_path', $current_path);
+                //目录-文章类别
+                $parentclass = $Articleclass->getfirstleveclass($article['ar_class'],0);
+                $class['data'] = $Articleclass->getsubclasstree($parentclass);
+                //var_dump($class1);
+                $this -> assign('class',$class);
                 //show screen
                 $this -> display();
             }

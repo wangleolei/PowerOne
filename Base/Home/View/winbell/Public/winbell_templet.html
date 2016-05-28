@@ -71,7 +71,7 @@
                         <div class="dhwz r">当前位置：<a href="{:U('/index')}">网站首页</a>
                         <block name="localhost">{$current_path}</block>
                         </div>
-                        <span>{$current_title}</span>
+                        <block name="content_title"><span>{$current_title}</span></block>
                     </div>   
 <!-- 主要内容展示 开始-->
 <block name="main-content">
@@ -97,6 +97,8 @@
                         </div>
                     </div>
                     <div class="fy mar_20">共 <b>1</b>页<b>2</b>条记录</div>
+</block>
+<block name="second-content">
 </block>
 <!-- 主要内容展示 结束-->
                 </div>
@@ -199,6 +201,23 @@ $(document).ready(function(){
         navz_cls: "menu_zzz",//主菜单选中class
         navul_cls: ".menu_div01", //子菜单calss
         stag: "a"//子菜单内容标签
+    });
+    //滚动图片
+    $("#main_hot").Run_x({
+    // 横向滚动配置
+        speed: 3000, //动画速度
+        auto: true, //自动滚动
+        less: true,//是否无缝
+        content: "#main_hot",//外层经过停止区域class
+        trigger: "click", //触发事件 注意用mouseover代替hover
+        conbox: ".main_hotbk ul", //内容容器id或class
+        ctag: "li", //内容标签 默认为<a>
+        copy: ".main_hotbk li", //要copy的标签
+        prev: ".hot_prev", //左按钮id或class
+        next: ".hot_next", //右按钮id或class片
+        prev_next: "prev", //滚动方向
+        lessnum: 1, //无缝滚倍数
+        mar: 0 //左右marin,pad总和
     });
 });
 </script>

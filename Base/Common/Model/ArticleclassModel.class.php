@@ -26,6 +26,18 @@ class ArticleclassModel extends Model{
         return $output_classtree;
                
 	}
+//  输入class ，返回第一层父类
+    function getfirstleveclass($class, $control){
+        $control = $control + 1;
+        if ($control > 100) 
+            return;
+        $condition['ar_class'] = $class;
+        $parent_class = $this -> where($condition) -> find();
+        if ($parent_class['ar_parent'] == 0 || $parent_class['ar_parent'] == NULL || !$parent_class) 
+            return $parent_class['ar_class'];
+        else 
+            return $this -> getfirstleveclass($parent_class['ar_parent'], $control);
+    }
 //  输入class 返回该分类所有子类以及子类的子类
     function getsubclass($parent_class){
         $subclasslist = array($parent_class);

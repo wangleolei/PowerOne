@@ -1,48 +1,43 @@
-<extend name="Public/templet-article" /> 
+<extend name="Public/winbell_templet" /> 
 <block name="title">{$article['ar_title']}</block>
-<block name="seo-keywords">{$article['ar_keywords']},{$site['site_keywords']}</block>
-<block name="seo-description">{$article['ar_description']}</block>
-<block name="localhost"><i class=""></i><small>您现在的位置: <a href="{:U('/index')}">首页</a> {$current_path} -> {$article['ar_title']}</small></block>
-<block name="content-right">
-    <article class="detail">
-        <h4>{$article['ar_title']}</h4>
-        <h5><span>发布时间：{$article['ar_time']|timestamp_to_timeline}</span><span>栏目：{$article['ar_class']|get_class_title}</span></h5>
-        <hr/>
+<block name="content_title"><span>{$article['ar_title']}</span></block>
+<block name="main-content">
+    <div class="ny_pad">
+        <div class="ny_about">
+
         <article>{$article['ar_body']}</article>
-        <ul class="module-page-1 pull-right">
-            <if condition="$button['first'] neq null"><li><a href="{:U('/article/'.$article['ar_id'])}">首页</a></li></if>
-            <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 1">{:U('/article/'.$article['ar_id'])}<else />{:U('/article/'.$article['ar_id'].'_'.$button['previous'])}</if>">上一页</a></li></if>
+        
+<ul class="module-page-1 pull-right">
+            <if condition="$button['first'] neq null"><li><a href="{:U('/details/'.$article['ar_id'])}">首页</a></li></if>
+            <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 1">{:U('/details/'.$article['ar_id'])}<else />{:U('/details/'.$article['ar_id'].'_'.$button['previous'])}</if>">上一页</a></li></if>
             <volist name="button['num']" id="numData">
                 <eq name="numData" value="$button['on']">
                 <li class="active"><a>{$numData}</a></li>
                 <else/>
-                <li><a href="<if condition="$numData eq 1">{:U('/article/'.$article['ar_id'])}<else />{:U('/article/'.$article['ar_id'].'_'.$numData)}</if>">{$numData}</a></li>
+                <li><a href="<if condition="$numData eq 1">{:U('/details/'.$article['ar_id'])}<else />{:U('/details/'.$article['ar_id'].'_'.$numData)}</if>">{$numData}</a></li>
                 </eq>
             </volist>
             <if condition="$button['next'] neq null"><li><a href="{:U('/article/'.$article['ar_id'].'_'.$button['next'])}">下一页</a></li></if>
             <if condition="$button['end'] neq null"><li><a href="{:U('/article/'.$article['ar_id'].'_'.$button['end'])}">末页</a></li></if>
         </ul>
-        <section>
-            <if condition="$article['ar_source'] neq null">
-            <h5><span>版权说明：</span>本文为【{$article['ar_source']}】原创文章，转载请说明出处。</h5>
-            <else />
-            <h5><span>版权说明：</span>本文为【{$site['site_name']}】原创文章，转载请说明出处。</h5>
-            <h5><span>文章地址：</span>www.powerone.cn/article/{$article['ar_id']}.html</h5>
-            </if>
-        </section>
+
         <footer>
-            <h4 class="pull-right hidden-xs">
+            <h4 class="module-page-1 pull-right hidden-xs">
                 <if condition="$article['previous'] eq null">
                 <a class="btn btn-info btn-sm disabled">当前是第一篇</a>
-                <else /><a href="{:U('/article/'.$article['previous'])}" class="btn btn-info btn-sm">上一篇</a></if>
+                <else /><a href="{:U('/details/'.$article['previous'])}" class="btn btn-info btn-sm">上一篇</a></if>
                 <if condition="$article['next'] eq null">
                 <a class="btn btn-info btn-sm disabled">当前是最后一篇</a>
-                <else /><a href="{:U('/article/'.$article['next'])}" class="btn btn-info btn-sm">下一篇</a></if>
+                <else /><a href="{:U('/details/'.$article['next'])}" class="btn btn-info btn-sm">下一篇</a></if>
             </h4>
         </footer>
         <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
     </article>
+
+        </div>
+    </div>
+ 
+  
+    <div class="clear"></div>
 </block>
 
-<block name="div-script">
-</block>
