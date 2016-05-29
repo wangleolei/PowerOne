@@ -16,7 +16,6 @@ class IndexController extends CommonController {
         //$slide = $notice->noticelist(3,0,3);
         //$this -> assign('slide',$slide);
         //主页控制逻辑
-        
         $cvt1100 = $cvt->getbyindex(58,1100);
         $numbers = count($cvt1100);
         foreach ($cvt1100 as $key => $value) {

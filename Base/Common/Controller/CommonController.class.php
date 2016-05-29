@@ -6,6 +6,13 @@ use Think\Controller;
 class CommonController extends Controller{
     // 自动加载函数
     public function _initialize(){
+        $control_code = cookie('control_code'); 
+        if ($control_code != '58' && $control_code != '98') {
+            cookie('control_code','58',3600); // 指定cookie保存时间
+        }
+        if(I('get.l') == 'zh-cn') cookie('control_code','58',3600); // 指定cookie保存时间
+        if(I('get.l') == 'en-us') cookie('control_code','98',3600); // 指定cookie保存时间
+        $control_code = cookie('control_code'); 
         /****************** 记录登录状态 ******************/ 
         // 1：是否用用户记录，有则第2步，无则第3步
         // 2：是否有get code记录，有则获取登陆QQ，更新用户记录，无则结束判断
@@ -73,16 +80,16 @@ class CommonController extends Controller{
         //$cvt1001 =  $cvt->getshortbyindex(58,1001);
         //$this->assign('cvt1001',$cvt1001);
         //电脑菜单CVT10000
-        $cvt10000 = $cvt->getdescbyindex(58,10000);
+        $cvt10000 = $cvt->getdescbyindex($control_code,10000);
         $numbers = count($cvt10000);
         for ($i=0; $i < $numbers ; $i++) { //电脑菜单二级菜单，要求主菜单int and sort从1到10顺序增加
-            $cvt10002 = $cvt->getdescbyint(58,10002,$i+1);
+            $cvt10002 = $cvt->getdescbyint($control_code,10002,$i+1);
             if($cvt10002) $cvt10000[$i]['cvt10002'] = $cvt10002;
         }
         
         $this->assign('cvt10000',$cvt10000);
         //手机菜单CVT10001
-        $cvt10001 = $cvt->getlast3byindex(58,10001);
+        $cvt10001 = $cvt->getlast3byindex($control_code,10001);
         for ($i=0; $cvt10001[$i] ; $i++) { 
              if ($cvt10001[$i]['long_desc'] != __SELF__) {
                  $cvt10001[$i]['oth_value'] = "";
