@@ -27,21 +27,19 @@
 <div id="wrapper">
     <div id="header">
         <div class="wel">
-            <div class="wel_link r">
-                <ul>
-                    <li><a href="#" class="icon_13">联系我们</a></li>
-                    <li><a onclick="window.external.AddFavorite(location.href,document.title)" style="cursor:pointer" class="icon_12">收藏本站</a></li>
-                    <li class="fir_li"><a href="./index.html" class="icon_11">返回首页</a></li>
-                </ul>
-            </div>
-            WELCOME TO OUR WEBSITE !
+        <p class="r">{$Think.lang._turn_to}<a href="?l=zh-cn">简体中文</a> | <a href="?l=en-us">English</a></p>
+            {$Think.lang._welcome}
         </div>
         <div class="top">
             <div class="top_tell pull-right">
-                ---办公电话---
+                ---{$Think.lang._office_tel}---
                 <p>021-65679986</p>
             </div>
-            <a href="http://www.win-bell.net/"><img src="__PUBLIC__/winbell/logo.jpg" width="506" height="85" alt="上海盈贝国际贸易有限公司" class="logo l"></a>
+            <div class="top_tell_logo">
+                <p>{$Think.lang._company_name}</p>
+            </div>
+<!--            <a href="http://www.win-bell.net/"><img src="__PUBLIC__/winbell/logo.jpg" width="506" height="85" alt="上海盈贝国际贸易有限公司" class="logo l"></a>
+-->
         </div>
         
         <div class="nav_winbell" id="nav_winbell">
@@ -68,7 +66,7 @@
             <div class="main_11 fix wid_1000">
                 <div class="main_w2 r">
                     <div class="ny_tl">
-                        <div class="dhwz r">当前位置：<a href="{:U('/index')}">网站首页</a>
+                        <div class="dhwz r">{$Think.lang._current_postion}<a href="{:U('/index')}">{$Think.lang._home}</a>
                         <block name="localhost">{$current_path}</block>
                         </div>
                         <block name="content_title"><span>{$current_title}</span></block>
@@ -96,7 +94,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fy mar_20">共 <b>1</b>页<b>2</b>条记录</div>
+                    <!-- <div class="fy mar_20">共 <b>1</b>页<b>2</b>条记录</div>  -->
 </block>
 <block name="second-content">
 </block>
@@ -104,7 +102,7 @@
                 </div>
 <!--左边list-->
                 <div class="main_w1 l">
-                    <div class="title_01">产品中心<i class="icon_01"></i><span class="icon_21"></span></div>
+                    <div class="title_01">{$Think.lang._prod_center}<i class="icon_01"></i><span class="icon_21"></span></div>
                     <div class="left_menu" id="left_menu">
                         <ul>
                             <volist name="class[data][subclass]" id="classData" key="i">
@@ -132,8 +130,8 @@
     <div id="footer">
         <div class="footer">
             <ul>
-                <li>Copyright <em class="en">©</em> 上海盈贝国际贸易有限公司 All Rights Reserved 沪ICP备11030505号-2 </li>
-                <li><span>电话/TEL：86-21-65679986</span><span>地址：上海市虹口区天宝路466弄9号建邦大厦902室</span></li>
+                <li>Copyright <em class="en">©</em> {$Think.lang._company_name} All Rights Reserved 沪ICP备11030505号-2 </li>
+                <li><span>{$Think.lang._tel}86-21-65679986</span><span>{$Think.lang._address}{$Think.lang._address_details}</span></li>
 
             </ul>
         </div>

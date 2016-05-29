@@ -28,6 +28,12 @@ return array(
         '/^search\/([^_]{1,})$/'            =>  'search/index?search=:1',
         '/^search\/([^_]{1,})_(\d{1,})$/'   =>  'search/index?search=:1&page=:2',
      ),
+     //配置项=>配置值
+        'LANG_SWITCH_ON'=>true,
+        'DEFAULT_LANG'=>'zh-cn',
+        'LANG_AUTO_DETECT'=>true,
+        'LANG_LIST'=>'en-us,zh-cn',
+        'VAR_LANGUAGE'     => 'l', // 默认语言切换变量
     'DEFAULT_THEME' => 'default'                           //view templete 
 //    'DEFAULT_THEME' => 'winbell'                           //view templete 
 );

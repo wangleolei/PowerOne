@@ -1,5 +1,5 @@
 <extend name="Public/winbell_templet" />
-<block name="title">{$current_title}</block>
+<block name="title">{$Think.lang._company_name}</block> 
 
 <block name="content_title"><span>{$introduction['no_title']}</span></block>
 <block name="main-content">
@@ -11,11 +11,9 @@
     </div>
        
 
-
-
     <ul class="module-page-1 pull-right">
-        <if condition="$button['first'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'])}">首页</a></li></if>
-        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 0">{:U('/classes/'.$class['class'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['previous'])}</if>">上一页</a></li></if>
+        <if condition="$button['first'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'])}">{$Think.lang._first}</a></li></if>
+        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 0">{:U('/classes/'.$class['class'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['previous'])}</if>">{$Think.lang._previous}</a></li></if>
         <volist name="button['num']" id="numData">
             <eq name="numData" value="$button['on']">
             <li class="active"><a>{$numData}</a></li>
@@ -23,8 +21,8 @@
             <li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$numData)}">{$numData}</a></li>
             </eq>
         </volist>
-        <if condition="$button['next'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['next'])}">下一页</a></li></if>
-        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['end'])}</if>">末页</a></li></if>
+        <if condition="$button['next'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['next'])}">{$Think.lang._next}</a></li></if>
+        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['end'])}</if>">{$Think.lang._last}</a></li></if>
     </ul>
     <div class="clear"></div>
 
