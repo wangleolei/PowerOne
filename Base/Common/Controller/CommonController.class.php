@@ -76,6 +76,43 @@ class CommonController extends Controller{
         //var_dump(__SELF__);
         // 实例化coded value
         $cvt = D('Common/Codedvalue');
+        //Common控制逻辑
+        $notice = D('Common/notice');
+        $Articleclass = D('Common/Articleclass');
+        $article = D('Common/article');
+        $cvt1101 = $cvt->getbyindex(58,1101);
+        $numbers = count($cvt1101);
+        foreach ($cvt1101 as $key => $value) {
+            $class_or_type = $value['int_value'];
+            $function_name    = $value['ext_value'];
+            $number_record = $value['oth_value'];
+            $display_name  = $value['short_desc']; 
+            switch ($function_name) {
+                case 'nolist':
+                    $result = $notice->noticelist($class_or_type,0,$number_record);
+                    $this -> assign($display_name,$result);
+                    break;
+                
+                case 'notice':
+                    $result = $notice->findbytype($class_or_type);
+                    $this -> assign($display_name,$result);
+                    break;
+                case 'article':
+                    $classlist = $Articleclass->getsubclass($class_or_type);  
+                    $where['ar_class'] = array('in', $classlist);
+                    $where['ar_state'] = 1;
+                    $result = $article->articlelist($where,0,8);
+                    $this -> assign($display_name,$result);
+                    break;
+                case 'classes':
+                    $result['data'] = $Articleclass->getsubclasstree($class_or_type);
+                    $this -> assign($display_name,$result);
+                    break;
+            }
+        }
+        $notice = NULL;
+        $Articleclass = NULL;
+        $article = NULL;
         //system url
         //$cvt1001 =  $cvt->getshortbyindex(58,1001);
         //$this->assign('cvt1001',$cvt1001);

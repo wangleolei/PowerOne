@@ -41,7 +41,8 @@ function get_string_img($content,$cut){
 // 发送邮件
 // 参数 $to收件人 $title邮件标题 $content邮件内容
 // ParameterController 使用
-function sendMail($to,$title,$content){
+// www.thinkphp.cn/extend/273.html
+function sendMail1($to,$title,$content){ 
 //    $data = M('parameter') -> where('pa_class=3') -> select();
     for($i=0;$i<count($data);$i++){
         $parameter[$data[$i]['pa_attribute']] = $data[$i]['pa_value'];
