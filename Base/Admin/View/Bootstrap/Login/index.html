@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>后台管理</title>
+    <link href="__PUBLIC__/css/bootstrap.3.3.5.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/user/user.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="__PUBLIC__/user/img/favicon.ico" />
+    <script src="__PUBLIC__/js/jquery.2.1.4.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header col-lg-4 col-md-6 col-sm-4 col-xs-8">
+                    <a href="#"><img src="__PUBLIC__/user/img/logo.png" /></a>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-8 col-xs-4 ">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="{:U('/home')}">返回首页</a></li>
+                        <li class="hidden-xs" onclick="logindisplay()"><a>登陆<strong>{$Think.session.user_ontime}</strong></a></li>
+                        <li class="hidden-xs hidden" onclick="registerdisplay()"><a>注册</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <article class="col-lg-3 col-md-3 col-sm-2 hidden-xs"></article>
+        <article class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+            <div class="panel panel-default" style="margin-top: 20px">
+                <div class="panel-heading">
+                    <h1 class="center-block" style="width:150px;">后台管理</h1>
+                </div>
+                <div class="panel-body" id="LoginDivID" style="display:;">
+                    <form role="form" name="LoginForm" id="LoginFormID" >
+                        <div class="form-group">
+                            <div class="row">
+                                <section class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>账号</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="username" id="user_name" placeholder="请输入账号" onblur="onblurName(this);"/>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>密码</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="password" class="form-control" name="password" placeholder="请输入密码，如忘记密码请联系管理员" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>验证码</h5></label>
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <input type="code" class="form-control" name="captcha" id="message_verifyid1"  placeholder="请输入验证码" />
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <span><img src="{:U('verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。" id="captchaimg"></span>
+                                </section>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default pull-right" onclick="login(this);return false;">登陆</button>
+                        <button type="button" class="btn btn-default pull-right hidden" onclick="registerdisplay()">注册</button>
+                        <p class="forgot"><a id="iforget" href="javascript:void(0);">忘记密码?</a></p>
+                    </form>
+                </div>
+                <div class="panel-body" id="RegisterDivID" style="display:none;">
+                    <form role="form" name="RegisterForm" id="RegisterFormID" action="{:U('login/register')}" method="post" onsubmit="return registervalidation()">
+                        <div class="form-group">
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>账号：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_name_input" placeholder="请输入账号(登陆时需要)" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>密码：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="password" class="form-control" name="user_password_input1" id="user_password_inputid1"  placeholder="请输入密码" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>确定密码：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="password" class="form-control" name="user_password_input2" id="user_password_inputid2" placeholder="请再次输入密码" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>匿名：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_nickname_input" placeholder="请输入匿名（将显示在文章下方）" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>真实姓名：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_realname_input" placeholder="请输入真实姓名（为找会密码凭证，不显示在系统中）" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>邮箱：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="email" class="form-control" name="user_email_input" placeholder="请输入邮箱（建议输入常用邮箱以便获得通知）" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>验证码：</h5></label>
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <input type="text" class="form-control" name="message_verify2" name="message_verifyid2" placeholder="请输入验证码" />
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-5">
+                                    <span><img src="{:U('Home/message/verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。"></span>
+                                </section>
+                            </div>
+                        </div>
+                        <p class="fieldset">
+                          <input type="checkbox" id="accept-terms">
+                          <label for="accept-terms">我已阅读并同意 <a href="/useragreement.html">用户协议</a></label>
+                        </p>
+                        <button type="submit" class="btn btn-default pull-right" >确定</button>
+                        <button type="reset" class="btn btn-default pull-right">重置</button>
+                        <button type="button" class="btn btn-default pull-right" onclick="logindisplay()">登陆</button>
+                    </form>                
+                </div>
+<!--
+                <div class="panel-footer text-center">                  
+                </div>
+-->
+            </div>
+        </article>
+    </div>
+</div>
+<include file='Public/footer' />
+</body>
+</html>
+<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
+
+<script type="text/javascript">
+
+function registerdisplay()
+{
+   document.getElementById( "RegisterDivID" ).style.display="";
+   document.getElementById( "LoginDivID" ).style.display="none";
+   
+}
+
+function logindisplay()
+{
+   document.getElementById( "RegisterDivID" ).style.display="none";
+   document.getElementById( "LoginDivID" ).style.display="";
+   
+}
+
+function registervalidation()
+{   
+//    var verify = $('.messagetool div input[name=message_verify2]').val();
+//    $.get("{:U('Home/message/messageverify')}?message_verify2="+verify,function(response)
+//                {
+//                    if(!response)
+//                    {alert("请重新输入验证码！");return false;}
+//                });
+
+    var user_name_input=document.forms["RegisterForm"]["user_name_input"].value;
+    if (user_name_input==null || user_name_input=="")
+    {
+        alert("账号不能为空");
+        return false;
+    }
+    var user_password_input1=document.forms["RegisterForm"]["user_password_input1"].value;
+    var user_password_input2=document.forms["RegisterForm"]["user_password_input2"].value;
+    if (user_password_input1==null || user_password_input1=="")
+    {
+        alert("密码不能为空");
+        return false;
+    }
+    if (user_password_input1 != user_password_input2) 
+    {
+        alert("输入密码不一致");
+        return false;
+    };
+    var user_nickname_input=document.forms["RegisterForm"]["user_nickname_input"].value;
+    if (user_nickname_input==null || user_nickname_input=="")
+    {
+        alert("匿名不能为空");
+        return false;
+    }
+    var user_email_input=document.forms["RegisterForm"]["user_email_input"].value;
+    if (user_email_input==null || user_email_input=="")
+    {
+        alert("邮箱不能为空");
+        return false;
+    }
+
+    if(!document.getElementById("accept-terms").checked){       
+        alert("必须同意使用协议才允许注册");
+        return;
+    } 
+
+}
+function loginvalidation()
+{   
+//    $("#message_verifyid1").val();
+//        if($.trim($("#message_verifyid1").val())==""){       
+//            WST.msg('请输入验证码!', {icon: 5});
+//            $("#message_verifyid1").focus();
+//            alert("请输入验证码! ");
+//            return false;
+//        }
+    var message_verifyid1 = $("#message_verifyid1").val();
+//    alert("Value: " + $("#message_verifyid1").val());
+//        return false;
+            if(message_verifyid1 =="")
+            {
+                alert("请输入验证码! ");
+                return false;
+            }
+            else
+            {
+                var verify = message_verifyid1;
+                $.get("{:U('Home/message/messageverify')}?message_verify="+verify,function(data,status)
+                   {
+                    if(data)
+                    {
+//                        $('.messagetool div.messagebutton button').attr('disabled',"true");
+//                        //$('div.validation button').removeAttr("disabled"); 移除disabled属性 
+//                        //return true;
+//                        alert("数据： " + response);
+                        alert("数据: " + data + "\n状态: " + status);
+                    }
+                    else {alert("验证码错误！"); return false;}
+                });
+//                return false;
+            }
+
+}
+function onblurName(obj){
+        jQuery("#loginNameTip").html("<span>输入的邮箱格式不正确</span>");
+        $("#loginNameTip").val(1234);
+        return;
+        
+}
+</script>
+<script>
+            function login(obc){
+                var copy = $(obc).clone();
+                $(obc).attr("disabled","true").removeAttr("onclick").html("登录中");
+                $.post("{:U('login')}",$("#LoginFormID").serialize(),function(state){
+                    if(state){
+                        switch(state){
+                            case 1: alert("该账号不存在！");break;
+                            case 2: alert("账户状态为不可登陆！");break;
+                            case 3: alert("密码错误！");break;
+                            case 4: alert("验证码错误！");break;
+                        }
+                        $(obc).replaceWith(copy);
+                        document.getElementById('captchaimg').click();
+                    }
+                    else
+                    {
+                        alert("登录成功！");
+                        location.href = "{:U('index/index')}";
+                    }
+                });
+            }
+
+</script>

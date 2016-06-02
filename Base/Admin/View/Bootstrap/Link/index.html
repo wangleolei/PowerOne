@@ -1,0 +1,36 @@
+<extend name="Public/tpl" />
+<block name="title">友情链接 - </block>
+<block name="content">
+    <nav class="nav-title">
+        <h4>友情链接 <small>这里显示所有的友情链接，您可以对其进行操作</small></h4>
+        <section class="pull-right">
+            <div class="input-group">
+                <span class="input-group-addon">状态</span>
+                <select class="form-control text-center" name="li_state" onchange="load_list(this.value)">
+                    <option value="1" <eq name="on_state" value="1" >selected</eq> >正常</option>
+                    <option value="2" <eq name="on_state" value="2" >selected</eq> >友链申请</option>
+                    <option value="3" <eq name="on_state" value="3" >selected</eq> >已拒绝</option>
+                </select>
+            </div>
+        </section>
+    </nav>
+    <table id="list-link" class="table table-striped">
+        <thead>
+        <tr>
+            <th style="width: 200px;">网站名称</th>
+            <th style="width: 250px;">链接地址</th>
+            <th style="width: 350px;">联系邮箱</th>
+            <th class="text-right">操作</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script type="text/javascript">
+    // 根据状态加载数据
+    function load_list(state){
+        $.get("{:U('link_list')}?state="+state,function(list){$("table#list-link tbody").html(list);});
+    }
+    // 首次访问自动加载列表
+    window.onload=load_list($("select[name=li_state]").val());
+    </script>
+</block>

@@ -1,0 +1,68 @@
+<extend name="Public/tpl" />
+<block name="title">资讯类别管理 - </block>
+<block name="content">
+    <form action="{:U('Article_class_operat')}" method="get" >
+    <nav class="nav-title">
+        <h4>资讯类别管理 <small>您可以在这里对文档分类进行管理</small></h4>
+        <button type="submit" class="btn btn-success pull-right">添加新的类别</button>
+        <section class="pull-right" style="margin-right:10px;width:150px" >
+            <input type="text" name="ar_parent" class="form-control" placeholder="请输入父类编号" maxlength="10" required />
+        </section>
+        <section class="pull-right" style="margin-right:10px;width:170px" >
+            <input type="text" name="ar_c_title" class="form-control" placeholder="请输入类别名称" maxlength="50" required />
+        </section>
+    </nav>
+    </form>
+    <hr />
+    <h5><b>提示</b>：删除类别后，所属其的文档将会移至回收站。</h5>
+    <hr />
+    <table id="list-article-class" class="table table-striped text-center">
+        <thead>
+        <tr>
+            <th class="text-center">编号</th>
+            <th class="text-center">类名</th>
+            <th class="text-center">父类编号</th>
+            <th class="text-center">对应url</th>
+            <th class="text-center">文档数</th>
+            <th class="text-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="class" id="classData">
+            <tr>
+                <td class="hidden-xs"><h5>{$classData['ar_class']}</h5></td>
+                <td><input type="text" class="form-control text-center" name="ar_c_title{$classData['ar_class']}" value="{$classData['ar_c_title']}" maxlength="50" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_parent{$classData['ar_class']}" value="{$classData['ar_parent']}" maxlength="10" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_c_url{$classData['ar_class']}" value="{$classData['ar_c_url']}" maxlength="40" /></td>
+                <td class="text-center hidden-xs"><h5>{$classData['ar_c_number']}</h5></td>
+                <td class="text-center">
+                    <button class="btn btn-success"  onclick="operat(this,{$classData['ar_class']},1);">保存</button>
+                    <button class="btn btn-danger" onclick="operat(this,{$classData['ar_class']});" >删除</button>
+                </td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+    function operat(obc,id,select){
+        if(select)
+        {
+            var value = $("input[name=ar_c_title"+id+"]").val();
+            var link = $("input[name=ar_parent"+id+"]").val();
+            var url  = $("input[name=ar_c_url"+id+"]").val();
+        }
+        else var value = 0;
+        var copy = $(obc).clone();
+        $(obc).addClass("disabled").removeAttr("onclick");
+        $.get("{:U('Article_class_operat')}",{id:id,value:value,link:link,url:url},function(state){
+            if(state)alert("找不到该记录！");
+            else
+            {
+                alert("修改成功！");
+                window.location.reload();
+            } 
+            $(obc).replaceWith(copy);
+        });
+    }
+    </script>
+</block>

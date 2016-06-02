@@ -17,6 +17,7 @@ class LoginController extends Controller {
     public function login(){
         if(IS_AJAX)
         {
+
             $where['ad_username'] = I('post.username');
             $admin = M('useradmin') -> where($where) -> find();
             if($admin){
