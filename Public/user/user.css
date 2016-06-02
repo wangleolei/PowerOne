@@ -1,0 +1,6 @@
+body{background-image: url(".../img/bg.jpg"); background-color: #3e4134;}/*背景*/
+.logonav{margin: 0px;padding: 0px;}/*logo的边距*/
+#footer{position:relative;margin-top:0px;background-color: #b4b4b4;height: 50px;line-height: 50px;}/*footer 页脚*/
+#footer p ,#footer a{color: #000000;}/*底部链接*/
+#footer a{margin-left: 10px;}/*链接间距*/
+#footer p a:hover{color: #5a5a5a;text-decoration: underline}/*鼠标放上去时的状态*/

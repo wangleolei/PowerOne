@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><block name="title"></block>PowerOne Admin管理系统</title>
+    <!-- ico/css/js -->
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css">
+    <script src="__PUBLIC__/js/jquery.2.1.4.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
+    <!--下面是自己的ico、css和js表-->
+    <link href="__PUBLIC__/admin/css/admin.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+<nav class="navbar navbar-default col-md-12" role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+         <span class="sr-only">切换导航</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">PowerOne 后台管理</a>
+   </div>
+   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="{:U('/')}" target="_blank">网站首页</a></li>
+         <li><a href="{:U('index/index')}">后台首页</a></li>
+         <li><a href="{:U('user/index')}">用户信息</a></li>
+         <li><a href="{:U('notice/index')}">消息类</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               文档维护 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="{:U('article/article_publish')}">编写文档</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/index')}">已发布文档</a></li>
+               <li><a href="{:U('article/article_box')}">存稿箱与回收站</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/Article_class')}">资讯类别管理</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/wechat')}" >推送到微信公众号</a></li>
+            </ul>
+         </li>
+         <li><a href="{:U('link/index')}">友情链接</a></li>
+         <li><a href="{:U('parameter/index')}">系统设置</a></li>
+         <li><a  onclick="exitLogin();">注销登录</a></li>
+      </ul>
+   </div>
+</nav>
+
+<article class="container">
+<block name="content">这是内容</block>
+</article>
+
+<script>
+    function exitLogin(){
+        if(confirm("要退出当前登录吗？")){
+            $.get("{:U('login/exit_login')}",function(state){
+                if (state){
+                    alert("退出成功！");
+                    location.href = "{:U('login/index')}";
+                }
+                else alert("退出失败！");
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

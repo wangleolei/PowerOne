@@ -1,0 +1,31 @@
+<extend name="Public/winbell_templet" />
+<block name="title">{$current_title}</block>
+
+<block name="main-content">
+    <div class="module module-right-search visible-xs" style="margin-top: 10px;">
+        <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
+        <footer><a class="btn btn-default">搜索</a></footer>
+    </div>
+    <div class="module">
+        <ul data-role="listview" data-theme="a" class="k_img_ul thumbnail" id="fpmxList"> 
+                    <volist name='article' id='articleData'>
+                        <li><span><a href="{:U('/details/'.$articleData['ar_id'])}"><img src="{$articleData['ar_cover_img']}" alt="{$articleData['ar_title']}_封面"/></a></span><p>{$articleData['ar_title']}</p></li>
+                    </volist>
+        </ul> 
+
+    </div>
+    <ul class="module-page-1 pull-right">
+        <if condition="$button['first'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'])}">首页</a></li></if>
+        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 0">{:U('/classes/'.$class['class'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['previous'])}</if>">上一页</a></li></if>
+        <volist name="button['num']" id="numData">
+            <eq name="numData" value="$button['on']">
+            <li class="active"><a>{$numData}</a></li>
+            <else/>
+            <li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$numData)}">{$numData}</a></li>
+            </eq>
+        </volist>
+        <if condition="$button['next'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['next'])}">下一页</a></li></if>
+        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['end'])}</if>">末页</a></li></if>
+    </ul>
+    <div class="clear"></div>
+</block>

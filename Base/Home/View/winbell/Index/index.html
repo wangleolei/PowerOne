@@ -1,25 +1,48 @@
 <extend name="Public/winbell_templet" />
-<block name="title">PowerOne首页</block>
-<block name="meta"><meta property="qc:admins" content="730633572147656375" /></block>
-<block name="localhost"><small>您现在的位置: <a href="{:U('/index')}">首页</a></small></block>
-<block name="face-image">
-    <div id="module-slide" class="module module-slide-1 carousel slide">
-        <ol class="carousel-indicators">
-            <li data-target="#module-slide" data-slide-to="0" class="active"></li>
-            <li data-target="#module-slide" data-slide-to="1"></li>
-            <li data-target="#module-slide" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <volist name="slide" id="slideData">
-                <div class="item <eq name="key" value="0">active</eq>"><a href="{:U('/article/'.$slideData['no_to_article'])}"><img src="__ROOT__/upload/base/image/system/inner1.jpg" alt="{$slideData['no_title']}"></a></div>
-            </volist>
+<block name="title">{$Think.lang._company_name}</block> 
+
+<block name="content_title"><span>{$introduction['no_title']}</span></block>
+<block name="main-content">
+    <div class="ny_pad">
+        <div class="ny_about">
+    
+            {$introduction['no_content']}
         </div>
     </div>
-</block>
+       
 
-<block name="div-script">
-<script>
-    /* 轮播启动 */
-    $(".module-slide-1").carousel({interval: 3000});
-</script>
+    <ul class="module-page-1 pull-right">
+        <if condition="$button['first'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'])}">{$Think.lang._first}</a></li></if>
+        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 0">{:U('/classes/'.$class['class'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['previous'])}</if>">{$Think.lang._previous}</a></li></if>
+        <volist name="button['num']" id="numData">
+            <eq name="numData" value="$button['on']">
+            <li class="active"><a>{$numData}</a></li>
+            <else/>
+            <li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$numData)}">{$numData}</a></li>
+            </eq>
+        </volist>
+        <if condition="$button['next'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['next'])}">{$Think.lang._next}</a></li></if>
+        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['end'])}</if>">{$Think.lang._last}</a></li></if>
+    </ul>
+    <div class="clear"></div>
+
+
+<!--滚动图片开始-->
+           
+<div class="ny_pad">     
+    <div class="main_hot" id="main_hot">            
+    <div class="main_hotbk l">
+        <ul class="dp_list" >
+            <volist name="right['box']['recom']" id="recomData">
+                <li style="width:140px"><a href="{:U('/details/'.$recomData['ar_id'])}" class="pro_a01"><img src="{$recomData['ar_cover_img']}"  alt="{$recomData['ar_title']}" /></a></li>
+            </volist>                                
+        </ul>
+    </div>
+        <span class="hot_prev" style="display: none"></span>
+        <span class="hot_next" style="display: none"></span>
+    </div>
+</div>                     
+<!--滚动图片结束-->                    
+         
+ 
 </block>

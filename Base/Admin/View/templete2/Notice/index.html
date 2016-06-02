@@ -10,10 +10,9 @@
                 <p class="button-height inline-label ">
                 <label for="validation-select" class="label ">查看&nbsp;</label>
                 <select id="validation-select" class="select blue-gradient" name="no_type" onchange="load_list(this.value);">
-                    <option value="1" <eq name="on_type" value="1" >selected</eq> >说说</option>
-                    <option value="2" <eq name="on_type" value="2" >selected</eq> >公告</option>
-                    <option value="3" <eq name="on_type" value="3" >selected</eq> >轮播图</option>
-                    <option value="4" <eq name="on_type" value="4" >selected</eq> >关于我们</option>
+                    <volist name="cvt10003" id="downlist">
+                        <option value="{$downlist.int_value}" <eq name="on_type" value="$downlist.int_value" >selected</eq> >{$downlist.short_desc}</option>
+                    </volist>
                 </select>
                 </p>
             </div>

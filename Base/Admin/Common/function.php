@@ -16,25 +16,33 @@ function get_class_name($id){
 // ArticleController 、 NoticeController 使用
 function get_string_img($content,$cut){
     preg_match("/\<img.*?src\=\"(.*?)\"[^>]*>/i",$content,$img);
+//    var_dump($img);
     if($img[1]){
         if($cut){
-            $img[1] = substr($img[1],9);
+//            $cut['width']  = 140; //临时写死
+//            $cut['height'] = 140; //临时写死
+            $img[1] = substr($img[1],9);  //去除powerone
             $array = explode('/',$img[1]);
             $thumb = '/upload/image/thumb/'.$array[count($array)-1];
             $image = new \Think\Image();
             $image -> open('.'.$img[1]);
-            $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$thumb);
+            $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$thumb); //固定比例缩放
+//            $image -> thumb($cut['width'],$cut['height'],2)->save('.'.$thumb); //缩放后填充类型
+
             return '/powerone'.$thumb;
+//            return $thumb;
         }
         else return $img[1];
     }
     else return '/powerone/upload/image/system/thumb'.rand(1,20).'.jpg';
+//    else return '/upload/image/system/thumb'.rand(1,20).'.jpg';
 }
 
 // 发送邮件
 // 参数 $to收件人 $title邮件标题 $content邮件内容
 // ParameterController 使用
-function sendMail($to,$title,$content){
+// www.thinkphp.cn/extend/273.html
+function sendMail1($to,$title,$content){ 
 //    $data = M('parameter') -> where('pa_class=3') -> select();
     for($i=0;$i<count($data);$i++){
         $parameter[$data[$i]['pa_attribute']] = $data[$i]['pa_value'];

@@ -126,6 +126,41 @@ function timestamp_to_timeline($time,$type){
     }
 }
 
+// 发送邮件
+// 参数 $to收件人 $title邮件标题 $content邮件内容
+// ParameterController 使用
+// www.thinkphp.cn/extend/273.html
+function send_mail($to,$title,$content){ 
+//    $data = M('parameter') -> where('pa_class=3') -> select();
+    $cvt = D('Common/Codedvalue');
+    $cvt1003 = $cvt->getdescbyindex($control_code,1003);
+    for($i=0;$i<count($cvt1003);$i++){
+        $parameter[$cvt1003[$i]['short_desc']] = $cvt1003[$i]['long_desc'];
+    }
+    if($parameter['email_is']=='true'){
+        vendor('phpmailer.class#phpmailer');
+        $mail = new phpmailer();
+        $mail->IsSMTP();
+        $mail->Host     = $parameter['email_host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $parameter['email_username'];
+        $mail->Password = $parameter['email_password'];
+        $mail->FromName = $parameter['email_name'];
+        $mail->IsHTML(true);
+        $mail->CharSet  = 'utf-8';
+        $mail->From     = $parameter['email_from'];
+        if ($to) $mail->AddAddress($to);
+        else $mail->AddAddress($parameter['email_to']);
+        $mail->Subject  = $title;
+        $mail->Body     = $content;
+        return($mail->Send());
+    }
+    else
+    {
+        echo '邮件功能尚未打开！';
+        return false;
+    }
+}
 
 //从记录集中取出二维数组中 其中一列：PHP 5.5+ 是系统自带函数
 //array_column(array,column_key,index_key);  

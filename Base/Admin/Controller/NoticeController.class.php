@@ -5,11 +5,15 @@ use Common\Controller\AuthController;
 
 class NoticeController extends AuthController {
 
-    // 通知主页 -> end in 2016/02/26
+    // 通知主页 -> end in 2016/02/26 
     public function index(){
         if(IS_AJAX)session('admin.notice',null);
         else
         {
+            $cvt = D('Common/Codedvalue');
+            $cvt10003 = $cvt->getbyindex(58,10003);
+            $this -> assign('cvt10003',$cvt10003);
+
             $session = session('admin.notice');
             if($session['no_type'])$on_type = $session['no_type'];
             $this -> assign('on_type',$on_type);
@@ -56,6 +60,10 @@ class NoticeController extends AuthController {
 
     // 新增通知 -> end in 2016/02/26
     public function notice_add(){
+        $cvt = D('Common/Codedvalue');
+        $cvt10003 = $cvt->getbyindex(58,10003);
+        $this -> assign('cvt10003',$cvt10003);
+
         $session = session('admin.notice');
         if($session['no_type'])$on_type = $session['no_type'];
         $this -> assign('on_type',$on_type);

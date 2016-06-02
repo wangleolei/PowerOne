@@ -1,18 +1,74 @@
-<extend name="Public/tpl" />
-<block name="title">留言天地</block>
-<block name="localhost"><i class="glyphicon glyphicon-comment"></i><small>留言天地</small></block>
-<block name="content-right">
-    <div class="module module-right-search visible-xs" style="margin-top: 10px;">
-        <header><input type="text" name="search" class="form-control" placeholder="输入搜索的文章名"></header>
-        <footer><a class="btn btn-default">搜索</a></footer>
-    </div>
-</block>
-<block name="content-left-top">
-    <div class="module">
-        <div class="module-title-2"><b>Notice</b><small>最新公告</small><span><i class="glyphicon glyphicon-time"></i>{$notice['no_time']|timestamp_to_timeline}</span></div>
-        <div class="module-right-notice">{$notice['no_content']}</div>
-    </div>
-</block>
-<block name="div-script">
+<extend name="Public/winbell_templet" />
+<block name="title">{:L(_message)}</block>
 
+<block name="content_title"><span>{:L(_message)}</span></block>
+<block name="main-content">
+    <div class="ny_pad">
+        <div class="ny_about">
+<form action="{:U('send')}" method="post">
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0"  class="graya12">
+            <tr>
+              <td width="100" height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_title)}</div></td>
+              <td width="394"><label> &nbsp;&nbsp;
+                    <input name="title" type="text" class="form1" id="title" size="30" />
+              </label></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_address)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="address" type="text" class="form1" id="address" size="40" /></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_name)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="name" type="text" class="form1" id="name" size="10" /></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_company)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="company" type="text" class="form1" id="company" size="40" /></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_email)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="post" type="text" class="form1" id="post" size="40" /></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_phone)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="phone" type="text" class="form1" id="phone" size="20" /></td>
+            </tr>
+            <tr>
+              <td height="30" class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_fax)}</div></td>
+              <td>&nbsp;&nbsp;
+                  <input name="fax" type="text" class="form1" id="fax" size="20" /></td>
+            </tr>
+            <tr>
+              <td class="graya14"><div align="center" class="STYLE2 l">{:L(_mail_content)}</div></td>
+              <td><label> &nbsp;&nbsp;
+                    <textarea name="text" cols="45" rows="10" class="form1" id="text"></textarea>
+              </label></td>
+            </tr>
+            <tr>
+              <td height="40" colspan="2"><label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                  <div align="center">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>&nbsp;&nbsp;
+                            <div align="center">
+                              <input name="Submit2" type="submit" class="form1" value="{:L(_mail_send)}" />
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              
+                          </div></td>
+                      </tr>
+                    </table>
+                  </div></td>
+            </tr>
+          </table>
+</form>
+
+        </div>
+    </div>
+         
+ 
 </block>

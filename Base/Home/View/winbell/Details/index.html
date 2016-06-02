@@ -1,0 +1,43 @@
+<extend name="Public/winbell_templet" /> 
+<block name="title">{$article['ar_title']}</block>
+<block name="content_title"><span>{$article['ar_title']}</span></block>
+<block name="main-content">
+    <div class="ny_pad">
+        <div class="ny_about">
+
+        <article>{$article['ar_body']}</article>
+        
+<ul class="module-page-1 pull-right">
+            <if condition="$button['first'] neq null"><li><a href="{:U('/details/'.$article['ar_id'])}">首页</a></li></if>
+            <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 1">{:U('/details/'.$article['ar_id'])}<else />{:U('/details/'.$article['ar_id'].'_'.$button['previous'])}</if>">上一页</a></li></if>
+            <volist name="button['num']" id="numData">
+                <eq name="numData" value="$button['on']">
+                <li class="active"><a>{$numData}</a></li>
+                <else/>
+                <li><a href="<if condition="$numData eq 1">{:U('/details/'.$article['ar_id'])}<else />{:U('/details/'.$article['ar_id'].'_'.$numData)}</if>">{$numData}</a></li>
+                </eq>
+            </volist>
+            <if condition="$button['next'] neq null"><li><a href="{:U('/article/'.$article['ar_id'].'_'.$button['next'])}">下一页</a></li></if>
+            <if condition="$button['end'] neq null"><li><a href="{:U('/article/'.$article['ar_id'].'_'.$button['end'])}">末页</a></li></if>
+        </ul>
+
+        <footer>
+            <h4 class="module-page-1 pull-right hidden-xs">
+                <if condition="$article['previous'] eq null">
+                <a class="btn btn-info btn-sm disabled">当前是第一篇</a>
+                <else /><a href="{:U('/details/'.$article['previous'])}" class="btn btn-info btn-sm">上一篇</a></if>
+                <if condition="$article['next'] eq null">
+                <a class="btn btn-info btn-sm disabled">当前是最后一篇</a>
+                <else /><a href="{:U('/details/'.$article['next'])}" class="btn btn-info btn-sm">下一篇</a></if>
+            </h4>
+        </footer>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </article>
+
+        </div>
+    </div>
+ 
+  
+    <div class="clear"></div>
+</block>
+

@@ -15,17 +15,17 @@ class ArticlesController extends CommonController {
             $current_path = $Articleclass->getpath(I('get.class'));
             $this -> assign('current_path', $current_path);
             //得到class list
-            $where['ar_class'] = I('get.class');
-            $classlist1 = array(I('get.class'));
+            //$where['ar_class'] = I('get.class');
+            //$classlist1 = array(I('get.class'));
             //$classlist2 = $this->getsubclass(I('get.class'));
             //$classlist3 = $this->array_column($classlist2, 'ar_class');
             
-            $classlist3 = $Articleclass->getsubclass(I('get.class'));  
+            $classlist4 = $Articleclass->getsubclass(I('get.class'));
 
-            $classlist4 = array_merge($classlist1,$classlist3);
+            //$classlist4 = array_merge($classlist1,$classlist3);
 
 //            var_dump($classlist4);
-            $where['ar_class'] = array('in', $classlist4);
+            $where['ar_class'] = array('in', $classlist4);  
         }
         $where['ar_state'] = 1;
         // 数据分页 

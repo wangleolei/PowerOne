@@ -1,56 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0041)http://www.greenexplore.cn/tag_699_1.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><block name="title">{$current_title}</block><block name="connect"><if condition="$site['site_name_suffix']"> - {$site['site_name_suffix']}</if></block>
+    </title>
+    <meta name="keywords" content="<block name="seo-keywords">{$site['site_keywords']}</block>" />
+    <meta name="description" content="<block name="seo-description">{$site['site_description']}</block>" />
+    <meta name="version" content="{$site['site_version']}" />
+    <meta name="author" content="{$site['site_author']}" />
+    <block name="meta"></block>
+    <!-- ico/css/js -->
+    <link rel="shortcut icon" href="__PUBLIC__/winbell/logo.jpg" />
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/winbell/style.css">
 
-<title>鲁道夫RUDOLF-杭州格恩纺织化工有限公司鲁道夫RUDOLF-杭州格恩纺织化工有限公司</title>
-<meta name="keywords" content="鲁道夫RUDOLF">
-<meta name="description" content="杭州格恩纺织化工有限公司有着多年的行业经验，可以为您提供各种纺织整理技术和各种品牌的纺织整理技术，如鲁道夫RUDOLF等。点击了解详情！">
-<link type="text/css" rel="stylesheet" href="__PUBLIC__/winbell/style.css">
+    <script src="__PUBLIC__/js/jquery.2.1.4.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
 </head>
 
 <body>
+
+
+
+
+
 <div id="wrapper">
     <div id="header">
-      <div class="wel">
-            <div class="wel_link r">
-                <ul>
-                    <li><a href="http://www.greenexplore.cn/index_70.html" class="icon_13">联系我们</a></li>
-                    <li><a onclick="window.external.AddFavorite(location.href,document.title)" style="cursor:pointer" class="icon_12">收藏本站</a></li>
-                    <li class="fir_li"><a href="http://www.greenexplore.cn/" class="icon_11">返回首页</a></li>
-                </ul>
-            </div>
-            WELCOME TO OUR WEBSITE !
+        <div class="wel">
+        <p class="r">{$Think.lang._turn_to}<a href="?l=zh-cn">简体中文</a> | <a href="?l=en-us">English</a></p>
+            {$Think.lang._welcome}
         </div>
         <div class="top">
-            <div class="top_tell r">
-                ---格恩服务热线---
-                <p>4009-959395</p>
+            <div class="top_tell pull-right">
+                ---{$Think.lang._office_tel}---
+                <p>021-65679986</p>
             </div>
-            <a href="http://www.greenexplore.cn/"><img src="__PUBLIC__/winbell/logo.jpg" width="506" height="85" alt="纺织整理技术" class="logo l"></a>
+<!--            <div class="top_tell_logo">
+                <p>{$Think.lang._company_name}</p>
+            </div>
+-->
+            <div class="top_tell_logo">
+            <img src="__PUBLIC__/winbell/logo.jpg" width="104" height="78" alt="上海盈贝国际贸易有限公司" class="logo l"><p>{$Think.lang._company_name}</p>
+            </div>
         </div>
-        <div class="nav" id="nav">
+        
+        <div class="nav_winbell" id="nav_winbell">
             <ul>
-                <li><a href="http://www.greenexplore.cn/">网站首页</a></li>
-                <li><a href="http://www.greenexplore.cn/aboutus_1.html">关于我们</a></li>
-                <li class="nav_01"><a href="http://www.greenexplore.cn/index_5.html" class="">纺织印染技术解决方案</a>
-                    <div class="nav_ul" style="display: none;">
-                        
-                            <a href="http://www.greenexplore.cn/index_5.html">生产工艺</a>
-                        
-                            <a href="http://www.greenexplore.cn/index_6.html">纤维行业</a>
-                        
-                            <a href="http://www.greenexplore.cn/index_61.html">合作品牌</a>
-                        
-                    </div>                  
+            <volist name="cvt10000" id="menu">
+                <li class="nav_winbell_01"><a href="{$menu.long_desc}">{$menu.short_desc}</a>
+                    <div class="nav_winbell_ul" style="display: none;">
+                        <volist name="menu.cvt10002" id="submenu">
+                            <a href="{$submenu.long_desc}">{$submenu.short_desc}</a>
+                        </volist>    
+                    </div> 
                 </li>
-                
-                <li class="nav_02"><a href="http://www.greenexplore.cn/index64.html">服装功能吊牌管理</a></li>
-                <li><a href="http://www.greenexplore.cn/order.html">我的订单</a></li>
-                <li><a href="http://www.greenexplore.cn/net.html">我的绿点</a></li>
-                <li><a href="http://www.greenexplore.cn/news_1_1.html">信息中心</a></li>
+            </volist>
             </ul>
         </div>
     </div>
+
+
+
     <div class="ny_banner l"><img src="__PUBLIC__/winbell/banner_11.jpg" width="1920" height="198" alt=""></div>
     <div class="clear"></div>
     <div id="content">
@@ -58,21 +68,27 @@
             <div class="main_11 fix wid_1000">
                 <div class="main_w2 r">
                     <div class="ny_tl">
-                        <div class="dhwz r">当前位置：<a href="http://www.greenexplore.cn/">网站首页</a> &gt; <a href="http://www.greenexplore.cn/index64.html">服装功能吊牌管理</a> &gt; <a href="http://www.greenexplore.cn/tag_1024_1.html">无氟拒水纺织整理技术</a> &gt; <strong>鲁道夫RUDOLF</strong></div>
-                        <span>鲁道夫RUDOLF</span>
-                    </div>      
+                        <div class="dhwz r">{$Think.lang._current_postion}<a href="{:U('/index')}">{$Think.lang._home}</a>
+                        <block name="localhost">{$current_path}</block>
+                        </div>
+                        <block name="content_title"><span>{$current_title}</span></block>
+                    </div>   
+<!-- 主要内容展示 开始-->
+<block name="main-content">
                     <div class="ny_show">
                         <div class="show" id="show">
                             <div class="show_big">
                                 <ul>
                                 <script language="javascript" src="__PUBLIC__/winbell/imgResize.js"></script>
-                                    <li style="position: absolute; z-index: 9; left: 0px; top: 0px;"><img src="__PUBLIC__/winbell/2-140922155Q3.jpg" alt="21-鲁道夫新版eco吊牌正面" title="21-鲁道夫新版eco吊牌正面" onload="javascript:ImgReSize(this,600,600)"></li><li style="position: absolute; z-index: 1; opacity: 0; left: 0px; top: 0px;"><img src="__PUBLIC__/winbell/2-141013143510D5.jpg" alt="21-鲁道夫新版eco吊牌反面" title="21-鲁道夫新版eco吊牌反面" onload="javascript:ImgReSize(this,600,600)"></li>
+                                    <li style="position: absolute; z-index: 9; left: 0px; top: 0px;"><img src="__PUBLIC__/winbell/2-140922155Q3-bk.jpg" alt="21-鲁道夫新版eco吊牌正面" title="21-鲁道夫新版eco吊牌正面" onload="javascript:ImgReSize(this,600,600)"></li>
+                                    <li style="position: absolute; z-index: 1; opacity: 0; left: 0px; top: 0px;"><img src="__PUBLIC__/winbell/2-141013143510D5.jpg" alt="21-鲁道夫新版eco吊牌反面" title="21-鲁道夫新版eco吊牌反面" onload="javascript:ImgReSize(this,600,600)"></li>
                                 </ul>
                             </div>
                             <div class="show_sml">
                                 <div class="show_smlbk">
                                     <ul style="width: 272px; margin-left: 0px;">
-                                        <li class="sh_z"><img src="__PUBLIC__/winbell/l2-140922155Q3_133_90.jpg" alt="21-鲁道夫新版eco吊牌正面" height="90" title="21-鲁道夫新版eco吊牌正面"></li><li><img src="__PUBLIC__/winbell/l2-141013143510D5_133_90.jpg" alt="21-鲁道夫新版eco吊牌反面" height="90" title="21-鲁道夫新版eco吊牌反面"></li>
+                                        <li class="sh_z"><img src="__PUBLIC__/winbell/l2-140922155Q3_133_90.jpg" alt="21-鲁道夫新版eco吊牌正面" height="90" title="21-鲁道夫新版eco吊牌正面"></li>
+                                        <li><img src="__PUBLIC__/winbell/l2-141013143510D5_133_90.jpg" alt="21-鲁道夫新版eco吊牌反面" height="90" title="21-鲁道夫新版eco吊牌反面"></li>
                                     </ul>
                                 </div>
                                 <span class="sh_prev" style="display: none;"></span>
@@ -80,176 +96,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fy mar_20">共 <b>1</b>页<b>2</b>条记录</div>
+                    <!-- <div class="fy mar_20">共 <b>1</b>页<b>2</b>条记录</div>  -->
+</block>
+<block name="second-content">
+</block>
+<!-- 主要内容展示 结束-->
                 </div>
+<!--左边list-->
                 <div class="main_w1 l">
-                    <div class="title_01">服装功能吊牌管理<i class="icon_01"></i><span class="icon_21"></span></div>
+                    <div class="title_01">{$Think.lang._prod_center}<i class="icon_01"></i><span class="icon_21"></span></div>
                     <div class="left_menu" id="left_menu">
                         <ul>
-                            <li><a href="http://www.greenexplore.cn/tag_1021_1.html" id="dd1021">防缩防皱纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_693_1.html" id="dd693">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1051_1.html" id="dd1051">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1066_1.html" id="dd1066">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1022_1.html" id="dd1022">抗菌防臭纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_698_1.html" id="dd698">拓纳</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1032_1.html" id="dd1032">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1034_1.html" id="dd1034">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1069_1.html" id="dd1069">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1024_1.html" id="dd1024" class="menu_z">无氟拒水纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_696_1.html" id="dd696">Nano-Tex</a>
-                                        
-                                        <a href="./鲁道夫RUDOLF-杭州格恩纺织化工有限公司鲁道夫RUDOLF-杭州格恩纺织化工有限公司_files/鲁道夫RUDOLF-杭州格恩纺织化工有限公司鲁道夫RUDOLF-杭州格恩纺织化工有限公司.html" id="dd699" class="menu_z">鲁道夫RUDOLF</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1036_1.html" id="dd1036">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1037_1.html" id="dd1037">拓纳</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1071_1.html" id="dd1071">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1025_1.html" id="dd1025">干爽舒适纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1038_1.html" id="dd1038">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1039_1.html" id="dd1039">拓纳</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1067_1.html" id="dd1067">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1026_1.html" id="dd1026">防晒护理纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1040_1.html" id="dd1040">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1042_1.html" id="dd1042">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1065_1.html" id="dd1065">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1027_1.html" id="dd1027">单向导湿纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_694_1.html" id="dd694">格林</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1028_1.html" id="dd1028">三防整理纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_695_1.html" id="dd695">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1043_1.html" id="dd1043">Nano-Tex</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1044_1.html" id="dd1044">拓纳</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1045_1.html" id="dd1045">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1070_1.html" id="dd1070">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1029_1.html" id="dd1029">防蚊虫纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_697_1.html" id="dd697">HHL</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1047_1.html" id="dd1047">拓纳</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1030_1.html" id="dd1030">护肤加工纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1048_1.html" id="dd1048">拓纳</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1068_1.html" id="dd1068">昂高</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1031_1.html" id="dd1031">体温管理功能整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1049_1.html" id="dd1049">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1064_1.html" id="dd1064">拓纳</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1052_1.html" id="dd1052">清新芳香功能整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1057_1.html" id="dd1057">亨斯迈</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1058_1.html" id="dd1058">鲁道夫</a>
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1059_1.html" id="dd1059">拓纳</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1053_1.html" id="dd1053">预防禽流感病毒整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1060_1.html" id="dd1060">拓纳</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1054_1.html" id="dd1054">柔软平滑纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1061_1.html" id="dd1061">鲁道夫</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1055_1.html" id="dd1055">汗液管理功能整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1062_1.html" id="dd1062">鲁道夫</a>
-                                        
-                                    </div>
-                                </li><li><a href="http://www.greenexplore.cn/tag_1056_1.html" id="dd1056">抗静电纺织整理技术</a>
-                                    <div style="display: none;" class="menu_div01">
-                                        
-                                        <a href="http://www.greenexplore.cn/tag_1063_1.html" id="dd1063">鲁道夫</a>
-                                        
-                                    </div>
+                            <volist name="class[data][subclass]" id="classData" key="i">
+
+                                <li>
+                                    
+                                    <a href="{$classData['ar_c_url']}" id="dd1021">{$classData.ar_c_title}</a>
+                                    
+                                
+                                <div style="display: none;" class="menu_div01">
+                                <volist name="classData['subclass']" id="subclassData" key="j">
+                                    <a href="{$subclassData['ar_c_url']}" id="dd693">{$subclassData.ar_c_title}</a>
+                                </volist>
+                                </div>
                                 </li>
+                            
+                            </volist>
                         </ul>
-                    </div>
-                    <div class="title_01 mar_20"><a href="http://www.greenexplore.cn/news_2_1.html" class="more_11 r">More</a>政策法规<i class="icon_01"></i><span class="icon_21"></span></div>
-                    <div class="left_news back_w">
-                        <ul>
-                            <li><a href="http://www.greenexplore.cn/news_2719.html">纺织品阻燃性能的测式方法</a></li>
-<li><a href="http://www.greenexplore.cn/news_2703.html">防水防油易去污纺织整理技术国外的相</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="title_01 mar_20"><a href="http://www.greenexplore.cn/index_5.html" class="more_11 r">More</a>最新产品<i class="icon_01"></i><span class="icon_21"></span></div>
-                    <div class="left_show back_w" id="left_show">
-                        <div class="left_showbk">
-                            <ul style="width: 880px; margin-left: -220px;">
-                                <li><p><a href="http://www.greenexplore.cn/products_1078.html" class="b">三防助剂 NT-X668</a></p>
-                            <div style="overflow:hidden; height:96px;">三防助剂 NT-X668 NT-X668 是一种可用于棉、聚酯及羊毛的耐久性拒水、拒油整理剂。 产品特性  赋予织物卓越的耐久拒水及拒...</div>
-                        </li>
-<li><p><a href="http://www.greenexplore.cn/products_1042.html" class="b">Nuva® N 2114 liquid</a></p>
-                            <div style="overflow:hidden; height:96px;">Nuva N 2114 liquid 具有极佳的拒水，拒油性，适于化纤和纤维素纤维，特别是棉，涤纶以及他们的混纺物； 对织物上残留的杂质...</div>
-                        </li>
-
-                            <li><p><a href="http://www.greenexplore.cn/products_1078.html" class="b">三防助剂 NT-X668</a></p>
-                            <div style="overflow:hidden; height:96px;">三防助剂 NT-X668 NT-X668 是一种可用于棉、聚酯及羊毛的耐久性拒水、拒油整理剂。 产品特性  赋予织物卓越的耐久拒水及拒...</div>
-                        </li><li><p><a href="http://www.greenexplore.cn/products_1042.html" class="b">Nuva® N 2114 liquid</a></p>
-                            <div style="overflow:hidden; height:96px;">Nuva N 2114 liquid 具有极佳的拒水，拒油性，适于化纤和纤维素纤维，特别是棉，涤纶以及他们的混纺物； 对织物上残留的杂质...</div>
-                        </li></ul>
-                        </div>
-                        <span class="hz_prev" style="display:none"></span>
-                        <span class="hz_next" style="display:none"></span>
                     </div>
                 </div>
                 <img src="__PUBLIC__/winbell/ny_bot.png" width="690" height="23" alt="" class="ny_fot">
@@ -259,8 +132,8 @@
     <div id="footer">
         <div class="footer">
             <ul>
-                <li>Copyright <em class="en">©</em> 2014-2015 版权所有：杭州格恩纺织化工有限公司 All Rights Reserved </li>
-                <li><span>电话/TEL：86-571-86766296</span><span>地址/ADD：浙江省杭州市丁桥紫丁香路151号新城广场550室</span>|<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253651109'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1253651109%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1253651109"><a href="http://www.cnzz.com/stat/website.php?web_id=1253651109" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="__PUBLIC__/winbell/pic1.gif"></a></span><script src="__PUBLIC__/winbell/z_stat.php" type="text/javascript"></script><script src="__PUBLIC__/winbell/core.php" charset="utf-8" type="text/javascript"></script></li>
+                <li>Copyright <em class="en">©</em> {$Think.lang._company_name} All Rights Reserved 沪ICP备11030505号-2 </li>
+                <li><span>{$Think.lang._tel}86-21-65679986</span><span>{$Think.lang._address}{$Think.lang._address_details}</span></li>
 
             </ul>
         </div>
@@ -272,16 +145,18 @@ document.oncontextmenu=new Function("event.returnValue=false;"); //禁止右键�
 document.onselectstart=new Function("event.returnValue=false;"); //禁止先择,也就是无法复制 
 </script>
 </div>
+
 <script type="text/javascript" src="__PUBLIC__/winbell/jqbase.js"></script>
+
 <script type="text/javascript">
     $("#dd1024").addClass("menu_z");//父类id
     $("#dd699").addClass("menu_z");  //循环子类id
 $(document).ready(function(){
-    $("#nav").Nav({
+    $("#nav_winbell").Nav({
     // 下拉菜单配置
         ctag: "li",//主菜单内容标签
         navz_cls: "nav_zz",//主菜单选中class
-        navul_cls: ".nav_ul", //子菜单calss
+        navul_cls: ".nav_winbell_ul", //子菜单calss
         stag: "a"//子菜单内容标签
     });
     $("#left_show").Run_x({
@@ -326,6 +201,23 @@ $(document).ready(function(){
         navz_cls: "menu_zzz",//主菜单选中class
         navul_cls: ".menu_div01", //子菜单calss
         stag: "a"//子菜单内容标签
+    });
+    //滚动图片
+    $("#main_hot").Run_x({
+    // 横向滚动配置
+        speed: 3000, //动画速度
+        auto: true, //自动滚动
+        less: true,//是否无缝
+        content: "#main_hot",//外层经过停止区域class
+        trigger: "click", //触发事件 注意用mouseover代替hover
+        conbox: ".main_hotbk ul", //内容容器id或class
+        ctag: "li", //内容标签 默认为<a>
+        copy: ".main_hotbk li", //要copy的标签
+        prev: ".hot_prev", //左按钮id或class
+        next: ".hot_next", //右按钮id或class片
+        prev_next: "prev", //滚动方向
+        lessnum: 1, //无缝滚倍数
+        mar: 0 //左右marin,pad总和
     });
 });
 </script>

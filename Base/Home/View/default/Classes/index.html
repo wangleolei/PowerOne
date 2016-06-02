@@ -1,5 +1,5 @@
 <extend name="Public/templet-article" />
-<block name="title">技术分享</block>
+<block name="title">{$current_title}</block>
 
 <block name="content-right">
     <div class="module module-right-search visible-xs" style="margin-top: 10px;">
@@ -23,17 +23,17 @@
     </volist>
     </div>
     <ul class="module-page-1 pull-right">
-        <if condition="$button['first'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles')}<else />{:U('/articles/'.$class['on'])}</if>">首页</a></li></if>
-        <if condition="$button['previous'] neq null"><li><a href="<if condition="$class['on'] eq 0 and $button['previous'] eq 1">{:U('/articles')}<elseif condition="$class['on'] eq 0"/>{:U('/articles_'.$button['previous'])}<elseif condition="$button['previous'] eq 1"/>{:U('/articles/'.$class['on'])}<else />{:U('/articles/'.$class['on'].'_'.$button['previous'])}</if>">上一页</a></li></if>
+        <if condition="$button['first'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'])}">首页</a></li></if>
+        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 0">{:U('/classes/'.$class['class'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['previous'])}</if>">上一页</a></li></if>
         <volist name="button['num']" id="numData">
             <eq name="numData" value="$button['on']">
             <li class="active"><a>{$numData}</a></li>
             <else/>
-            <li><a href="<if condition="$class['on'] eq 0 and $numData eq 1">{:U('/articles')}<elseif condition="$class['on'] eq 0"/>{:U('/articles_'.$numData)}<elseif condition="$numData eq 1"/>{:U('/articles/'.$class['on'])}<else />{:U('/articles/'.$class['on'].'_'.$numData)}</if>">{$numData}</a></li>
+            <li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$numData)}">{$numData}</a></li>
             </eq>
         </volist>
-        <if condition="$button['next'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['next'])}<else />{:U('/articles/'.$class['on'].'_'.$button['next'])}</if>">下一页</a></li></if>
-        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/articles/'.$class['on'].'_'.$button['end'])}</if>">末页</a></li></if>
+        <if condition="$button['next'] neq null"><li><a href="{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['next'])}">下一页</a></li></if>
+        <if condition="$button['end'] neq null"><li><a href="<if condition="$class['on'] eq 0">{:U('/articles_'.$button['end'])}<else />{:U('/classes/'.$class['class'].$class['subclass'].'_'.$button['end'])}</if>">末页</a></li></if>
     </ul>
     <div class="clear"></div>
 </block>

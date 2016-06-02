@@ -9,7 +9,7 @@
             <input type="text" name="ar_parent" class="form-control" placeholder="请输入父类编号" maxlength="10" required />
         </section>
         <section class="pull-right" style="margin-right:10px;width:170px" >
-            <input type="text" name="ar_c_title" class="form-control" placeholder="请输入类别名称" maxlength="10" required />
+            <input type="text" name="ar_c_title" class="form-control" placeholder="请输入类别名称" maxlength="50" required />
         </section>
     </nav>
     </form>
@@ -31,7 +31,7 @@
         <volist name="class" id="classData">
             <tr>
                 <td class="hidden-xs"><h5>{$classData['ar_class']}</h5></td>
-                <td><input type="text" class="form-control text-center" name="ar_c_title{$classData['ar_class']}" value="{$classData['ar_c_title']}" maxlength="10" required /></td>
+                <td><input type="text" class="form-control text-center" name="ar_c_title{$classData['ar_class']}" value="{$classData['ar_c_title']}" maxlength="50" required /></td>
                 <td><input type="text" class="form-control text-center" name="ar_parent{$classData['ar_class']}" value="{$classData['ar_parent']}" maxlength="10" required /></td>
                 <td><input type="text" class="form-control text-center" name="ar_c_url{$classData['ar_class']}" value="{$classData['ar_c_url']}" maxlength="40" /></td>
                 <td class="text-center hidden-xs"><h5>{$classData['ar_c_number']}</h5></td>
