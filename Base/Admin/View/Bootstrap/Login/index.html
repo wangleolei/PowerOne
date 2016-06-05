@@ -70,7 +70,34 @@
                         </div>
                         <button type="submit" class="btn btn-default pull-right" onclick="login(this);return false;">登陆</button>
                         <button type="button" class="btn btn-default pull-right hidden" onclick="registerdisplay()">注册</button>
-                        <p class="forgot"><a id="iforget" href="javascript:void(0);">忘记密码?</a></p>
+                        <p class="forgot"><a id="iforget" href="javascript:forgetdisplay();">忘记密码?</a></p>
+                    </form>
+                </div>
+                <div class="panel-body" id="ForgetDivID" style="display:none;">
+                    <form role="form" name="ForgetForm" id="ForgetFormID" >
+                        <div class="form-group">
+                            <div class="row">
+                                <section class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>注册邮箱</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="email_input" id="email_input" placeholder="请输入您的注册邮箱" onblur="onblurName(this);"/>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>验证码</h5></label>
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <input type="code" class="form-control" name="captcha_forget" id="message_verifyid1"  placeholder="请输入验证码" />
+                                </section>
+                                <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <span><img src="{:U('verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。" id="captchaimg"></span>
+                                </section>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-default pull-right" onclick="forget(this);return false;">重置密码</button>
+                        <button type="submit" class="btn btn-default pull-right" onclick="logindisplay()">登陆</button>
                     </form>
                 </div>
                 <div class="panel-body" id="RegisterDivID" style="display:none;">
@@ -164,6 +191,7 @@ function registerdisplay()
 {
    document.getElementById( "RegisterDivID" ).style.display="";
    document.getElementById( "LoginDivID" ).style.display="none";
+   document.getElementById( "ForgetDivID" ).style.display="none";
    
 }
 
@@ -171,7 +199,15 @@ function logindisplay()
 {
    document.getElementById( "RegisterDivID" ).style.display="none";
    document.getElementById( "LoginDivID" ).style.display="";
+   document.getElementById( "ForgetDivID" ).style.display="none";
    
+}
+
+function forgetdisplay()
+{
+   document.getElementById( "RegisterDivID" ).style.display="none";
+   document.getElementById( "LoginDivID" ).style.display="none";
+   document.getElementById( "ForgetDivID" ).style.display="";
 }
 
 function registervalidation()
@@ -282,6 +318,27 @@ function onblurName(obj){
                     {
                         alert("登录成功！");
                         location.href = "{:U('index/index')}";
+                    }
+                });
+            }
+
+            function forget(obc){
+                var copy = $(obc).clone();
+                $.post("{:U('forget')}",$("#ForgetFormID").serialize(),function(state){
+                    if(state){
+                        switch(state){
+                            case 1: alert("该账号不存在！");break;
+                            case 2: alert("重置密码异常，请重试或者联系管理员！");break;
+                            case 3: alert("发送邮件异常，请重试或者联系管理员！");break;
+                            case 4: alert("验证码错误！");break;
+                        }
+                        $(obc).replaceWith(copy);
+                        document.getElementById('captchaimg').click();
+                    }
+                    else
+                    {
+                        alert("系统已经发送邮件到您的邮箱，请登陆邮箱查看默认密码，并登陆后及时修改密码！");
+                        location.href = "{:U('index')}";
                     }
                 });
             }

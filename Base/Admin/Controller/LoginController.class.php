@@ -58,5 +58,49 @@ class LoginController extends Controller {
         else $this -> error('你的操作有错误！');
     }
 
+    // 重置密码 
+    public function forget(){
+        if(IS_AJAX)
+        {
+            $captcha = I('post.captcha_forget');
+            if(!verify($captcha)) {
+                $state = 4;
+                $this -> ajaxReturn($state);
+                return;    
+            }
+            $email = I('post.email_input');
+            $admin = D('Common/Useradmin');
+            $result = $admin->findbyemail($email);
+            if (!$result) {
+                $state = 1;
+                $this -> ajaxReturn($state);
+                return; 
+            }
 
+            $newpassword = randomkeys(6);
+            $upd_result = $admin->updatepassword($result['ad_id'], $result['ad_password']);
+            if (!$upd_result) {
+                $state = 2;
+                $this -> ajaxReturn($state);
+                return; 
+            }
+
+            $title      = '密码重置（系统邮件，请勿回复）';
+            $username   = $result['ad_username'];
+            $password   = $newpassword;
+
+            $fulltext   = '账号：'.$username.'<br/>密码：'.$password.'<br/><br/>'.
+                        '请尽快登陆系统，并修改密码！';
+            $send_result = send_mail($email,$title,$fulltext);
+            if (!$send_result) {
+                $state = 3;
+                $this -> ajaxReturn($state);
+                return; 
+            }
+            $state = 0;
+            $this -> ajaxReturn($state);
+            return;
+        }
+    }
+//结束
 }
