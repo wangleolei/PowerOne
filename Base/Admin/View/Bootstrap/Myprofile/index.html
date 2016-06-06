@@ -1,0 +1,26 @@
+<extend name="Public/tpl" />
+<block name="title">用户信息 - </block>
+<block name="content">
+<nav class="nav-title">
+    <h4>用户信息 <small>在这里可以查看用户的信息</small></h4>
+    <section class="pull-right">
+        <div class="input-group">
+            <span class="input-group-addon">信息类型</span>
+            <select class="form-control text-center" name="us_type" onchange="load_list(this.value);">
+                <option value="3" <eq name="on_type" value="3" >selected</eq> >管理员</option>
+                <option value="2" <eq name="on_type" value="2" >selected</eq> >QQ用户</option>
+                <option value="1" <eq name="on_type" value="1" >selected</eq> >访客统计</option>
+            </select>
+        </div>
+    </section>
+</nav>
+<table id="list-user" class="table table-striped"></table>
+<script type="text/javascript">
+// 根据状态加载数据
+function load_list(type){
+    $.get("{:U('user_list')}?type="+type,function(list){$("table#list-user").html(list);});
+}
+// 首次访问自动加载列表
+window.onload=load_list($("select[name=us_type]").val());
+</script>
+</block>

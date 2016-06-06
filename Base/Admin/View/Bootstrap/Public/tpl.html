@@ -46,9 +46,18 @@
                <li><a href="{:U('article/wechat')}" >推送到微信公众号</a></li>
             </ul>
          </li>
-         <li><a href="{:U('link/index')}">友情链接</a></li>
          <li><a href="{:U('parameter/index')}">系统设置</a></li>
-         <li><a  onclick="exitLogin();">注销登录</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               我的 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="{:U('link/index')}">友情链接</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('myprofile/upd_password')}">修改密码</a></li>
+               <li><a  onclick="exitLogin();">注销登录</a></li>
+            </ul>
+         </li>
       </ul>
    </div>
 </nav>

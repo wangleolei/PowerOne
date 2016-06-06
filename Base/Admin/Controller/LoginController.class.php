@@ -17,13 +17,12 @@ class LoginController extends Controller {
     public function login(){
         if(IS_AJAX)
         {
-
             $where['ad_username'] = I('post.username');
             $admin = M('useradmin') -> where($where) -> find();
             if($admin){
                 if($admin['ad_state']=='1'){
- //                   $password = md5(I('post.password'));
-                    $password = I('post.password');
+                    $password = md5(I('post.password'));
+ //                   $password = I('post.password');
                     if($admin['ad_password'] == $password){
                         $captcha = I('post.captcha');
                         if(verify($captcha)){
@@ -78,7 +77,7 @@ class LoginController extends Controller {
             }
 
             $newpassword = randomkeys(6);
-            $upd_result = $admin->updatepassword($result['ad_id'], $result['ad_password']);
+            $upd_result = $admin->updatepassword($result['ad_id'], $newpassword);
             if (!$upd_result) {
                 $state = 2;
                 $this -> ajaxReturn($state);

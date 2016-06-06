@@ -133,7 +133,7 @@ function timestamp_to_timeline($time,$type){
 function send_mail($to,$title,$content){ 
 //    $data = M('parameter') -> where('pa_class=3') -> select();
     $cvt = D('Common/Codedvalue');
-    $cvt1003 = $cvt->getdescbyindex($control_code,1003);
+    $cvt1003 = $cvt->getdescbyindex(58,1003);
     for($i=0;$i<count($cvt1003);$i++){
         $parameter[$cvt1003[$i]['short_desc']] = $cvt1003[$i]['long_desc'];
     }
