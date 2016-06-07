@@ -56,6 +56,7 @@ class CommonController extends Controller{
         // 右侧 box
         // 推荐文章、点击排行、最新发布
         $where['ar_state'] = 1;
+        $where['control_code'] = $control_code;
         $right['box']['hits'] = M('article')->where($where)->order('ar_hits desc')->limit(9)->field('ar_id,ar_title,ar_cover_img')->select();
         $right['box']['time'] = M('article')->where($where)->order('ar_time desc')->limit(9)->field('ar_id,ar_title,ar_cover_img')->select();
         $where['ar_position'] = array('in','1,3');

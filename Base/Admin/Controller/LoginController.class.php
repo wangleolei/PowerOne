@@ -62,7 +62,7 @@ class LoginController extends Controller {
         if(IS_AJAX)
         {
             $captcha = I('post.captcha_forget');
-            if(!verify($captcha)) {
+            if(empty($captcha) || !verify($captcha)) {
                 $state = 4;
                 $this -> ajaxReturn($state);
                 return;    

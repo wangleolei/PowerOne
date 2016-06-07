@@ -92,12 +92,12 @@
                                     <input type="code" class="form-control" name="captcha_forget" id="message_verifyid1"  placeholder="请输入验证码" />
                                 </section>
                                 <section class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <span><img src="{:U('verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。" id="captchaimg"></span>
+                                    <span><img src="{:U('verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。" id="captchaimg_forget"></span>
                                 </section>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-default pull-right" onclick="forget(this);return false;">重置密码</button>
-                        <button type="submit" class="btn btn-default pull-right" onclick="logindisplay()">登陆</button>
+                        <button type="submit" class="btn btn-default pull-right" onclick="forget(this);return false;">重置密码</button>
+                        <button type="button" class="btn btn-default pull-right" onclick="logindisplay()">登陆</button>
                     </form>
                 </div>
                 <div class="panel-body" id="RegisterDivID" style="display:none;">
@@ -333,7 +333,7 @@ function onblurName(obj){
                             case 4: alert("验证码错误！");break;
                         }
                         $(obc).replaceWith(copy);
-                        document.getElementById('captchaimg').click();
+                        document.getElementById('captchaimg_forget').click();
                     }
                     else
                     {
