@@ -24,4 +24,5 @@ return array(
     '_mail_fax'     =>'传真：',
     '_mail_content' =>'内容：',
     '_mail_send'    =>'发 送',
+    '_news'         => '最新动态',
  );
