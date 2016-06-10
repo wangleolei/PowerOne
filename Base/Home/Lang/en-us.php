@@ -1,6 +1,6 @@
 <?php
 return array(
-    '_company_name'=>'上海盈贝国际贸易有限公司',
+    '_company_name'=>'Shanghai Winbell International Co.Ltd.',
     '_welcome'=>'WELCOME TO OUR WEBSITE !',
     '_turn_to'=> 'TURN TO: ',
     '_office_tel'	=>'Office Tel',
@@ -24,4 +24,5 @@ return array(
     '_mail_fax'     =>'Fax:',
     '_mail_content' =>'Content:',
     '_mail_send'    =>'Send Out',
+    '_news'         => 'NEWS',
  );

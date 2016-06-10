@@ -254,7 +254,7 @@ $mpnews = $weixin->upload_news($news);
     // 文档操作 -> end in 2016/02/29
     public function article_operat(){
         if(IS_POST){
-            $array = array('ar_class','ar_position','ar_title','ar_keywords','ar_description','ar_source','ar_hits');
+            $array = array('control_code','ar_class','ar_position','ar_title','ar_keywords','ar_description','ar_source','ar_hits');
             $cut['width']  = 140;
             $cut['height'] = 105;
             if(I('get.id')){

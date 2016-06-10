@@ -28,6 +28,15 @@ class CodedvalueModel extends Model{
         $result = $this->where($condition) ->select();
         return $result;
     }
+//  输入control code, index, ext_value to retreive .
+    public function findbyext($control,$index,$ext){
+        if  ($control) $condition['control_code'] = $control;
+        else  $condition['control_code'] = 58;
+        $condition['index'] = $index;
+        $condition['ext_value'] = $ext;
+        $result = $this->where($condition) ->find();
+        return $result;
+    }
 //  输入control code, index, int_value to retreive short and long description.
     public function getdescbyint($control,$index,$int){
         if  ($control) $condition['control_code'] = $control;

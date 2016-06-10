@@ -78,6 +78,7 @@ class NoticeController extends AuthController {
     public function operat_add(){
         if(IS_AJAX){
             if(I('post.no_type')&&I('post.no_title')&&I('post.no_content')){
+                $add['control_code']    = I('post.no_lang');
                 $add['no_type']    = I('post.no_type');
                 $add['no_title']   = I('post.no_title');
                 $add['no_content'] = $_POST['no_content'];
@@ -110,6 +111,7 @@ class NoticeController extends AuthController {
         if(IS_AJAX&&I('post.no_id')){
             $notice = M('notice') -> where('no_id='.I('post.no_id')) -> find();
             if($notice){
+                if($notice['control_code']!=I('post.no_lang'))$save['control_code'] = I('post.no_lang');
                 if($notice['no_type']!=I('post.no_type'))$save['no_type'] = I('post.no_type');
                 if($notice['no_title']!=I('post.no_title'))$save['no_title'] = I('post.no_title');
                 if($notice['no_content']!=I('post.no_content'))$save['no_content'] = $_POST['no_content'];

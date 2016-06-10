@@ -29,10 +29,20 @@
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-xs-8">
+            <div class="col-xs-5">
                 <div class="input-group">
                     <span class="input-group-addon">关键词语</span>
                     <input type="text" class="form-control" placeholder="文档关键词，seo使用关键词，多个用小写逗号【,】 隔开，最多三个词，总计不超过16个字符" maxlength="16" name="ar_keywords" value="{$article['ar_keywords']}" required />
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon">语言</span>
+                    <select class="form-control text-center" name="no_lang">
+                        <option value="58" selected>中文</option>
+                        <option value="98" >英文</option>
+                                    
+                    </select>
                 </div>
             </div>
             <div class="col-xs-4">
@@ -48,7 +58,7 @@
             </div>
         </div>
         <div class="input-group form-group">
-            <span class="input-group-addon">导航语句</span>
+            <span class="input-group-addon">导航语句</span> 
             <input type="text" class="form-control" placeholder="导航语句，seo使用描述文本，简述，不超过128个字符" maxlength="128" name="ar_description" value="{$article['ar_description']}" required />
         </div>
         <h5><b>封面提示1</b>：勾选“使用内容的第一张图片作封面”选项又上传单独封面了，会优先使用上传的单独封面。</h5>

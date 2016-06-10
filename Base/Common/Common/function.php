@@ -133,7 +133,7 @@ function timestamp_to_timeline($time,$type){
 function send_mail($to,$title,$content){ 
 //    $data = M('parameter') -> where('pa_class=3') -> select();
     $cvt = D('Common/Codedvalue');
-    $cvt1003 = $cvt->getdescbyindex($control_code,1003);
+    $cvt1003 = $cvt->getdescbyindex(58,1003);
     for($i=0;$i<count($cvt1003);$i++){
         $parameter[$cvt1003[$i]['short_desc']] = $cvt1003[$i]['long_desc'];
     }
@@ -161,7 +161,15 @@ function send_mail($to,$title,$content){
         return false;
     }
 }
-
+//随机字符生成
+function randomkeys($length) {
+    $returnStr='';
+    $pattern = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMNOPQRSTUVWXYZ';
+    for($i = 0; $i < $length; $i ++) {
+        $returnStr .= $pattern {mt_rand ( 0, 61 )}; //生成php随机数
+    }
+    return $returnStr;
+}
 //从记录集中取出二维数组中 其中一列：PHP 5.5+ 是系统自带函数
 //array_column(array,column_key,index_key);  
 //array 必需。指定要使用的多维数组（记录集）。

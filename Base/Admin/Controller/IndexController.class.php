@@ -33,7 +33,6 @@ class IndexController extends AuthController {
             M('Articledata') -> add($addData);
         }*/
         
-        
         $this -> display();
     }
 

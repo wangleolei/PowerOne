@@ -49,6 +49,8 @@ class ClassesController extends CommonController {
             $where['ar_class'] = array('in', $classlist);
         }
         $where['ar_state'] = 1;
+        $control_code = cookie('control_code'); 
+        $where['control_code'] = $control_code;
         // 数据分页 
         $articletb = D('Common/Article');
         //$sum  = M('article') -> where($where) -> count();

@@ -20,14 +20,23 @@
                         <div class="input-group">
                             <span class="input-group-addon">类型</span>
                             <select class="form-control text-center" name="no_type">
-                                <option value="1" <eq name="on_type" value="1" >selected</eq> >说说</option>
-                                <option value="2" <eq name="on_type" value="2" >selected</eq> >公告</option>
-                                <option value="3" <eq name="on_type" value="3" >selected</eq> >轮播图</option>
-                                <option value="4" <eq name="on_type" value="４" >selected</eq> >关于我们</option>
+                                <volist name="cvt10003" id="downlist">
+                                    <option value="{$downlist.int_value}" <eq name="on_type" value="$downlist.int_value" >selected</eq> >{$downlist.short_desc}</option>
+                                </volist>
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">语言</span>
+                            <select class="form-control text-center" name="no_lang">
+                                <option value="58" selected>中文</option>
+                                <option value="98" >英文</option>
+                                    
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
                         <div class="input-group">
                             <span class="input-group-addon">轮播文章ID</span>
                             <input type="number" class="form-control" name="no_to_article" placeholder="点击轮播图后进入的文章ID" maxlength="11" value="{$notice['no_to_article']}" />
