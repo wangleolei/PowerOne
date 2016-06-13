@@ -38,9 +38,8 @@ class ClassesController extends CommonController {
             $current_title = $Articleclass->getclassname($input_subclass);
             $this -> assign('current_title', $current_title);
 
-            //目录-文章类别
+            //目录-文章类别 -- common logic handled it.
             $class['data'] = $Articleclass->getsubclasstree($input_class);
-            //var_dump($class1);
             $this -> assign('class',$class);
 
             //得到class list 

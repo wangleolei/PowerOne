@@ -3,6 +3,77 @@ namespace Common\Model;
 use Think\Model;
 
 class ArticleclassModel extends Model{
+    private $ar_class ;
+    private $control_code;
+    private $ar_parent;
+    private $ar_c_title;
+    private $ar_c_url;
+    private $ar_c_number;
+    public function set_ar_class($ar_class){
+        $this->ar_class = $ar_class;
+    }
+    public function set_control_code($control_code){
+        $this->control_code = $control_code;
+    }
+    public function set_ar_parent($ar_parent){
+        $this->ar_parent = $ar_parent;
+    }
+    public function set_ar_c_title($ar_c_title){
+        $this->ar_c_title = $ar_c_title;
+    }
+    public function set_ar_c_url($ar_c_url){
+        $this->ar_c_url = $ar_c_url;
+    }
+    public function set_ar_c_number($ar_c_number){
+        $this->ar_c_number = $ar_c_number;
+    }
+    //insert a new record into table.
+    public function insert(){
+        if ($this->ar_class)        $new_record['ar_class']     = $this->ar_class;
+        if ($this->control_code)    $new_record['control_code'] = $this->control_code;
+        if ($this->ar_parent != NULL) $new_record['ar_parent']  = $this->ar_parent;
+        if ($this->ar_c_title)      $new_record['ar_c_title']   = $this->ar_c_title;
+        if ($this->ar_c_url)        $new_record['ar_c_url']     = $this->ar_c_url;
+        if ($this->ar_c_number)     $new_record['ar_c_number']  = $this->ar_c_number;
+
+        if(!$this -> validate_parent($this->ar_parent,1)) return false;
+        $result = $this -> add($new_record);
+        if(!$result) return false;
+        return true;
+    }
+    //insert a new record into table.
+    public function update(){
+        if ($this->ar_class) $condition['ar_class']     = $this->ar_class;
+        else return false;  
+        if ($this->control_code)    $new_value['control_code'] = $this->control_code;
+        if ($this->ar_parent != NULL) {
+            $new_value['ar_parent']  = $this->ar_parent;
+            if(!$this -> validate_parent($this->ar_parent,1)) return false;
+        }
+        if ($this->ar_c_title)      $new_value['ar_c_title']   = $this->ar_c_title;
+        if ($this->ar_c_url)        $new_value['ar_c_url']     = $this->ar_c_url;
+        if ($this->ar_c_number)     $new_value['ar_c_number']  = $this->ar_c_number;
+        
+        if($this -> where($condition) -> save($new_value)) return true;
+        else  return false;
+    }
+    //validate parent, and make sure it is tree structure.
+    private function validate_parent($parent_class, $control){
+        $control = $control + 1;
+        if ($control > 100) 
+            return false;
+
+        if ($parent_class == 0) return true;
+        $condition['ar_class'] = $parent_class;
+        $parentclass = $this -> field('ar_parent') -> where($condition) -> find();
+        if($parentclass && $parentclass['ar_parent'] == 0 )
+            return true;
+        if (!$parentclass || $parentclass['ar_parent'] == $this->ar_class)
+            return false;
+        $result = $this -> validate_parent($parentclass['ar_parent'], $control);
+        if($result) return true;
+        else return false;
+    }
 //	输入其中一个分类，查找一条线上的所有分类  并且返回 ， 并且专使用到where条件
 	function getclasstreecondition($class){
         $condition1['ar_class'] = $class;
@@ -41,13 +112,19 @@ class ArticleclassModel extends Model{
 //  输入class 返回该分类所有子类以及子类的子类
     function getsubclass($parent_class){
         $subclasslist = array($parent_class);
-        $temp_subclasslist = $this -> getsubclass_temp($parent_class, 0);
+        $control_code = session('control_code'); 
+        if (!$control_code) {
+            cookie('control_code','58',3600); // 指定cookie保存时间
+        }
+
+        $temp_subclasslist = $this -> getsubclass_temp($control_code, $parent_class, 0);
         if ($temp_subclasslist)
             $subclasslist = array_merge($subclasslist, $temp_subclasslist);
         return $subclasslist;
     }
 //  输入class 返回该分类所有子类,如果类别存储打破树状结构，这里将会出现死循环。class 新增操作需要加强validation
-    private function getsubclass_temp($parent_class, $level){
+    private function getsubclass_temp($control_code, $parent_class, $level){
+        if($control_code)  $condition['control_code'] = $control_code;
         $level = $level + 1;
         if ($level > 100) return;//防止死循环，这个地方限定100层
         $condition['ar_parent'] = $parent_class;
@@ -89,6 +166,7 @@ class ArticleclassModel extends Model{
     }
 //  输入其中一个分类，查找该分类下的所有分类 并且根据所在层返回到对应数组层(tree结构用数组表示)，我们最大支持10层
     function getsubclasstree($class){
+        $control_code = session('control_code'); 
         $condition['ar_parent'] = $parent_class;
         //$temp_subclass = M('Articleclass') -> where($condition) -> field('ar_class') -> select();
         $temp_subclass = $this -> where($condition) -> field('ar_class') -> select();
@@ -98,11 +176,12 @@ class ArticleclassModel extends Model{
         $root_class = $this -> where($condition1) -> find();
         if(!$root_class) return;
 
-        $root_class['subclass'] = $this -> getsubclasstree_temp($root_class, 0);
+        $root_class['subclass'] = $this -> getsubclasstree_temp($control_code, $root_class, 0);
         return $root_class;
     }
 //  输入class 返回该分类所有子类,如果类别存储打破树状结构，这里将会出现死循环。class 新增操作需要加强validation
-    private function getsubclasstree_temp($parent_class, $level){
+    private function getsubclasstree_temp($control_code, $parent_class, $level){
+        if($control_code)  $condition2['control_code'] = $control_code;
         $level = $level + 1;
         if ($level > 100) return;//防止死循环，这个地方限定100层
         $condition2['ar_parent'] = $parent_class['ar_class'];
@@ -111,7 +190,7 @@ class ArticleclassModel extends Model{
 
         $arraylength = count($subclass);
         for ($i=0; $i < $arraylength ; $i++) { 
-            $subclass_temp = $this -> getsubclasstree_temp($subclass[$i], $level);
+            $subclass_temp = $this -> getsubclasstree_temp($control_code,$subclass[$i], $level);
             if ($subclass_temp) 
                 $subclass[$i]['subclass'] = $subclass_temp;
         }

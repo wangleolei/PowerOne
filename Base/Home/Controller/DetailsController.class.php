@@ -29,10 +29,9 @@ class DetailsController extends CommonController {
                 $Articleclass = D('Common/Articleclass');
                 $current_path = $Articleclass->getpath($article['ar_class']);
                 $this -> assign('current_path', $current_path);
-                //目录-文章类别
+                //目录-文章类别-common logic handled it
                 $parentclass = $Articleclass->getfirstleveclass($article['ar_class'],0);
                 $class['data'] = $Articleclass->getsubclasstree($parentclass);
-                //var_dump($class1);
                 $this -> assign('class',$class);
                 //show screen
                 $this -> display();

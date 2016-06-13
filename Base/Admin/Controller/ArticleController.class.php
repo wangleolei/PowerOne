@@ -207,11 +207,19 @@ $mpnews = $weixin->upload_news($news);
             if($state)$this -> ajaxReturn($state);
             else
             {
+                $class_table = D('Articleclass');
                 if(I('get.value')){
-                    $save['ar_c_title'] = I('get.value');
-                    $save['ar_parent'] = I('get.link');
-                    $save['ar_c_url'] = I('get.url');
-                    M('Articleclass') -> where('ar_class='.I('get.id')) -> save($save);
+                    $class_table->set_ar_class(I('get.id'));
+                    $class_table->set_control_code(I('get.lang_code'));
+                    $class_table->set_ar_c_title(I('get.value'));
+                    $class_table->set_ar_parent(I('get.link'));
+                    $class_table->set_ar_c_url(I('get.url'));
+                    if(!$class_table->update()) $state=4;
+//                    $save['control_code'] = I('get.lang_code');
+//                    $save['ar_c_title'] = I('get.value');
+//                    $save['ar_parent'] = I('get.link');
+//                    $save['ar_c_url'] = I('get.url');
+//                    M('Articleclass') -> where('ar_class='.I('get.id')) -> save($save);
                 }
                 else
                 {
@@ -220,15 +228,22 @@ $mpnews = $weixin->upload_news($news);
                     $save['ar_class'] = 1;
                     M('article') -> where('ar_class='.I('get.id')) -> save($save);
                 }
-                $state=0;
+                if($state == NULL) $state=0;
                 $this -> ajaxReturn($state);
             }
         }
         elseif(IS_GET)
         {
-            $add['ar_c_title'] = I('get.ar_c_title');
-            $add['ar_parent'] = I('get.ar_parent');
-            if(M('Articleclass') -> add($add))$this -> success('新增类别成功！');
+//            $add['control_code'] = I('get.lang_code');
+//            $add['ar_c_title'] = I('get.ar_c_title');
+//            $add['ar_parent'] = I('get.ar_parent');
+//            if(M('Articleclass') -> add($add))$this -> success('新增类别成功！');
+//            else $this -> error('存储数据失败！');
+            $class_table = D('Articleclass');
+            $class_table->set_control_code(I('get.lang_code'));
+            $class_table->set_ar_c_title(I('get.ar_c_title'));
+            $class_table->set_ar_parent(I('get.ar_parent'));
+            if ($class_table->insert())  $this -> success('新增类别成功！');
             else $this -> error('存储数据失败！');
         }
         else $this -> error('你的操作有错误！');

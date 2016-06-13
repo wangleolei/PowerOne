@@ -23,6 +23,8 @@ switch ($_SERVER["HTTP_HOST"]) {
 	    define('APP_PATH','./jnnewmig/');
     break;
     case "test.jnnewmig.com":
+    case "win-bell.net":
+    case "www.win-bell.net":
 	    define('APP_PATH','./winbell/');
     break;
     case "localhost":

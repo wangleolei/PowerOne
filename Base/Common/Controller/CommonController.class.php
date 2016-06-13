@@ -13,6 +13,7 @@ class CommonController extends Controller{
         if(I('get.l') == 'zh-cn') cookie('control_code','58',3600); // 指定cookie保存时间
         if(I('get.l') == 'en-us') cookie('control_code','98',3600); // 指定cookie保存时间
         $control_code = cookie('control_code'); 
+        session('control_code',$control_code);
         /****************** 记录登录状态 ******************/ 
         // 1：是否用用户记录，有则第2步，无则第3步
         // 2：是否有get code记录，有则获取登陆QQ，更新用户记录，无则结束判断
@@ -81,7 +82,7 @@ class CommonController extends Controller{
         $notice = D('Common/notice');
         $Articleclass = D('Common/Articleclass');
         $article = D('Common/article');
-        $cvt1101 = $cvt->getbyindex(58,1101);
+        $cvt1101 = $cvt->getbyindex($control_code,1101);
         $numbers = count($cvt1101);
         foreach ($cvt1101 as $key => $value) {
             $class_or_type = $value['int_value'];
