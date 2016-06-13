@@ -112,19 +112,14 @@ class ArticleclassModel extends Model{
 //  输入class 返回该分类所有子类以及子类的子类
     function getsubclass($parent_class){
         $subclasslist = array($parent_class);
-        $control_code = session('control_code'); 
-        if (!$control_code) {
-            cookie('control_code','58',3600); // 指定cookie保存时间
-        }
 
-        $temp_subclasslist = $this -> getsubclass_temp($control_code, $parent_class, 0);
+        $temp_subclasslist = $this -> getsubclass_temp($parent_class, 0);
         if ($temp_subclasslist)
             $subclasslist = array_merge($subclasslist, $temp_subclasslist);
         return $subclasslist;
     }
 //  输入class 返回该分类所有子类,如果类别存储打破树状结构，这里将会出现死循环。class 新增操作需要加强validation
-    private function getsubclass_temp($control_code, $parent_class, $level){
-        if($control_code)  $condition['control_code'] = $control_code;
+    private function getsubclass_temp($parent_class, $level){
         $level = $level + 1;
         if ($level > 100) return;//防止死循环，这个地方限定100层
         $condition['ar_parent'] = $parent_class;
