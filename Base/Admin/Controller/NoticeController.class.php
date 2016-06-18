@@ -81,7 +81,13 @@ class NoticeController extends AuthController {
                 $add['control_code']    = I('post.no_lang');
                 $add['no_type']    = I('post.no_type');
                 $add['no_title']   = I('post.no_title');
-                $add['no_content'] = $_POST['no_content'];
+//                $temp_content = I('post.no_content');
+                $temp_content = $_POST['no_content'];
+                if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
+                {
+                    $temp_content=stripslashes($temp_content);//将字符串进行处理
+                }
+                $add['no_content'] = $temp_content;
                 $session = session('admin.auth');
                 $add['no_user']    = $session['ad_id'];
                 $add['no_time']    = time();
@@ -114,7 +120,13 @@ class NoticeController extends AuthController {
                 if($notice['control_code']!=I('post.no_lang'))$save['control_code'] = I('post.no_lang');
                 if($notice['no_type']!=I('post.no_type'))$save['no_type'] = I('post.no_type');
                 if($notice['no_title']!=I('post.no_title'))$save['no_title'] = I('post.no_title');
-                if($notice['no_content']!=I('post.no_content'))$save['no_content'] = $_POST['no_content'];
+//                $temp_content = I('post.no_content');
+                $temp_content = $_POST['no_content'];
+                if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
+                {
+                    $temp_content=stripslashes($temp_content);//将字符串进行处理
+                }
+                if($notice['no_content']!=$temp_content) $save['no_content'] = $temp_content;
                 if($save)
                 {
                     if(I('post.no_type')==3)
