@@ -4,7 +4,7 @@ use Think\Model;
 
 class ArticleclassModel extends Model{
     private $ar_class ;
-    private $control_code;
+    private $control_code ;
     private $ar_parent;
     private $ar_c_title;
     private $ar_c_url;
@@ -59,6 +59,7 @@ class ArticleclassModel extends Model{
     }
     //validate parent, and make sure it is tree structure.
     private function validate_parent($parent_class, $control){
+        $condition['control_code'] = session('control_code'); 
         $control = $control + 1;
         if ($control > 100) 
             return false;
@@ -76,7 +77,9 @@ class ArticleclassModel extends Model{
     }
 //	输入其中一个分类，查找一条线上的所有分类  并且返回 ， 并且专使用到where条件
 	function getclasstreecondition($class){
+        $condition1['control_code'] = session('control_code'); 
         $condition1['ar_class'] = $class;
+        $condition2['control_code'] = session('control_code'); 
         $condition2['ar_parent'] = $class;
         $inputarray = array($class);
         //$parentclass = M('Articleclass') -> field('ar_parent') -> where($condition1) -> find();
@@ -99,6 +102,7 @@ class ArticleclassModel extends Model{
 	}
 //  输入class ，返回第一层父类
     function getfirstleveclass($class, $control){
+        $condition['control_code'] = session('control_code'); 
         $control = $control + 1;
         if ($control > 100) 
             return;
@@ -120,6 +124,7 @@ class ArticleclassModel extends Model{
     }
 //  输入class 返回该分类所有子类,如果类别存储打破树状结构，这里将会出现死循环。class 新增操作需要加强validation
     private function getsubclass_temp($parent_class, $level){
+        $condition['control_code'] = session('control_code'); 
         $level = $level + 1;
         if ($level > 100) return;//防止死循环，这个地方限定100层
         $condition['ar_parent'] = $parent_class;
@@ -139,7 +144,9 @@ class ArticleclassModel extends Model{
 
 //  输入其中一个分类，查找一条线上的所有分类 并且返回 (tree结构没有升级到用数组表示)。
         function getclasstree($class){
+        $condition1['control_code'] = session('control_code'); 
         $condition1['ar_class'] = $class;
+        $condition2['control_code'] = session('control_code'); 
         $condition2['ar_parent'] = $class;
         $inputarray = array($class);
         //$parentclass = M('Articleclass') -> field('ar_parent') -> where($condition1) -> find();
@@ -177,6 +184,7 @@ class ArticleclassModel extends Model{
 //  输入class 返回该分类所有子类,如果类别存储打破树状结构，这里将会出现死循环。class 新增操作需要加强validation
     private function getsubclasstree_temp($control_code, $parent_class, $level){
         if($control_code)  $condition2['control_code'] = $control_code;
+        else  $condition2['control_code'] = session('control_code'); 
         $level = $level + 1;
         if ($level > 100) return;//防止死循环，这个地方限定100层
         $condition2['ar_parent'] = $parent_class['ar_class'];
@@ -194,6 +202,7 @@ class ArticleclassModel extends Model{
     }
 //输入类别，返回该分支的path. e,g   技术分享->主机相关
     function getpath($class){
+            $condition['control_code'] = session('control_code'); 
             for ($i=0; $i < 10; $i++) { 
                 $condition['ar_class'] = $class;
                 $parentclass = $this->field('ar_parent, ar_c_title, ar_c_url')->where($condition) -> find();
@@ -220,6 +229,7 @@ class ArticleclassModel extends Model{
     }
 //输入类别号，返回该类别名称
     function getclassname($class){
+        $condition['control_code'] = session('control_code'); 
         $condition['ar_class'] = $class;
         $result = $this->field('ar_c_title')->where($condition) -> find();
         $classname = $result['ar_c_title'];

@@ -34,6 +34,6 @@ return array(
         'LANG_AUTO_DETECT'=>true,
         'LANG_LIST'=>'en-us,zh-cn',
         'VAR_LANGUAGE'     => 'l', // 默认语言切换变量
-    'DEFAULT_THEME' => 'default'                           //view templete 
-//    'DEFAULT_THEME' => 'winbell'                           //view templete 
+//    'DEFAULT_THEME' => 'default'                           //view templete 
+    'DEFAULT_THEME' => 'winbell'                           //view templete 
 );
