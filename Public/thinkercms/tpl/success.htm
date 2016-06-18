@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title><?php echo($message); ?></title>
+<link href="/Public/css/zh-cn-system.css" rel="stylesheet" type="text/css" />
+<script src="/Public/js/jquery.min.js"></script>
+<?php load_artdialog($dialog_theme);?>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	window.top.art.dialog({
+    init: function () {
+    	var that = this, i = <?php echo($waitSecond); ?>;
+        var fn = function () {
+            that.title(i + '秒后自动跳转');
+            !i && (jump());
+            i --;
+        };
+        timer = setInterval(fn, 1000);
+        fn();
+    },		
+	icon: 'face-smile',
+	id:'dialog_success',
+    content: '<?php echo($message); ?>',
+    ok: function () {
+		jump();
+		return true;
+    },
+    close:function(){
+    	jump();
+		return true;
+    }
+});
+});
+function jump()
+{
+	try{
+		var obj=window.top.document;
+		if($(obj).find("#rightMain").length>0)
+		{
+			if('<?php echo($jumpUrl); ?>')
+			{
+				window.top.document.getElementById('rightMain').src='<?php echo($jumpUrl); ?>';
+			}
+			else
+			{
+				$src1=window.top.document.getElementById('rightMain').contentDocument.location;
+				$src2=window.top.document.getElementById('rightMain').src;
+				$src3='<?php echo $_SERVER['HTTP_REFERER'];?>';
+				$src4=window.location;
+				if($src4==$src3)
+				{
+					window.top.document.getElementById('rightMain').src=$src1;
+				}
+				else if($src1==$src4)
+				{
+					window.top.document.getElementById('rightMain').src=$src3;
+				}
+				else
+				{
+					window.top.document.getElementById('rightMain').src=$src2;
+				}
+			}
+		}
+		else
+		{
+			if('<?php echo($jumpUrl); ?>')
+			{
+				window.top.location = '<?php echo($jumpUrl); ?>';	
+			}
+			else
+			{
+				window.top.history.go(-1);
+			}
+		}
+	}catch (e){}
+	close_dialog();
+}
+function close_dialog()
+{
+	try{
+		var list = window.top.art.dialog.list;
+		for (var i in list) {
+			if(i!=='dialog_success')
+			{
+				list[i].close();
+			}
+		};
+	}catch (e){}
+}
+</script>
+</head>
+<body>
+</body>
+</html>

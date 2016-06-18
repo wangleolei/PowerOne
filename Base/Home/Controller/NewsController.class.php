@@ -7,7 +7,10 @@ class NewsController extends CommonController {
 
     // 文章页 end in 2016/03/13
     public function index(){
-        $sum  = M('notice') -> where('no_type=1') -> count();
+        $notice = D('Notice');
+        $sum = $notice->notice_count(1);
+
+//        $sum  = M('notice') -> where('no_type=1') -> count();
         $cvt = D('Common/Codedvalue');
         $cvt1102 = $cvt->findbyext(58,1102,'number');
         if (!$cvt1102['int_value']) {
@@ -20,7 +23,8 @@ class NewsController extends CommonController {
             $this -> assign('pages',$page->pages);
         }
         // 文章信息
-        $data  = M('notice') -> where('no_type=1') -> order('no_time desc') -> limit($page->limit,$page->single) -> select();
+//        $data  = M('notice') -> where('no_type=1 and control_code=98') -> order('no_time desc') -> limit($page->limit,$page->single) -> select();
+        $data = $notice->noticelist(1,$page->limit,$page->single);
         $place = new \Org\Util\IP();
         $news  = change_news($data,$place);
         $this -> assign('news',$news);

@@ -1,0 +1,35 @@
+.header {background: #3c86c5 url(img4/hdbg.gif) no-repeat right top;}
+.header .logo{background-image: url(img4/logo.png)}
+.header .nav li, .header .nav li a{background-image: url(img4/nav_bg.png)}
+.header .nav li.tab_web a, .header .nav li.tab_web a span{background-image: url(img4/site.png);}
+.fav-help a{ background:none; height:auto; padding:0; margin:0 20px 0 0}
+.cut_line span{color:#9fc7e8}
+#Skin .s1{background-position:0 -66px}
+#Skin .s4{background-position:-14px 0px;}
+/*按钮*/
+.button-tkp,
+.button-tkp-flat {
+  background-color:#3E88D6 !important;
+  border-color: #3E88D6 !important;
+  border:1px solid;
+  color: #fff !important;}
+  .button-tkp:visited,
+  .button-tkp-flat:visited {
+    color: #fff !important;}
+  .button-tkp:hover, .button-tkp:focus,
+  .button-tkp-flat:hover,
+  .button-tkp-flat:focus {
+    background-color: #2782E2 !important;
+    border-color: #2782E2 !important;
+    color: #fff !important;}
+  .button-tkp:active, .button-tkp.active, .button-tkp.is-active,
+  .button-tkp-flat:active,
+  .button-tkp-flat.active,
+  .button-tkp-flat.is-active {
+    background-color: #2782E2 !important;
+    border-color: #2782E2 !important;
+    color: #fff !important;}
+    .main-color{color:#3E88D6;}
+       .main-color:hover{color:#4B98E9;}
+    /*商品编辑导航条*/      
+.nav-bar{ background-color:#4B98E9 !important;}   

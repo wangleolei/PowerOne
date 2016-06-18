@@ -26,8 +26,8 @@ function get_string_img($content,$cut){
             $thumb = '/upload/image/thumb/'.$array[count($array)-1];
             $image = new \Think\Image();
             $image -> open('.'.$img[1]);
-            $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$thumb); //固定比例缩放
-//            $image -> thumb($cut['width'],$cut['height'],2)->save('.'.$thumb); //缩放后填充类型
+//            $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$thumb); //固定比例缩放
+            $image -> thumb($cut['width'],$cut['height'],2)->save('.'.$thumb); //缩放后填充类型
 
             return '/powerone'.$thumb;
 //            return $thumb;

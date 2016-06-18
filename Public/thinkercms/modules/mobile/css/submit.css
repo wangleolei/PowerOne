@@ -1,0 +1,19 @@
+.free-ask{margin-top:20px;}
+.free-ask .title{width:100%; height:40px; line-height: 40px; text-align: center; color:#fff; background-color: #027bab;}
+.info-block{width:100%; padding:0 6.667%; box-sizing:border-box;}
+.info-item{width:100%; height:50px; line-height: 50px; border-bottom:1px solid #ddd;}
+.info-item .t{float:left; width:23%; text-align: right; font-size: 14px; padding-right:2%; box-sizing:border-box;}
+.info-item input,.info-item .select,.info-item textarea{float:left; width:77%; height:50px; line-height: 50px;}
+.info-item input,.info-item select,.info-item textarea{font-size: 12px; color:#999; padding:10px; box-sizing:border-box; outline: none;}
+.info-item .add-select{overflow: hidden;}
+.info-suggetions{height:90px;}
+.info-item textarea{height:90px; line-height: 28px; resize:none;}
+.info-item select{float:left;width:50%; height:50px; color:#999; text-align: center!important; appearance:none; -webkit-appearance:none; -moz-appearance:none; transform:translateY(-2px); -webkit-transform:translateY(-2px); -moz-transform:translateY(-2px); background: url('{:cdn('PUBLIC')}/home/images/mobile-arrow-gray.png') 95% 55% no-repeat; -webkit-background-size: 12px; background-size: 12px; padding-top:13px;}
+.btn-submit{width:95%; height:50px; line-height: 50px; text-align: center; padding:20px 0; margin:0 auto;}
+.btn-submit input{display: block; width:100%; height:40px; line-height: 40px; text-align: center; font-size: 16px; color:#fff; text-decoration: none; background: -webkit-gradient(linear,0 0,0 100%,from(#02a3e3),to(#027bab)); border-radius: 5px;}
+.positionA{position: absolute;}
+.positionR{position: relative;}
+.positionF{position: fixed;}
+.info-item span.redStar{position: absolute; top:0; left:-20px;width:20px; height:50px; line-height: 50px; color:#f13c27; text-align: center;}
+.info-item select:before{content:''; width:14px; height:14px; background-color: #fff; transform:rotate(-45deg) translateY(-77%); -webkit-transform:rotate(-45deg) translateY(-77%); -moz-transform:rotate(-45deg) translateY(-77%); position:absolute; top:50%; right:7px; z-index: 3;}
+.info-item select:after{content:''; width:14px; height:14px; background-color: #999; transform:rotate(-45deg) translateY(-77%); -webkit-transform:rotate(-45deg) translateY(-77%); -moz-transform:rotate(-45deg) translateY(-77%); position:absolute; top:50%; right:5px; z-index: 2;}

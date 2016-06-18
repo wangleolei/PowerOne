@@ -1,6 +1,6 @@
 <?php
 return array(
-    '_company_name'=>'Shanghai Winbell International Co.Ltd.',
+    '_company_name'=>'Shanghai Win-Bell International Co.,Ltd.',
     '_welcome'=>'WELCOME TO OUR WEBSITE !',
     '_turn_to'=> 'TURN TO: ',
     '_office_tel'	=>'Office Tel',
