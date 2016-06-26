@@ -50,14 +50,16 @@ class ArticleController extends AuthController {
             elseif($session['ar_class'])$where['ar_class'] = $session['ar_class'];
             // 状态
             if(I('get.state'))$session['ar_state'] = $where['ar_state'] = I('get.state');
-            elseif($session['ar_state'])$where['ar_state'] = $session['ar_state'];
+//            elseif($session['ar_state'])$where['ar_state'] = $session['ar_state'];
             else $session['ar_state'] = $where['ar_state'] = 1;
             session('admin.article',$session);
             // 数据分页
             $sum  = M('article') -> where($where) -> count();
             $page = new \Org\Powerone\Page($sum,15);
-            $page->ulcss = 'page-ul';
-            $page->licss = 'page-on';
+//            $page->ulcss = 'page-ul';
+//            $page->licss = 'page-on';
+            $page->ulcss = 'pagination';
+            $page->licss = '';
             $page->now   = $now_page;
             $button = $page->show();
             if(($page->pages)>1){
@@ -66,6 +68,14 @@ class ArticleController extends AuthController {
             }
             // 文章信息
             $article = M('article') -> where($where) -> order('ar_time desc') -> limit($page->limit,$page->single) -> select();
+            
+//            $page = new \Think\Page($sum,5);
+//            $page->setConfig('prev','上一页');
+//            $page->setConfig('next','下一页');
+//            $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %next% %END%');
+//            $button = $page->show();
+//            $this -> assign('button',$button);
+//            $article = M('article') -> where($where) -> order('ar_time desc') -> limit($page->firstRow,$page->listRows) -> select();
             $this -> assign('article',$article);
             // 当前状态
             $this -> assign('on_state',$where['ar_state']);

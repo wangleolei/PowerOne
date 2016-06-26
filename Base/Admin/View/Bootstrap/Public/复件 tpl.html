@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><block name="title"></block>PowerOne Admin管理系统</title>
+    <!-- ico/css/js -->
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css">
+    <script src="__PUBLIC__/js/jquery.2.1.4.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
+    <!--下面是自己的ico、css和js表-->
+    <link href="__PUBLIC__/admin/css/tpl.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+<nav class="navbar navbar-inverse  col-md-12" role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+         <span class="sr-only">切换导航</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">PowerOne 后台管理</a>
+   </div>
+   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="{:U('/')}" target="_blank">网站首页</a></li>
+         <li><a href="{:U('index/index')}">后台首页</a></li>
+         <li><a href="{:U('user/index')}">用户信息</a></li>
+         <li><a href="{:U('notice/index')}">消息类</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               文档维护 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="{:U('article/article_publish')}">编写文档</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/index')}">已发布文档</a></li>
+               <li><a href="{:U('article/article_box')}">存稿箱与回收站</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/Article_class')}">资讯类别管理</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('article/wechat')}" >推送到微信公众号</a></li>
+            </ul>
+         </li>
+         <li><a href="{:U('parameter/index')}">系统设置</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               我的 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="{:U('link/index')}">友情链接</a></li>
+               <li class="divider"></li>
+               <li><a href="{:U('myprofile/upd_password')}">修改密码</a></li>
+               <li><a  onclick="exitLogin();">注销登录</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+
+
+
+
+
+
+       <!-- nav start -->
+        <nav class="navbar-default navbar-static-side col-md-2">
+            <div class="sidebar-collapse">
+                <div class="project-img" id="project-img">
+                    <p><img src="img/app-default.jpg" id="projectImg" border="0"><span class="bg"></span><span class="btn"><i class="fa fa-refresh"></i><br>刷新项目</span></p>
+                </div>
+                <div class="sidebar-menus-icon"><span class="fa fa-navicon" title="展开" alt="展开"></span></div>
+                <ul class="nav side-menu" id="side-menu">
+                    <li class="divider"></li>
+                    <li class="active" data-url="projectInfo.html" for="main" alt="项目概况" title="项目概况">
+                        <a href="javascript:void(0)"><i class="fa fa-sitemap"></i> <span class="nav-label">项目概况</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="bugActive.html" for="main" alt="活动BUG" title="活动BUG" class="li-bugActive">
+                        <a href="javascript:void(0)"><i class="fa fa-clock-o"></i> <span class="nav-label">活动BUG <sup class="badge bgDefault" id="bugsActive"></sup></span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="bugAll.html" for="main" alt="所有BUG" title="所有BUG" class="li-bugAll">
+                        <a href="javascript:void(0)"><i class="fa fa-bug"></i> <span class="nav-label">所有BUG</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="count.html" for="main" alt="BUG统计" title="BUG统计" class="li-count">
+                        <a href="javascript:void(0)"><i class="fa fa-pie-chart"></i> <span class="nav-label">BUG统计</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li class="divider"></li>
+                    <li data-url="bugAssignToMe.html" for="main" alt="我的待办" title="我的待办">
+                        <a href="javascript:void(0)"><i class="fa fa-flask"></i> <span class="nav-label">我的待办 <sup class="badge bgDefault" id="bugsAssignToMe"></sup></span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="bugFixByMe.html" for="main" alt="分配给我" title="分配给我">
+                        <a href="javascript:void(0)"><i class="fa fa-sign-in"></i> <span class="nav-label">分配给我</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="bugAssignByMe.html" for="main" alt="我的分配" title="我的分配">
+                        <a href="javascript:void(0)"><i class="fa fa-sign-out"></i> <span class="nav-label">我的分配</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li class="divider"></li>
+                    <li data-url="notice.html" for="main" alt="项目通知" title="项目通知" class="li-notice">
+                        <a href="javascript:void(0)"><i class="fa fa-bullhorn"></i> <span class="nav-label">项目通知</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                    <li data-url="version.html" for="main" alt="版本管理" title="版本管理" class="li-version">
+                        <a href="javascript:void(0)"><i class="fa fa-flag-o"></i> <span class="nav-label">版本管理</span></a><span class="right fa fa-angle-left" alt="隐藏" title="隐藏"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- nav end -->
+
+<article class="container content col-md-10">
+<block name="content">这是内容</block>
+</article>
+
+<script>
+    function exitLogin(){
+        if(confirm("要退出当前登录吗？")){
+            $.get("{:U('login/exit_login')}",function(state){
+                if (state){
+                    alert("退出成功！");
+                    location.href = "{:U('login/index')}";
+                }
+                else alert("退出失败！");
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

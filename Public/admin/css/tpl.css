@@ -1,0 +1,10 @@
+@charset "utf-8";
+/******* 标签重定义 *******/
+body{height:100%;font-family: 微软雅黑 !important;min-width: 100%; background-color: #f0f0f0;}/*背景*/
+
+
+/*mine*/
+.content{
+    margin-top: 66px; overflow: scroll; height: 570px;
+}
+

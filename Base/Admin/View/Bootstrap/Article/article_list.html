@@ -86,21 +86,30 @@
 <if condition="$button neq null">
 <tfoot><tr><td colspan="6" class="text-center">{$button}</td></tr></tfoot>
 <script type="text/javascript">
-$(".page-ul li a").removeAttr("href");
-$(".page-ul li a").click(function()
-    {
-        var active = $('.page-ul li.page-on a').text();        // 当前页
-        var button = $(this).text();                           // 点击的按钮
-        switch(button)
-        {
-        case '上一页': var to = (parseInt(active)-1); break;
-        case '下一页': var to = (parseInt(active)+1); break;
-        case '尾页'  : var to = {$pages};             break;
-        case '首页'  : var to = 1;                    break;
-        default      : var to = button;
-        }
-        $.get("{:U('article_list')}?page="+to,function(list){$("table#list-article").html(list);});
-    });
+
+$(".pagination li a").click(function(e){
+    e.preventDefault();
+    var link = $(this).attr("href");
+    if(link){
+        $.get(link,function(list){$("table#list-article").html(list);});    
+    }
+});
+//$(".page-ul li a").removeAttr("href");
+//$(".page-ul li a").click(function()
+//    {   
+//        var active = $('.page-ul li.page-on a').text();        // 当前页
+//        var button = $(this).text();                           // 点击的按钮
+//        switch(button)
+//        {
+//        case '上一页': var to = (parseInt(active)-1); break;
+//        case '下一页': var to = (parseInt(active)+1); break;
+//        case '尾页'  : var to = {$pages};             break;
+//        case '首页'  : var to = 1;                    break;
+//        default      : var to = button;
+//        }
+//        $.get("{:U('article_list')}?page="+to,function(list){$("table#list-article").html(list);});
+//
+//    });
 </script>
 </if>
 <script type="text/javascript">
