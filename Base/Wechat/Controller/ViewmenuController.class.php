@@ -13,13 +13,13 @@ class ViewmenuController extends Controller {
 		$menu_content = I('post.menu_content');
 		//$weixin = new \Think\Weixin_adv($appid, $appsecret);
 		$weixin = new \Common\Logic\WechatadvLogic($appid, $appsecret);  
-//		$res = $weixin->get_menu($data);
+		$res = $weixin->get_menu($data);
 //		var_dump($weixin->get_groups());
 //		$media3 = $weixin->upload_media("thumb","1462168421124465.jpg");
 //		var_dump("@".dirname(__FILE__).'\\'.'1462168421124465.jpg');
 
 //        echo dirname(__FILE__).'/1462168421124465.jpg';
-		$uploadpic = $weixin->upload_media("thumb",dirname(__FILE__).'\1462168421124465.jpg');
+/*		$uploadpic = $weixin->upload_media("thumb",dirname(__FILE__).'\1462168421124465.jpg');
 		echo $uploadpic['thumb_media_id']. "          " ;
 //		$news[] = array("thumb_media_id"=>$thumb_media_id3, 
 
@@ -41,10 +41,10 @@ echo "    ".$mpnews['media_id']."                ";
         $data = $mpnews['media_id'];
 		$sentres = $weixin->mass_send_group($groupid, $type, $data);
 		var_dump($sentres);
-
+*/
 		$menu_content = $res;
 		$this -> assign('menu_content',$menu_content);  
-//        $this -> display('index');
+        $this -> display('index');
 
 	}
 }

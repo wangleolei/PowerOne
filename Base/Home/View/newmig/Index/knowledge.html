@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>业绩应用</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body>
+<include file='Public/header' />
+
+
+
+<div class="container">
+      <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                
+                <div class="indexhotarticle">&nbsp;</div>
+     <section class="blogclass">             
+                  <ul class="product_list">
+                  
+                                       	<li class="indexhotarticle" style="list-style-type:none;">
+                                            
+                                            <a >米顿罗业绩</a></li></br>
+                                        
+                                        <li class="indexhotarticle" style="list-style-type:none;">
+                                            
+                                            <a >山东应用现场</a></li></br>
+
+
+                  </ul>
+    </section>
+                
+            </div>
+<!--
+    <div class="box1">
+-->
+
+
+
+<!-- -->
+            <div class="col-lg-8 col-md-6 col-xs-12"> 
+                <section class="indexhotarticle">米顿罗业绩</section>
+                <section class="indexImg">
+                    <img src="__PUBLIC__/newmig/img/company/yejiyingyong.jpg" style="width: 90%;">
+                </section>
+                
+            </div> 
+
+
+     </div>
+
+
+
+    <script>
+    $(".blogclass a").click(function()
+        {
+            $("html,body").animate({scrollTop:$("body").offset().top},500);
+               
+	            if($(this).html() == '米顿罗业绩'){
+	               
+	                    $("section.indexhotarticle").html('米顿罗业绩');
+	                    $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/yejiyingyong.jpg" style="width: 90%;">');
+	                
+	            } 
+	            if($(this).html() == '山东应用现场'){
+	                    $("section.indexhotarticle").html('山东应用现场');
+	                  
+	                    $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/shandongxianchang.jpg" style="width: 90%;">');
+	                  
+	            }
+
+        });
+    
+    </script> 
+    
+</div>
+
+<include file='Public/footer' />
+</body>
+</html>

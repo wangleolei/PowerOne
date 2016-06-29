@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+<!--
+    <title>{$wwwdata['NAME']} — 首页</title>
+-->
+    <title>新米格欢迎您! 首页</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body style="margin-top:0pt;BACKGROUND-COLOR: #E9F2FA;">
+<include file='Public/header' />
+<article class="container indexslide">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="#"><img src="__PUBLIC__/newmig/img/slider/220.jpg" style="width: 100%;"></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="__PUBLIC__/newmig/img/slider/20160329.jpg" style="width: 100%;"></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="__PUBLIC__/newmig/img/slider/1973.jpg" style="width: 100%;"></a>
+            </div>
+        </div>
+            
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">上一个</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">下一个</span>
+        </a>
+
+    </div>
+</article>
+<div class="container">
+      <div class="row">
+        <article  class="well col-lg-12 col-md-12 indexwell">
+
+   <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="center_title_main2">
+                <a href="/#">
+                <img src="__PUBLIC__/newmig/img/slider/index_new.png" /></a>
+        </div>
+        <div style="clear: both;"></div>
+
+        
+          <!-- <ul class="news">
+          
+               <li class="active"><a href="#">Home</a></li>  
+              <li style="list-style-type:none;">&nbsp;&nbsp;</li> 
+               <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">2015年我们搬家啦！</a></li>
+                            
+                                <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">Factory Inspection for STS Clor...</a></li>
+                            
+                                <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">污水处理投药计量泵电镀自动加药泵...</a></li>
+                            
+                                <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">怎样稳定计量泵的流量及计量精度</a></li>
+                            
+                                <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">超声波液位计应用于黄河水位测量</a></li>
+                            
+                                <li style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">首都品牌加氯机中国应用（部分）</a></li>
+
+          </ul>
+          <ul class="menu1">
+            <volist name="softtop5" id="softtop5data">
+                <section class="indexarticle">
+                        <li><a href="{:U('/lookblog')}/{$softtop5data.blog_number}">{$softtop5data.blog_name}</a></li>
+                </section>
+            </volist>
+          </ul>  -->
+            <ul class="menu1">
+                        <volist name="news" id="newsdata">
+                            <section class="indexarticle">
+                                <li><a href="{:U('/news_'.$newsdata['no_id'])}">{$newsdata.no_title}</a><span class='pull-right'>{$newsdata['no_time']|timestamp_to_timeline}</span>
+                                </li>
+                            </section>
+                        </volist>
+            </ul>
+        <div class="at2"><span><a href="#">>>了解详情</a></span> </div>
+      <div class="clear"></div>
+    </div>
+<!--
+    <div class="box1">
+-->
+
+
+
+<!-- 产品展示 -->
+<div class="col-lg-8 col-md-6 col-xs-12"> 
+    <div class="center_title_main2">
+                <a href="/#">
+                <img src="__PUBLIC__/newmig/img/slider/index_product.png" /></a>
+    </div>
+    <div class="marquee">
+    <ul>
+        <volist name="right['box']['recom']" id="recomData">
+            <li><a href="{:U('/details/'.$recomData['ar_id'])}"><img height="140" class="img-rounded"  src="{$recomData['ar_cover_img']}"/><em>{$recomData['ar_title']} </em></a></li>
+        </volist>
+
+    </ul>
+    </div>
+</div> 
+
+
+
+
+
+<!--    联系我们 -->
+   <div class="col-lg-4 col-md-6 col-xs-12">    	
+       <div class="center_title_main2">
+                <a href="/#">
+                <img src="__PUBLIC__/newmig/img/slider/contact1.png" /></a>
+        </div>
+
+      	   <br/>   
+                     <!--   <span style='font-family:Microsoft YaHei;color:#003399;font-size:16px;'>销售咨询：<br/> </span>   -->
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>地址：山东省济南市高新区舜华路2000舜泰广场8号楼1-1102A<br /></span>
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>传真：0531-67808193</span><br />
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>销售热线：0531-67808379 / 13701661567 / 18678820805</span><br />
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>邮箱：</span><a href='mailto:sales01_newmig@126.com'><span style='font-family:Microsoft YaHei;font-size:14px;'>sales01_newmig@126.com</span></a><span style='font-family:Microsoft YaHei;font-size:14px;'>&nbsp;</span><br />
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>QQ: 3199345716</span><br />
+
+                         <br/>   
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>服务热线：0531-67808357/ 18678820705</span><br />
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>邮箱：</span><a href='mailto:service02_newmig@126.com'><span style='font-family:Microsoft YaHei;font-size:14px;'>service02_newmig@126.com</span></a><span style='font-family:Microsoft YaHei;font-size:14px;'> &nbsp;</span><br/>
+                        <span style='font-family:Microsoft YaHei;font-size:14px;'>QQ: 3361465943</span><br />
+                        <br/> 
+                        <br/> 
+
+    </div>
+
+    <!--公司介绍-->
+    <div class="col-lg-8 col-md-6 col-xs-12">
+        <div class="center_title_main2">
+                <a href="/#">
+                <img src="__PUBLIC__/newmig/img/slider/INFO1.png" /></a>
+        </div>
+
+        <div class="indexsign"> 
+            </br>
+        <p>
+        济南新米格公司作为美国米顿罗公司2016年最具重要意义的中国市场战略变革，米顿罗公司首次设立米顿罗计量泵山东省存货商。
+        </p>
+         <p>
+        作为中国环保三强的山东省，一直是米顿罗公司最为关注的战略市场，设立山东存货商，是对聚焦在水处理、电力、化工、石化、油气田等行业的山东环保产业战线的工程公司、环保用户最有利支持，持续提供最具性价比、高质量的计量泵产品和最完善的售后服务。
+        </p>
+        <p>该具有历史意义的存货商重担将由具有11年米顿罗公司工作经历、丰富计量泵经验的李海东总经理担当，带领济南新米格工业设备有限公司团队，秉持“职业、专业、敬业、事业”之理念，勇于担当，作为变革新起点，回报山东环保同仁最大支持行动，开创米顿罗在山东新里程！</p>
+
+
+        </div>
+    </div>
+    
+
+<!-- mine end-->
+    </div>
+
+</div>
+
+
+
+</body>
+<footer>
+<include file='Public/footer' />
+</footer>
+</html>
+
+
+<!-- CSS JS for 产品滚动条。 -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.marquee').kxbdMarquee({
+            direction:'left',
+            eventA:'mouseenter',
+            eventB:'mouseleave'
+    });
+});
+</script> 
+<script>
+//滚动
+(function($){
+
+    $.fn.kxbdMarquee = function(options){
+        var opts = $.extend({},$.fn.kxbdMarquee.defaults, options);
+        
+        return this.each(function(){
+            var $marquee = $(this);//滚动元素容器
+            var _scrollObj = $marquee.get(0);//滚动元素容器DOM
+            var scrollW = $marquee.width();//滚动元素容器的宽度
+            var scrollH = $marquee.height();//滚动元素容器的高度
+            var $element = $marquee.children(); //滚动元素
+            var $kids = $element.children();//滚动子元素
+            var scrollSize=0;//滚动元素尺寸
+            var _type = (opts.direction == 'left' || opts.direction == 'right') ? 1:0;//滚动类型，1左右，0上下
+
+            //防止滚动子元素比滚动元素宽而取不到实际滚动子元素宽度
+            $element.css(_type?'width':'height',10000);
+            //获取滚动元素的尺寸
+            if (opts.isEqual) {
+                scrollSize = $kids[_type?'outerWidth':'outerHeight']() * $kids.length;
+            }else{
+                $kids.each(function(){
+                    scrollSize += $(this)[_type?'outerWidth':'outerHeight']();
+                });
+            }
+            //滚动元素总尺寸小于容器尺寸，不滚动
+            if (scrollSize<(_type?scrollW:scrollH)) return; 
+            //克隆滚动子元素将其插入到滚动元素后，并设定滚动元素宽度
+            $element.append($kids.clone()).css(_type?'width':'height',scrollSize*2);
+            
+            var numMoved = 0;
+            function scrollFunc(){
+                var _dir = (opts.direction == 'left' || opts.direction == 'right') ? 'scrollLeft':'scrollTop';
+                if (opts.loop > 0) {
+                    numMoved+=opts.scrollAmount;
+                    if(numMoved>scrollSize*opts.loop){
+                        _scrollObj[_dir] = 0;
+                        return clearInterval(moveId);
+                    } 
+                }
+                if(opts.direction == 'left' || opts.direction == 'up'){
+                    var newPos = _scrollObj[_dir] + opts.scrollAmount;
+                    if(newPos>=scrollSize){
+                        newPos -= scrollSize;
+                    }
+                    _scrollObj[_dir] = newPos;
+                }else{
+                    var newPos = _scrollObj[_dir] - opts.scrollAmount;
+                    if(newPos<=0){
+                        newPos += scrollSize;
+                    }
+                    _scrollObj[_dir] = newPos;
+                }
+            };
+            //滚动开始
+            var moveId = setInterval(scrollFunc, opts.scrollDelay);
+            //鼠标划过停止滚动
+            $marquee.hover(
+                function(){
+                    clearInterval(moveId);
+                },
+                function(){
+                    clearInterval(moveId);
+                    moveId = setInterval(scrollFunc, opts.scrollDelay);
+                }
+            );
+            
+            //控制加速运动
+            if(opts.controlBtn){
+                $.each(opts.controlBtn, function(i,val){
+                    $(val).bind(opts.eventA,function(){
+                        opts.direction = i;
+                        opts.oldAmount = opts.scrollAmount;
+                        opts.scrollAmount = opts.newAmount;
+                    }).bind(opts.eventB,function(){
+                        opts.scrollAmount = opts.oldAmount;
+                    });
+                });
+            }
+        });
+    };
+    $.fn.kxbdMarquee.defaults = {
+        isEqual:true,//所有滚动的元素长宽是否相等,true,false
+        loop: 0,//循环滚动次数，0时无限
+        direction: 'left',//滚动方向，'left','right','up','down'
+        scrollAmount:1,//步长
+        scrollDelay:20,//时长
+        newAmount:2,//加速滚动的步长
+        eventA:'mousedown',//鼠标事件，加速
+        eventB:'mouseup'//鼠标事件，原速
+    };
+    
+    $.fn.kxbdMarquee.setDefaults = function(settings) {
+        $.extend( $.fn.kxbdMarquee.defaults, settings );
+    };
+    
+})(jQuery);
+
+</script>
+<style>
+a{ font-size:13px; color:#333333; text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+img{ border:none;}
+
+.marquee {width:100%;height:190px;overflow:hidden;border:0px solid #333; margin-top:20px;}
+.marquee li{ display:inline; float:left; margin-right:10px;}
+.marquee li a{ width:160px; height:190px; display:block; float:left; text-align:center; font-size:14px;}
+.marquee li a:hove{ text-decoration:none;}
+.marquee li img {width:140px; height:140px;}
+.marquee li em{font-style: normal; height:24px; line-height:24px; display:block; margin-top:8px;}
+</style>

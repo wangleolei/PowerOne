@@ -2,6 +2,7 @@ ThinkPHP/*
 jnnewmig/*
 Runtime/*
 Public/newmig/*
+Public/winbell/*
 Base/Common/Conf/*
 Base/Runtime/*
 upload/*

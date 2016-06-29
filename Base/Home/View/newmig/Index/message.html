@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>资料下载</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body >
+<include file='Public/header' />
+
+
+
+
+<div class="container">
+      <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                
+                <div class="indexhotarticle">下载中心</div>
+     <section class="blogclass">             
+                  <ul class="product_list">
+                  
+                                       <li class="indexhotarticle" style="list-style-type:none;" >
+                                            
+                                            <a >样品</a></li> </br>
+                                        <li class="indexhotarticle" style="list-style-type:none;">
+                                            
+                                            <a >说明书</a></li></br>
+
+
+
+                  </ul>
+    </section>
+                
+            </div>
+<!--
+    <div class="box1">
+-->
+
+
+
+<!-- -->
+            <div class="col-lg-8 col-md-6 col-xs-12"> 
+                <section class="indexhotarticle">样本下载</section>
+                <section class="indexImg">
+                   <div id="download1">
+                        <a href='__PUBLIC__/newmig/files/mRoy-item/G系列GMA型计量泵.pdf' target='_blank'><span style='font-size:14px;font-family:Microsoft YaHei;color:#e53333;'>G系列GMA型计量泵样本</span></a></br> 
+                        <a href="__PUBLIC__/newmig/files/mRoy-item/G系列GMGB型机械隔膜计量泵.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">G系列GMGB型机械隔膜计量泵样本</span></file></br> 
+                                <a href="__PUBLIC__/newmig/files/mRoy-item/Milroyal B系列高性能液压隔膜计量泵.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">Milroyal B系列高性能液压隔膜计量泵样本</span></a></br> 
+                                <a href="__PUBLIC__/newmig/files/mRoy-item/MROY系列液压膜计量泵.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">MROY系列液压膜计量泵样本</span></a></br> 
+                                <a href="__PUBLIC__/newmig/files/mRoy-item/PRIMEROYAL系列计量泵.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">PRIMEROYAL系列计量泵样本</span></a></br>
+                   </div>
+                   <div id="download2" style="display:none" >
+                        <a href="__PUBLIC__/newmig/files/item-introduce/G系列B型隔膜计量泵GB_MR.CHN.339-0049-000.08_2014.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">G系列B型隔膜计量泵说明书</span></a></br>
+
+<a href="__PUBLIC__/newmig/files/item-introduce/G系列GMA型隔膜计量泵GMA_MR.CHN.160-0707-001.07_2015.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">G系列GMA型隔膜计量泵说明书</span></a></br>
+
+<a href="__PUBLIC__/newmig/files/item-introduce/G系列M型隔膜计量泵GM_MR.CHN.339-0080-000.07_2015.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">G系列M型隔膜计量泵说明书</span></a></br>
+
+<a href="__PUBLIC__/newmig/files/item-introduce/MilroyalB使用说明书.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">Milroyal B 使用说明书</span></a></br>
+
+<a href="__PUBLIC__/newmig/files/item-introduce/mRoyXW系列计量泵MR.CHN.339-0060-000.08_2014.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">mRoy XW 系列计量泵说明书</span></a></br>
+
+<a href="__PUBLIC__/newmig/files/item-introduce/mRoy系列计量泵MR.CHN.339-0047-000.01_2014.pdf" target="_blank"><span style="font-size:14px;font-family:Microsoft YaHei;color:#e53333;">mRoy系列计量泵说明书</span></a></br>
+
+                   </div>
+                </section>
+                
+            </div> 
+
+
+     </div>
+
+
+
+    <script>
+    $(".blogclass a").click(function()
+        {
+            $("html,body").animate({scrollTop:$("body").offset().top},500);
+                if($(this).html() == '样品'){
+                   
+                        $("section.indexhotarticle").html('样品下载');
+                        $("#download2").hide();
+                        $("#download1").show();
+                    
+                } 
+                if($(this).html() == '说明书'){
+                        $("section.indexhotarticle").html('说明书下载');
+                        $("#download1").hide();
+                        $("#download2").show();
+                        // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">');
+                      
+                }
+                
+
+        });
+    
+    </script> 
+    
+</div>
+<include file='Public/footer' />
+</body>
+</html>

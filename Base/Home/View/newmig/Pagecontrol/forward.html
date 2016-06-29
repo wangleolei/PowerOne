@@ -1,0 +1,53 @@
+<volist name="forward" id="forwarddata">
+    <section class="panel panel-default forward">
+        <header class="panel-heading">
+            <time>{$forwarddata.forward_time}</time><span class="pull-right">{$forwarddata.forward_name}</span>
+        </header>
+        <div class="panel-body">
+            <section>
+                <img src="__PUBLIC__/newmig/img/about_img.jpg" class="img-circle"/>
+            </section>
+            <p>{$forwarddata.forward_content}</p>
+        </div>
+    </section>
+</volist>
+<section class="text-center">
+    <ul class="pagination">
+        <if condition="$page eq nopage">
+            <li class="active"><span class="current">1</span></li>
+            <else />{$page}
+        </if>
+    </ul>
+</section>
+<script>
+$(".pagination li a").click(function()
+    {
+        $("html,body").animate({scrollTop:$("body").offset().top},500);
+        var active = $('.pagination li span').html();   //当前页
+        var pagenumber = $(this).html();                //页数
+        switch(pagenumber)
+        {
+        case '上一页':
+            var gonumber = (parseInt(active)-1);
+            break;
+        case '下一页':
+            var gonumber = (parseInt(active)+1);
+            break;
+        case '末页':
+            var gonumber = '{$forwardpages["pages"]}';
+            break;
+        case '首页':
+            var gonumber = 1;
+            break;
+        default:
+            var gonumber = pagenumber;
+            break;
+        }
+        $.get("{:U('pagecontrol/forward')}?page="+gonumber,function(response)
+        {
+
+            $("#forward").html(response);
+        });
+        return false;
+    });
+</script>

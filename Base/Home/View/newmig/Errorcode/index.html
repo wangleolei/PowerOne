@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>MF Error Code 维护系统</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body>
+<include file='Public/header' />
+<div class="container">
+  <section class="well messagetool">
+    <header>
+        <h3>MF Error Code 维护系统</h3>
+    </header>
+    <form action="{:U('errorcode/index')}" method="post" name="form1" >
+        <div class="input-group">
+            <span class="input-group-addon" >Language</span>
+            <select name="Language"  id="Languageid" class="form-control" {$displaytype.textlanguage} >  
+              <option value="COBOL" selected="selected" >COBOL</option>
+              <option value="DB2">DB2</option>
+              <option value="JCL">JCL</option>
+              <option value="CICS">CICS</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Error Code</span>
+            <input type="text" class="form-control" name="Code" id="Codeid" placeholder="请输入Error Code。" maxlength="10"  {$displaytype.textcode} value = {$_POST['Code']} >
+        </div>
+        <div class="messagebutton text-right">
+            <button type="submit" class="btn btn-danger" name="btninq" id="btninqid" {$displaytype.btninq}>查询</button>
+        </div>
+
+
+        <div class="input-group">
+            <span class="input-group-addon">Reason</span>
+            <textarea class="form-control" name="Reason" id="Reasonid" maxlength="280" rows = 3 {$displaytype.textreason}>{$errorcode.reason}</textarea>
+        </div>
+                <div class="input-group">
+            <span class="input-group-addon">Description</span>
+            <textarea class="form-control" name="Description" id="Descriptionid" maxlength="1200" rows = 4 {$displaytype.textdescription}>{$errorcode.description}</textarea>
+        </div>
+                <div class="input-group">
+            <span class="input-group-addon">System Action</span>
+            <textarea class="form-control" name="Action" id="Actionid" maxlength="500" rows = 3 {$displaytype.textaction}>{$errorcode.action}</textarea>
+        </div>
+                <div class="input-group">
+            <span class="input-group-addon">User Response</span>
+            <textarea class="form-control" name="Response" id="Responseid"  maxlength="1000" rows = 4 {$displaytype.textresponse}>{$errorcode.response}</textarea>
+        </div>
+        <div class="messagebutton text-right">
+            <button type="button" class="btn btn-danger" id="btnaddid"  onclick="setadddisplay()" {$displaytype.btnadd}>新增</button>
+            <button type="submit" class="btn btn-danger" name="btndel" id="btndelid" {$displaytype.btndel}>删除</button>
+            <button type="button" class="btn btn-danger" id="btnupdid" {$displaytype.btnupd} onclick="setupddisplay()">修改</button>
+            <button type="submit" class="btn btn-danger" name="btncancel" id="btncancelid" onclick="setcanceldisplay()"{$displaytype.btncancel}>取消</button>
+            <button type="submit" class="btn btn-danger" id="btnsaveid" onclick="setsavedisplay()" {$displaytype.btnsave} >保存</button>
+            
+        </div>
+<!--
+        <div class="input-group">
+            <span class="input-group-addon">字符验证</span>
+            <input type="text" class="form-control" name="message_verify" placeholder="请输入验证码。" />
+        </div>
+        <div class="messagebutton text-right">
+            <span><img src="{:U('message/verify')}" onClick="this.src=this.src+'?'+Math.random();" title="点击更换验证码。"></span>
+            <button type="submit" class="btn btn-danger" name="messagetype" value="{$lookblog['blog_number']}">留言</button>
+        </div>
+-->
+      {$test}
+    </form>
+  </section>
+
+</div>
+<include file='Public/footer' />
+</body>
+</html>
+
+<script type="text/javascript">
+if ($_POST['Language']) {document.form1.Language.value = '{$_POST['Language']}';};
+
+function setupddisplay()
+{
+    document.getElementById( "Languageid" ).setAttribute("disabled",'ture');
+    document.getElementById( "Codeid" ).setAttribute("readonly",'ture');
+    document.getElementById( "Reasonid" ).removeAttribute("readonly");
+    document.getElementById( "Descriptionid" ).removeAttribute("readonly");
+    document.getElementById( "Actionid" ).removeAttribute("readonly");
+    document.getElementById( "Responseid" ).removeAttribute("readonly");
+    document.getElementById( "btninqid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btnaddid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btndelid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btnupdid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btncancelid" ).removeAttribute("disabled");
+    document.getElementById( "btnsaveid" ).removeAttribute("disabled");
+    document.getElementById( "btnsaveid" ).setAttribute("name", 'btnupd');
+}
+function setcanceldisplay()
+{
+    document.getElementById( "Languageid" ).removeAttribute("disabled");
+}
+function setsavedisplay()
+{
+    document.getElementById( "Languageid" ).removeAttribute("disabled");
+}
+function setadddisplay()
+{
+    document.getElementById( "Languageid" ).removeAttribute("disabled");
+    document.getElementById( "Codeid" ).removeAttribute("readonly");
+    document.getElementById( "Reasonid" ).removeAttribute("readonly");
+    document.getElementById( "Descriptionid" ).removeAttribute("readonly");
+    document.getElementById( "Actionid" ).removeAttribute("readonly");
+    document.getElementById( "Responseid" ).removeAttribute("readonly");
+    document.getElementById( "btninqid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btnaddid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btndelid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btnupdid" ).setAttribute("disabled",'ture');
+    document.getElementById( "btncancelid" ).removeAttribute("disabled");
+    document.getElementById( "btnsaveid" ).removeAttribute("disabled");
+    document.getElementById( "btnsaveid" ).setAttribute("name", 'btnadd');
+    document.form1.Code.value = '';
+    document.form1.Reason.value = '';
+    document.form1.Description.value = '';
+    document.form1.Action.value = '';
+    document.form1.Response.value = '';
+}
+</script>
+

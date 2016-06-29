@@ -10,9 +10,7 @@ return array(
     'URL_ROUTE_RULES' => array(
         // 文章与文章分页
         '/^article\/(\d{1,})$/'             =>  'article/index?id=:1',
-        '/^article\/(\d{1,})_(\d{1,})$/'    =>  'article/index?id=:1&page=:2',
         '/^details\/(\d{1,})$/'             =>  'details/index?id=:1',
-        '/^details\/(\d{1,})_(\d{1,})$/'    =>  'details/index?id=:1&page=:2',
         // 文章类别与分页
         '/^articles\/(\d{1,})$/'            =>  'articles/index?class=:1',
         '/^articles\/(\d{1,})_(\d{1,})$/'   =>  'articles/index?class=:1&page=:2',
@@ -27,6 +25,7 @@ return array(
         // 搜索分页
         '/^search\/([^_]{1,})$/'            =>  'search/index?search=:1',
         '/^search\/([^_]{1,})_(\d{1,})$/'   =>  'search/index?search=:1&page=:2',
+        '/^(\d{1,})$/'                      =>  'index/common?index=:1',
      ),
      //配置项=>配置值
         'LANG_SWITCH_ON'=>true,
@@ -34,6 +33,7 @@ return array(
         'LANG_AUTO_DETECT'=>true,
         'LANG_LIST'=>'en-us,zh-cn',
         'VAR_LANGUAGE'     => 'l', // 默认语言切换变量
-    'DEFAULT_THEME' => 'default'                           //view templete 
+//    'DEFAULT_THEME' => 'default'                           //view templete 
 //    'DEFAULT_THEME' => 'winbell'                           //view templete 
+    'DEFAULT_THEME' => 'newmig'                           //view templete 
 );

@@ -46,8 +46,7 @@ class IndexController extends CommonController {
                     break;
             }
         }
-        $current_title = "公司名字";
-        $this -> assign('current_title',$current_title);
+
         // 8篇最新技术分享的文章
         //$Articleclass = D('Common/Articleclass');
         //$where1 = $Articleclass->getclasstreecondition(1);  
@@ -66,5 +65,52 @@ class IndexController extends CommonController {
         
         $this -> display();
     }
+    
+    // 首页
+    public function common(){
+        $cvt_index = I('get.index');
+        $control_code = session('control_code');
+
+        $notice = D('Common/notice');
+        $Articleclass = D('Common/Articleclass');
+        $article = D('Common/article');
+        $cvt = D('Common/Codedvalue');
+
+        $cvt1100 = $cvt->getbyindex($control_code,$cvt_index);
+        $numbers = count($cvt1100);
+        foreach ($cvt1100 as $key => $value) {
+            $class_or_type = $value['int_value'];
+            $function_name    = $value['ext_value'];
+            $number_record = $value['oth_value'];
+            $display_name  = $value['short_desc']; 
+            switch ($function_name) {
+                case 'view':
+                    $view_name = $display_name;
+                    break;
+                case 'nolist':
+                    $result = $notice->noticelist($class_or_type,0,$number_record);
+                    $this -> assign($display_name,$result);
+                    break;
+                
+                case 'notice':
+                    $result = $notice->findbytype($class_or_type);
+                    $this -> assign($display_name,$result);
+                    break;
+                case 'article':
+                    $classlist = $Articleclass->getsubclass($class_or_type);  
+                    $where['ar_class'] = array('in', $classlist);
+                    $where['ar_state'] = 1;
+                    $result = $article->articlelist($where,0,8);
+                    $this -> assign($display_name,$result);
+                    break;
+                case 'classes':
+                    $result['data'] = $Articleclass->getsubclasstree($class_or_type);
+                    $this -> assign($display_name,$result);
+                    break;
+            }
+        }
+
         
+        $this -> display($view_name);
+    }   
 }

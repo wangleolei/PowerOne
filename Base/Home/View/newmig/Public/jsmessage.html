@@ -1,0 +1,31 @@
+<script>
+function addmessage()
+{
+    var name = $(".messagetool div input[name=message_name]").val();
+    var email = $(".messagetool div input[name=message_email]").val();
+    var content = $('.messagetool div textarea').val();
+    if(name)
+    {
+        if(email)
+        {
+            if(content)
+            {
+                var verify = $('.messagetool div input[name=message_verify]').val();
+                $.get("{:U('message/messageverify')}?message_verify="+verify,function(response)
+                {
+                    if(response)
+                    {
+                        $('.messagetool div.messagebutton button').attr('disabled',"true");
+                        //$('div.validation button').removeAttr("disabled"); 移除disabled属性 
+                        return true;
+                    }
+                    else {alert("失败！");return false;}
+                });
+            }
+            else{alert('内容不能为空！');return false;}
+        }
+        else{alert('邮箱不能为空！');return false;}
+    }
+    else{alert('昵称不能为空！');return false;}
+}
+</script>

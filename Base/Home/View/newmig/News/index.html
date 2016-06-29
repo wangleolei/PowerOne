@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+
+    <title>公司介绍</title>
+    <meta name="keywords" content="{$wwwdata['KEYWORDS']}" />
+    <meta name="description" content="{$wwwdata['DESCRIPTION']}" />
+    <meta name="version" content="{$wwwdata['VERSION']}" />
+    <meta name="author" content="{$wwwdata['AUTHOR']}" />
+    <include file='Public/link' />
+</head>
+<body background="">
+<include file='Public/header' />
+
+
+
+<div class="container">
+      <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                
+                <div class="indexhotarticle">&nbsp;</div>
+     <section class="blogclass">             
+                  <ul class="product_list">
+                  
+                                       <li class="indexhotarticle" style="list-style-type:none;" >
+                                            
+                                            <a >公司介绍</a></li> </br>
+                                    	<li class="indexhotarticle" style="list-style-type:none;">
+                                            
+                                            <a >米顿罗公司介绍</a></li></br>
+                                        <li class="indexhotarticle" style="list-style-type:none;">
+                                            
+                                            <a >公司动态</a></li></br>
+
+
+                  </ul>
+    </section>
+                
+            </div>
+<!--
+    <div class="box1">
+-->
+
+
+
+<!-- -->
+            <div class="col-lg-8 col-md-6 col-xs-12"> 
+                <section class="indexhotarticle">公司介绍</section>
+                    <div id="info1"> 
+                        <img src="__PUBLIC__/newmig/img/company/company-intro.png" style="width: 90%;">
+                    </div>
+                    <div id="info2" style="display:none">
+                        <img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">
+                    </div>
+                    <div id="news" style="display:none">
+                        
+                            <ul class="news-list">
+           
+              <li style="list-style-type:none;">&nbsp;&nbsp;</li> 
+               <li class="news-list" style="list-style-type:none;">
+                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                                    <a href="#">&nbsp;&nbsp;2016年我们来啦！</a></li>
+                            
+
+          </ul>
+                    </div>
+                
+            </div> 
+
+
+     </div>
+
+
+
+    <script>
+    $(".blogclass a").click(function()
+        {
+            $("html,body").animate({scrollTop:$("body").offset().top},500);
+                if($(this).html() == '公司介绍'){
+	               
+	                    $("section.indexhotarticle").html('公司介绍');
+	                    // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/company-intro.png" style="width: 90%;">');
+                         $("#news").hide();
+                         $("#info2").hide();
+                         $("#info1").show();
+	                
+	            } 
+	            if($(this).html() == '米顿罗公司介绍'){
+	                    $("section.indexhotarticle").html('米顿罗公司介绍');
+	                    
+	                    // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">');
+                         $("#news").hide();
+                         $("#info1").hide();
+                         $("#info2").show();
+	                  
+	            }
+                if($(this).html() == '公司动态'){
+                        $("section.indexhotarticle").html('公司动态');
+                         $("#info1").hide();
+                         $("#info2").hide();
+                         $("#news").show();
+                      
+                }
+	           
+        });
+    
+    </script> 
+    
+</div>
+
+<include file='Public/footer' />
+</body>
+</html>
+

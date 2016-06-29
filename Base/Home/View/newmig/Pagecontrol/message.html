@@ -1,0 +1,56 @@
+<volist name="message" id="messagedata">
+    <section class="panel panel-default message">
+        <header class="panel-heading">
+            <img src="{$messagedata.message_img}" class="img-circle"/>
+            <p>{$messagedata.message_name}<small class="hidden">我是一个标识</small></p>
+            <time>{$messagedata.message_time}</time>
+        </header>
+        <div class="panel-body">
+            <p>{$messagedata.message_content}</p>
+        </div>
+        <if condition="$messagedata.reply_name neq null">
+        <footer class="panel-footer">
+            <p><span class="glyphicon glyphicon-user"></span><span>{$messagedata.reply_name}：</span>{$messagedata.reply_content}</p>
+        </footer>
+        </if>
+    </section>
+</volist>
+<section class="text-center">
+    <ul class="pagination">
+        <if condition="$page eq nopage">
+            <li class="active"><span class="current">1</span></li>
+            <else />{$page}
+        </if>
+    </ul>
+</section>
+<script>
+$(".pagination li a").click(function()
+    {
+        $("html,body").animate({scrollTop:$("body").offset().top},500);
+        var active = $('.pagination li span').html();   //当前页
+        var pagenumber = $(this).html();                //页数
+        switch(pagenumber)
+        {
+        case '上一页':
+            var gonumber = (parseInt(active)-1);
+            break;
+        case '下一页':
+            var gonumber = (parseInt(active)+1);
+            break;
+        case '末页':
+            var gonumber = '{$messagepages["pages"]}';
+            break;
+        case '首页':
+            var gonumber = 1;
+            break;
+        default:
+            var gonumber = pagenumber;
+            break;
+        }
+        $.get("{:U('pagecontrol/message')}?page="+gonumber,function(response)
+        {
+            $("#message").html(response);
+        });
+        return false;
+    });
+</script>

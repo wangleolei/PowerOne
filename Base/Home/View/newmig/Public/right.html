@@ -1,0 +1,35 @@
+<div class="indexhotarticle">产品列表</div>
+  <div class="txt2">           
+    <div class="panel-group" id="accordion">
+      <volist name="blogclass_only" id="blogclass_only_data">   
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#{$blogclass_only_data.blog_class}">
+                {$blogclass_only_data.blog_class}
+              </a>
+            </h4>
+          </div>
+          <eq name="blogclass_only_data.blog_class" value="$product.blog_class">
+          <div id="{$blogclass_only_data.blog_class}" class="panel-collapse collapse in">
+          <else/>
+          <div id="{$blogclass_only_data.blog_class}" class="panel-collapse collapse">
+          </eq>
+            <div class="panel-body rightwell">
+              <ul class="product_list">
+                <volist name="blogclass" id="blogclassdata">
+                  <eq name="blogclassdata.blog_class" value="$blogclass_only_data.blog_class">
+                    <li style="list-style-type:none;">
+                        <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                        <a href="{:U('/service/listlog')}/class/{$blogclassdata.blogclass_number}/subclass/{$blogclassdata.blog_subclass}">{$blogclassdata.blog_subclass}</a>
+                    </li>
+                  </eq>
+                </volist>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </volist>
+    </div>
+  </div>
+</div>
