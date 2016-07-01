@@ -6,7 +6,7 @@
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#{$blogclass_only_data.blog_class}">
-                {$blogclass_only_data.blog_class}
+                {$blogclass_only_data.blog_class} 
               </a>
             </h4>
           </div>
@@ -30,6 +30,36 @@
           </div>
         </div>
       </volist>
+<!-- -->
+      <volist name="class[data][subclass]" id="classData">   
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#panel{$classData.ar_class}">
+                {$classData.ar_c_title}
+              </a>
+            </h4>
+          </div>
+          <eq name="classData.ar_class" value="3">
+            <div id="panel{$classData.ar_class}" class="panel-collapse collapse in">
+          <else/>
+            <div id="panel{$classData.ar_class}" class="panel-collapse collapse ">
+          </eq>
+            <div class="panel-body rightwell">
+              <ul class="product_list">
+                <volist name="classData['subclass']" id="subclassData">
+                    <li style="list-style-type:none;">
+                        <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                        <a href="{$subclassData['ar_c_url']}">{$subclassData.ar_c_title}</a>
+                    </li>
+                </volist>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </volist>
+
+<!-- -->      
     </div>
   </div>
 </div>
