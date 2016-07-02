@@ -20,6 +20,7 @@ return array(
         '/^classes_(\d{1,})$/'              =>  'classes/index?page=:1',
         // 说说心情分页
         '/^news_(\d{1,})$/'                 =>  'news/index?page=:1',
+        '/^news\/details_(\d{1,})$/'        =>  'news/details?id=:1',
         // 留言板留言分页
         '/^comment_(\d{1,})$/'              =>  'comment/index?page=:1',
         // 搜索分页

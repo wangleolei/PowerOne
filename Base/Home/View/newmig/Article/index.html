@@ -15,98 +15,20 @@
 <div class="container">
     <div class="row">
         <article  class="col-lg-8 col-md-8 well indexwell">
-            <section class="indexhotarticle ">产品
-                <neq name="product.blog_class" value="">
-                    -{$product.blog_class}
-                </neq>
-                <neq name="product.blog_subclass" value="">
-                    -{$product.blog_subclass}
-                </neq>
+            <section class="indexhotarticle ">
+                <small>您现在的位置: <a href="{:U('/index')}">首页</a> {$current_path} -> {$article['ar_title']}</small>
             </section>
             <section class="panel panel-info lookblog">
                 <header class="panel-heading text-center">
-                    <h3>{$lookblog["blog_name"]}</h3>
+                    <h3>{$article['ar_title']}</h3>
                 </header>
-                <div class="panel-footer text-center">
-<!--
-                    <span class="hidden-xs">发表于 </span><time>{$lookblog["blog_time"]}</time>
-                    <span>作者：</span>{$lookblog["blog_author"]}
- -->
-                    <span  class="hidden-xs">所属分类：</span>【{$lookblog["blog_class"]}】
-                    <span  class="hidden-xs">所属子分类：</span>【{$lookblog["blog_subclass"]}】
-                </div>
                 <div class="panel-body" >
-                    {$lookblog["blog_content"]}
-<!--
-                    <section class="text-center">
-                        <p>本文为<span class="hidden-xs"><b>PowerOne</b>：<a href="#">powerone.com</a></span>如转载请写明出处。</p>
-                        <p class="visible-xs"><b>充电时空</b>：<a href="#">PowerOne.com</a></p>
-                    </section>
--->
+                    {$article['ar_body']}
+
                 </div>
- <!--
-                <footer class="panel-footer">
-                    <header class="pull-right">
 
-                    <div id="qq">
-                    <script type="text/javascript">
-                    (function(){
-                        var p = {url:location.href,desc:'',title:'{$lookblog["blog_name"]}',pics:'http://foryan.com{$lookblog["blog_img"]}',summary:'{$lookblog["blog_name2"]}',style:'201',width:32,height:32};
-                        var s = [];
-                        for(var i in p){s.push(i + '=' + encodeURIComponent(p[i]||''));}
-                        document.write(['<a class="qcShareQQDiv" href="http://connect.qq.com/widget/shareqq/index.html?',s.join('&'),'" target="_blank">分享到QQ</a>'].join(''));
-                        document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
-                    })();
-                    </script>
-
-                    <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
-                    <script src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
-
-                    </div>
-
-                    </header>
-
-                    <footer class="pull-left">
-
-                        <p><span>上一篇：</span>
-                            <if condition="$lookblogup neq null">
-                            <a href="{:U('/lookblog')}/{$lookblogup['blog_number']}" title="{$lookblogup['blog_name2']}">{$lookblogup["blog_name"]}</a>
-                            <else />已经是第一篇了。
-                            </if>
-                        </p>
-                        <p><span>下一篇：</span>
-                            <if condition="$lookblogdown neq null">
-                            <a href="{:U('/lookblog')}/{$lookblogdown['blog_number']}" title="{$lookblogdown['blog_name2']}">{$lookblogdown["blog_name"]}</a>    
-                            <else />已经是最后一篇了。
-                            </if>
-                        </p>
-
-                    </footer>
-
-                </footer>
--->
             </section>
-<!-- 
-            <volist name="blogmessage" id="blogmessagedata">
-                <section class="panel panel-default message">
-                    <header class="panel-heading">
-                        <img src="{$blogmessagedata.message_img}" class="img-circle"/>
-                        <p>{$blogmessagedata.message_name}<small class="hidden">我是一个标识</small></p>
-                        <time>{$blogmessagedata.message_time}</time>
-                    </header>
-                    <div class="panel-body">
-                        <p>{$blogmessagedata.message_content}</p>
-                    </div>
-                    <if condition="$blogmessagedata.reply_name neq null">
-                    <footer class="panel-footer">
-                        <p><span class="glyphicon glyphicon-user"></span><span>{$blogmessagedata.reply_name}：</span>{$blogmessagedata.reply_content}</p>
-                    </footer>
-                    </if>
-                </section>
-            </volist>
 
-            <include file='Public/messageinput' />
--->
         </article>
         <article class="col-lg-4 col-md-4 col-sm-12 col-xs-12 well rightwell">
             <include file='Public/right' />

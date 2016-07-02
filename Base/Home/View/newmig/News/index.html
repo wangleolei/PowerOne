@@ -27,7 +27,7 @@
                                        <li class="indexhotarticle" style="list-style-type:none;" >
                                             
                                             <a >公司介绍</a></li> </br>
-                                    	<li class="indexhotarticle" style="list-style-type:none;">
+                                      <li class="indexhotarticle" style="list-style-type:none;">
                                             
                                             <a >米顿罗公司介绍</a></li></br>
                                         <li class="indexhotarticle" style="list-style-type:none;">
@@ -47,50 +47,26 @@
 
 <!-- -->
             <div class="col-lg-8 col-md-6 col-xs-12"> 
-                <section class="indexhotarticle">公司介绍</section>
-                    <div id="info1" style="display:none"> 
+                <section class="indexhotarticle">公司动态</section>
+                    <div id="info1"  style="display:none"> 
                         <img src="__PUBLIC__/newmig/img/company/company-intro.png" style="width: 90%;">
                     </div>
                     <div id="info2" style="display:none">
                         <img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">
                     </div>
-                    <div id="news" >
-    <div class="module">
-    <volist name="news" id="newsData">
-       <article class="module-news-1">
-
-            <div><span></span></div>
-             <footer>
-                <h4> 
-                    <time>{$newsData['no_nickname']}<small>{$newsData['no_time']|timestamp_to_timeline}</small></time>
-                </h4>
-                <div>{$newsData['no_content']}</div>
-           </footer>
-        </article>
-    </volist>
-    </div>
-    <ul class="module-page-1 pull-right">
-        <if condition="$button['first'] neq null"><li><a href="{:U('/news')}">首页</a></li></if>
-        <if condition="$button['previous'] neq null"><li><a href="<if condition="$button['previous'] eq 1">{:U('/news')}<else />{:U('/news_'.$button['previous'])}</if>">上一页</a></li></if>
-        <volist name="button['num']" id="numData">
-            <eq name="numData" value="$button['on']"><li class="active"><a>{$numData}</a></li>
-            <else/><li><a href="<if condition="$numData eq 1">{:U('/news')}<else />{:U('/news_'.$numData)}</if>">{$numData}</a></li>
-            </eq>
-        </volist>
-        <if condition="$button['next'] neq null"><li><a href="{:U('/news_'.$button['next'])}">下一页</a></li></if>
-        <if condition="$button['end'] neq null"><li><a href="{:U('/news_'.$button['end'])}">末页</a></li></if>
-    </ul>
-    <div class="clear"></div>
-
-
-            <ul class="news-list">
+                    <div id="news">
+                        
+                            <ul class="news-list">
            
               <li style="list-style-type:none;">&nbsp;&nbsp;</li> 
-               <li class="news-list" style="list-style-type:none;">
-                                    <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
-                                    <a href="#">&nbsp;&nbsp;2016年我们来啦！</a></li>
-                            
-
+                           
+                <volist name="news" id="newsdata">
+                    <li class="news-list" style="list-style-type:none;">
+                        <img src="__PUBLIC__/newmig/img/slider/sanjiao.png" />
+                        <a href="{:U('/news/details_'.$newsdata['no_id'])}">{$newsdata.no_title}</a>
+                        <span class='pull-right'>{$newsdata['no_time']|timestamp_to_timeline}</span>
+                    </li>
+                </volist>
           </ul>
                     </div>
                 
@@ -106,23 +82,23 @@
         {
             $("html,body").animate({scrollTop:$("body").offset().top},500);
                 if($(this).html() == '公司介绍'){
-	               
-	                    $("section.indexhotarticle").html('公司介绍');
-	                    // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/company-intro.png" style="width: 90%;">');
+                 
+                      $("section.indexhotarticle").html('公司介绍');
+                      // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/company-intro.png" style="width: 90%;">');
                          $("#news").hide();
                          $("#info2").hide();
                          $("#info1").show();
-	                
-	            } 
-	            if($(this).html() == '米顿罗公司介绍'){
-	                    $("section.indexhotarticle").html('米顿罗公司介绍');
-	                    
-	                    // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">');
+                  
+              } 
+              if($(this).html() == '米顿罗公司介绍'){
+                      $("section.indexhotarticle").html('米顿罗公司介绍');
+                      
+                      // $("section.indexImg").html('<img src="__PUBLIC__/newmig/img/company/mdl.jpg" style="width: 90%;">');
                          $("#news").hide();
                          $("#info1").hide();
                          $("#info2").show();
-	                  
-	            }
+                    
+              }
                 if($(this).html() == '公司动态'){
                         $("section.indexhotarticle").html('公司动态');
                          $("#info1").hide();
@@ -130,7 +106,7 @@
                          $("#news").show();
                       
                 }
-	           
+             
         });
     
     </script> 

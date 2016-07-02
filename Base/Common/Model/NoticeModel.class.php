@@ -26,6 +26,13 @@ class NoticeModel extends Model{
 		$sum  = $this -> where($condition) -> count();
 		return $sum;
 	}
-
+//	get details
+	function get_details($no_id){
+		$control_code = session('control_code'); 
+		$condition['control_code'] = $control_code;
+		$condition['no_id'] = $no_id;
+		$sum  = $this -> where($condition) -> find();
+		return $sum;
+	}
 
 }

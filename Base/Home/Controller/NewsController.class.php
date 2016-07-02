@@ -30,4 +30,13 @@ class NewsController extends CommonController {
         $this -> assign('news',$news);
         $this -> display();
     }
+
+// 文章页 details
+    public function details(){
+        $no_id = I('get.id');
+        $notice = D('Notice');
+        $news = $notice->get_details($no_id);
+        $this -> assign('news',$news);
+        $this -> display();
+    }
 }
