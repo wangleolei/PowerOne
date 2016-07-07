@@ -1,0 +1,130 @@
+<div class="panel panel-primary" >
+    <div class="panel-heading">内容标题</div>
+    <div class="panel-body" id="RegisterDivID" style="display:;">
+                    <form role="form" name="RegisterForm" id="RegisterFormID" action="{:U('login/register')}" method="post" onsubmit="return registervalidation()">
+                        <div class="form-group col-xs-6">
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>管理员级别：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <select class="form-control  text-center " name="user_group_input">
+                                        <option value="1" >超级管理员</option>
+                                        <option value="2" selected>普通管理员</option>
+                                    </select>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>账号：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_name_input" placeholder="请输入账号(登陆时需要)" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>密码：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="password" class="form-control" name="user_password_input1" id="user_password_inputid1"  placeholder="请输入密码" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>确定密码：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="password" class="form-control" name="user_password_input2" id="user_password_inputid2" placeholder="请再次输入密码" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>匿名：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_nickname_input" placeholder="请输入匿名（将显示在文章下方）" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>真实姓名：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="text" class="form-control" name="user_realname_input" placeholder="请输入真实姓名（为找会密码凭证，不显示在系统中）" />
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="text-left col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                                    <label><h5>邮箱：</h5></label>
+                                </section>
+                                <section class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                                    <input type="email" class="form-control" name="user_email_input" placeholder="请输入邮箱（建议输入常用邮箱以便获得通知）" />
+                                </section>
+                            </div>
+                            <button type="button" class="btn btn-default pull-right" onclick="register(this)">创建该管理员</button>
+                        </div>
+                        <div class="form-group col-xs-6"> 说明：略（以后添加）</div>
+                        
+                    </form>                
+    </div>    
+</div>
+
+
+<script type="text/javascript">
+
+function register(obc){
+    var user_name_input=document.forms["RegisterForm"]["user_name_input"].value;
+    if (user_name_input==null || user_name_input=="")
+    {
+        alert("账号不能为空");
+        return false;
+    }
+    var user_password_input1=document.forms["RegisterForm"]["user_password_input1"].value;
+    var user_password_input2=document.forms["RegisterForm"]["user_password_input2"].value;
+    if (user_password_input1==null || user_password_input1=="")
+    {
+        alert("密码不能为空");
+        return false;
+    }
+    if (user_password_input1 != user_password_input2) 
+    {
+        alert("输入密码不一致");
+        return false;
+    };
+    var user_nickname_input=document.forms["RegisterForm"]["user_nickname_input"].value;
+    if (user_nickname_input==null || user_nickname_input=="")
+    {
+        alert("匿名不能为空");
+        return false;
+    }
+    var user_email_input=document.forms["RegisterForm"]["user_email_input"].value;
+    if (user_email_input==null || user_email_input=="")
+    {
+        alert("邮箱不能为空");
+        return false;
+    }
+                var copy = $(obc).clone();
+                $(obc).attr("disabled","true").removeAttr("onclick").html("创建中");
+                $.post("{:U('register')}",$("#RegisterFormID").serialize(),function(result){
+                    var obj_result = eval("("+result+")");
+//                    alert(obj_result);
+//                    alert(obj_result.resp_message);
+                    if(obj_result.resp_code){
+                        switch(obj_result.resp_code){
+                            case 90001: alert("该账号已被使用！");break;
+                            case 90002: alert("该邮箱已被使用！");break;
+                            case 90003: alert("注册出错！");break;
+                        }
+                        $(obc).replaceWith(copy);
+                        document.getElementById('captchaimg').click();
+                    }
+                    else
+                    {
+                        alert("添加管理员成功！");
+//                        location.href = "{:U('index/index')}";
+                    }
+                });
+}
+
+</script>

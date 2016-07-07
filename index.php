@@ -20,10 +20,10 @@ define('APP_DEBUG',True);
 switch ($_SERVER["HTTP_HOST"]) {
     case "jnnewmig.com":
     case "www.jnnewmig.com":
-	    define('APP_PATH','./jnnewmig/');
+	    define('APP_PATH','./newmig/');
     break;
     case "test.jnnewmig.com":
-        define('APP_PATH','./newmig/');
+        define('APP_PATH','./jnnewmig/');
         break;
     case "win-bell.net":
     case "www.win-bell.net":

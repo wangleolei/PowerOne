@@ -92,7 +92,7 @@
             <ul class="menu1">
                         <volist name="news" id="newsdata">
                             <section class="indexarticle">
-                                <li><a href="{:U('/news/details_'.$newsdata['no_id'])}">{$newsdata.no_title}</a><span class='pull-right'>{$newsdata['no_time']|timestamp_to_timeline}</span>
+                                <li><a href="{:U('/news/details_'.$newsdata['no_id'])}">{$newsdata.no_title}</a><span class='pull-right hidden-xs'>{$newsdata['no_time']|timestamp_to_timeline}</span>
                                 </li>
                             </section>
                         </volist>
@@ -115,7 +115,7 @@
     <div class="marquee">
     <ul>
         <volist name="right['box']['recom']" id="recomData">
-            <li><a href="{:U('/details/'.$recomData['ar_id'])}"><img height="140" class="img-rounded"  src="{$recomData['ar_cover_img']}"/><em>{$recomData['ar_title']} </em></a></li>
+            <li><a href="{:U('/article/'.$recomData['ar_id'])}"><img height="140" class="img-rounded"  src="{$recomData['ar_cover_img']}"/><em>{$recomData['ar_title']} </em></a></li>
         </volist>
 
     </ul>
