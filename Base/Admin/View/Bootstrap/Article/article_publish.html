@@ -1,5 +1,12 @@
 <extend name="Public/tpl" />
 <block name="title">资讯文档管理 - </block>
+
+<block name="linkage" >
+    <!--uploadify -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
+    <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify.js"></script>
+</block>
+
 <block name="content">
     <nav class="nav-title">
         <h4><if condition="$article neq null">编辑<else />新增</if>文档 <small>你可以在这里<if condition="$article neq null">编辑<else />新增</if>文档</small></h4>
@@ -75,8 +82,10 @@
                 </div>
             </div>
             <div class="col-xs-6">
-                <label for="upload-cover" class="col-xs-4 control-label text-center">单独封面</label>
-                <div class="col-xs-8"><input type="file" name="upload{$article['ar_id']}" id="upload-cover"></div>
+<!--                <label for="upload_cover" class="col-xs-4 control-label text-center">单独封面</label>
+-->             <img src="{$article['ar_cover_img']}" id="img_cover" width="140px" height="105px" >
+                <div class="col-xs-6"><input type="file" name="upload{$article['ar_id']}" id="upload_cover"></div>
+            
             </div>
         </div>
         <div class="form-group">
@@ -107,4 +116,28 @@
             </div>
         </div>
     </form>
+
+<script type="text/javascript">
+$("#upload_cover").change(function(){
+    var objUrl = getObjectURL(this.files[0]);
+    console.log("objUrl = "+objUrl);
+    if (objUrl) {
+        $("#img_cover").attr("src",objUrl);
+    };
+});
+//建立一个可存取到该file的url
+function getObjectURL(file){
+    var url = null;
+
+    if(window.createObjectURL != undefined) //basic
+        url = window.createObjectURL(file) ;
+    else if (window.URL != undefined) //mozilla(firefox)
+        url = window.URL.createObjectURL(file);
+    else if (window.webkitURL != undefined) //webkit or chrome
+        url = window.webkitURL.createObjectURL(file);
+    
+    return url;
+}
+</script>
+
 </block>

@@ -71,29 +71,33 @@ function sendMail1($to,$title,$content){
     }
 }
 
-// 上传文件
+// 上传文件 
 // 参数 $name 上传input的name $cut 图片裁剪大小
 // ArticleController 、 ParameterController 使用
 function upload_file($name,$cut){
     $config = array(
         'maxSize'    =>    1048576,
-        'savePath'   =>    'image/',
+        'rootPath'   =>    './upload/image/', // 设置附件上传根目录
+        'savePath'   =>    '',// 设置附件上传（子）目录
         'saveName'   =>    time().$name,
         'exts'       =>    array('jpg', 'gif', 'png', 'jpeg'),
         'autoSub'    =>    true,
         'subName'    =>    array('date','Ymd'),
         );
     $upload = new \Think\Upload($config);
-    $info   = $upload->upload();
+//    $info   = $upload->upload();
+    $info   = $upload->uploadOne($_FILES['upload'.$name]);
+    
+//    var_dump($upload->getError());
     if($info){
         $data = $upload->rootPath;
-        $data = '/'.$data.$info['upload'.$name]['savepath'].$info['upload'.$name]['savename'];
+        $data = '/upload/image/'.$info['savepath'].$info['savename'];
 //        if($cut){
             $image = new \Think\Image();
             $image -> open('.'.$data);
-            $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$data);
+            $res = $image -> thumb($cut['width'],$cut['height'],6)->save('.'.$data);
         //}
-        return $data;
+        return __ROOT__.$data;
     }
     else return false;
 }

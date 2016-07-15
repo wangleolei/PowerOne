@@ -7,8 +7,9 @@ class AdminController extends AuthController {
 
     // 用户主页 -> end in 2016/02/27
     public function index(){
-
-            $this -> display();
+            $session = session("admin.auth");
+            if($session['ad_group']  == 1) $this -> display('Public/no_access');
+            else $this -> display();
     }
 
     // 注册新的管理员

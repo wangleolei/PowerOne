@@ -1,7 +1,138 @@
 <extend name="Public/tpl" />
 <block name="title">首页 - </block>
+
+<block name="linkage" >
+    <!--uploadify -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
+    <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify.js"></script>
+</block>
+
 <block name="content">
-   
+<div class="avatar_box"> <img id="image" src="/powerone/logo.png" width="130" height="130" border="0" />
+    <div class="upload_avatar"><input id="file_upload" name="file_upload" type="file" multiple="true" value="" /></div>
+ </div>
+
+<form id="CoverFormID" enctype="multipart/form-data" method="post" action="__URL__/uploadify/" >  
+<br><img src="" id="img0" width="133" height="100" >
+<input type='file'  name='test' id="test">
+
+<input type="submit" value="提交" class="button" >
+</form>
 
 
+<script type="text/javascript">
+$("#test").change(function(){
+	var objUrl = getObjectURL(this.files[0]);
+	console.log("objUrl = "+objUrl);
+	if (objUrl) {
+		$("#img0").attr("src",objUrl);
+	};
+});
+//建立一个可存取到该file的url
+function getObjectURL(file){
+	var url = null;
+
+	if(window.createObjectURL != undefined) //basic
+		url = window.createObjectURL(file) ;
+	else if (window.URL != undefined) //mozilla(firefox)
+		url = window.URL.createObjectURL(file);
+	else if (window.webkitURL != undefined) //webkit or chrome
+		url = window.webkitURL.createObjectURL(file);
+	
+	return url;
+}
+
+$(function(){
+	 $('#photo').change(function(){
+		$.post("{:U('index/uploadify')}",$("#CoverFormID").serialize(),function(result){
+			alert(result);
+//                    var obj_result = eval("("+result+")");
+//                    alert(obj_result);
+//                    alert(obj_result.resp_message);
+//                    if(obj_result.resp_code){
+//                        switch(obj_result.resp_code){
+//                            case 90001: alert("该账号已被使用！");break;
+//                            case 90002: alert("该邮箱已被使用！");break;
+//                            case 90003: alert("注册出错！");break;
+//                        }
+//                        $(obc).replaceWith(copy);
+//                        document.getElementById('captchaimg').click();
+//                    }
+//                    else
+//                    {
+//                        alert("添加管理员成功！");
+//                        location.href = "{:U('index/index')}";
+ //                   }
+                });
+	});
+});
+
+$(function() {
+    $('#file_upload').uploadify({
+        'swf'      : '__PUBLIC__/uploadify/uploadify.swf',   //swf路径
+        'uploader' : '{:U('index/uploadify')}',
+        'buttonText' : '上传头像',
+        'method':'post',  
+        'onUploadSuccess' : function(file, data, response) {
+//            $('#image').attr('src','/powerone/upload/test/130_'+data);
+//            $('#pic').val(data);
+            alert(data);
+        },
+    });
+ });
+ </script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#uploadify").uploadify({
+        'uploader':'/Public/jquery.uploadify-v2.1.0/uploadify.swf',    //swf路径
+        'script': '/Code/file',                                      //后台处理文件上传的路径
+        'cancelImg':'/Public/jquery.uploadify-v2.1.0/cancel.png',      //按钮背景图片的路径
+        'folder': '/Uploads',
+        'method':'post',                       
+        'buttonText':'file',
+        'fileExt': '*.jpg;*.gif,*.png',                           //允许上传的文件格式为*.jpg,*.gif,*.png
+        'fileDesc': 'Web Image Files(.JPG,.GIF,.PNG)',            //过滤掉除了*.jpg,*.gif,*.png的文件
+        'queueID': 'fileQueue',
+        'sizeLimit': '2048000',                                   //最大允许的文件大小为2M
+        'fileDataName':'uploadify',
+        'auto': false,
+        'queueSizeLimit':15,
+        'simUploadLimit':15,
+        'removeCompleted':false,                                 
+        'multi':true,                               
+        'onCancel': funCancel,                          //当用户取消上传时
+        'onComplete': funComplete,                      //完成上传任务
+        'OnError': funError                             //上传发生错误时
+    });
+});
+//用户取消函数
+function funCancel(event, ID, fileObj, data) {
+    alert('您取消了操作');
+    return;
+}
+//图片上传发生的事件
+function funComplete(event, ID, fileObj, response, data) {
+
+    //alert('上传事件');
+    if (response == 0) {
+        alert('图片' + fileObj.name + '操作失败');
+        return false;
+    }else{
+         var str=$('#image').html();
+            var add="<img src='"+"/Uploads/"+response+"'" +"style='margin-left:15px;margin-top:15px'/></img>";
+            str+=add;
+         $('#image').html(str);
+         return true;
+    }
+}
+
+//上传发生错误时。
+function funError(event, ID, fileObj, errorObj) {
+    //alert('错误事件');
+    alert(errorObj.info);
+    return;
+}
+</script>
+ 
 </block>
